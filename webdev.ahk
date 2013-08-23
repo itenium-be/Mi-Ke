@@ -1,6 +1,11 @@
 #SingleInstance force
 
 ; automatisch comparer openen met links en rechts op desktop
+; When we want to do this some more:
+; - Open the current URL in all 4 browsers
+; - When no URL on clipboard: ask for input
+
+
 
 ; Hotstrings: imail+TAB
 :`t:imail::laoujin@hotmail.com
@@ -15,18 +20,23 @@
 ;return
 
 ; Control+Win+Arrows: DiffMerge
-; Left/Right Arrow: open left/right file and paste cliboard
-; Down: compare left/right file
+; Left Arrow: delete left and paste cliboard
+; Down: delete right, paste clipboard and compare with left file
 #Persistent
-diffMergeFilePath := A_Desktop
-diffMergePathLeft := diffMergeFilePath . "\left.txt"
-diffMergePathRight := diffMergeFilePath . "\right.txt"
-diffMergeContentLeftFile := ""
-return
+
+GetLeft()
+{
+	return A_Desktop . "\left.txt"
+}
+
+GetRight()
+{
+	return A_Desktop . "\right.txt"
+}
 
 PasteClipboardToFile(file)
 {
-	MsgBox blah %file%
+	;MsgBox %file%
 	FileDelete, %file%
 	FileAppend, %clipboard%, %file%
 }
@@ -35,16 +45,16 @@ DiffMergeOpenAppl(left, right)
 {
 	Run C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe -nosplash "%left%" "%right%"
 }
-
+	
 ^#Left::
 Send, ^c
 ;Use CopyToClipboard
 ;http://www.autohotkey.com/board/topic/79494-go-to-anything-browseexploregoogle-the-selected-text/
-PasteClipboardToFile(diffMergePathLeft)
+PasteClipboardToFile(GetLeft())
 diffMergeContentLeftFile := clipboard
 return
 
-^#Right::
+^#Down::
 Send, ^c
 doCompare = false
 if (clipboard = diffMergeContentLeftFile)
@@ -58,13 +68,9 @@ else
 	
 if doCompare = true
 {
-	PasteClipboardToFile(diffMergePathRight)
-	DiffMergeOpenAppl(diffMergePathLeft, diffMergePathRight)
+	PasteClipboardToFile(GetRight())
+	DiffMergeOpenAppl(GetLeft(), GetRight())
 }
-return
-
-^#Down::
-DiffMergeOpenAppl(diffMergePathLeft, diffMergePathRight)
 return
 
 
@@ -97,12 +103,5 @@ return
 <^>!#t::Run C:\temp
 <^>!#l::Run H:\!Download
 
-; Window "Save As"
-; -> insert bookmarks
-
-
-; When we want to do this some more:
-; - Open the current URL in all 4 browsers
-; - When no URL on clipboard: ask for input
 
 
