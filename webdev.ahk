@@ -1,5 +1,7 @@
 #SingleInstance force
 
+; automatisch comparer openen met links en rechts op desktop
+
 ; Hotstrings: imail+TAB
 :`t:imail::laoujin@hotmail.com
 :`t:nimail::woutervs@hotmail.com
@@ -67,10 +69,10 @@ return
 
 
 ; Win+C: Open notepad++. C=Code? :) (N is already mapped to OneNote)
-#c::Run C:\Program Files (x86)\Notepad++\Notepad++
+#c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe
 
 ; Control+Win+C: Open new N++ instance
-^#c::Run Notepad -multiInst
+^#c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe -multiInst
 
 ; Control+Win+F: FileZilla
 ^#f::
@@ -86,14 +88,14 @@ return
 
 
 ; AltGr+Win: Go directly to special folders
-; +D: Dropbox
+; +C: Dropbox
 ; +W: WWW Folder
 ; +T: Temp folder
 ; +L: Leeching folder
-<^>!#d::Run C:\Dropbox\Personal
-<^>!#w::Run C:\wamp\www
+<^>!#c::Run C:\CloudDrives\Dropbox\Personal\Programming
+<^>!#w::Run C:\unix\wamp\www
 <^>!#t::Run C:\temp
-<^>!#l::Run C:\Download
+<^>!#l::Run H:\!Download
 
 ; Window "Save As"
 ; -> insert bookmarks
