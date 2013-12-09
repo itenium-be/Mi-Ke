@@ -1,17 +1,12 @@
 #SingleInstance force
 
-; automatisch comparer openen met links en rechts op desktop
-; When we want to do this some more:
-; - Open the current URL in all 4 browsers
-; - When no URL on clipboard: ask for input
-
-
-
 ; Hotstrings: imail+TAB
 :`t:imail::laoujin@hotmail.com
 :`t:nimail::woutervs@hotmail.com
 :`t:gimail::laoujin@gmail.com
 :`t:wimail::wouter.vanschandevijl@ypto.be
+
+:`t:wzh:://TODO: we zaten hier
 
 ; Change music volume
 ;#Home::
@@ -36,7 +31,7 @@ GetRight()
 
 PasteClipboardToFile(file)
 {
-	;MsgBox %file%
+	; MsgBox %clipboard%
 	FileDelete, %file%
 	FileAppend, %clipboard%, %file%
 }
@@ -48,14 +43,15 @@ DiffMergeOpenAppl(left, right)
 	
 ^#Left::
 Send, ^c
+Sleep, 150
 ;Use CopyToClipboard
-;http://www.autohotkey.com/board/topic/79494-go-to-anything-browseexploregoogle-the-selected-text/
 PasteClipboardToFile(GetLeft())
 diffMergeContentLeftFile := clipboard
 return
 
 ^#Down::
 Send, ^c
+Sleep, 150
 doCompare = false
 if (clipboard = diffMergeContentLeftFile)
 {
