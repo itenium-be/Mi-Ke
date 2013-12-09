@@ -38,7 +38,11 @@ PasteClipboardToFile(file)
 
 DiffMergeOpenAppl(left, right)
 {
-	Run C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe -nosplash "%left%" "%right%"
+	; DiffMerge
+	;Run C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe -nosplash "%left%" "%right%"
+	
+	; Beyond compare
+	Run C:\Program Files (x86)\Beyond Compare 3\BCompare.exe "%left%" "%right%"
 }
 	
 ^#Left::
