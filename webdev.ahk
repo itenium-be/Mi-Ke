@@ -4,7 +4,7 @@
 :`t:imail::laoujin@hotmail.com
 :`t:nimail::woutervs@hotmail.com
 :`t:gimail::laoujin@gmail.com
-:`t:wimail::wouter.vanschandevijl@ypto.be
+:`t:wimail::wouter.vanschandevijl@team4talent.be
 
 :`t:wzh:://TODO: we zaten hier
 
@@ -12,6 +12,7 @@
 ;#Home::
 ;SoundSetWaveVolume, +10
 ;SoundGetWaveVolume, OutputVar
+
 ;return
 
 ; Control+Win+Arrows: DiffMerge
@@ -40,11 +41,11 @@ DiffMergeOpenAppl(left, right)
 {
 	; DiffMerge
 	;Run C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe -nosplash "%left%" "%right%"
-	
+
 	; Beyond compare
 	Run C:\Program Files (x86)\Beyond Compare 3\BCompare.exe "%left%" "%right%"
 }
-	
+
 ^#Left::
 Send, ^c
 Sleep, 150
@@ -65,7 +66,7 @@ if (clipboard = diffMergeContentLeftFile)
 }
 else
 	doCompare = true
-	
+
 if doCompare = true
 {
 	PasteClipboardToFile(GetRight())
