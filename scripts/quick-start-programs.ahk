@@ -1,5 +1,11 @@
 ; Control+Win+S: SublimeText
-^#s::Run C:\Program Files\Sublime Text 3\sublime_text.exe --new-window
+^#s::
+SetTitleMatchMode RegEx
+IfWinExist, Sublime Text
+	Run C:\Program Files\Sublime Text 3\sublime_text.exe --new-window
+else
+	Run C:\Program Files\Sublime Text 3\sublime_text.exe
+return
 
 ; Win+C: Open notepad++. C=Code? :) (N is already mapped to OneNote)
 #c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe
