@@ -5,6 +5,7 @@ Menu, Tray, Tip, MiKe
 
 Menu, Tray, MainWindow
 Menu, Tray, Add, &Reload, MiKeTrayReload
+Menu, Tray, Add, &Debug, MiKeTrayDebug
 Menu, Tray, Add, &Suspend, MiKeTraySuspend
 Menu, Tray, Add, E&xit, MiKeTrayExit
 Menu, Tray, Default, &Reload
@@ -12,6 +13,9 @@ Menu, Tray, Default, &Reload
 Goto, MiKeContinue
 
 ; Tray menu subroutines
+MiKeTrayDebug:
+  ListHotkeys
+  return
 MiKeTrayReload:
   Reload
   return
