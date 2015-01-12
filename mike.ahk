@@ -8,6 +8,7 @@
 
 #Include scripts\change-sound-volume.ahk
 #Include scripts\memory-diff.ahk
+#Include scripts\path-wintounix.ahk
 
 #Include scripts\quick-start-programs.ahk
 
