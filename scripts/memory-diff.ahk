@@ -40,7 +40,7 @@ Sleep, 150
 doCompare = false
 if (clipboard = diffMergeContentLeftFile)
 {
-	MsgBox, 4, Identical, Clipboards are identical. Do you want to open DiffMerge anyway?, 3
+	MsgBox, 4, Identical, Clipboards are identical. Do you want to open DiffMerge anyway?, 1
 	IfMsgBox, Yes
 		doCompare = true
 }
