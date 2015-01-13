@@ -13,7 +13,7 @@ StringReplace, path, path, :
 path = /%path%/
 
 ; Quote directories with spaces in them
-path := RegExReplace(path, "(?<=/)((?:[^\\/:*?""<>|])+ (?:[^\\/:*?""<>|])+)(?=/)" , """$1""")
+path := RegExReplace(path, "(?<=/)(([^\\/:*?""<>|]+) (?2))(?=/)" , """$1""")
 
 clipboard = %path%
 
