@@ -2,27 +2,57 @@
 ; Newly downloaded files directory on the left
 ; USB drive on the right
 ; Hotkey: AltGr+Win+D
-<^>!#d::
-SetTitleMatchMode RegEx
-IfWinNotExist !Download
-{
-	Run H:\!Download
-	Sleep, 400
-	WindowPadMove(-1, -1, 0.5, 1, "")
-
-	Run J:\
-	Sleep, 400
-	WindowPadMove(1, 0, 0.5, 1, "")
-}
-else
-{
-	WinClose
-
-	IfWinExist \(J:\)
+GetUsbDrive() {
+	DriveGet, list, list
+	Loop, Parse, list
 	{
-		WinClose
+		drive = %A_LoopField%:\
+
+		;DriveGet, cap, capacity, %drive%
+		;DrivespaceFree, free, %drive%
+		DriveGet, fs, fs, %drive%
+		;DriveGet, label, label, %drive%
+		;DriveGet, serial, serial, %drive%
+		DriveGet, type, type, %drive%
+		DriveGet, status, status, %drive%
+
+		if type = Removable
+		{
+			if status = Ready
+			{
+				return %drive%
+			}
+		}
 	}
 }
 
+<^>!#d::
+usbDrive := GetUsbDrive()
+If usbDrive
+{
+	SetTitleMatchMode RegEx
+	IfWinNotExist !Download
+	{
+		Run H:\!Download
+		Sleep, 400
+		WindowPadMove(-1, -1, 0.5, 1, "")
 
+		Run %usbDrive%
+		Sleep, 400
+		WindowPadMove(1, 0, 0.5, 1, "")
+	}
+	else
+	{
+		WinClose
+
+		IfWinExist \(%usbDrive%)
+		{
+			WinClose
+		}
+	}
+}
+else
+{
+	MsgBox No Usb drive?
+}
 return
