@@ -5,6 +5,7 @@ Menu, Tray, Tip, MiKe
 
 Menu, Tray, MainWindow
 Menu, Tray, Add, &Reload, MiKeTrayReload
+Menu, Tray, Add, Source, MiKeTraySource
 Menu, Tray, Add, &Debug, MiKeTrayDebug
 Menu, Tray, Add, &Suspend, MiKeTraySuspend
 Menu, Tray, Add, E&xit, MiKeTrayExit
@@ -25,5 +26,7 @@ MiKeTraySuspend:
   return
 MiKeTrayExit:
   ExitApp
+MiKeTraySource:
+  Run, explore %A_ScriptDir%
 
 MiKeContinue:
