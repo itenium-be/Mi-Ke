@@ -5,6 +5,7 @@
 
 #Include hotstrings\email.ahk
 #Include hotstrings\misc.ahk
+#Include hotstrings\t4t.ahk
 
 #Include scripts\change-sound-volume.ahk
 #Include scripts\memory-diff.ahk
