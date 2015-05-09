@@ -1,9 +1,13 @@
-: :gclone::git clone https://github.com/Laoujin/T4T-Git
+; : :gclone::git clone https://github.com/Laoujin/T4T-Git
 
-: :giturl::https://github.com/Laoujin/T4T-Git
+; : :giturl::https://github.com/Laoujin/T4T-Git
 
-: :gitsub::git submodule add https://github.com/github/gitignore gitignores
+; : :gitsub::git submodule add https://github.com/github/gitignore gitignores
 
-: :gittemp::https://github.com/Laoujin/_test
+; : :gittemp::https://github.com/Laoujin/_test
 
-: :t4tmap::\Training\Trainingsday 2015 Git
+; : :t4tmap::\Training\Trainingsday 2015 Git
+
+
+
+; : :buildit::cd C:\projects\test\focus\Container\build;.\Update-Local-Focus.ps1
