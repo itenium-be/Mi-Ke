@@ -1,6 +1,9 @@
 #Persistent
 #SingleInstance force
 
+; TODOs
+; need autohotkey to open sublime text with copied  folder opened
+
 #Include mike-menu.ahk
 
 #Include hotstrings\email.ahk
