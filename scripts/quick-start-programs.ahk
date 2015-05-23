@@ -19,5 +19,5 @@ SetTitleMatchMode RegEx
 IfWinExist, FileZilla$
 	WinActivate
 else
-	Run C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe
+	Run C:\Program Files\FileZilla FTP Client\filezilla.exe
 return
