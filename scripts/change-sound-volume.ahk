@@ -1,6 +1,6 @@
 ; Change music volume
 ; Hotkey: Windows+PageUp/Down
-#PgUp::SoundSetWaveVolume, +1
-#PgDn::SoundSetWaveVolume, -1
+#PgUp::SoundSetWaveVolume, +10
+#PgDn::SoundSetWaveVolume, -10
 
 #End::SoundSetWaveVolume, 0
