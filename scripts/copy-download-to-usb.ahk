@@ -33,7 +33,7 @@ If usbDrive
 	SetTitleMatchMode RegEx
 	IfWinNotExist !Download
 	{
-		Run H:\!Download
+		Run C:\Users\Wouter\Downloads
 		Sleep, 400
 		WindowPadMove(-1, -1, 0.5, 1, "")
 
