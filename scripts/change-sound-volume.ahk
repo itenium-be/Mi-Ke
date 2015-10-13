@@ -34,71 +34,67 @@ Class PleasantNotify
 		Critical
 		lastfound := WinExist()
 
+		imgPath = %A_ScriptDir%\scripts\change-sound-volume\change-sound-volume
+
 		textX = 20
 		textY = 12
 		if volume >= 90
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-90.jpg
+			Image = %imgPath%-90.jpg
 			pnW = 510
 			pnH = 319
 		}
 		else if volume >= 80
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-80.jpg
+			Image = %imgPath%-80.jpg
 			pnW = 570
 			pnH = 241
 		}
 		else if volume >= 70
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-70.jpg
+			Image = %imgPath%-70.jpg
 			pnW = 313
 			pnH = 393
 		}
 		else if volume >= 60
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-60.gif
+			Image = %imgPath%-60.gif
 			pnW = 350
 			pnH = 281
 		}
-		else if volume >= 31
+		else if volume >= 41
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-31.jpg
+			Image = %imgPath%-41.jpg
 			pnW = 524
 			pnH = 393
 			textY = 250
 		}
 		else if volume >= 21
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-21.jpg
-			pnW = 642
-			pnH = 361
-			textY = 310
-		}
-		else if volume >= 11
-		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-11.jpg
+			Image = %imgPath%-21.jpg
 			pnW = 590
 			pnH = 393
 			textY = 340
 		}
+		else if volume >= 11
+		{
+			Image = %imgPath%-11.jpg
+			pnW = 642
+			pnH = 361
+			textY = 310
+		}
 		else if volume >= 1
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-1.jpg
+			Image = %imgPath%-1.jpg
 			pnW = 590
 			pnH = 393
 		}
 		else if volume = 0
 		{
-			Image = %A_ScriptDir%\scripts\change-sound-volume-0.jpg
+			Image = %imgPath%-0.jpg
 			pnW = 500
 			pnH = 250
 		}
-		; else if volume = 0
-		; {
-		; 	Image = %A_ScriptDir%\scripts\__change-sound-volume-0.jpg
-		; 	pnW = 295
-		; 	pnH = 393
-		; }
 
 
 		title := "Volume " Round(volume)
