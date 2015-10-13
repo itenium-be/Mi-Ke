@@ -58,6 +58,8 @@ Class PleasantNotify
 		}
 		else if volume >= 60
 		{
+			; TODO: show animated gif
+			; http://www.autohotkey.com/board/topic/17722-show-animated-gifs-in-your-gui/
 			Image = %imgPath%-60.gif
 			pnW = 350
 			pnH = 281
