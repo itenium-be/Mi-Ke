@@ -3,17 +3,22 @@
 #PgUp::SetAndDisplaySoundVolume("+10")
 #PgDn::SetAndDisplaySoundVolume("-10")
 #End::SetAndDisplaySoundVolume(0)
+#Home::DisplaySoundVolume()
 
 ; +Control: Without the fancy image but better response
 ^#PgUp::SoundSetWaveVolume, +10
 ^#PgDn::SoundSetWaveVolume, -10
 ^#End::SoundSetWaveVolume, 0
 
-SetAndDisplaySoundVolume(volume)
+SetAndDisplaySoundVolume(volumeMod)
 {
-	SoundSetWaveVolume, % volume
+	SoundSetWaveVolume, % volumeMod
+	DisplaySoundVolume()
+}
+
+DisplaySoundVolume()
+{
 	SoundGetWaveVolume, volume
-	volume := "Volume " Round(volume)
 	new PleasantNotify(volume, "")
 }
 
@@ -24,55 +29,107 @@ SetAndDisplaySoundVolume(volume)
 
 Class PleasantNotify
 {
-	__New(title, message, pnW=570, pnH=241, position="b r", time=200)
+	__New(volume, message, pnW=650, pnH=241, position="b r", time=400)
 	{
 		Critical
 		lastfound := WinExist()
+
+		textX = 20
+		textY = 12
+		if volume >= 90
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-90.jpg
+			pnW = 510
+			pnH = 319
+		}
+		else if volume >= 80
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-80.jpg
+			pnW = 570
+			pnH = 241
+		}
+		else if volume >= 70
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-70.jpg
+			pnW = 313
+			pnH = 393
+		}
+		else if volume >= 60
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-60.gif
+			pnW = 350
+			pnH = 281
+		}
+		else if volume >= 31
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-31.jpg
+			pnW = 524
+			pnH = 393
+			textY = 250
+		}
+		else if volume >= 21
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-21.jpg
+			pnW = 642
+			pnH = 361
+			textY = 310
+		}
+		else if volume >= 11
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-11.jpg
+			pnW = 590
+			pnH = 393
+			textY = 340
+		}
+		else if volume >= 1
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-1.jpg
+			pnW = 590
+			pnH = 393
+		}
+		else if volume = 0
+		{
+			Image = %A_ScriptDir%\scripts\change-sound-volume-0.jpg
+			pnW = 500
+			pnH = 250
+		}
+		; else if volume = 0
+		; {
+		; 	Image = %A_ScriptDir%\scripts\__change-sound-volume-0.jpg
+		; 	pnW = 295
+		; 	pnH = 393
+		; }
+
+
+		title := "Volume " Round(volume)
 
 		Gui, New, % "HwndPN_hwnd"
 		this.PN_hwnd := PN_hwnd
 		Gui, % PN_hwnd ": Default"
 		Gui, % PN_hwnd ": +AlwaysOnTop +ToolWindow -SysMenu -Caption +LastFound"
-		;WinSet, ExStyle, +0x20
 		WinSet, Transparent, 0
 		Gui, % PN_hwnd ": Color", 0xF2F2F0
 		Gui, % PN_hwnd ": Font", c0x07D82F s18 wBold, Segoe UI
-		Gui, % PN_hwnd ": Add", Text, % " x" 20 " y" 12 " w" 150 " hwndTitleHwnd", % title
+		Gui, % PN_hwnd ": Add", Text, % " x" textX " y" textY " w" 150 " hwndTitleHwnd", % title
 		this.TitleHwnd := TitleHwnd
 		Gui, % PN_hwnd ": Font", cBlack s15 wRegular
 
-		Image = %A_ScriptDir%\scripts\change-sound-volume-max.jpg
-		Gui, Add, Picture, x0 y0 w610 h385 +0x4000000, %Image%
+		Gui, Add, Picture, % " x" 0 " y" 0 " w" pnW " h" pnH " +0x4000000", %Image%
 
-		Gui, % PN_hwnd ": Add", Text, % " BackgroundTrans x" 20 " y" 56 " w" pnW " h" pnH-56 " hwndMessageHwnd", % message
+		;Gui, % PN_hwnd ": Add", Text, % " BackgroundTrans x" textX " y" textY " w" pnW " h" pnH-56 " hwndMessageHwnd", % message
 
-		if (time = "P")
-		{
-			Gui, % PN_hwnd ": Add", Button, % " x" pnW - 80 " y" pnH - 50 " w50 h25 ", OK
-			; When OK is clicked, call this instance of the class
-			fn := bind("_NotifyOK", this)
-			GuiControl +g, OK, %fn%
-		}
 		this.MessageHwnd := MessageHwnd
 		RealW := pnW + 50
 		RealH := pnH + 20
 		Gui, % PN_hwnd ": Show", W%RealW% H%RealH% NoActivate
 		this.WinMove(PN_hwnd, position)
-		;Gui, % PN_Hwnd ": +Parent" A_ScriptHwnd
 		if A_ScreenDPI = 96
 			WinSet, Region,0-0 w%pnW% h%pnH% R40-40,%A_ScriptName%
-		/* For Screen text size 125%
-		if A_ScreenDPI = 120
-			WinSet, Region, 0-0 w800 h230 R40-40, %A_ScriptName%
-		*/
+
 		Critical Off
-		this.winfade("ahk_id " PN_hwnd,210,5)
-		if (time != "P")
-		{
-			; Bind this class to the timer.
-			fn := bind("_NotifyTimer", this)
-			SetTimer %fn%, % time * -1
-		}
+		this.winfade("ahk_id " PN_hwnd, 210, 5)
+		fn := bind("_NotifyTimer", this)
+		SetTimer %fn%, % time * -1
 
 		if (WinExist(lastfound))
 		{
