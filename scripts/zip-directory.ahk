@@ -13,8 +13,8 @@ if currentPath =
 SplitPath, currentPath, topDirName
 
 Run, "C:\Program Files\7-Zip\7z.exe" a "%currentPath%\%topDirName%.zip" "%currentPath%\*"
+#IfWinActive
 return
-
 
 
 ActiveFolderPath()
