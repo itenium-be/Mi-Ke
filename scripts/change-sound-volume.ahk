@@ -38,31 +38,31 @@ Class PleasantNotify
 
 		textX = 20
 		textY = 12
-		if volume >= 90
-		{
-			Image = %imgPath%-90.jpg
-			pnW = 510
-			pnH = 319
-		}
-		else if volume >= 80
-		{
-			Image = %imgPath%-80.jpg
-			pnW = 570
-			pnH = 241
-		}
-		else if volume >= 70
-		{
-			Image = %imgPath%-70.jpg
-			pnW = 313
-			pnH = 393
-		}
-		else if volume >= 60
+		if volume >= 91
 		{
 			; TODO: show animated gif
 			; http://www.autohotkey.com/board/topic/17722-show-animated-gifs-in-your-gui/
 			Image = %imgPath%-60.gif
 			pnW = 350
 			pnH = 281
+		}
+		else if volume >= 81
+		{
+			Image = %imgPath%-90.jpg
+			pnW = 510
+			pnH = 319
+		}
+		else if volume >= 71
+		{
+			Image = %imgPath%-80.jpg
+			pnW = 570
+			pnH = 241
+		}
+		else if volume >= 61
+		{
+			Image = %imgPath%-70.jpg
+			pnW = 313
+			pnH = 393
 		}
 		else if volume >= 41
 		{
@@ -85,7 +85,7 @@ Class PleasantNotify
 			pnH = 361
 			textY = 310
 		}
-		else if volume >= 1
+		else if volume > 0
 		{
 			Image = %imgPath%-1.jpg
 			pnW = 590
