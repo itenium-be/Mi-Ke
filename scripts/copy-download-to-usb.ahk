@@ -31,7 +31,7 @@ usbDrive := GetUsbDrive()
 If usbDrive
 {
 	SetTitleMatchMode RegEx
-	IfWinNotExist !Download
+	IfWinNotExist Downloads
 	{
 		Run C:\Users\Wouter\Downloads
 		Sleep, 400
