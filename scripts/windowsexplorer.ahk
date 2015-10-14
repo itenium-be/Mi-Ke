@@ -12,11 +12,11 @@ Esc::
 CapsLock::
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 {
-	SelectedPath := Explorer_GetSelectedFile()
-	SplitPath, SelectedPath, name, dir, ext, name_no_ext, drive
-	clipboard := dir
+	SelectedPath := Explorer_GetPath()
+	clipboard := SelectedPath
 	ClipWait
-	Notify("Path Copied", clipboard, -1, "Style=Mine")
+	if IsFunc("Notify")
+		Notify("Path Copied", clipboard)
 }
 Return
 

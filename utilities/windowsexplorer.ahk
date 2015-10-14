@@ -51,13 +51,6 @@ Explorer_GetSelected(hwnd="")
 	return Explorer_Get(hwnd,true)
 }
 
-Explorer_GetSelectedFile(hwnd="")
-{
-	SelectedFiles := Explorer_GetSelected()
-	StringSplit, selectedFile, SelectedFiles, `n
-	return %selectedFile1%
-}
-
 Explorer_GetWindow(hwnd="")
 {
 	; thanks to jethrow for some pointers here

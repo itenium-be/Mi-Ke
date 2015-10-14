@@ -5,9 +5,8 @@ editorPath = C:\Program Files\Sublime Text 3\sublime_text.exe
 IfWinActive ahk_class CabinetWClass
 {
 	; Start Editor with current Windows Explorer path opened
-	SelectedPath := Explorer_GetSelectedFile()
-	SplitPath, SelectedPath, name, dir, ext, name_no_ext, drive
-	Run %editorPath% %dir%
+	SelectedPath := Explorer_GetPath()
+	Run %editorPath% %SelectedPath%
 }
 Else
 {
