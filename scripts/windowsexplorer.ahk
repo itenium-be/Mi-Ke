@@ -21,9 +21,3 @@ If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 Return
 
 #IfWinActive
-
-; TODO: move to utilities\windows.ahk?
-MouseIsOver(Wintitle) {
-	MouseGetPos,,, Win
-	return WinExist(Wintitle . " ahk_id " . Win)
-}
