@@ -30,7 +30,7 @@
 
 
 
-Notify(Title="Notify()",Message="",Duration="",Options="")
+Notify(Title="Notify()",Message="",Duration=-4,Options="Style=Mine")
 {
  static GNList, ACList, ATList, AXList, Exit, _Wallpaper_, _Title_, _Message_, _Progress_, _Image_, Saved
  static GF := 50      ; Gui First Number
@@ -151,7 +151,11 @@ Notify(Title="Notify()",Message="",Duration="",Options="")
    Else If Style = Load
     Return % Notify(Title,Message,Duration,Saved)
    Else If Style = Mine
-    Return % Notify(Title,Message,Duration,"SI=50 GC=555555 TC=White MC=White SI=350 ST=450 BC=00000 GR=9 BR=13 BW=0 BT=105 TS=9 MS=8 " Options "Style=")
+    ; SI:
+    ; GC:
+    ; TC: TitleColor, MC: MessageColor
+    ; TS: TitleSize, MS: MessageSize
+    Return % Notify(Title,Message,Duration,"SI=50 GC=555555 TC=White MC=White SI=350 ST=450 BC=00000 GR=9 BR=13 BW=0 BT=105 TS=13 MS=11 " Options "Style=")
    Else If Style = Alert
     Return % Notify(Title,Message,Duration,"SI=50 GC=Red TC=White MC=White SI=350 ST=450 BC=White GR=9 BR=13 BW=2 BT=105 TS=9 MS=8 " Options "Style=")
   }
