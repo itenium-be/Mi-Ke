@@ -1,10 +1,23 @@
 ; Control+Win+S: SublimeText
 ^#s::
-SetTitleMatchMode RegEx
-IfWinExist, Sublime Text
-	Run C:\Program Files\Sublime Text 3\sublime_text.exe --new-window
-else
-	Run C:\Program Files\Sublime Text 3\sublime_text.exe
+editorPath = C:\Program Files\Sublime Text 3\sublime_text.exe
+
+IfWinActive ahk_class CabinetWClass
+{
+	; Start Editor with current Windows Explorer path opened
+	SelectedPath := Explorer_GetSelectedFile()
+	SplitPath, SelectedPath, name, dir, ext, name_no_ext, drive
+	Run %editorPath% %dir%
+}
+Else
+{
+	; Just start the editor
+	SetTitleMatchMode RegEx
+	IfWinExist, Sublime Text
+		Run %editorPath% --new-window
+	else
+		Run %editorPath%
+}
 return
 
 ; Win+C: Open notepad++. C=Code? :) (N is already mapped to OneNote)
