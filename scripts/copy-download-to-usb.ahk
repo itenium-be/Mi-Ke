@@ -2,7 +2,46 @@
 ; Newly downloaded files directory on the left
 ; USB drive on the right
 ; Hotkey: AltGr+Win+D
-GetUsbDrive() {
+; Requires: WindowPad
+<^>!#d::
+usbDrive := GetUsbDrive()
+If usbDrive
+{
+	downloadPath = C:\Users\Wouter\Downloads
+
+	IfWinNotExist Downloads
+	{
+		Run %downloadPath%
+		;Run %downloadPath%
+		;WinWait ahk_pid %downloadWindow%
+		Sleep, 500
+		WindowPadMove(-1, -1, 0.5, 1, "")
+
+		Run %usbDrive%
+		Sleep, 500
+		WindowPadMove(1, 0, 0.5, 1, "")
+	}
+	else
+	{
+		WinClose
+
+		; TODO: second window doesn't close anymore... :(
+		IfWinExist %usbDrive%
+		{
+			WinClose
+		}
+	}
+}
+else
+{
+	if IsFunc("Notify")
+	{
+		Notify("No Usb drive?")
+	}
+}
+
+GetUsbDrive()
+{
 	DriveGet, list, list
 	Loop, Parse, list
 	{
@@ -26,33 +65,4 @@ GetUsbDrive() {
 	}
 }
 
-<^>!#d::
-usbDrive := GetUsbDrive()
-If usbDrive
-{
-	SetTitleMatchMode RegEx
-	IfWinNotExist Downloads
-	{
-		Run C:\Users\Wouter\Downloads
-		Sleep, 400
-		WindowPadMove(-1, -1, 0.5, 1, "")
-
-		Run %usbDrive%
-		Sleep, 400
-		WindowPadMove(1, 0, 0.5, 1, "")
-	}
-	else
-	{
-		WinClose
-
-		IfWinExist \(%usbDrive%)
-		{
-			WinClose
-		}
-	}
-}
-else
-{
-	MsgBox No Usb drive?
-}
 return
