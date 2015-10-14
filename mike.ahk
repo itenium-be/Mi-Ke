@@ -1,9 +1,6 @@
 #Persistent
 #SingleInstance force
 
-; TODOs
-; need autohotkey to open sublime text with copied  folder opened
-
 #Include mike-menu.ahk
 
 #Include hotstrings\personal.ahk
@@ -18,5 +15,8 @@
 #Include scripts\zip-directory.ahk
 
 #Include scripts\quick-start-programs.ahk
+#Include scripts\windowsexplorer.ahk
 
 #Include scripts\WindowPad\source\WindowPad.ahk
+#Include utilities\windowsexplorer.ahk
+#Include utilities\notify.ahk
