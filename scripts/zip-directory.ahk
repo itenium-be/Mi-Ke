@@ -1,5 +1,6 @@
 ; Put all files in Windows Explorer path to new zip file
-; Named to parent directory name
+; Named as parent directory name.zip
+; Select just a few files to put those only to the zip archive
 ; Control + Win + Z
 ^#z::
 GroupAdd, ExplorerGroup, ahk_class CabinetWClass
@@ -10,9 +11,26 @@ currentPath := ActiveFolderPath()
 if currentPath =
 	return
 
-SplitPath, currentPath, topDirName
+selectedFiles := Explorer_GetSelected()
+if selectedFiles
+{
+	toZip =
+	Loop, Parse, selectedFiles, `n
+	{
+		toZip .= """" A_LoopField """ "
+	}
+}
+else
+{
+	toZip := """" currentPath "\*"""
+}
 
-Run, "C:\Program Files\7-Zip\7z.exe" a "%currentPath%\%topDirName%.zip" "%currentPath%\*"
+SplitPath, currentPath, topDirName
+Run, "C:\Program Files\7-Zip\7z.exe" a "%currentPath%\%topDirName%.zip" %toZip%
+
+if IsFunc("Notify")
+	Notify("Zip Created", topDirName ".zip")
+
 #IfWinActive
 return
 
