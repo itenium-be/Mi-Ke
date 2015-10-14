@@ -8,16 +8,32 @@ Esc::
 		Send, {Esc}
 	Return
 
-; Press capslock twice to put full directory path of selected file to the clipboard
+; Press capslock twice to put full path of selected file to the clipboard
 CapsLock::
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 {
-	SelectedPath := Explorer_GetPath()
-	clipboard := SelectedPath
+	toClipboard := Explorer_GetPath()
+	ToClipboardAndNotify(toClipboard)
+}
+Return
+
+; Double capslock with shift: put full filename to clipboard
+Shift & CapsLock::
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+{
+	SelectedFiles := Explorer_GetSelected()
+	StringSplit, selectedFile, SelectedFiles, `n
+	;SplitPath, selectedFile1, name, dir, ext, name_no_ext, drive
+	ToClipboardAndNotify(selectedFile1)
+}
+Return
+
+ToClipboardAndNotify(toClipboard)
+{
+	clipboard := toClipboard
 	ClipWait
 	if IsFunc("Notify")
 		Notify("Path Copied", clipboard)
 }
-Return
 
 #IfWinActive
