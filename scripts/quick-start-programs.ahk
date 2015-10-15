@@ -1,6 +1,7 @@
 ; Control+Win+S: SublimeText
 ^#s::
 editorPath = C:\Program Files\Sublime Text 3\sublime_text.exe
+editorWinName = Sublime Text
 
 IfWinActive ahk_class CabinetWClass
 {
@@ -11,23 +12,43 @@ IfWinActive ahk_class CabinetWClass
 Else
 {
 	; Just start the editor
-	SetTitleMatchMode RegEx
-	IfWinExist, Sublime Text
+	IfWinExist, %editorWinName%
+	{
 		Run %editorPath% --new-window
+	}
 	else
+	{
 		Run %editorPath%
+	}
+}
+return
+
+; Win+C: Open cmder
+^#c::
+cmdPath = C:\tools\cmder\Cmder.exe
+
+IfWinActive ahk_class CabinetWClass
+{
+	SelectedPath := Explorer_GetPath()
+	Run %cmdPath% /start %SelectedPath%
+	; TODO: doesn't work
+	; https://github.com/cmderdev/cmder/issues/91
+	; TODO: start cmder with SelectedPath (or even better a new tab?)
+}
+Else
+{
+	Run %cmdPath%
 }
 return
 
 ; Win+C: Open notepad++. C=Code? :) (N is already mapped to OneNote)
 #c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe
-
 ; Control+Win+C: Open new N++ instance
-^#c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe -multiInst
+;^#c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe -multiInst
+
 
 ; Control+Win+F: FileZilla
 ^#f::
-SetTitleMatchMode RegEx
 IfWinExist, FileZilla$
 	WinActivate
 else
