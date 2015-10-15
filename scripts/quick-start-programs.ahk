@@ -23,7 +23,7 @@ Else
 }
 return
 
-; Win+C: Open cmder
+; Control+Win+C: Open cmder
 ^#c::
 cmdPath = C:\tools\cmder\Cmder.exe
 
