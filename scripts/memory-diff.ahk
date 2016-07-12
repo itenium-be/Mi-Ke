@@ -1,6 +1,7 @@
 ; Copy two blocks of text and compare them in diff program
 ; Control + Windows + Left Arrow: Put left part in %A_Desktop%\left.txt
 ; Control + Windows + Down Arrow: Put right part in %A_Desktop%\right.txt and open diff program
+; Control + Windows + Right Arrow: open diff program
 GetLeft()
 {
 	return A_Desktop . "\left.txt"
@@ -58,6 +59,10 @@ if doCompare = true
 	PasteClipboardToFile(GetRight())
 	DiffMergeOpenAppl(GetLeft(), GetRight())
 }
+return
+
+^#Right::
+DiffMergeOpenAppl(GetLeft(), GetRight())
 return
 
 
