@@ -1,5 +1,3 @@
-TODO: memory-diff: Select a file and put the file content in left/right.txt
-
 Mi-Ke
 =====
 This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
