@@ -23,23 +23,8 @@ Else
 }
 return
 
-; Control+Win+C: Open cmder
-^#c::
-cmdPath = C:\tools\cmder\Cmder.exe
-
-IfWinActive ahk_class CabinetWClass
-{
-	SelectedPath := Explorer_GetPath()
-	Run %cmdPath% /start %SelectedPath%
-	; TODO: doesn't work
-	; https://github.com/cmderdev/cmder/issues/91
-	; TODO: start cmder with SelectedPath (or even better a new tab?)
-}
-Else
-{
-	Run %cmdPath%
-}
-return
+; Control+Win+C: Open calculator
+^#c::Run C:\Windows\System32\calc.exe
 
 ; Win+C: Open notepad++. C=Code? :) (N is already mapped to OneNote)
 #c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe
