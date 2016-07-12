@@ -18,7 +18,6 @@ SetTitleMatchMode RegEx
 
 #Include hotstrings\personal.ahk
 #Include hotstrings\misc.ahk
-#Include hotstrings\t4t.ahk
 #Include hotstrings\digipolis.ahk
 
 #Include scripts\change-sound-volume.ahk
