@@ -11,3 +11,6 @@
 :*:icalogin::ICA\ex02262{tab}Ttttt(§è
 
 :*:mjira::project = FOCUS AND status in (Open, "In Progress", Reopened, "To Do") AND assignee in (currentUser())
+
+:*:gitci::git ci -m"$(Pull-FocusId(git branch-name)): "{Left 1}
+:*:gitca::git ca "$(Pull-FocusId(git branch-name)): "{Left 1}
