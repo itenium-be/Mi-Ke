@@ -1,7 +1,10 @@
 ; Copy two blocks of text and compare them in diff program
 ; Control + Windows + Left Arrow: Put left part in %A_Desktop%\left.txt
 ; Control + Windows + Down Arrow: Put right part in %A_Desktop%\right.txt and open diff program
-; Control + Windows + Right Arrow: open diff program
+; Control + Windows + Right Arrow: open diff program with left vs right
+; Control + Windows + Up: show current clipboard content
+; Select a file in Explorer to compare the contents
+
 GetLeft()
 {
 	return A_Desktop . "\left.txt"
@@ -14,9 +17,13 @@ GetRight()
 
 PasteClipboardToFile(file)
 {
+	clipContent := clipboard
+	IfExist, %clipContent%
+		FileRead, clipContent, %clipContent%
+
 	; MsgBox %clipboard%
 	FileDelete, %file%
-	FileAppend, %clipboard%, %file%
+	FileAppend, %clipContent%, %file%
 }
 
 DiffMergeOpenAppl(left, right)
@@ -30,7 +37,7 @@ DiffMergeOpenAppl(left, right)
 
 ^#Left::
 Send, ^c
-Sleep, 150
+ClipWait
 PasteClipboardToFile(GetLeft())
 diffMergeContentLeftFile := clipboard
 
@@ -43,7 +50,7 @@ return
 
 ^#Down::
 Send, ^c
-Sleep, 150
+ClipWait
 doCompare = false
 if (clipboard = diffMergeContentLeftFile)
 {
@@ -85,3 +92,11 @@ TrimContent(content)
 	}
 	return Trim(trimmedContent)
 }
+
+^#Up::
+if IsFunc("Notify")
+{
+	trimmedContent := TrimContent(Clipboard)
+	Notify("Clipboard contents", trimmedContent)
+}
+return
