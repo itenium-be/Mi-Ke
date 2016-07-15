@@ -2,15 +2,15 @@
 #SingleInstance force
 SetTitleMatchMode RegEx
 
+; Recommended for new scripts due to its superior speed and reliability.
+SendMode Input
+
 ; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #WinActivateForce
-; #SingleInstance force
-; SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 ; SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-; SetTitleMatchMode, RegEx
 ; DetectHiddenWindows, On
-; SetCapsLockState, AlwaysOff
 
+; Numlock, Capslock, ScrollLock
 SetNumlockState, on
 SetNumlockState, AlwaysOn
 
