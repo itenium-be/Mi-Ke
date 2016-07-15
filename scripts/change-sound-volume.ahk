@@ -2,13 +2,33 @@
 ; Hotkey: Windows+PageUp/Down
 #PgUp::SetAndDisplaySoundVolume("+10")
 #PgDn::SetAndDisplaySoundVolume("-10")
-#End::SetAndDisplaySoundVolume(0)
 #Home::DisplaySoundVolume()
+
+lastVolumeLevel :=
+#End::
+if (lastVolumeLevel) {
+	SetAndDisplaySoundVolume(lastVolumeLevel)
+	lastVolumeLevel :=
+} else {
+	SoundGetWaveVolume, volume
+	SetAndDisplaySoundVolume(0)
+	lastVolumeLevel := volume
+}
+return
 
 ; +Control: Without the fancy image but better response
 ^#PgUp::SoundSetWaveVolume, +10
 ^#PgDn::SoundSetWaveVolume, -10
-^#End::SoundSetWaveVolume, 0
+^#End::
+if (lastVolumeLevel) {
+	SoundSetWaveVolume, lastVolumeLevel
+	lastVolumeLevel :=
+} else {
+	SoundGetWaveVolume, volume
+	SoundSetWaveVolume, 0
+	lastVolumeLevel := volume
+}
+return
 
 SetAndDisplaySoundVolume(volumeMod)
 {
