@@ -11,8 +11,8 @@ SetTitleMatchMode RegEx
 ; DetectHiddenWindows, On
 ; SetCapsLockState, AlwaysOff
 
-; don't seem to be using this anymore? so won't get created :)
-; shortcut to minimize/maximize all windows on same screen as open window
+SetNumlockState, on
+SetNumlockState, AlwaysOn
 
 #Include mike-menu.ahk
 
