@@ -29,6 +29,7 @@ SetNumlockState, AlwaysOn
 #Include scripts\path-wintounix.ahk
 #Include scripts\copy-download-to-usb.ahk
 #Include scripts\zip-directory.ahk
+#Include scripts\md-code-block.ahk
 
 #Include scripts\quick-start-programs.ahk
 #Include scripts\windowsexplorer.ahk
