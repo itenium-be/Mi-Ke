@@ -25,7 +25,8 @@ If usbDrive
 	{
 		WinClose
 
-		; TODO: second window doesn't close anymore... :(
+		; TitleMatchMode == RegEx
+		usbDrive := StrReplace(usbDrive, "\", "\\")
 		IfWinExist %usbDrive%
 		{
 			WinClose
