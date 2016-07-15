@@ -5,6 +5,10 @@ SetTitleMatchMode RegEx
 ; Recommended for new scripts due to its superior speed and reliability.
 SendMode Input
 
+; Debugging:
+F11::ListVars
+^#r::Reload
+
 ; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #WinActivateForce
 ; SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.

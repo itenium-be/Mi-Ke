@@ -11,8 +11,6 @@ Menu, Tray, Add, &Suspend, MiKeTraySuspend
 Menu, Tray, Add, E&xit, MiKeTrayExit
 Menu, Tray, Default, &Reload
 
-^#r::Reload
-
 Goto, MiKeContinue
 
 ; Tray menu subroutines
