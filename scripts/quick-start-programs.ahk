@@ -25,6 +25,15 @@ return
 
 ; Control+Win+C: Open calculator
 ^#c::Run C:\Windows\System32\calc.exe
+; Esc twice to close calculator
+#IfWinActive Calculator
+	Esc::
+		If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+			WinClose
+		Else
+			Send, {Esc}
+		Return
+#IfWinActive
 
 ; Alt+Win+C: Open cmder
 ; TODO: cant open cmder with specific path: https://github.com/cmderdev/cmder/issues/91
