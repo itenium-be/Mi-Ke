@@ -31,7 +31,7 @@ Return
 ToClipboardAndNotify(toClipboard)
 {
 	clipboard := toClipboard
-	ClipWait
+	Sleep, 150
 	if IsFunc("Notify")
 		Notify("Path Copied", clipboard)
 }

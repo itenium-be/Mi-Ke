@@ -2,7 +2,7 @@
 !#c::
 oldClip := clipboard
 Send ^c
-ClipWait
+Sleep, 150
 highlighted := clipboard
 highlighted := RegExReplace(highlighted, "\r\n?|\n\r?", "`n")
 

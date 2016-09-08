@@ -37,7 +37,7 @@ DiffMergeOpenAppl(left, right)
 
 ^#Left::
 Send, ^c
-ClipWait
+Sleep, 150
 PasteClipboardToFile(GetLeft())
 diffMergeContentLeftFile := clipboard
 
@@ -50,7 +50,7 @@ return
 
 ^#Down::
 Send, ^c
-ClipWait
+Sleep, 150
 doCompare = false
 if (clipboard = diffMergeContentLeftFile)
 {
