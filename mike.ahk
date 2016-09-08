@@ -5,10 +5,6 @@ SetTitleMatchMode RegEx
 ; Recommended for new scripts due to its superior speed and reliability.
 SendMode Input
 
-; Debugging:
-F11::ListVars
-^#r::Reload
-
 ; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #WinActivateForce
 ; SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -37,3 +33,10 @@ SetNumlockState, AlwaysOn
 #Include scripts\WindowPad\source\WindowPad.ahk
 #Include utilities\windowsexplorer.ahk
 #Include utilities\notify.ahk
+
+; Debugging:
+; Some weird stuff...
+; A MsgBox shows when placed below #Include mike-menu but not when placed below #Include personal.ahk..?
+; Putting these 2 lines above #Include mike-menu.ahk and the default menu is loaded instead..?
+!F11::ListVars
+^#r::Reload
