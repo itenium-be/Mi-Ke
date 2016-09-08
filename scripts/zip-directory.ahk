@@ -12,8 +12,22 @@ if currentPath =
 	return
 
 selectedFiles := Explorer_GetSelected()
+
+; If one file selected, probably by accident?, default to zipping entire directory
 if selectedFiles
 {
+	StringReplace, selectedFiles, selectedFiles, `n, `n, UseErrorLevel
+	selectedFilesCount := ErrorLevel + 1
+	if (selectedFilesCount = 1) {
+		MsgBox, 4, Zippy, Selected one file:`n%selectedFiles%`n`nNo to zip just this file`nYes to zip the entire folder instead., 5
+		IfMsgBox, Yes
+			selectedFiles :=
+	}
+}
+
+if selectedFiles
+{
+	; Zip selected file(s)
 	toZip =
 	Loop, Parse, selectedFiles, `n
 	{
@@ -22,18 +36,67 @@ if selectedFiles
 }
 else
 {
+	; Zip entire directory
 	toZip := """" currentPath "\*"""
 }
 
-SplitPath, currentPath, topDirName
-Run, "C:\Program Files\7-Zip\7z.exe" a "%currentPath%\%topDirName%.zip" %toZip%
 
+If selectedFilesCount = 1
+{
+	; One filename: use that filename for the zip
+	SplitPath, selectedFiles, , , , selectedFileName
+	zipFileName := selectedFileName
+}
+else
+{
+	; Use active directory name as name for the zip
+	SplitPath, currentPath, topDirName
+
+
+	; .NET: If bin/debug/release foldername, go up for full .net name
+	; I assume that adding the AssemblyVersion is overkill for this script? :)
+	if (topDirName = "Debug" or topDirName = "Release" or topDirName = "bin")
+	{
+		parentDirectory := GetParentDirectoryName(currentPath)
+		SplitPath, parentDirectory, topDirName
+		if (topDirName = "bin")
+		{
+			parentDirectory := GetParentDirectoryName(parentDirectory)
+			SplitPath, parentDirectory, topDirName
+		}
+	}
+	zipFileName := topDirName
+
+
+	; If the target zip already exists?
+	; Simply continuating would overwrite the existing zip with the original zip inside it (ie doubling size because 7zip doesn't see what happened)
+	fullZipName = %currentPath%\%topDirName%.zip
+	if FileExist(fullZipName)
+	{
+		MsgBox, 4, Zippy already exists?, %topDirName%.zip already exists!`n`nYes to delete it.`nNo to abort
+		IfMsgBox, Yes
+			FileDelete %fullZipName%
+		IfMsgBox, No
+			return
+	}
+}
+
+; The actual zipping :)
+fullZipName = %currentPath%\%zipFileName%.zip
+RunWait, "C:\Program Files\7-Zip\7z.exe" a "%fullZipName%" %toZip%
+
+; RunWait so that we can determine file size
+FileGetSize, zipFileSize, %fullZipName%, M
 if IsFunc("Notify")
-	Notify("Zip Created", topDirName ".zip")
+	Notify(zipFileName ".zip created", "Size: " zipFileSize "MB")
 
 #IfWinActive
 return
 
+GetParentDirectoryName(path)
+{
+	return SubStr(path, 1, InStr(SubStr(path, 1, -1), "\", 0, 0) - 1)
+}
 
 ActiveFolderPath()
 {
