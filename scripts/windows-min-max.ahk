@@ -1,7 +1,8 @@
-; Alt+Win+D: minimize all/restore minimized windows on active monitor
 minimizedWindows :=
 minimizedWindowCount :=
+windowThatWasActive :=
 
+; Alt+Win+D: minimize all/restore minimized windows on active monitor
 !#D::
 ; Determine which monitor contains the center of the active window
 WinGetPos, x, y, w, h, A
@@ -11,6 +12,8 @@ activeMonitor := wp_GetMonitorAt(x+w/2, y+h/2)
 
 If minimizedWindowCount =
 {
+	WinGet, windowThatWasActive, ID, A
+
 	; Minimize and remember
 	minimizedWindows := Object()
 	minimizedWindowCount := 0
@@ -27,10 +30,14 @@ If minimizedWindowCount =
 			monitor := wp_GetMonitorAt(x+w/2, y+h/2)
 			If (monitor = activeMonitor)
 			{
-				WinGet isMinimized, MinMax, ahk_id %id%
-				If (isMinimized = 0)
+				WinGet windowState, MinMax, ahk_id %id%
+				; Window state: 1=max, 0=normal, -1=min
+				If (windowState = 0 or windowState = 1)
 				{
 					WinMinimize, ahk_id %id%
+					If (windowState = 1) {
+						WinMinimize, ahk_id %id%
+					}
 					minimizedWindows.Insert(id)
 					minimizedWindowCount++
 				}
@@ -45,6 +52,7 @@ else
 	{
 		WinRestore, ahk_id %element%
 	}
+	WinActivate ahk_id %windowThatWasActive%
 
 	minimizedWindowCount :=
 }

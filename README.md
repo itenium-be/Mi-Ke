@@ -50,5 +50,6 @@ Script: quick-start-programs
 
 Other Scripts
 -------------
+**Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 **AltGr + Win + D**: Open 2 explorers, one in download folder, one with USB stick (copy-download-to-usb)  
 **Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-wintounix)  
