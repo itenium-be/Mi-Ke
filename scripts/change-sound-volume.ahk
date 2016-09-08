@@ -16,6 +16,10 @@ if (lastVolumeLevel) {
 }
 return
 
+; Ctrl+Win+Alt: +/-1
+!^#PgUp::SoundSetWaveVolume, +1
+!^#PgDn::SoundSetWaveVolume, -1
+
 ; +Control: Without the fancy image but better response
 ^#PgUp::SoundSetWaveVolume, +10
 ^#PgDn::SoundSetWaveVolume, -10

@@ -34,10 +34,10 @@ Change sound volume with 'funny' images.
 
 **Win + PgUp**: Volume +10  
 **Win + PgDn**: Volume -10  
-**Win + End**: Mute  
+**Win + Ctrl + PgDn/Up: Volume +/-10 without images
+**Win + Ctrl + + Alt PgDn/Up: Volume +/-1 without images
+**Win + End**: Mute/Restore  
 **Win + Home**: Show sound volume  
-
-Combine with `Control` to skip the images.
 
 
 Script: quick-start-programs
