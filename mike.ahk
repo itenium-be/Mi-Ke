@@ -22,7 +22,6 @@ SetNumlockState, AlwaysOn
 
 #Include hotstrings\personal.ahk
 #Include hotstrings\misc.ahk
-#Include hotstrings\digipolis.ahk
 
 #Include scripts\change-sound-volume.ahk
 #Include scripts\memory-diff.ahk
