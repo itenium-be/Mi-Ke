@@ -4,7 +4,7 @@
 Send, ^c
 Sleep, 100
 
-; Replace c:\path\ with c/path/
+; Replace c:\path\ with c:/path/
 StringReplace, path, clipboard, \, /, All
 
 ; Replace C:/ with c/

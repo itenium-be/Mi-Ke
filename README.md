@@ -7,6 +7,8 @@ Script: memory-diff
 -------------------
 **Control + Win + Left**: Put selected text in Desktop\left.txt  
 **Control + Win + Down**: Put selected text in Desktop\right.txt and open Diff tool  
+**Control + Win + Up**: Show current clipboard content  
+**Control + Win + Right**: Open Diff tool with current left/right.txt  
 
 **Configuration**: left.txt, right.txt and Diff tool path  
 
