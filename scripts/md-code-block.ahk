@@ -1,5 +1,5 @@
-; Alt+Win+c: Surround selected text with Markdown code block
-!#c::
+; Alt+Win+m: Surround selected text with Markdown code block
+!#m::
 oldClip := clipboard
 Send ^c
 Sleep, 150
@@ -20,8 +20,8 @@ clipboard := oldClip
 return
 
 
-; Ctrl+Alt+Win+c: New Markdown code block
-!^#c::
+; Ctrl+Alt+Win+m: New Markdown code block
+!^#m::
 Send, {enter}
 Send, ``````{space}
 Send, {enter}{enter}

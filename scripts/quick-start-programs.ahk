@@ -26,6 +26,23 @@ return
 ; Control+Win+C: Open calculator
 ^#c::Run C:\Windows\System32\calc.exe
 
+; Alt+Win+C: Open cmder
+; TODO: cant open cmder with specific path: https://github.com/cmderdev/cmder/issues/91
+!#c::
+cmdPath = C:\bin\cmder\Cmder.exe
+
+IfWinActive ahk_class CabinetWClass
+{
+	SelectedPath := Explorer_GetPath()
+	MsgBox %SelectedPath%
+	Run %cmdPath% /start %SelectedPath%
+}
+Else
+{
+	Run %cmdPath%
+}
+return
+
 ; Win+C: Open notepad++. C=Code? :) (N is already mapped to OneNote)
 #c::Run C:\Program Files (x86)\Notepad++\Notepad++.exe
 ; Control+Win+C: Open new N++ instance
