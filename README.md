@@ -47,8 +47,8 @@ Script: quick-start-programs
 **Control + Win + S**: Start Sublime Text. When in Explorer: Open with active folder in Side Bar.  
 **Control + Win + C**: Start Cmder  
 **Win + C**: Start Notepad++  
-**Control + Win + F**: Start FileZilla (or activate existing Window)
-
+**Control + Win + F**: Start FileZilla (or activate existing Window)  
+**Control + Alt + H**: Start HeidiSql  
 
 Other Scripts
 -------------

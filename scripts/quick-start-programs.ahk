@@ -65,3 +65,12 @@ IfWinExist, FileZilla$
 else
 	Run C:\Program Files\FileZilla FTP Client\filezilla.exe
 return
+
+
+; Control+Alt+H: HeidiSql
+!#h::
+IfWinExist, HeidiSQL\s*\d+(\.\d+)+$
+	WinActivate
+else
+	Run C:\Program Files\HeidiSQL\heidisql.exe
+return
