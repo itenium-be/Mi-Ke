@@ -5,3 +5,6 @@
 :`t:wimail::wouter.van.schandevijl@macadam.eu
 
 :`t:itel::0476403502
+
+:`t:iname::Wouter Van Schandevijl
+:`t:inamer::Van Schandevijl Wouter
