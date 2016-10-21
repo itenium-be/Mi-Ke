@@ -20,6 +20,7 @@ SetNumlockState, AlwaysOn
 
 #Include %A_Scriptdir%\hotstrings\personal.ahk
 #Include %A_Scriptdir%\hotstrings\misc.ahk
+#Include %A_Scriptdir%\hotstrings\work.ahk
 
 #Include %A_Scriptdir%\scripts\change-sound-volume.ahk
 #Include %A_Scriptdir%\scripts\memory-diff.ahk
