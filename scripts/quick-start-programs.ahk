@@ -67,8 +67,8 @@ else
 return
 
 
-; Control+Alt+H: HeidiSql
-!#h::
+; CapsLock & S: HeidiSql
+CapsLock & S::
 IfWinExist, HeidiSQL\s*\d+(\.\d+)+$
 	WinActivate
 else

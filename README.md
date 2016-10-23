@@ -48,7 +48,7 @@ Script: quick-start-programs
 **Control + Win + C**: Start Cmder  
 **Win + C**: Start Notepad++  
 **Control + Win + F**: Start FileZilla (or activate existing Window)  
-**Control + Alt + H**: Start HeidiSql  
+**CapsLock & S**: Start HeidiSql  
 
 Other Scripts
 -------------
