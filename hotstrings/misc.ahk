@@ -2,6 +2,7 @@
 
 :*:mss::misschien
 :*:wss::waarschijnlijk
+:*:ivm::in verband met
 
 ; I mail dutch/english?
 :*:imld::Beste ,{enter}{enter}{enter}{enter}met vriendelijke groet,{enter}Wouter{up}{up}{up}{up}{up}{end}{left}
