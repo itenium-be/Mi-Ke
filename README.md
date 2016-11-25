@@ -2,6 +2,12 @@ Mi-Ke
 =====
 This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
 
+TODO: Explorer: shortcut for "list view" (and details view etc? cycle?)
+--> List: Control + Shift + 5
+--> Details: Control + Shift + 6
+
+TODO: Disable pressing Win from going into Metro mode
+TODO: markdown doesn't work properly: also ClipWait issue? Add markdown to this readme
 
 Script: memory-diff
 -------------------
