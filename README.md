@@ -2,9 +2,31 @@ Mi-Ke
 =====
 This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
 
+To learn:
+- miles, pounds, feet... (imperial system)
+- International Phonetic Alphabet (IPA)
+
+Window mover: resize so not below taskbar or above screen (or left/right:)
+Window mover: take away from all the edges a bit
+Window mover: center at "semi" full screen
+Window mover: for when screen has some weird size: take up half left/right of screen depending on where it currently is
+
+Chrome extension: DevSearch (or DefSearch)
+- take over native F3 / Ctrl+F
+- if text is selected on the keyboard, put it in automatically
+- have dropdownlist with previous search terms
+- search case insensitive, with regex (check how sublime text search looks like)
+- highlight found keywords whilst they are being typed
+- possibility to put overlay screen at the bottom of the page with all matches with some context
+- display how many matches on the page
+- jump to the first match right away? when no more matches: clear red indication + stay located at last match
+--- double clicking on a match/context jumps to that part of the page (+ highlight that entire section on the screen for a moment)
+--- would be great if there was a sublime like part at left to indicate where the matches are located on the page
+----- or perhaps that can be done on the vertical scrollbar?
+
 TODO: Explorer: shortcut for "list view" (and details view etc? cycle?)
 --> List: Control + Shift + 5
---> Details: Control + Shift + 6
+--> Details: Control + Shift + 6 --> Make a hotkey anyhow: the name column needs to be made larger so that all filenames are fully visible
 
 TODO: Disable pressing Win from going into Metro mode
 TODO: markdown doesn't work properly: also ClipWait issue? Add markdown to this readme
