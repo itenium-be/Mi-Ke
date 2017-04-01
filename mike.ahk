@@ -16,6 +16,9 @@ SetWorkingDir %A_ScriptDir%
 SetNumlockState, on
 SetNumlockState, AlwaysOn
 
+; Disable Left Win to go into Metro screen
+LWin::Return
+
 #Include %A_Scriptdir%\mike-menu.ahk
 
 #Include %A_Scriptdir%\hotstrings\personal.ahk

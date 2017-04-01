@@ -28,8 +28,6 @@ TODO: Explorer: shortcut for "list view" (and details view etc? cycle?)
 --> List: Control + Shift + 5
 --> Details: Control + Shift + 6 --> Make a hotkey anyhow: the name column needs to be made larger so that all filenames are fully visible
 
-TODO: Disable pressing Win from going into Metro mode
-
 Script: memory-diff
 -------------------
 **Control + Win + Left**: Put selected text in Desktop\left.txt  
