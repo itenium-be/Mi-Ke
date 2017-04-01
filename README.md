@@ -29,7 +29,6 @@ TODO: Explorer: shortcut for "list view" (and details view etc? cycle?)
 --> Details: Control + Shift + 6 --> Make a hotkey anyhow: the name column needs to be made larger so that all filenames are fully visible
 
 TODO: Disable pressing Win from going into Metro mode
-TODO: markdown doesn't work properly: also ClipWait issue? Add markdown to this readme
 
 Script: memory-diff
 -------------------
@@ -83,3 +82,5 @@ Other Scripts
 **Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 **AltGr + Win + D**: Open 2 explorers, one in download folder, one with USB stick (copy-download-to-usb)  
 **Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-wintounix)  
+**Win + Alt + M**: Put selected text in Markdown code block (md-code-block)
+**Control + Win + Alt + M**: Create new Markdown code block (md-code-block)
