@@ -73,4 +73,15 @@ IfWinExist, HeidiSQL\s*\d+(\.\d+)+$
 	WinActivate
 else
 	Run C:\Program Files\HeidiSQL\heidisql.exe
+	WinActivate
+return
+
+
+; CapsLock & Q: Robomongo
+CapsLock & Q::
+IfWinExist, Robomongo\s*\d+(\.\d+)+$
+	WinActivate
+else
+	Run C:\Program Files\Robomongo 0.9.0\Robomongo.exe
+	WinActivate
 return

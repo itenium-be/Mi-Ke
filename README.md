@@ -70,15 +70,22 @@ Change sound volume with 'funny' images.
 Script: quick-start-programs
 ----------------------------
 **Control + Win + S**: Start Sublime Text. When in Explorer: Open with active folder in Side Bar.  
-**Control + Win + C**: Start Cmder  
+**Alt + Win + C**: Start Cmder  
+**Control + Win + C**: Start calculator (2x esc to close)  
 **Win + C**: Start Notepad++  
 **Control + Win + F**: Start FileZilla (or activate existing Window)  
 **CapsLock & S**: Start HeidiSql  
+**CapsLock & Q**: Start Robomongo  
 
 Other Scripts
 -------------
 **Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 **AltGr + Win + D**: Open 2 explorers, one in download folder, one with USB stick (copy-download-to-usb)  
 **Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-wintounix)  
-**Win + Alt + M**: Put selected text in Markdown code block (md-code-block)
-**Control + Win + Alt + M**: Create new Markdown code block (md-code-block)
+**Win + Alt + M**: Put selected text in Markdown code block (md-code-block)  
+**Control + Win + Alt + M**: Create new Markdown code block (md-code-block)  
+
+Dev Stuff
+---------
+**Control + Win + R**: Reload script  
+**Shift + F11**: Open ListVars window  

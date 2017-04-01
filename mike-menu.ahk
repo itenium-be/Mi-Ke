@@ -5,8 +5,11 @@ Menu, Tray, Tip, MiKe
 
 Menu, Tray, MainWindow
 Menu, Tray, Add, &Reload, MiKeTrayReload
-Menu, Tray, Add, Source, MiKeTraySource
+Menu, Tray, Add
+Menu, Tray, Add, Source (Explorer), MiKeTraySource
 Menu, Tray, Add, Source (Sublime), MiKeTraySourceEditor
+Menu, Tray, Add, Source (Github), MiKeTraySourceGithub
+Menu, Tray, Add
 Menu, Tray, Add, &Debug, MiKeTrayDebug
 Menu, Tray, Add, &Suspend, MiKeTraySuspend
 Menu, Tray, Add, E&xit, MiKeTrayExit
@@ -37,6 +40,10 @@ MiKeTraySource:
 
 MiKeTraySourceEditor:
   Run, "C:\Program Files\Sublime Text 3\subl.exe" %A_ScriptDir%
+  return
+
+MiKeTraySourceGithub:
+  run % "chrome.exe" ( winExist("ahk_class Chrome_WidgetWin_1") ? " -new " : " " ) "https://github.com/laoujin/Mi-Ke"
   return
 
 MiKeContinue:

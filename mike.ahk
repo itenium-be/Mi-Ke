@@ -16,9 +16,8 @@ SetWorkingDir %A_ScriptDir%
 SetNumlockState, on
 SetNumlockState, AlwaysOn
 
-; Disable Left Win to go into Metro screen
-LWin::Return
-
+; ATTN: Do not put shortcuts/hotstrings above the mike-menu
+; (or it will show the default menu instead)
 #Include %A_Scriptdir%\mike-menu.ahk
 
 #Include %A_Scriptdir%\hotstrings\personal.ahk
@@ -47,3 +46,7 @@ LWin::Return
 ; Putting these 2 lines above #Include mike-menu.ahk and the default menu is loaded instead..?
 !F11::ListVars
 ^#r::Reload
+
+; Disable Left Win going into Metro mode
+; TODO: Also disables shortcuts using Win key
+; LWin::Return
