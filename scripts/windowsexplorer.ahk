@@ -1,5 +1,23 @@
 #IfWinActive ahk_class CabinetWClass
 
+; Control + Shift + N: New directory
+; Control + Shift + F: New file
+^+f::
+	Send ^{Space}
+	Send {Appskey}
+	Send w
+	Send t
+	Send ^a
+	Return
+
+; Control + Shift + T: New txt file
+^+t::
+	Send ^{Space}
+	Send {Appskey}
+	Send w
+	Send t
+	Return
+
 ; Esc twice to close open Windows Explorer
 Esc::
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
@@ -7,6 +25,7 @@ Esc::
 	Else
 		Send, {Esc}
 	Return
+
 
 ; Press capslock twice to put full path of selected file to the clipboard
 CapsLock::
@@ -16,6 +35,7 @@ If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 	ToClipboardAndNotify(toClipboard)
 }
 Return
+
 
 ; Double capslock with shift: put full filename to clipboard
 Shift & CapsLock::
@@ -27,6 +47,7 @@ If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 	ToClipboardAndNotify(selectedFile1)
 }
 Return
+
 
 ToClipboardAndNotify(toClipboard)
 {

@@ -50,7 +50,10 @@ Script: windowsexplorer
 -----------------------
 **2x Esc**: Close active Explorer window  
 **2x Capslock**: Put full directory of selected file/folder to clipboard  
-**2x Shift + Capslock**: Put full selected filename to clipboard
+**2x Shift + Capslock**: Put full selected filename to clipboard  
+**Control + Shift + N**: New directory (=Windows shortcut)  
+**Control + Shift + F**: New file  
+**Control + Shift + T**: New txt file  
 
 **Dependencies**: utilities/windowsexplorer.ahk
 
