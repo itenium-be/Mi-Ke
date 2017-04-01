@@ -1,5 +1,12 @@
 ; Local, Dev, Test logins
-:*:lmac::wouter.van.schandevijl@macadam.eu{tab}pitstop{enter}
+:*:lmac::
+WinGetTitle, title, A
+IfInString, title, Showroom
+	SendInput wouter.van.schandevijl@macadam.eu{tab}showroom{enter}
+Else
+	SendInput wouter.van.schandevijl@macadam.eu{tab}pitstop{enter}
+Return
+
 :*:lsmac::leaseplanrentalbrk@macadam.eu{tab}pitstop{enter}
 :*:lpmac::poolbeheer@leaseplan.be{tab}pitstop{enter}
 :*:lrmac::anneke.geerdink@leaseplan.nl{tab}pitstop{enter}
