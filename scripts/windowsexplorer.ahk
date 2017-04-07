@@ -3,7 +3,7 @@
 ; Control + Shift + N: New directory
 ; Control + Shift + F: New file
 ^+f::
-	Send ^{Space}
+	DeselectSelectedFiles()
 	Send {Appskey}
 	Send w
 	Send t
@@ -12,11 +12,22 @@
 
 ; Control + Shift + T: New txt file
 ^+t::
-	Send ^{Space}
+	DeselectSelectedFiles()
 	Send {Appskey}
 	Send w
 	Send t
 	Return
+
+DeselectSelectedFiles()
+{
+	selectedFiles := Explorer_GetSelected()
+	if selectedFiles
+	{
+		; If no file is selected, ^Space may actually select it
+		; after which {AppsKey} will open the wrong ContextMenu
+		Send ^{Space}
+	}
+}
 
 ; Esc twice to close open Windows Explorer
 Esc::
