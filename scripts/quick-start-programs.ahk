@@ -85,3 +85,9 @@ else
 	Run C:\Program Files\Robomongo 0.9.0\Robomongo.exe
 	WinActivate
 return
+
+
+; Capslock & W: Chrome window
+Capslock & W::
+Run chrome
+return

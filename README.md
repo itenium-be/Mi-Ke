@@ -68,6 +68,7 @@ Script: quick-start-programs
 **Control + Win + F**: Start FileZilla (or activate existing Window)  
 **CapsLock & S**: Start HeidiSql  
 **CapsLock & Q**: Start Robomongo  
+**Capslock & W**: New Chrome window  
 
 Other Scripts
 -------------
