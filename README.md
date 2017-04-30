@@ -69,6 +69,7 @@ Script: quick-start-programs
 **CapsLock & S**: Start HeidiSql  
 **CapsLock & Q**: Start Robomongo  
 **Capslock & W**: New Chrome window  
+**Capslock & X**: Google selected text  
 
 Other Scripts
 -------------

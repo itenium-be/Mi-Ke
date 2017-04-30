@@ -91,3 +91,10 @@ return
 Capslock & W::
 Run chrome
 return
+
+; Capslock & X: Copy and open Google search
+Capslock & X::
+Send, ^c
+Sleep 50
+Run, http://www.google.com/search?q=%clipboard%
+return
