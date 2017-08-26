@@ -1,5 +1,11 @@
 #IfWinActive, ahk_class Chrome_WidgetWin
 
+; Alt + Left/Right: history.back() / forward()
+; Backspace for history.back() was removed from Chrome
+; Oh no you don't!
+Backspace::Send !{Left}
+
+
 ; F1: Open chrome://extensions
 F1::
 IfWinActive, New Tab

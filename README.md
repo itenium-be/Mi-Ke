@@ -81,6 +81,11 @@ Other Scripts
 **Win + Alt + M**: Put selected text in Markdown code block (md-code-block)  
 **Control + Win + Alt + M**: Create new Markdown code block (md-code-block)  
 
+In app scripts
+--------------
+**Chrome F1**: Open chrome://extensions in new tab (apps/chrome.ahk)  
+**Chrome Alt + Left/Right**: Builtin for history.back/forward(). Reinstated Backspace. (apps/chrome.ahk)  
+
 Dev Stuff
 ---------
 **Control + Win + R**: Reload script  
