@@ -45,7 +45,11 @@ SetNumlockState, AlwaysOn
 ; A MsgBox shows when placed below #Include mike-menu but not when placed below #Include personal.ahk..?
 ; Putting these 2 lines above #Include mike-menu.ahk and the default menu is loaded instead..?
 !F11::ListVars
-^#r::Reload
+
+^#r::
+Notify("Script Reloaded")
+Reload
+return
 
 ; Disable Left Win going into Metro mode
 ; TODO: Also disables shortcuts using Win key
