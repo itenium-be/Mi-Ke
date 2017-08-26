@@ -18,6 +18,7 @@ Script: memory-diff
 **Control + Win + Down**: Put selected text in Desktop\right.txt and open Diff tool  
 **Control + Win + Up**: Show current clipboard content  
 **Control + Win + Right**: Open Diff tool with current left/right.txt  
+**Control + Win + Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
 
 **Configuration**: left.txt, right.txt and Diff tool path  
 

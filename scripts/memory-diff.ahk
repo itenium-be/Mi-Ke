@@ -1,9 +1,11 @@
-; Copy two blocks of text and compare them in diff program
-; Control + Windows + Left Arrow: Put left part in %A_Desktop%\left.txt
-; Control + Windows + Down Arrow: Put right part in %A_Desktop%\right.txt and open diff program
+; Copy two blocks of text and compare them in a diff program
+; Select a file in Explorer to compare the contents
+
+; Control + Windows + Left Arrow: Copy selected text and put in %A_Desktop%\left.txt
+; Control + Windows + Down Arrow: Copy selected text in %A_Desktop%\right.txt and open diff program
 ; Control + Windows + Right Arrow: open diff program with left vs right
 ; Control + Windows + Up: show current clipboard content
-; Select a file in Explorer to compare the contents
+; Control + Windows + 0: select a file with Dropbox conflict to compare it with the original file
 
 GetLeft()
 {
@@ -15,9 +17,8 @@ GetRight()
 	return A_Desktop . "\right.txt"
 }
 
-PasteClipboardToFile(file)
+PasteClipboardToFile(file, clipContent)
 {
-	clipContent := clipboard
 	IfExist, %clipContent%
 	{
 		fileName := clipContent
@@ -30,8 +31,11 @@ PasteClipboardToFile(file)
 	FileAppend, %clipContent%, %file%
 }
 
-DiffMergeOpenAppl(left, right)
+DiffMergeOpenAppl()
 {
+	left := GetLeft()
+	right := GetRight()
+
 	; DiffMerge
 	;Run C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe -nosplash "%left%" "%right%"
 
@@ -39,10 +43,12 @@ DiffMergeOpenAppl(left, right)
 	Run C:\Program Files (x86)\Beyond Compare 3\BCompare.exe "%left%" "%right%"
 }
 
+
+
 ^#Left::
 Send, ^c
 Sleep, 150
-PasteClipboardToFile(GetLeft())
+PasteClipboardToFile(GetLeft(), clipboard)
 diffMergeContentLeftFile := clipboard
 
 if IsFunc("Notify")
@@ -51,6 +57,8 @@ if IsFunc("Notify")
 	Notify("left.txt", trimmedContent)
 }
 return
+
+
 
 ^#Down::
 Send, ^c
@@ -67,14 +75,37 @@ else
 
 if doCompare = true
 {
-	PasteClipboardToFile(GetRight())
-	DiffMergeOpenAppl(GetLeft(), GetRight())
+	PasteClipboardToFile(GetRight(), clipboard)
+	DiffMergeOpenAppl()
 }
 return
 
+
+
 ^#Right::
-DiffMergeOpenAppl(GetLeft(), GetRight())
+DiffMergeOpenAppl()
 return
+
+
+
+^#Numpad0::
+Send, ^c
+Sleep, 150
+clipContent := clipboard
+IfExist, %clipContent%
+{
+	IfInString, clipContent, (Exemplaar met conflict van
+	{
+		PasteClipboardToFile(GetRight(), clipContent)
+
+		originalFileName := RegExReplace(clipContent, " \(Exemplaar met conflict van .* \d{4}-\d{2}-\d{2}\)(?=\.)", "")
+		PasteClipboardToFile(GetLeft(), originalFileName)
+
+		DiffMergeOpenAppl()
+	}
+}
+return
+
 
 
 TrimContent(content)
