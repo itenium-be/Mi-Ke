@@ -90,3 +90,7 @@ Dev Stuff
 ---------
 **Control + Win + R**: Reload script  
 **Shift + F11**: Open ListVars window  
+
+Snippets
+--------
+**Control + Shift + C**: Append to clipboard
