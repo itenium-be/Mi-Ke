@@ -19,7 +19,11 @@ PasteClipboardToFile(file)
 {
 	clipContent := clipboard
 	IfExist, %clipContent%
+	{
+		fileName := clipContent
 		FileRead, clipContent, %clipContent%
+		clipContent = %fileName%`n%clipContent%
+	}
 
 	; MsgBox %clipboard%
 	FileDelete, %file%
