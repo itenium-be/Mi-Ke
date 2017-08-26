@@ -50,8 +50,8 @@ Esc::
 CapsLock::
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 {
-	toClipboard := Explorer_GetPath()
-	ToClipboardAndNotify(toClipboard)
+	curPath := Explorer_GetPath()
+	ToClipboardAndNotify(curPath)
 }
 Return
 
@@ -71,9 +71,21 @@ Return
 ToClipboardAndNotify(toClipboard)
 {
 	clipboard := toClipboard
-	Sleep, 150
 	if IsFunc("Notify")
-		Notify("Path Copied", clipboard)
+		Notify("Path Copied", toClipboard)
 }
 
 #IfWinActive
+; From here: Hotkeys active when NOT within Explorer:
+
+
+; 2x Control+Capslock: Open path on the clipboard in Explorer
+Control & CapsLock::
+if (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500 and FileExist(clipboard))
+{
+	explorerCmd := "explorer /select," clipboard
+	Run, %explorerCmd%
+	Sleep 250
+	Send {Enter}
+}
+Return

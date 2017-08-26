@@ -36,6 +36,7 @@ Script: windowsexplorer
 **2x Esc**: Close active Explorer window  
 **2x Capslock**: Put full directory of selected file/folder to clipboard  
 **2x Shift + Capslock**: Put full selected filename to clipboard  
+**2x Control + Capslock**: Open the path currently on the clipboard in Explorer  
 
 **Control + Shift + N**: New directory (=Windows shortcut)  
 **Control + Shift + F**: New file  
