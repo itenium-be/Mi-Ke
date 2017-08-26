@@ -2,8 +2,7 @@
 
 ; Alt + Left/Right: history.back() / forward()
 ; Backspace for history.back() was removed from Chrome
-; Oh no you don't!
-Backspace::Send !{Left}
+;Backspace::Send !{Left} ; Haha, also blocks backspace in the address bar :)
 
 
 ; F1: Open chrome://extensions
