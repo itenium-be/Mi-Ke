@@ -35,6 +35,7 @@ SetNumlockState, AlwaysOn
 #Include %A_Scriptdir%\scripts\quick-start-programs.ahk
 #Include %A_Scriptdir%\scripts\windowsexplorer.ahk
 #Include %A_Scriptdir%\scripts\WindowPad\source\WindowPad.ahk
+#Include %A_Scriptdir%\scripts\snippets.ahk
 
 #Include %A_Scriptdir%\scripts\apps\chrome.ahk
 #Include %A_Scriptdir%\scripts\apps\cmd.ahk
