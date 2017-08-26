@@ -2,16 +2,6 @@ Mi-Ke
 =====
 This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
 
-TODO
-----
-- Copy path and open explorer with path
-- in file dialog, the path should not be selected
-
-Window mover: resize so not below taskbar or above screen (or left/right:)
-Window mover: take away from all the edges a bit
-Window mover: center at "semi" full screen
-Window mover: for when screen has some weird size: take up half left/right of screen depending on where it currently is
-
 Script: memory-diff
 -------------------
 **Control + Win + Left**: Put selected text in Desktop\left.txt  
@@ -93,4 +83,40 @@ Dev Stuff
 
 Snippets
 --------
-**Control + Shift + C**: Append to clipboard
+`scripts\snippets.ahk`:
+
+**Control + Shift + C**: Append to clipboard  
+
+
+Resources
+---------
+Looking for even more little productivity boosters?
+
+Look no further!
+
+- [denolfe/AutoHotkey](https://github.com/denolfe/AutoHotkey)
+- [Drugoy/Autohotkey-scripts-.ahk](https://github.com/Drugoy/Autohotkey-scripts-.ahk)
+- [camerb/AHKs](https://github.com/camerb/AHKs)
+- [AutoHotkey-Util](https://github.com/cocobelgica/AutoHotkey-Util)
+
+And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awesome-AutoHotkey)!
+
+
+
+TODO
+----
+Window mover: Use https://github.com/fuhsjr00/bug.n  ?
+Window mover: resize so not below taskbar or above screen (or left/right:)
+Window mover: take away from all the edges a bit
+Window mover: center at "semi" full screen
+Window mover: for when screen has some weird size: take up half left/right of screen depending on where it currently is
+--> https://github.com/nimdahk/FillX-Windows/blob/master/FillX.ahk ?
+
+
+Need to put all config in ini files
+https://autohotkey.com/board/topic/33506-read-ini-file-in-one-go/
+
+
+Gui Creator?
+https://autohotkey.com/boards/viewtopic.php?f=6&t=303&sid=4f44b6b191c1f6fe0df4f93944c39aa6
+https://github.com/maestrith/GUI_Creator
