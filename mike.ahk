@@ -32,12 +32,13 @@ SetNumlockState, AlwaysOn
 #Include %A_Scriptdir%\scripts\zip-directory.ahk
 #Include %A_Scriptdir%\scripts\md-code-block.ahk
 #Include %A_Scriptdir%\scripts\windows-min-max.ahk
-
 #Include %A_Scriptdir%\scripts\quick-start-programs.ahk
 #Include %A_Scriptdir%\scripts\windowsexplorer.ahk
-#Include %A_Scriptdir%\scripts\apps\chrome.ahk
-
 #Include %A_Scriptdir%\scripts\WindowPad\source\WindowPad.ahk
+
+#Include %A_Scriptdir%\scripts\apps\chrome.ahk
+#Include %A_Scriptdir%\scripts\apps\cmd.ahk
+
 #Include %A_Scriptdir%\utilities\windowsexplorer.ahk
 #Include %A_Scriptdir%\utilities\notify.ahk
 
