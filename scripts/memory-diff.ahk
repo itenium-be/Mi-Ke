@@ -89,6 +89,7 @@ return
 
 
 ^#Numpad0::
+; English Dropbox conflict filename: \(.*'s conflicted copy \d{4}-\d{2}-\d{2}\)
 Send, ^c
 Sleep, 150
 clipContent := clipboard
