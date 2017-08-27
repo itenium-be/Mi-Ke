@@ -88,35 +88,52 @@ Snippets
 **Control + Shift + C**: Append to clipboard  
 
 
-Resources
----------
+Other resources
+---------------
 Looking for even more little productivity boosters?
 
 Look no further!
 
-- [denolfe/AutoHotkey](https://github.com/denolfe/AutoHotkey)
 - [Drugoy/Autohotkey-scripts-.ahk](https://github.com/Drugoy/Autohotkey-scripts-.ahk)
+- [denolfe/AutoHotkey](https://github.com/denolfe/AutoHotkey)
+- [Skrommel scripts](http://www.donationcoder.com/Software/Skrommel/index.html)
+	- [GoneIn60s](http://www.donationcoder.com/Software/Skrommel/index.html#GoneIn60s): Recover closed applications
+	- [IpUpload](http://www.donationcoder.com/Software/Skrommel/index.html#IpUpload): Upload current IP address to a FTP server
+	- [NoClose](http://www.donationcoder.com/Software/Skrommel/index.html#NoClose): Disable the Close button (X) of selected windows
+	- [MoveInactiveWin](http://www.donationcoder.com/Software/Skrommel/index.html#MoveInactiveWin): Move a window without activating it
+	- [WhatColor](http://www.donationcoder.com/Software/Skrommel/index.html#WhatColor): Show and copy the RRGGBB color under the cursor
 - [camerb/AHKs](https://github.com/camerb/AHKs)
 - [AutoHotkey-Util](https://github.com/cocobelgica/AutoHotkey-Util)
 
 And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awesome-AutoHotkey)!
 
 
-
 TODO
 ----
-Window mover: Use https://github.com/fuhsjr00/bug.n  ?
-Window mover: resize so not below taskbar or above screen (or left/right:)
-Window mover: take away from all the edges a bit
-Window mover: center at "semi" full screen
-Window mover: for when screen has some weird size: take up half left/right of screen depending on where it currently is
---> https://github.com/nimdahk/FillX-Windows/blob/master/FillX.ahk ?
+Script to create a kramdown table from tabbed data
 
+Included but not yet bound to a shortcut:  
+utilities/base64.ahk  
+utilities/eol-convert.ahk  
 
-Need to put all config in ini files
+Need to put all config in ini files  
 https://autohotkey.com/board/topic/33506-read-ini-file-in-one-go/
 
 
-Gui Creator?
-https://autohotkey.com/boards/viewtopic.php?f=6&t=303&sid=4f44b6b191c1f6fe0df4f93944c39aa6
+Gui Creator?  
+https://autohotkey.com/boards/viewtopic.php?f=6&t=303&sid=4f44b6b191c1f6fe0df4f93944c39aa6  
 https://github.com/maestrith/GUI_Creator
+
+### Window moving
+
+- [bug.n](https://github.com/fuhsjr00/bug.n): Tiling Window Manager for Windows
+- [Min2Tray](http://junyx.breadfan.de/Min2Tray): Minimize window to tray & more
+- [NiftyWindows](http://www.enovatic.org/products/niftywindows/download): control of all basic window interactions such as snap-to-grid, "keep window aspect ratio", rolling up a window to its title bar, transparency control.
+- [WindowPad](https://github.com/hoppfrosch/WindowPadX)
+
+Window mover: Use https://github.com/fuhsjr00/bug.n  ?  
+Window mover: resize so not below taskbar or above screen (or left/right:)  
+Window mover: take away from all the edges a bit  
+Window mover: center at "semi" full screen  
+Window mover: for when screen has some weird size: take up half left/right of screen depending on where it currently is  
+--> https://github.com/nimdahk/FillX-Windows/blob/master/FillX.ahk ?  
