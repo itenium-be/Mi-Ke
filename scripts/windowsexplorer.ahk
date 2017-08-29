@@ -75,6 +75,17 @@ ToClipboardAndNotify(toClipboard)
 		Notify("Path Copied", toClipboard)
 }
 
+
+; Alt + Enter for ContextMenu.Properties does not work for a Drive
+!enter::
+selectedFiles := ActiveFolderPath()
+isDrive := RegExMatch(selectedFiles, "\w:\\")
+if isDrive {
+	Run, properties "%selectedFiles%"
+}
+return
+
+
 #IfWinActive
 ; From here: Hotkeys active when NOT within Explorer:
 

@@ -1,3 +1,22 @@
+ActiveFolderPath()
+{
+	return PathCreateFromURL(ExplorerPath(WinExist("A")))
+}
+
+ExplorerPath(_hwnd)
+{
+	for Item in ComObjCreate("Shell.Application").Windows
+		if (Item.hwnd = _hwnd)
+			return, Item.LocationURL
+}
+
+PathCreateFromURL(URL)
+{
+	VarSetCapacity(fPath, Sz := 2084, 0)
+	DllCall("shlwapi\PathCreateFromUrl" (A_IsUnicode ? "W" : "A" ), Str, URL, Str, fPath, UIntP,Sz, UInt, 0)
+	return fPath
+}
+
 /*
 	Library for getting info from a specific explorer window (if window handle not specified, the currently active
 	window will be used).  Requires AHK_L or similar.  Works with the desktop.  Does not currently work with save

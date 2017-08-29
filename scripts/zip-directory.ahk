@@ -97,22 +97,3 @@ GetParentDirectoryName(path)
 {
 	return SubStr(path, 1, InStr(SubStr(path, 1, -1), "\", 0, 0) - 1)
 }
-
-ActiveFolderPath()
-{
-	return PathCreateFromURL(ExplorerPath(WinExist("A")))
-}
-
-ExplorerPath(_hwnd)
-{
-	for Item in ComObjCreate("Shell.Application").Windows
-		if (Item.hwnd = _hwnd)
-			return, Item.LocationURL
-}
-
-PathCreateFromURL(URL)
-{
-	VarSetCapacity(fPath, Sz := 2084, 0)
-	DllCall("shlwapi\PathCreateFromUrl" (A_IsUnicode ? "W" : "A" ), Str, URL, Str, fPath, UIntP,Sz, UInt, 0)
-	return fPath
-}
