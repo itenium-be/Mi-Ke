@@ -1,10 +1,5 @@
 #IfWinActive, ahk_class Chrome_WidgetWin
 
-; Alt + Left/Right: history.back() / forward()
-; Backspace for history.back() was removed from Chrome
-;Backspace::Send !{Left} ; Haha, also blocks backspace in the address bar :)
-
-
 ; F1: Open chrome://extensions
 F1::
 IfWinActive, New Tab
@@ -25,6 +20,11 @@ SendInput chrome`:`/`/chrome`/extensions`/{Enter}
 ; Complete list: chrome://chrome-urls
 ; Blog post: https://fossbytes.com/complete-list-of-secret-chrome-urls-uses
 Return
+
+
+; Alt + Left/Right: history.back() / forward()
+; Backspace for history.back() was removed from Chrome
+;Backspace::Send !{Left} ; Haha, also blocks backspace in the address bar :)
 
 
 #IfWinActive

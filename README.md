@@ -78,7 +78,6 @@ Other Scripts
 In app scripts
 --------------
 **Chrome F1**: Open chrome://extensions in new tab (apps/chrome.ahk)  
-**Chrome Alt + Left/Right**: Builtin for history.back/forward(). Reinstated Backspace. (apps/chrome.ahk)  
 
 
 Dev Stuff
