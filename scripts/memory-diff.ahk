@@ -7,14 +7,30 @@
 ; Control + Windows + Up: show current clipboard content
 ; Control + Windows + 0: select a file with Dropbox conflict to compare it with the original file
 
+
+FileReplacements(fileName)
+{
+	; https://autohotkey.com/docs/Variables.htm
+	StringReplace, fileName, fileName, <A_DESKTOP>, %A_DESKTOP%
+	StringReplace, fileName, fileName, <A_TEMP>, %A_TEMP%
+	StringReplace, fileName, fileName, <A_SCRIPTDIR>, %A_SCRIPTDIR%
+	return fileName
+}
+
 GetLeft()
 {
-	return A_Desktop . "\left.txt"
+	IniRead, leftFile, %A_Scriptdir%\scripts\memory-diff.ini, output, leftFile
+	leftFile := FileReplacements(leftFile)
+	;Notify(leftFile)
+	return leftFile
 }
 
 GetRight()
 {
-	return A_Desktop . "\right.txt"
+	IniRead, rightFile, %A_Scriptdir%\scripts\memory-diff.ini, output, rightFile
+	rightFile := FileReplacements(rightFile)
+	;Notify(rightFile)
+	return rightFile
 }
 
 PasteClipboardToFile(file, clipContent)
@@ -36,14 +52,11 @@ DiffMergeOpenAppl()
 	left := GetLeft()
 	right := GetRight()
 
-	; DiffMerge
-	;Run C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe -nosplash "%left%" "%right%"
-
-	; Beyond compare
-	Run C:\Program Files (x86)\Beyond Compare 3\BCompare.exe "%left%" "%right%"
+	IniRead, mergeTool, %A_Scriptdir%\scripts\memory-diff.ini, merge, tool
+	StringReplace, mergeTool, mergeTool, <left>, %left%
+	StringReplace, mergeTool, mergeTool, <right>, %right%
+	Run %mergeTool%
 }
-
-
 
 ^#Left::
 Send, ^c
@@ -89,17 +102,19 @@ return
 
 
 ^#Numpad0::
-; English Dropbox conflict filename: \(.*'s conflicted copy \d{4}-\d{2}-\d{2}\)
 Send, ^c
 Sleep, 150
 clipContent := clipboard
 IfExist, %clipContent%
 {
-	IfInString, clipContent, (Exemplaar met conflict van
+	IniRead, fileConflictRegex, %A_Scriptdir%\scripts\memory-diff.ini, dropbox, conflictRegex
+	isConflictFile := RegExMatch(clipContent, fileConflictRegex)
+
+	if isConflictFile
 	{
 		PasteClipboardToFile(GetRight(), clipContent)
 
-		originalFileName := RegExReplace(clipContent, " \(Exemplaar met conflict van .* \d{4}-\d{2}-\d{2}\)(?=\.)", "")
+		originalFileName := RegExReplace(clipContent, fileConflictRegex, "")
 		PasteClipboardToFile(GetLeft(), originalFileName)
 
 		DiffMergeOpenAppl()
