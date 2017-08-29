@@ -24,7 +24,8 @@ If minimizedWindowCount =
 		id := windows%A_Index%
 
 		WinGetTitle title, ahk_id %id%
-		If (title <> "" and title <> "mike.ahk")
+		;Notify(A_ScriptName) ; = mike.ahk
+		If (title <> "" and title <> A_ScriptName)
 		{
 			WinGetPos, x, y, w, h, ahk_id %id%
 			monitor := wp_GetMonitorAt(x+w/2, y+h/2)
