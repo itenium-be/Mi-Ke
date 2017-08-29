@@ -1,5 +1,10 @@
 #IfWinActive ahk_class CabinetWClass
 
+; TODO: Subtitles: script to rename srt that looks like selected file to match selected file exactly
+; or if only one srt in directory, rename to same as selected file
+; http://www.yifysubtitles.com/
+; http://www.ondertitel.com/
+
 ; Control + Shift + 6: Details View
 ; ~ = Do not block native function
 ~^+6::

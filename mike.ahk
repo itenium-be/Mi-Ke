@@ -25,6 +25,8 @@ SetNumlockState, AlwaysOn
 #Include %A_Scriptdir%\hotstrings\work.ahk
 #Include %A_Scriptdir%\hotstrings\pongit.ahk
 
+; TODO: SetWorkingDir for consistent path in \scripts folder?
+; https://autohotkey.com/docs/commands/SetWorkingDir.htm
 #Include %A_Scriptdir%\scripts\change-sound-volume.ahk
 #Include %A_Scriptdir%\scripts\memory-diff.ahk
 #Include %A_Scriptdir%\scripts\path-wintounix.ahk

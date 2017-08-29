@@ -10,15 +10,15 @@ Script: memory-diff
 **Control + Win + Right**: Open Diff tool with current left/right.txt  
 **Control + Win + Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
 
-Configuration in **memory-diff.ini**.
+Configuration in **memory-diff.ini**
 
 
 Script: zip-directory
 ---------------------
 **Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer  
 
-**Configuration**: Path to 7zip.exe  
-**Dependencies**: utilities/windowsexplorer.ahk
+Path to 7zip.exe in **scipts/zip-directory.ini**  
+**Dependencies**: utilities/windowsexplorer.ahk  
 
 
 Script: windowsexplorer
@@ -50,6 +50,8 @@ Change sound volume with 'funny' images.
 **Win + End**: Mute/Restore  
 **Win + Home**: Show sound volume  
 
+**Dependencies**: The images in scripts\change-sound-volume
+
 
 Script: quick-start-programs
 ----------------------------
@@ -63,6 +65,7 @@ Script: quick-start-programs
 **Capslock & W**: New Chrome window  
 **Capslock & X**: Google selected text  
 
+
 Other Scripts
 -------------
 **Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
@@ -71,15 +74,18 @@ Other Scripts
 **Win + Alt + M**: Put selected text in Markdown code block (md-code-block)  
 **Control + Win + Alt + M**: Create new Markdown code block (md-code-block)  
 
+
 In app scripts
 --------------
 **Chrome F1**: Open chrome://extensions in new tab (apps/chrome.ahk)  
 **Chrome Alt + Left/Right**: Builtin for history.back/forward(). Reinstated Backspace. (apps/chrome.ahk)  
 
+
 Dev Stuff
 ---------
 **Control + Win + R**: Reload script  
 **Shift + F11**: Open ListVars window  
+
 
 Snippets
 --------
