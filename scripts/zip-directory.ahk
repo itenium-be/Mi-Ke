@@ -83,9 +83,15 @@ else
 
 ; The actual zipping :)
 fullZipName = %currentPath%\%zipFileName%.zip
-RunWait, "C:\Program Files\7-Zip\7z.exe" a "%fullZipName%" %toZip%
+
+IniRead, downloadPath, %A_SCRIPTDIR%\scripts\zip-directory.ini, zip, cmd
+StringReplace, downloadPath, downloadPath, <fullZipName>, %fullZipName%
+StringReplace, downloadPath, downloadPath, <toZip>, %toZip%
+
+RunWait, %downloadPath%
 
 ; RunWait so that we can determine file size
+; Which works - sometimes :p
 FileGetSize, zipFileSize, %fullZipName%, M
 if IsFunc("Notify")
 	Notify(zipFileName ".zip created", "Size: " zipFileSize "MB")
