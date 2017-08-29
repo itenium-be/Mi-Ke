@@ -1,4 +1,4 @@
-; Open Explorers
+; Opens 2 Explorers
 ; Newly downloaded files directory on the left
 ; USB drive on the right
 ; Hotkey: AltGr+Win+D
@@ -7,13 +7,13 @@
 usbDrive := GetUsbDrive()
 If usbDrive
 {
-	downloadPath = C:\Users\Wouter\Downloads
+	IniRead, downloadPath, %A_SCRIPTDIR%\scripts\copy-download-to-usb.ini, copy-from, path
+	StringReplace, downloadPath, downloadPath, <USERPROFILE>, %USERPROFILE%
+	SplitPath, downloadPath, downloadDirName
 
-	IfWinNotExist Downloads
+	IfWinNotExist %downloadDirName%
 	{
 		Run %downloadPath%
-		;Run %downloadPath%
-		;WinWait ahk_pid %downloadWindow%
 		Sleep, 500
 		WindowPadMove(-1, -1, 0.5, 1, "")
 
