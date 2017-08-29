@@ -1,3 +1,6 @@
+; Config: memory-diff.ini
+; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
+
 ; Copy two blocks of text and compare them in a diff program
 ; Select a file in Explorer to compare the contents
 
@@ -8,29 +11,14 @@
 ; Control + Windows + 0: select a file with Dropbox conflict to compare it with the original file
 
 
-FileReplacements(fileName)
-{
-	; https://autohotkey.com/docs/Variables.htm
-	StringReplace, fileName, fileName, <A_DESKTOP>, %A_DESKTOP%
-	StringReplace, fileName, fileName, <A_TEMP>, %A_TEMP%
-	StringReplace, fileName, fileName, <A_SCRIPTDIR>, %A_SCRIPTDIR%
-	return fileName
-}
-
 GetLeft()
 {
-	IniRead, leftFile, %A_Scriptdir%\scripts\memory-diff.ini, output, leftFile
-	leftFile := FileReplacements(leftFile)
-	;Notify(leftFile)
-	return leftFile
+	return ReadIniValue("memory-diff", "output", "leftFile", true)
 }
 
 GetRight()
 {
-	IniRead, rightFile, %A_Scriptdir%\scripts\memory-diff.ini, output, rightFile
-	rightFile := FileReplacements(rightFile)
-	;Notify(rightFile)
-	return rightFile
+	return ReadIniValue("memory-diff", "output", "rightFile", true)
 }
 
 PasteClipboardToFile(file, clipContent)
@@ -52,12 +40,13 @@ DiffMergeOpenAppl()
 	left := GetLeft()
 	right := GetRight()
 
-	IniRead, mergeTool, %A_Scriptdir%\scripts\memory-diff.ini, merge, tool
+	mergeTool := ReadIniValue("memory-diff", "merge", "tool", false)
 	StringReplace, mergeTool, mergeTool, <left>, %left%
 	StringReplace, mergeTool, mergeTool, <right>, %right%
 	Run %mergeTool%
 }
 
+; Control + Win + Left: Clipboard to left.txt
 ^#Left::
 Send, ^c
 Sleep, 150
@@ -72,7 +61,7 @@ if IsFunc("Notify")
 return
 
 
-
+; Control + Win + Down: Clipboard to right.txt and open diff tool
 ^#Down::
 Send, ^c
 Sleep, 150
@@ -94,22 +83,22 @@ if doCompare = true
 return
 
 
-
+; Control + Win + Right: Open diff tool
 ^#Right::
 DiffMergeOpenAppl()
 return
 
 
-
+; Control + Win + 0: Compare with Dropbox unconflicted file
+; In Windows Explorer, compare original file against "someFile (Bert's conflicted copy 2017-07-07).ext"
 ^#Numpad0::
 Send, ^c
 Sleep, 150
 clipContent := clipboard
 IfExist, %clipContent%
 {
-	IniRead, fileConflictRegex, %A_Scriptdir%\scripts\memory-diff.ini, dropbox, conflictRegex
+	fileConflictRegex := ReadIniValue("memory-diff", "dropbox", "conflictRegex", false)
 	isConflictFile := RegExMatch(clipContent, fileConflictRegex)
-
 	if isConflictFile
 	{
 		PasteClipboardToFile(GetRight(), clipContent)
@@ -122,6 +111,14 @@ IfExist, %clipContent%
 }
 return
 
+
+; Control + Win + Up: See clipboard
+^#Up::
+if IsFunc("Notify")
+{
+	trimmedContent := TrimContent(Clipboard)
+	Notify("Clipboard contents", trimmedContent)
+}
 
 
 TrimContent(content)
@@ -144,10 +141,5 @@ TrimContent(content)
 	return Trim(trimmedContent)
 }
 
-^#Up::
-if IsFunc("Notify")
-{
-	trimmedContent := TrimContent(Clipboard)
-	Notify("Clipboard contents", trimmedContent)
-}
+
 return

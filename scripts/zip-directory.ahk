@@ -1,3 +1,6 @@
+; Config: zip-directory.ini (Path to 7zip.exe)
+; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
+
 ; Put all files in Windows Explorer path to new zip file
 ; Named as parent directory name.zip
 ; Select just a few files to put those only to the zip archive
@@ -84,7 +87,7 @@ else
 ; The actual zipping :)
 fullZipName = %currentPath%\%zipFileName%.zip
 
-IniRead, downloadPath, %A_SCRIPTDIR%\scripts\zip-directory.ini, zip, cmd
+downloadPath := ReadIniValue("zip-directory", "zip", "cmd", false)
 StringReplace, downloadPath, downloadPath, <fullZipName>, %fullZipName%
 StringReplace, downloadPath, downloadPath, <toZip>, %toZip%
 

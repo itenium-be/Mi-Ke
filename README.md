@@ -2,6 +2,11 @@ Mi-Ke
 =====
 This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
 
+Two fancy ones:
+
+**Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (zip-directory)  
+**Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
+
 Script: memory-diff
 -------------------
 **Control + Win + Left**: Put selected text in Desktop\left.txt  
@@ -9,17 +14,6 @@ Script: memory-diff
 **Control + Win + Up**: Show current clipboard content  
 **Control + Win + Right**: Open Diff tool with current left/right.txt  
 **Control + Win + Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
-
-Configuration in **memory-diff.ini**
-
-
-Script: zip-directory
----------------------
-**Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer  
-
-Path to 7zip.exe in **scipts/zip-directory.ini**  
-**Dependencies**: utilities/windowsexplorer.ahk  
-
 
 Script: windowsexplorer
 -----------------------
@@ -35,22 +29,6 @@ Script: windowsexplorer
 **Control + Shift + 3**: View => small icons  
 **Control + Shift + 4**: View => three columns  
 **Control + Shift + 6**: View => details list  
-
-**Dependencies**: utilities/windowsexplorer.ahk
-
-
-Script: change-sound-volume
----------------------------
-Change sound volume with 'funny' images.  
-
-**Win + PgUp**: Volume +10  
-**Win + PgDn**: Volume -10  
-**Win + Ctrl + PgDn/Up: Volume +/-10 without images  
-**Win + Ctrl + + Alt PgDn/Up: Volume +/-1 without images  
-**Win + End**: Mute/Restore  
-**Win + Home**: Show sound volume  
-
-**Dependencies**: The images in scripts\change-sound-volume
 
 
 Script: quick-start-programs
@@ -68,29 +46,33 @@ Script: quick-start-programs
 
 Other Scripts
 -------------
-**Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 **AltGr + Win + D**: Open 2 explorers, one in download folder, one with USB stick (copy-download-to-usb)  
 **Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-wintounix)  
 **Win + Alt + M**: Put selected text in Markdown code block (md-code-block)  
 **Control + Win + Alt + M**: Create new Markdown code block (md-code-block)  
-
-
-In app scripts
---------------
 **Chrome F1**: Open chrome://extensions in new tab (apps/chrome.ahk)  
+
+**scripts\snippets.ahk**:  
+
+**Control + Shift + C**: Append to clipboard  
+
+
+Script: change-sound-volume
+---------------------------
+Change sound volume with 'funny' images.  
+
+**Win + PgUp**: Volume +10  
+**Win + PgDn**: Volume -10  
+**Win + Ctrl + PgDn/Up: Volume +/-10 without images  
+**Win + Ctrl + + Alt PgDn/Up: Volume +/-1 without images  
+**Win + End**: Mute/Restore  
+**Win + Home**: Show sound volume  
 
 
 Dev Stuff
 ---------
 **Control + Win + R**: Reload script  
 **Shift + F11**: Open ListVars window  
-
-
-Snippets
---------
-`scripts\snippets.ahk`:
-
-**Control + Shift + C**: Append to clipboard  
 
 
 Other resources
@@ -120,6 +102,8 @@ Script to create a kramdown table from tabbed data
 Included but not yet bound to a shortcut:  
 utilities/base64.ahk  
 utilities/eol-convert.ahk  
+
+https://github.com/jNizM/AHK_Scripts
 
 Need to put all config in ini files  
 https://autohotkey.com/board/topic/33506-read-ini-file-in-one-go/

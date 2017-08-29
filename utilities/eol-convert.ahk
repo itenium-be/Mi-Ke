@@ -1,3 +1,5 @@
+; Not included, not bound to a hotkey
+
 /* Function: eol
  *     Convert newline in strings to/from "`r`n", "`n", "`r"
  * Requirements:

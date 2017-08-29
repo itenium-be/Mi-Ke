@@ -1,3 +1,5 @@
+; Not included, not bound to a hotkey
+
 /* Library: Base64
  *     Functions for Base64 (en|de)coding
  * Version:

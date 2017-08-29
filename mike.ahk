@@ -18,6 +18,7 @@ SetNumlockState, AlwaysOn
 
 ; ATTN: Do not put shortcuts/hotstrings above the mike-menu
 ; (or it will show the default menu instead)
+#Include %A_Scriptdir%\utilities\ini-reader.ahk
 #Include %A_Scriptdir%\mike-menu.ahk
 
 #Include %A_Scriptdir%\hotstrings\personal.ahk

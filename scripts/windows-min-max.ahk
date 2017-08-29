@@ -1,3 +1,5 @@
+; No dependencies
+
 minimizedWindows :=
 minimizedWindowCount :=
 windowThatWasActive :=

@@ -1,3 +1,6 @@
+; Config: TODO: config
+; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
+
 #IfWinActive ahk_class CabinetWClass
 
 ; TODO: Subtitles: script to rename srt that looks like selected file to match selected file exactly

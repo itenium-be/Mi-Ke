@@ -1,3 +1,5 @@
+; The images are stored in scripts\change-sound-volume\*.jpg
+
 ; Change music volume
 ; Hotkey: Windows+PageUp/Down
 #PgUp::SetAndDisplaySoundVolume("+10")

@@ -1,3 +1,5 @@
+; Config: copy-download-to-usb.ini (download folder defaults to %USERPROFILE%\Downloads)
+
 ; Opens 2 Explorers
 ; Newly downloaded files directory on the left
 ; USB drive on the right
@@ -7,8 +9,7 @@
 usbDrive := GetUsbDrive()
 If usbDrive
 {
-	IniRead, downloadPath, %A_SCRIPTDIR%\scripts\copy-download-to-usb.ini, copy-from, path
-	StringReplace, downloadPath, downloadPath, <USERPROFILE>, %USERPROFILE%
+	downloadPath := ReadIniValue("copy-download-to-usb", "copy-from", "path", true)
 	SplitPath, downloadPath, downloadDirName
 
 	IfWinNotExist %downloadDirName%
