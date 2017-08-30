@@ -54,16 +54,16 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 ; Debugging:
 ; Some weird stuff...
 ; A MsgBox shows when placed below #Include mike-menu but not when placed below #Include personal.ahk..?
-; Putting these 2 lines above #Include mike-menu.ahk and the default menu is loaded instead..?
-!F11::ListVars
+; Putting these lines above #Include mike-menu.ahk and the default menu is loaded instead..?
+; (is it because of stopping execution after the first "return"?)
 
-; TODO: put these two in config aswell :)
-
-^#r::
+DevReloadScript:
+;^#r::
 Notify("Script Reloaded")
 Reload
 return
 
-; Disable Left Win going into Metro mode
-; TODO: Also disables shortcuts using Win key
-; LWin::Return
+DevListVars:
+;!F11::
+ListVars
+return

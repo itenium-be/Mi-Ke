@@ -58,3 +58,7 @@ CreateSingleMikeHotkey("apps-windows-explorer-new-txt-file", "ExplorerNewTextFil
 CreateSingleMikeHotkey("apps-windows-explorer-selected-file-dir-to-clipboard", "ExplorerSelectedFileDirToClipboard")
 CreateSingleMikeHotkey("apps-windows-explorer-selected-file-path-to-clipboard", "ExplorerSelectedFilePathToClipboard")
 CreateSingleMikeHotkey("apps-windows-open-explorer-in-clipboard-path", "OpenExplorerInClipboardPath")
+
+; DEV stuff
+CreateSingleMikeHotkey("dev-reload-script", "DevReloadScript")
+CreateSingleMikeHotkey("dev-list-vars", "DevListVars")
