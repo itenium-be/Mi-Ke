@@ -16,9 +16,10 @@
 	Return
 
 
-; Control + Shift + N: New directory
+; Control + Shift + N: New directory (builtin)
 ; Control + Shift + F: New file
-^+f::
+; ^+f::
+ExplorerNewFile:
 	DeselectSelectedFiles()
 	Send {Appskey}
 	Send w
@@ -27,7 +28,8 @@
 	Return
 
 ; Control + Shift + T: New txt file
-^+t::
+; ^+t::
+ExplorerNewTextFile:
 	DeselectSelectedFiles()
 	Send {Appskey}
 	Send w
@@ -55,7 +57,8 @@ Esc::
 
 
 ; 2x Capslock: put path of selected file to clipboard
-CapsLock::
+;CapsLock::
+ExplorerSelectedFileDirToClipboard:
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 {
 	curPath := Explorer_GetPath()
@@ -65,7 +68,8 @@ Return
 
 
 ; 2x Shift+Capslock: put path + filename to clipboard
-Shift & CapsLock::
+; Shift & CapsLock::
+ExplorerSelectedFilePathToClipboard:
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 {
 	SelectedFiles := Explorer_GetSelected()
@@ -99,12 +103,13 @@ return
 
 
 ; 2x Control+Capslock: Open path on the clipboard in Explorer
-Control & CapsLock::
+;Control & CapsLock::
+OpenExplorerInClipboardPath:
 if (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500 and FileExist(clipboard))
 {
 	explorerCmd := "explorer /select," clipboard
 	Run, %explorerCmd%
-	Sleep 250
+	Sleep 400
 	Send {Enter}
 }
 Return

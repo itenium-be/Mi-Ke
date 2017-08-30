@@ -9,12 +9,18 @@ FileReplacements(fileName)
 }
 
 
-ReadMikeIni(sectionName, key, replacePaths)
+ReadMikeIni(sectionName, key, replacePaths := false)
 {
 	;IfNotExist mike.ini -> then pick mini.default.ini
 
 	IniRead, value, %A_Scriptdir%\mike.ini, %sectionName%, %key%
-	if replacePaths
-		value := FileReplacements(value)
-	return value
+	if (value = "ERROR") {
+		MsgBox Error reading from ini. Section=%sectionName% Key=%key%
+
+	} else {
+		if replacePaths
+			value := FileReplacements(value)
+		return value
+	}
+
 }

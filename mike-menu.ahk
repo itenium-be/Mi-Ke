@@ -48,7 +48,7 @@ MiKeTraySourceEditor:
   return
 
 MiKeTraySourceGithub:
-  githubUri := ReadMikeIni("tray-menu", "github-url", false)
+  githubUri := ReadMikeIni("tray-menu", "github-url")
   run % BROWSER ( winExist("ahk_class Chrome_WidgetWin_1") ? " " BROWSER_NEWFLAG " " : " " ) githubUri
   return
 

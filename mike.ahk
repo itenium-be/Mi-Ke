@@ -21,7 +21,7 @@ SetNumlockState, AlwaysOn
 #Include %A_Scriptdir%\utilities\ini-reader.ahk
 EDITOR := ReadMikeIni("core", "editor", true)
 BROWSER := ReadMikeIni("core", "browser", true)
-BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag", false)
+BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 
 ; Load scripts from mike.ini
 #Include %A_Scriptdir%\mike-loader.ahk
@@ -36,18 +36,17 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag", false)
 ; https://autohotkey.com/docs/commands/SetWorkingDir.htm
 #Include %A_Scriptdir%\scripts\change-sound-volume.ahk
 #Include %A_Scriptdir%\scripts\memory-diff.ahk
-#Include %A_Scriptdir%\scripts\path-wintounix.ahk
-#Include %A_Scriptdir%\scripts\copy-download-to-usb.ahk
-#Include %A_Scriptdir%\scripts\zip-directory.ahk
-#Include %A_Scriptdir%\scripts\md-code-block.ahk
-#Include %A_Scriptdir%\scripts\windows-min-max.ahk
 #Include %A_Scriptdir%\scripts\quick-start-programs.ahk
-#Include %A_Scriptdir%\scripts\windowsexplorer.ahk
-#Include %A_Scriptdir%\scripts\WindowPad\source\WindowPad.ahk
 #Include %A_Scriptdir%\scripts\snippets.ahk
+#Include %A_Scriptdir%\scripts\windows-min-max.ahk
 
 #Include %A_Scriptdir%\scripts\apps\chrome.ahk
-#Include %A_Scriptdir%\scripts\apps\cmd.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-cmd.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer-copy-download-to-usb.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer-zip-directory.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer.ahk
+
+#Include %A_Scriptdir%\vendor\WindowPad\source\WindowPad.ahk
 
 #Include %A_Scriptdir%\utilities\windowsexplorer.ahk
 #Include %A_Scriptdir%\utilities\notify.ahk
@@ -57,6 +56,8 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag", false)
 ; A MsgBox shows when placed below #Include mike-menu but not when placed below #Include personal.ahk..?
 ; Putting these 2 lines above #Include mike-menu.ahk and the default menu is loaded instead..?
 !F11::ListVars
+
+; TODO: put these two in config aswell :)
 
 ^#r::
 Notify("Script Reloaded")

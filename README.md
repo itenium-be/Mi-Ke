@@ -4,7 +4,7 @@ This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey sc
 
 Two fancy ones:
 
-**Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (zip-directory)  
+**Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
 **Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 
 Script: memory-diff
@@ -15,8 +15,10 @@ Script: memory-diff
 **Control + Win + Right**: Open Diff tool with current left/right.txt  
 **Control + Win + Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
 
-Script: windowsexplorer
------------------------
+Script: apps/windows-explorer
+-----------------------------
+**AltGr + Win + D**: Open 2 explorers, one in download folder, one with USB stick (apps/windows-explorer-copy-download-to-usb)  
+
 **2x Esc**: Close active Explorer window  
 **2x Capslock**: Put full directory of selected file/folder to clipboard  
 **2x Shift + Capslock**: Put full selected filename to clipboard  
@@ -46,15 +48,14 @@ Script: quick-start-programs
 
 Other Scripts
 -------------
-**AltGr + Win + D**: Open 2 explorers, one in download folder, one with USB stick (copy-download-to-usb)  
-**Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-wintounix)  
-**Win + Alt + M**: Put selected text in Markdown code block (md-code-block)  
-**Control + Win + Alt + M**: Create new Markdown code block (md-code-block)  
 **Chrome F1**: Open chrome://extensions in new tab (apps/chrome.ahk)  
 
 **scripts\snippets.ahk**:  
 
-**Control + Shift + C**: Append to clipboard  
+**Control + Shift + C**: Append to clipboard (append-to-clipboard) 
+**Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-win-to-unix)  
+**Win + Alt + M**: Put selected text in Markdown code block (md-code-block-surround)  
+**Control + Win + Alt + M**: Create new Markdown code block (md-code-block-new)  
 
 
 Script: change-sound-volume
@@ -97,9 +98,8 @@ And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awes
 
 TODO
 ----
-Script to create a kramdown table from tabbed data
-
-Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
+- Script to create a kramdown table from tabbed data
+- Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
 
 Included but not yet bound to a shortcut:  
 utilities/base64.ahk  

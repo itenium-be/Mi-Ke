@@ -5,7 +5,8 @@
 ; Named as parent directory name.zip
 ; Select just a few files to put those only to the zip archive
 ; Control + Win + Z
-^#z::
+ZipDirectory:
+; ^#z::
 GroupAdd, ExplorerGroup, ahk_class CabinetWClass
 GroupAdd, ExplorerGroup, ahk_class ExploreWClass
 
@@ -87,7 +88,7 @@ else
 ; The actual zipping :)
 fullZipName = %currentPath%\%zipFileName%.zip
 
-downloadPath := ReadMikeIni("zip-directory", "cmd", false)
+downloadPath := ReadMikeIni("zip-directory", "cmd", true)
 StringReplace, downloadPath, downloadPath, <fullZipName>, %fullZipName%
 StringReplace, downloadPath, downloadPath, <toZip>, %toZip%
 
