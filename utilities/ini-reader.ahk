@@ -11,6 +11,8 @@ FileReplacements(fileName)
 
 ReadMikeIni(sectionName, key, replacePaths)
 {
+	;IfNotExist mike.ini -> then pick mini.default.ini
+
 	IniRead, value, %A_Scriptdir%\mike.ini, %sectionName%, %key%
 	if replacePaths
 		value := FileReplacements(value)
