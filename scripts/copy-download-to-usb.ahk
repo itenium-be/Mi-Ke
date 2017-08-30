@@ -1,4 +1,4 @@
-; Config: copy-download-to-usb.ini (download folder defaults to %USERPROFILE%\Downloads)
+; Config: mike.ini [copy-download-to-usb] (download folder defaults to %USERPROFILE%\Downloads)
 
 ; Opens 2 Explorers
 ; Newly downloaded files directory on the left
@@ -9,7 +9,7 @@
 usbDrive := GetUsbDrive()
 If usbDrive
 {
-	downloadPath := ReadIniValue("copy-download-to-usb", "copy-from", "path", true)
+	downloadPath := ReadMikeIni("copy-download-to-usb", "copy-from-path", true)
 	SplitPath, downloadPath, downloadDirName
 
 	IfWinNotExist %downloadDirName%

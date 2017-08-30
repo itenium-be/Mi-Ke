@@ -1,4 +1,4 @@
-; Config: zip-directory.ini (Path to 7zip.exe)
+; Config: mike.ini [zip-directory] (Path to 7zip.exe)
 ; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
 
 ; Put all files in Windows Explorer path to new zip file
@@ -87,7 +87,7 @@ else
 ; The actual zipping :)
 fullZipName = %currentPath%\%zipFileName%.zip
 
-downloadPath := ReadIniValue("zip-directory", "zip", "cmd", false)
+downloadPath := ReadMikeIni("zip-directory", "cmd", false)
 StringReplace, downloadPath, downloadPath, <fullZipName>, %fullZipName%
 StringReplace, downloadPath, downloadPath, <toZip>, %toZip%
 

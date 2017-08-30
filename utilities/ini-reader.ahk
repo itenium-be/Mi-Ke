@@ -8,13 +8,6 @@ FileReplacements(fileName)
 	return fileName
 }
 
-ReadIniValue(fileName, sectionName, key, replacePaths)
-{
-	IniRead, value, %A_Scriptdir%\scripts\%fileName%.ini, %sectionName%, %key%
-	if replacePaths
-		value := FileReplacements(value)
-	return value
-}
 
 ReadMikeIni(sectionName, key, replacePaths)
 {
