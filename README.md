@@ -52,7 +52,7 @@ Other Scripts
 
 **scripts\snippets.ahk**:  
 
-**Control + Shift + C**: Append to clipboard (append-to-clipboard) 
+**Control + Shift + Win + C**: Append to clipboard (append-to-clipboard) 
 **Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-win-to-unix)  
 **Win + Alt + M**: Put selected text in Markdown code block (md-code-block-surround)  
 **Control + Win + Alt + M**: Create new Markdown code block (md-code-block-new)  
@@ -104,6 +104,10 @@ TODO
 Included but not yet bound to a shortcut:  
 utilities/base64.ahk  
 utilities/eol-convert.ahk  
+
+Disable Left Win going into Metro mode  
+TODO: Also disables shortcuts using Win key  
+LWin::Return  
 
 https://github.com/jNizM/AHK_Scripts
 

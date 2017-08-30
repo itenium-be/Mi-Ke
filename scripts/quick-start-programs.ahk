@@ -1,30 +1,36 @@
-; Control+Win+S: SublimeText
-^#s::
-editorPath = C:\Program Files\Sublime Text 3\sublime_text.exe
-editorWinName = Sublime Text
+; Control+Win+S: Open editor
+;^#s::
+QuickStartEditor:
+	editorPath = %EDITOR%
+	editorAhkClass := ReadMikeIni("core", "editor-ahk_class")
 
-IfWinActive ahk_class CabinetWClass
-{
-	; Start Editor with current Windows Explorer path opened
-	SelectedPath := Explorer_GetPath()
-	Run %editorPath% %SelectedPath%
-}
-Else
-{
-	; Just start the editor
-	IfWinExist, %editorWinName%
+	IfWinActive ahk_class CabinetWClass
 	{
-		Run %editorPath% --new-window
+		; Start Editor with current Windows Explorer path opened
+		SelectedPath := Explorer_GetPath()
+		Run %editorPath% %SelectedPath%
 	}
-	else
+	Else
 	{
-		Run %editorPath%
+		; Just start the editor
+		IfWinExist ahk_class %editorAhkClass%
+		{
+			editorNewWindowFlag := ReadMikeIni("core", "editor-new-window-flag")
+			Run %editorPath% %editorNewWindowFlag%
+		}
+		else
+		{
+			Run %editorPath%
+		}
 	}
-}
 return
 
 ; Control+Win+C: Open calculator
-^#c::Run C:\Windows\System32\calc.exe
+;^#c::
+QuickStartCalc:
+Run % ReadMikeIni("quick-start-calc", "path", true)
+return
+
 ; Esc twice to close calculator
 #IfWinActive Calculator
 	Esc::
@@ -84,17 +90,4 @@ IfWinExist, Robomongo\s*\d+(\.\d+)+$
 else
 	Run C:\Program Files\Robomongo 0.9.0\Robomongo.exe
 	WinActivate
-return
-
-
-; Capslock & W: Chrome window
-Capslock & W::
-Run chrome
-return
-
-; Capslock & X: Copy and open Google search
-Capslock & X::
-Send, ^c
-Sleep 50
-Run, http://www.google.com/search?q=%clipboard%
 return

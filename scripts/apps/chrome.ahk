@@ -28,3 +28,23 @@ Return
 
 
 #IfWinActive
+
+
+; Capslock & W: Chrome window
+BrowserOpen:
+Run %BROWSER%
+return
+
+; Capslock & X: Copy and open Google search
+BrowserSearch:
+Send, ^c
+Sleep 50
+Run, http://www.google.com/search?q=%clipboard%
+return
+
+; Capslock & H: Copy and google Autohotkey
+BrowserSearchAutohotkey:
+Send, ^c
+Sleep 50
+Run, http://www.google.com/search?q=autohotkey+%clipboard%
+return

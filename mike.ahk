@@ -42,6 +42,7 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 
 #Include %A_Scriptdir%\scripts\apps\chrome.ahk
 #Include %A_Scriptdir%\scripts\apps\windows-cmd.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer-builtin.ahk
 #Include %A_Scriptdir%\scripts\apps\windows-explorer-copy-download-to-usb.ahk
 #Include %A_Scriptdir%\scripts\apps\windows-explorer-zip-directory.ahk
 #Include %A_Scriptdir%\scripts\apps\windows-explorer.ahk

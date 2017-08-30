@@ -1,5 +1,5 @@
-; Control+Shift+C: Append to clipboard
-; ^+c::
+; Control+Shift+Win+C: Append to clipboard
+; ^+#c::
 AppendToClipboard:
 	bak = %clipboard%
 	Send, ^c
@@ -64,8 +64,8 @@ MdCodeBlockSurround:
 return
 
 
-; Ctrl+Alt+Win+m: New Markdown code block
-; !^#m::
+; Ctrl+Win+Alt+m: New Markdown code block
+; ^#!m::
 MdCodeBlockNew:
 	Send, {enter}
 	Send, ``````{space}
