@@ -23,6 +23,30 @@ EDITOR := ReadMikeIni("core", "editor", true)
 BROWSER := ReadMikeIni("core", "browser", true)
 BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag", false)
 
+; CreateMikeHotkey(sectionName, key, labelName)
+; {
+; 	IniRead, value, %A_Scriptdir%\mike.ini, %sectionName%, %key%
+; 	Hotkey, %memoryDiff%, %labelName%
+; }
+; CreateMikeHotkey("memory-diff", "hotkey-left", MemoryDiffSaveLeft)
+; CreateMikeHotkey("memory-diff", "hotkey-right-and-open", MemoryDiffSaveRightAndOpen)
+
+
+memoryDiff := ReadMikeIni("memory-diff", "hotkey-left", false)
+Hotkey, %memoryDiff%, MemoryDiffSaveLeft
+
+memoryDiff := ReadMikeIni("memory-diff", "hotkey-right-and-open", false)
+Hotkey, %memoryDiff%, MemoryDiffSaveRightAndOpen
+
+memoryDiff := ReadMikeIni("memory-diff", "hotkey-open", false)
+Hotkey, %memoryDiff%, MemoryDiffOpen
+
+memoryDiff := ReadMikeIni("memory-diff", "hotkey-dropbox-open", false)
+Hotkey, %memoryDiff%, MemoryDiffDropboxOpen
+
+memoryDiff := ReadMikeIni("memory-diff", "hotkey-see", false)
+Hotkey, %memoryDiff%, MemoryDiffSee
+
 
 ; ATTN: Do not put shortcuts/hotstrings above the mike-menu
 ; (or it will show the default menu instead)

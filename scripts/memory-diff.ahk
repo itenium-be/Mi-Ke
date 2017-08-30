@@ -1,4 +1,4 @@
-; Config: memory-diff.ini
+; Config: mike.ini [memory-diff]
 ; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
 
 ; Copy two blocks of text and compare them in a diff program
@@ -13,12 +13,12 @@
 
 GetLeft()
 {
-	return ReadIniValue("memory-diff", "output", "leftFile", true)
+	return ReadMikeIni("memory-diff", "leftFile", true)
 }
 
 GetRight()
 {
-	return ReadIniValue("memory-diff", "output", "rightFile", true)
+	return ReadMikeIni("memory-diff", "rightFile", true)
 }
 
 PasteClipboardToFile(file, clipContent)
@@ -40,14 +40,14 @@ DiffMergeOpenAppl()
 	left := GetLeft()
 	right := GetRight()
 
-	mergeTool := ReadIniValue("memory-diff", "merge", "tool", false)
+	mergeTool := ReadMikeIni("memory-diff", "merge-tool", false)
 	StringReplace, mergeTool, mergeTool, <left>, %left%
 	StringReplace, mergeTool, mergeTool, <right>, %right%
 	Run %mergeTool%
 }
 
 ; Control + Win + Left: Clipboard to left.txt
-^#Left::
+MemoryDiffSaveLeft:
 Send, ^c
 Sleep, 150
 PasteClipboardToFile(GetLeft(), clipboard)
@@ -62,7 +62,7 @@ return
 
 
 ; Control + Win + Down: Clipboard to right.txt and open diff tool
-^#Down::
+MemoryDiffSaveRightAndOpen:
 Send, ^c
 Sleep, 150
 doCompare = false
@@ -84,20 +84,20 @@ return
 
 
 ; Control + Win + Right: Open diff tool
-^#Right::
+MemoryDiffOpen:
 DiffMergeOpenAppl()
 return
 
 
 ; Control + Win + 0: Compare with Dropbox unconflicted file
 ; In Windows Explorer, compare original file against "someFile (Bert's conflicted copy 2017-07-07).ext"
-^#Numpad0::
+MemoryDiffDropboxOpen:
 Send, ^c
 Sleep, 150
 clipContent := clipboard
 IfExist, %clipContent%
 {
-	fileConflictRegex := ReadIniValue("memory-diff", "dropbox", "conflictRegex", false)
+	fileConflictRegex := ReadMikeIni("memory-diff-dropbox", "conflictRegex", false)
 	isConflictFile := RegExMatch(clipContent, fileConflictRegex)
 	if isConflictFile
 	{
@@ -113,7 +113,7 @@ return
 
 
 ; Control + Win + Up: See clipboard
-^#Up::
+MemoryDiffSee:
 if IsFunc("Notify")
 {
 	trimmedContent := TrimContent(Clipboard)
