@@ -47,7 +47,7 @@ DiffMergeOpenAppl()
 }
 
 ; Control + Win + Left: Clipboard to left.txt
-^#Left::
+MemoryDiffSaveLeft:
 Send, ^c
 Sleep, 150
 PasteClipboardToFile(GetLeft(), clipboard)
@@ -62,7 +62,7 @@ return
 
 
 ; Control + Win + Down: Clipboard to right.txt and open diff tool
-^#Down::
+MemoryDiffSaveRightAndOpen:
 Send, ^c
 Sleep, 150
 doCompare = false
@@ -84,14 +84,14 @@ return
 
 
 ; Control + Win + Right: Open diff tool
-^#Right::
+MemoryDiffOpen:
 DiffMergeOpenAppl()
 return
 
 
 ; Control + Win + 0: Compare with Dropbox unconflicted file
 ; In Windows Explorer, compare original file against "someFile (Bert's conflicted copy 2017-07-07).ext"
-^#Numpad0::
+MemoryDiffDropboxOpen:
 Send, ^c
 Sleep, 150
 clipContent := clipboard
@@ -113,7 +113,7 @@ return
 
 
 ; Control + Win + Up: See clipboard
-^#Up::
+MemoryDiffSee:
 if IsFunc("Notify")
 {
 	trimmedContent := TrimContent(Clipboard)
