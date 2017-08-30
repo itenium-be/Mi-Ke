@@ -13,18 +13,22 @@ SetWorkingDir %A_ScriptDir%
 ; DetectHiddenWindows, On
 
 ; Numlock, Capslock, ScrollLock
+; TODO: Put in config... uhoh what have I gotten myself into
 SetNumlockState, on
 SetNumlockState, AlwaysOn
 
+
+#Include %A_Scriptdir%\utilities\ini-reader.ahk
+EDITOR := ReadMikeIni("core", "editor", true)
+BROWSER := ReadMikeIni("core", "browser", true)
+BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag", false)
+
+
 ; ATTN: Do not put shortcuts/hotstrings above the mike-menu
 ; (or it will show the default menu instead)
-#Include %A_Scriptdir%\utilities\ini-reader.ahk
 #Include %A_Scriptdir%\mike-menu.ahk
 
-#Include %A_Scriptdir%\hotstrings\personal.ahk
-#Include %A_Scriptdir%\hotstrings\misc.ahk
-#Include %A_Scriptdir%\hotstrings\work.ahk
-#Include %A_Scriptdir%\hotstrings\pongit.ahk
+#Include %A_Scriptdir%\hotstrings\_start.ahk
 
 ; TODO: SetWorkingDir for consistent path in \scripts folder?
 ; https://autohotkey.com/docs/commands/SetWorkingDir.htm

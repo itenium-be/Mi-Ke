@@ -1,13 +1,18 @@
+; Config: mike.ini [tray-menu]
+; Dependencies: utilities/ini-read.ahk
+
 Menu, Tray, NoStandard
 
-Menu, Tray, Icon, %A_ScriptDir%\iseedeadcode.ico,, 1
+trayIconPath := ReadMikeIni("tray-menu", "icon", true)
+
+Menu, Tray, Icon, %trayIconPath%,, 1
 Menu, Tray, Tip, MiKe
 
 Menu, Tray, MainWindow
 Menu, Tray, Add, &Reload, MiKeTrayReload
 Menu, Tray, Add
 Menu, Tray, Add, Source (Explorer), MiKeTraySource
-Menu, Tray, Add, Source (Sublime), MiKeTraySourceEditor
+Menu, Tray, Add, Source (IDE), MiKeTraySourceEditor
 Menu, Tray, Add, Source (Github), MiKeTraySourceGithub
 Menu, Tray, Add
 Menu, Tray, Add, &Debug, MiKeTrayDebug
@@ -39,11 +44,12 @@ MiKeTraySource:
   return
 
 MiKeTraySourceEditor:
-  Run, "C:\Program Files\Sublime Text 3\subl.exe" %A_ScriptDir%
+  Run, "%EDITOR%" %A_ScriptDir%
   return
 
 MiKeTraySourceGithub:
-  run % "chrome.exe" ( winExist("ahk_class Chrome_WidgetWin_1") ? " -new " : " " ) "https://github.com/laoujin/Mi-Ke"
+  githubUri := ReadMikeIni("github", "url", false)
+  run % BROWSER ( winExist("ahk_class Chrome_WidgetWin_1") ? " " BROWSER_NEWFLAG " " : " " ) githubUri
   return
 
 MiKeContinue:

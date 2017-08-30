@@ -15,3 +15,11 @@ ReadIniValue(fileName, sectionName, key, replacePaths)
 		value := FileReplacements(value)
 	return value
 }
+
+ReadMikeIni(sectionName, key, replacePaths)
+{
+	IniRead, value, %A_Scriptdir%\mike.ini, %sectionName%, %key%
+	if replacePaths
+		value := FileReplacements(value)
+	return value
+}

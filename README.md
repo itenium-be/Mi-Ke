@@ -99,6 +99,8 @@ TODO
 ----
 Script to create a kramdown table from tabbed data
 
+Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
+
 Included but not yet bound to a shortcut:  
 utilities/base64.ahk  
 utilities/eol-convert.ahk  
