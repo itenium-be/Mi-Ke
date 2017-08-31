@@ -1,5 +1,5 @@
-; Config: TODO: config
 ; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
+
 
 
 ; TODO: Subtitles: script to rename srt that looks like selected file to match selected file exactly
@@ -13,25 +13,21 @@
 ; Control + Shift + F: New file
 ; ^+f::
 ExplorerNewFile:
-if WinActive("ahk_class CabinetWClass") {
 	DeselectSelectedFiles()
 	Send {Appskey}
 	Send w
 	Send t
 	Send ^a
-}
 Return
 
 
 ; Control + Shift + T: New txt file
 ; ^+t::
 ExplorerNewTextFile:
-if WinActive("ahk_class CabinetWClass") {
 	DeselectSelectedFiles()
 	Send {Appskey}
 	Send w
 	Send t
-}
 Return
 
 DeselectSelectedFiles()
@@ -52,28 +48,24 @@ DeselectSelectedFiles()
 ; 2x Capslock: put path of selected file to clipboard
 ;CapsLock::
 ExplorerSelectedFileDirToClipboard:
-if WinActive("ahk_class CabinetWClass") {
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 	{
 		curPath := Explorer_GetPath()
 		ToClipboardAndNotify(curPath)
 	}
-}
 Return
 
 
 ; 2x Shift+Capslock: put path + filename to clipboard
 ; Shift & CapsLock::
 ExplorerSelectedFilePathToClipboard:
-if WinActive("ahk_class CabinetWClass") {
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 	{
 		SelectedFiles := Explorer_GetSelected()
 		StringSplit, selectedFile, SelectedFiles, `n
-		;SplitPath, selectedFile1, name, dir, ext, name_no_ext, drive
+		SplitPath, selectedFile1, name, dir, ext, name_no_ext, drive
 		ToClipboardAndNotify(selectedFile1)
 	}
-}
 Return
 
 

@@ -40,31 +40,6 @@ if ReadMikeIni("memory-diff", "active") {
 CreateSingleMikeHotkey("windows-min-max", "WindowsMinMax")
 
 
-; quick-start-programs
-
-CreateSingleMikeHotkey("quick-start-editor", "QuickStartEditor")
-CreateSingleMikeHotkey("quick-start-calc", "QuickStartCalc")
-
-
-; quickStarters := ReadMikeIni("quick-start-programs", "")
-; Loop, parse, quickStarters, `n
-; {
-; 	StringSplit, keyValue, A_LoopField, =
-; 	key := keyValue1
-; 	value := keyValue2
-
-
-
-; 	;MsgBox, %key% => %value%
-; }
-
-
-; QuickStartPrograms:
-;A_ThisHotkey
-; return
-
-
-
 ; snippets
 CreateSingleMikeHotkey("snippets-append-to-clipboard", "AppendToClipboard")
 CreateSingleMikeHotkey("snippets-path-win-to-unix", "PathWinToUnix")
@@ -82,14 +57,17 @@ CreateMikeHotkey("core", "browser-hotkey-search-autohotkey", "BrowserSearchAutoh
 
 ; windows-explorer
 CreateSingleMikeHotkey("apps-windows-explorer-copy-download-to-usb", "CopyDownloadToUsb")
+CreateSingleMikeHotkey("apps-windows-open-explorer-in-clipboard-path", "OpenExplorerInClipboardPath")
+
+; TODO: configure IfWinActive in the ini
+Hotkey, IfWinActive, ahk_class (CabinetWClass|ExploreWClass)
 CreateSingleMikeHotkey("apps-windows-explorer-zip-directory", "ZipDirectory")
 CreateSingleMikeHotkey("apps-windows-explorer-new-file", "ExplorerNewFile")
 CreateSingleMikeHotkey("apps-windows-explorer-new-txt-file", "ExplorerNewTextFile")
 CreateSingleMikeHotkey("apps-windows-explorer-selected-file-dir-to-clipboard", "ExplorerSelectedFileDirToClipboard")
 CreateSingleMikeHotkey("apps-windows-explorer-selected-file-path-to-clipboard", "ExplorerSelectedFilePathToClipboard")
-CreateSingleMikeHotkey("apps-windows-open-explorer-in-clipboard-path", "OpenExplorerInClipboardPath")
+Hotkey, IfWinActive
 
 ; DEV stuff
 CreateSingleMikeHotkey("dev-reload-script", "DevReloadScript")
 CreateSingleMikeHotkey("dev-list-vars", "DevListVars")
-

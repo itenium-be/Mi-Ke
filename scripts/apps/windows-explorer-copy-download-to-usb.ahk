@@ -11,7 +11,7 @@ CopyDownloadToUsb:
 usbDrive := GetUsbDrive()
 If usbDrive
 {
-	downloadPath := ReadMikeIni("copy-download-to-usb", "copy-from-path", true)
+	downloadPath := ReadMikeIni("apps-windows-explorer-copy-download-to-usb", "copy-from-path", true)
 	SplitPath, downloadPath, downloadDirName
 
 	IfWinNotExist %downloadDirName%

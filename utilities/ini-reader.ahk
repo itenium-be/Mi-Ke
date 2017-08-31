@@ -19,7 +19,7 @@ ReadMikeIni(sectionName, key, replacePaths := false)
 
 	IniRead, value, %A_Scriptdir%\mike.ini, %sectionName%, %key%
 	if (value = "ERROR") {
-		MsgBox Error reading from ini. Section=%sectionName% Key=%key%
+		MsgBox Error reading from ini. Section="%sectionName%", Key="%key%"
 
 	} else {
 		if replacePaths

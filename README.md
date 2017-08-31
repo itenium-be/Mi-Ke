@@ -98,6 +98,9 @@ And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awes
 
 TODO
 ----
+- some gui screen with all active hotkeys
+- Waiting for windows -> use hwnd for more reliability
+- Also check about doing something waiting for other stuff (clipboard, ...)
 - Script to create a kramdown table from tabbed data
 - Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
 

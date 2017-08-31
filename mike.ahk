@@ -18,25 +18,27 @@ SetNumlockState, on
 SetNumlockState, AlwaysOn
 
 
-#Include %A_Scriptdir%\utilities\ini-reader.ahk
 EDITOR := ReadMikeIni("core", "editor", true)
 BROWSER := ReadMikeIni("core", "browser", true)
 BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 
 ; Load scripts from mike.ini
 #Include %A_Scriptdir%\mike-loader.ahk
+#Include %A_Scriptdir%\utilities\quick-start-programs-loader.ahk
+
 
 ; ATTN: Do not put shortcuts/hotstrings above the mike-menu
 ; (or it will show the default menu instead)
 #Include %A_Scriptdir%\mike-menu.ahk
 
+
+; TODO: Read all ahk files in hotstrings/
+; TODO: Now people have to edit the hotstrings leading to code changes...
 #Include %A_Scriptdir%\hotstrings\_start.ahk
 
-; TODO: SetWorkingDir for consistent path in \scripts folder?
-; https://autohotkey.com/docs/commands/SetWorkingDir.htm
+; Scripts
 #Include %A_Scriptdir%\scripts\change-sound-volume.ahk
 #Include %A_Scriptdir%\scripts\memory-diff.ahk
-#Include %A_Scriptdir%\scripts\quick-start-programs.ahk
 #Include %A_Scriptdir%\scripts\snippets.ahk
 #Include %A_Scriptdir%\scripts\windows-min-max.ahk
 
@@ -47,17 +49,16 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 #Include %A_Scriptdir%\scripts\apps\windows-explorer-zip-directory.ahk
 #Include %A_Scriptdir%\scripts\apps\windows-explorer.ahk
 
+; Utilities
 #Include %A_Scriptdir%\vendor\WindowPad\source\WindowPad.ahk
 
-#Include %A_Scriptdir%\utilities\windowsexplorer.ahk
+#Include %A_Scriptdir%\utilities\ini-reader.ahk
 #Include %A_Scriptdir%\utilities\notify.ahk
+#Include %A_Scriptdir%\utilities\quick-start-programs.ahk
+#Include %A_Scriptdir%\utilities\windowsexplorer.ahk
 
-; Debugging:
-; Some weird stuff...
-; A MsgBox shows when placed below #Include mike-menu but not when placed below #Include personal.ahk..?
-; Putting these lines above #Include mike-menu.ahk and the default menu is loaded instead..?
-; (is it because of stopping execution after the first "return"?)
 
+; Debugging
 DevReloadScript:
 ;^#r::
 Notify("Script Reloaded")
