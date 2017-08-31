@@ -96,6 +96,7 @@ Look no further!
 
 And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awesome-AutoHotkey)!
 
+Be nice to Mike, or he will throw rocks at you.
 
 TODO
 ----
