@@ -2,6 +2,42 @@ Mi-Ke
 =====
 This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
 
+# Why
+
+
+
+# Install
+
+%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\
+
+## Executable
+
+Download the zip from the [release tab](https://github.com/Laoujin/Mi-Ke/releases)  
+- Extract it
+- Run mike.exe
+- Much win
+
+
+## From source
+
+Requires Autohotkey_L
+
+PowerShell:
+```ps
+git clone https://github.com/Laoujin/Mi-Ke
+cd Mi-Ke
+
+# Create an initial setup
+.\init.ps1
+
+# Start
+.\mike.ahk
+```
+
+
+
+# The scripts
+
 Two fancy ones:
 
 **Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
@@ -96,10 +132,12 @@ Look no further!
 
 And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awesome-AutoHotkey)!
 
-Be nice to Mike, or he will throw rocks at you.
 
 TODO
 ----
+Build a script that creates the exe, zipped with the ini files
+--> This should be added to releases in Github
+
 - some gui screen with all active hotkeys
 - Waiting for windows -> use hwnd for more reliability
 - Also check about doing something waiting for other stuff (clipboard, ...)

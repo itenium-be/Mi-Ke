@@ -2,6 +2,8 @@
 #SingleInstance force
 SetTitleMatchMode RegEx
 
+; Reload script with Control+Win+R (default shortcut)
+
 ; Recommended for new scripts due to its superior speed and reliability.
 SendMode Input
 
@@ -19,16 +21,14 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 ; Load scripts from mike.ini
 #Include %A_Scriptdir%\mike-loader.ahk
 #Include %A_Scriptdir%\utilities\quick-start-programs-loader.ahk
-
-
-; ATTN: Do not put shortcuts/hotstrings above the mike-menu
-; (or it will show the default menu instead)
 #Include %A_Scriptdir%\mike-menu.ahk
 
+; All code that needs to be executed
+; automatically should be above this
 
-; TODO: Read all ahk files in hotstrings/
-; TODO: Now people have to edit the hotstrings leading to code changes...
-#Include %A_Scriptdir%\hotstrings\_start.ahk
+; Load hotstrings
+#Include %A_Scriptdir%\hotstrings\hotstring-loader.ahk
+return
 
 ; Scripts
 #Include %A_Scriptdir%\scripts\change-sound-volume.ahk
@@ -36,6 +36,7 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 #Include %A_Scriptdir%\scripts\snippets.ahk
 #Include %A_Scriptdir%\scripts\windows-min-max.ahk
 
+#Include %A_Scriptdir%\scripts\apps\autohotkey-debugging.ahk
 #Include %A_Scriptdir%\scripts\apps\chrome.ahk
 #Include %A_Scriptdir%\scripts\apps\windows-cmd.ahk
 #Include %A_Scriptdir%\scripts\apps\windows-explorer-builtin.ahk
@@ -50,16 +51,3 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 #Include %A_Scriptdir%\utilities\notify.ahk
 #Include %A_Scriptdir%\utilities\quick-start-programs.ahk
 #Include %A_Scriptdir%\utilities\windowsexplorer.ahk
-
-
-; Debugging
-DevReloadScript:
-;^#r::
-Notify("Script Reloaded")
-Reload
-return
-
-DevListVars:
-;!F11::
-ListVars
-return
