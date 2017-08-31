@@ -61,5 +61,5 @@ QuickStarterInfoCloserExecutor:
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 		WinClose
 	Else
-		Send, {Esc}
+		Send, %A_ThisHotKey%
 Return
