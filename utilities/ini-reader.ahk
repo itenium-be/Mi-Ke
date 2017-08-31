@@ -13,7 +13,7 @@ FileReplacements(fileName)
 }
 
 
-ReadMikeIni(sectionName, key = "", replacePaths := false)
+ReadMikeIni(sectionName, key := "", replacePaths := false)
 {
 	ini = %A_Scriptdir%\mike.ini
 	IfExist %ini%
@@ -28,7 +28,7 @@ ReadMikeIni(sectionName, key = "", replacePaths := false)
 		}
 	}
 
-	if (value = "ERROR") {
+	if (value = "ERROR" or (value = "" and key = "")) {
 		MsgBox Error reading from ini. Section="%sectionName%", Key="%key%"
 
 	} else {
