@@ -90,6 +90,7 @@ Look no further!
 	- [NoClose](http://www.donationcoder.com/Software/Skrommel/index.html#NoClose): Disable the Close button (X) of selected windows
 	- [MoveInactiveWin](http://www.donationcoder.com/Software/Skrommel/index.html#MoveInactiveWin): Move a window without activating it
 	- [WhatColor](http://www.donationcoder.com/Software/Skrommel/index.html#WhatColor): Show and copy the RRGGBB color under the cursor
+- [Jack's Autohotkey Blog](http://www.computoredge.com/AutoHotkey/Free_AutoHotkey_Scripts_and_Apps_for_Learning_and_Generating_Ideas.html)
 - [camerb/AHKs](https://github.com/camerb/AHKs)
 - [AutoHotkey-Util](https://github.com/cocobelgica/AutoHotkey-Util)
 
@@ -104,6 +105,11 @@ TODO
 - Script to create a kramdown table from tabbed data
 - Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
 
+Bootloader
+- init.ahk/ps1: script to "get started"
+- it could check what software is installed on the pc...
+- Exercise: New docker, git clone, init.ahk, and it should just work?
+
 Included but not yet bound to a shortcut:  
 utilities/base64.ahk  
 utilities/eol-convert.ahk  
@@ -112,7 +118,9 @@ Disable Left Win going into Metro mode
 TODO: Also disables shortcuts using Win key  
 LWin::Return  
 
-https://github.com/jNizM/AHK_Scripts
+Sitez:  
+- https://jacksautohotkeyblog.wordpress.com (http://www.computoredge.com/AutoHotkey/Downloads/)
+- https://github.com/jNizM/AHK_Scripts
 
 Need to put all config in ini files  
 https://autohotkey.com/board/topic/33506-read-ini-file-in-one-go/
