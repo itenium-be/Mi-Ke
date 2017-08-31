@@ -12,12 +12,6 @@ SetWorkingDir %A_ScriptDir%
 ; #WinActivateForce
 ; DetectHiddenWindows, On
 
-; Numlock, Capslock, ScrollLock
-; TODO: Put in config... uhoh what have I gotten myself into
-SetNumlockState, on
-SetNumlockState, AlwaysOn
-
-
 EDITOR := ReadMikeIni("core", "editor", true)
 BROWSER := ReadMikeIni("core", "browser", true)
 BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")

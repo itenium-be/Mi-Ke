@@ -13,7 +13,7 @@ FileReplacements(fileName)
 }
 
 
-ReadMikeIni(sectionName, key, replacePaths := false)
+ReadMikeIni(sectionName, key = "", replacePaths := false)
 {
 	ini = %A_Scriptdir%\mike.ini
 	IfExist %ini%
