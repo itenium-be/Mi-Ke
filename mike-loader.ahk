@@ -81,7 +81,6 @@ CreateMikeHotkey("core", "browser-hotkey-search-autohotkey", "BrowserSearchAutoh
 CreateSingleMikeHotkey("apps-windows-explorer-copy-download-to-usb", "CopyDownloadToUsb")
 CreateSingleMikeHotkey("apps-windows-open-explorer-in-clipboard-path", "OpenExplorerInClipboardPath")
 
-; TODO: configure IfWinActive in the ini
 Hotkey, IfWinActive, ahk_class (CabinetWClass|ExploreWClass)
 CreateSingleMikeHotkey("apps-windows-explorer-zip-directory", "ZipDirectory")
 CreateSingleMikeHotkey("apps-windows-explorer-new-file", "ExplorerNewFile")

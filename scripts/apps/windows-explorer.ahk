@@ -1,13 +1,4 @@
-; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
-
-
-
-; TODO: Subtitles: script to rename srt that looks like selected file to match selected file exactly
-; or if only one srt in directory, rename to same as selected file
-; http://www.yifysubtitles.com/
-; http://www.ondertitel.com/
-
-
+; Dependencies: vendor/windows-explorer-util.ahk, utilities/ini-reader.ahk, notify.ahk
 
 ; Control + Shift + N: New directory (builtin)
 ; Control + Shift + F: New file

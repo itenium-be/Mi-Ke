@@ -2,7 +2,7 @@ quickStarterz := []
 
 Loop, 1000 {
 	sectionName = qs%A_Index%
-	IniRead, quickStarter, %A_Scriptdir%\mike.ini, %sectionName%
+	IniRead, quickStarter, %A_Scriptdir%\quick-start-programs.ini, %sectionName%
 	if (quickStarter = "ERROR") {
 		break
 

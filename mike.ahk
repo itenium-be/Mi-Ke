@@ -45,9 +45,10 @@ return
 #Include %A_Scriptdir%\scripts\apps\windows-explorer.ahk
 
 ; Utilities
-#Include %A_Scriptdir%\vendor\WindowPad\source\WindowPad.ahk
-
 #Include %A_Scriptdir%\utilities\ini-reader.ahk
-#Include %A_Scriptdir%\utilities\notify.ahk
 #Include %A_Scriptdir%\utilities\quick-start-programs.ahk
-#Include %A_Scriptdir%\utilities\windowsexplorer.ahk
+
+; Vendor
+#Include %A_Scriptdir%\vendor\WindowPad\source\WindowPad.ahk
+#Include %A_Scriptdir%\vendor\notify.ahk
+#Include %A_Scriptdir%\vendor\windows-explorer-util.ahk

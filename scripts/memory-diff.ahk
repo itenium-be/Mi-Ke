@@ -1,5 +1,5 @@
 ; Config: mike.ini [memory-diff]
-; Dependencies: utilities/windowsexplorer.ahk, ini-reader.ahk, notify.ahk
+; Dependencies: vendor/windows-explorer-util.ahk, utilities/ini-reader.ahk, notify.ahk
 
 ; Copy two blocks of text and compare them in a diff program
 ; Select a file in Explorer to compare the contents
