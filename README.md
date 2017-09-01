@@ -175,6 +175,8 @@ And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awes
 
 # TODO
 
+-> Move this to gh-pages :p
+
 ## Script ideas
 
 - Script to create a kramdown table from tabbed data
@@ -195,7 +197,9 @@ FormatTime, CurrentDateTime,, M/d/yyyy h:mm tt  ; It will look like 9/1/2005 3:5
 SendInput %CurrentDateTime%  
 return  
 
-
+gui for managing favourite locations  
+can define shortcut for opening location in explorer  
+or menu accessible from contextmenu  
 
 
 ## Accessibility
