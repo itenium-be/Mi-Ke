@@ -59,7 +59,7 @@ cd Mi-Ke
 To start Mi-Ke when Windows starts:
 
 Put a `mike.ahk.lnk` in `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup`.  
-In the right click tray menu there is also an option to do this for you.
+In the right click contextmenu of the Mi-Ke tray icon there is also an option to do this for you.
 
 
 
