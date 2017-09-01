@@ -1,5 +1,20 @@
 # Script to get you up and running
+# .\init.ps1 -bare to create without example hotstrings
+param ([switch]$bare = $false)
+
+function Create-File($file, $initial = "") {
+	if (-not (Test-Path $file)) {
+		echo $file
+		$initial | Out-File $file -Encoding UTF8
+	}
+}
+
 $path = Split-Path $SCRIPT:MyInvocation.MyCommand.Path -Parent
+
+if ($bare) {
+	Create-File "$($path)\hotstrings\_includes.ahk" ""
+	return
+}
 
 
 # Copy *.default.ini
@@ -9,13 +24,6 @@ if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 	Copy-Item "$($path)\mike.default.ini" $iniPath
 }
 
-
-function Create-File($file, $initial = "") {
-	if (-not (Test-Path $file)) {
-		echo $file
-		$initial | Out-File $file -Encoding UTF8
-	}
-}
 
 
 echo "Creating some sample hotstrings"

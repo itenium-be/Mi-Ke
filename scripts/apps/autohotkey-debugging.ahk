@@ -1,5 +1,8 @@
 ; Stuff to help during doing Autohotkey :)
 
+; TODO: DynaRun: copy some Autohotkey and run it
+; TODO: Convert an ahk to exe
+
 DevReloadScript:
 ;^#r::
 ; Double click tray icon to reload also

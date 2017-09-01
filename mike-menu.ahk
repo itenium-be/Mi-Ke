@@ -20,13 +20,13 @@ Menu, Tray, Add, Spy window, MiKeTraySpyWindow
 Menu, Tray, Add, &Suspend script, MiKeTraySuspend
 Menu, Tray, Add
 
-startupLink = %A_APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\mike.ahk
-; Msgbox %startupLink%
-; IfNotExist startupLink
-; {
-; 	Menu, Tray, Add, Start Mi-Ke when computer starts, MikeCreateStartupShortcut
-; 	Menu, Tray, Add
-; }
+; Start Mi-Ke when windows starts
+startupLink = %A_APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\mike.ahk.lnk
+IfNotExist %startupLink%
+{
+	Menu, Tray, Add, Start Mi-Ke when computer starts, MikeCreateStartupShortcut
+	Menu, Tray, Add
+}
 
 Menu, Tray, Add, E&xit, MiKeTrayExit
 Menu, Tray, Default, &Reload script and ini
@@ -68,7 +68,7 @@ MiKeTraySourceGithub:
   return
 
 MikeCreateStartupShortcut:
-  FileCreateShortcut, %A_ScriptFullPath%, startupLink
+  FileCreateShortcut, %A_ScriptFullPath%, %startupLink%
   return
 
 MiKeContinue:
