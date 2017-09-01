@@ -4,8 +4,8 @@ This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey sc
 
 Two fancy ones:
 
-**Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
-**Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
+**Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
+**Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 
 # What
 
