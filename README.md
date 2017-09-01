@@ -148,10 +148,12 @@ Dev Stuff
 ---------
 **Control + Win + R**: Reload script  
 **Shift + F11**: Open ListVars window  
+**Alt + F12**: Window Spy
+**Capslock & A**: Google selected text + "autohotkey"  
 
 
-Other resources
----------------
+# Other resources
+
 Looking for even more little productivity boosters?
 
 Look no further!
@@ -171,21 +173,37 @@ Look no further!
 And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awesome-AutoHotkey)!
 
 
-TODO
-----
-Build a script that creates the exe, zipped with the ini files
---> This should be added to releases in Github
+# TODO
 
-- some gui screen with all active hotkeys
-- Waiting for windows -> use hwnd for more reliability
-- Also check about doing something waiting for other stuff (clipboard, ...)
+## Script ideas
+
 - Script to create a kramdown table from tabbed data
 - Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
 
-Bootloader
-- init.ahk/ps1: script to "get started"
+## Accessibility
+
+Build a script that creates the exe, zipped with the ini files  
+--> 2 zips (ahk/exe) should be added to releases in Github
+
+- this readme is too long -> put stuff in gh-pages branch:  
+https://stackoverflow.com/questions/31969868/how-to-store-github-wiki-as-part-of-source
+
+- some gui screen with all active hotkeys
+
+init.ps1
+
 - it could check what software is installed on the pc...
-- Exercise: New docker, git clone, init.ahk, and it should just work?
+- Exercise: New docker, git clone, init.ps1, and it should just work?
+
+## Quick start programs
+
+- If title matcher is not provided, get the ahk_exe after opening for first time?
+
+## Improvements
+- Waiting for windows -> use hwnd for more reliability
+- Also check about doing something waiting for other stuff (clipboard, ...)
+
+## Unused snippets
 
 Included but not yet bound to a shortcut:  
 utilities/base64.ahk  
@@ -199,7 +217,6 @@ Sitez:
 - https://jacksautohotkeyblog.wordpress.com (http://www.computoredge.com/AutoHotkey/Downloads/)
 - https://github.com/jNizM/AHK_Scripts
 
-Need to put all config in ini files  
 https://autohotkey.com/board/topic/33506-read-ini-file-in-one-go/
 
 
@@ -207,7 +224,7 @@ Gui Creator?
 https://autohotkey.com/boards/viewtopic.php?f=6&t=303&sid=4f44b6b191c1f6fe0df4f93944c39aa6  
 https://github.com/maestrith/GUI_Creator
 
-### Window moving
+## Window moving
 
 - [bug.n](https://github.com/fuhsjr00/bug.n): Tiling Window Manager for Windows
 - [Min2Tray](http://junyx.breadfan.de/Min2Tray): Minimize window to tray & more
