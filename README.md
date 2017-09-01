@@ -4,8 +4,8 @@ This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey sc
 
 Two fancy ones:
 
-**Control + Win + Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
-**Win + Alt + D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
+**Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
+**Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 
 # What
 
@@ -22,7 +22,7 @@ A script running in the background with little productivity boosters.
 
 ## Executable
 
-Download the zip from the [release tab](https://github.com/Laoujin/Mi-Ke/releases)  
+Download the zip from the [release tab](https://github.com/Laoujin/Mi-Ke/releases).  
 - Extract it
 - Run mike.exe
 - Much win
@@ -35,7 +35,7 @@ pick them up.
 
 ## From source
 
-Requires [Autohotkey_L](https://autohotkey.com/download)
+Requires [Autohotkey_L](https://autohotkey.com/download).
 
 PowerShell:
 ```ps
@@ -83,37 +83,37 @@ Edit `mike.ini`.
 
 Script: memory-diff
 -------------------
-**Control + Win + Left**: Put selected text in Desktop\left.txt  
-**Control + Win + Down**: Put selected text in Desktop\right.txt and open Diff tool  
-**Control + Win + Up**: Show current clipboard content  
-**Control + Win + Right**: Open Diff tool with current left/right.txt  
-**Control + Win + Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
+**Control+Win+Left**: Put selected text in Desktop\left.txt  
+**Control+Win+Down**: Put selected text in Desktop\right.txt and open Diff tool  
+**Control+Win+Up**: Show current clipboard content  
+**Control+Win+Right**: Open Diff tool with current left/right.txt  
+**Control+Win+Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
 
 Script: apps/windows-explorer
 -----------------------------
-**AltGr + Win + D**: Open 2 explorers, one in download folder, one with USB stick (apps/windows-explorer-copy-download-to-usb)  
+**AltGr+Win+D**: Open 2 explorers, one in download folder, one with USB stick (apps/windows-explorer-copy-download-to-usb)  
 
 **2x Esc**: Close active Explorer window  
 **2x Capslock**: Put full directory of selected file/folder to clipboard  
-**2x Shift + Capslock**: Put full selected filename to clipboard  
-**2x Control + Capslock**: Open the path currently on the clipboard in Explorer  
+**2x Shift+Capslock**: Put full selected filename to clipboard  
+**2x Control+Capslock**: Open the path currently on the clipboard in Explorer  
 
-**Control + Shift + N**: New directory (=Windows shortcut)  
-**Control + Shift + F**: New file  
-**Control + Shift + T**: New txt file  
+**Control+Shift+N**: New directory (=Windows shortcut)  
+**Control+Shift+F**: New file  
+**Control+Shift+T**: New txt file  
 
-**Control + Shift + 3**: View => small icons  
-**Control + Shift + 4**: View => three columns  
-**Control + Shift + 6**: View => details list  
+**Control+Shift+3**: View => small icons  
+**Control+Shift+4**: View => three columns  
+**Control+Shift+6**: View => details list  
 
 
 Script: quick-start-programs
 ----------------------------
-**Control + Win + S**: Start Sublime Text. When in Explorer: Open with active folder in Side Bar.  
-**Alt + Win + C**: Start Cmder  
-**Control + Win + C**: Start calculator (2x esc to close)  
-**Win + C**: Start Notepad++  
-**Control + Win + F**: Start FileZilla (or activate existing Window)  
+**Control+Win+S**: Start Sublime Text. When in Explorer: Open with active folder in Side Bar.  
+**Alt+Win+C**: Start Cmder  
+**Control+Win+C**: Start calculator (2x esc to close)  
+**Win+C**: Start Notepad++  
+**Control+Win+F**: Start FileZilla (or activate existing Window)  
 **CapsLock & S**: Start HeidiSql  
 **CapsLock & Q**: Start Robomongo  
 **Capslock & W**: New Chrome window  
@@ -126,29 +126,29 @@ Other Scripts
 
 **scripts\snippets.ahk**:  
 
-**Control + Shift + Win + C**: Append to clipboard (append-to-clipboard) 
-**Control + Win + X**: Put selected text to clipboard. Convert windows path to Unix style path (path-win-to-unix)  
-**Win + Alt + M**: Put selected text in Markdown code block (md-code-block-surround)  
-**Control + Win + Alt + M**: Create new Markdown code block (md-code-block-new)  
+**Control+Shift+Win+C**: Append to clipboard (append-to-clipboard) 
+**Control+Win+X**: Put selected text to clipboard. Convert windows path to Unix style path (path-win-to-unix)  
+**Win+Alt+M**: Put selected text in Markdown code block (md-code-block-surround)  
+**Control+Win+Alt+M**: Create new Markdown code block (md-code-block-new)  
 
 
 Script: change-sound-volume
 ---------------------------
 Change sound volume with 'funny' images.  
 
-**Win + PgUp**: Volume +10  
-**Win + PgDn**: Volume -10  
-**Win + Ctrl + PgDn/Up**: Volume +/-10 without images  
-**Win + Ctrl + + Alt PgDn/Up**: Volume +/-1 without images  
-**Win + End**: Mute/Restore  
-**Win + Home**: Show sound volume  
+**Win+PgUp**: Volume +10  
+**Win+PgDn**: Volume -10  
+**Win+Ctrl+PgDn/Up**: Volume +/-10 without images  
+**Win+Ctrl+Alt PgDn/Up**: Volume +/-1 without images  
+**Win+End**: Mute/Restore  
+**Win+Home**: Show sound volume  
 
 
 Dev Stuff
 ---------
-**Control + Win + R**: Reload script  
-**Shift + F11**: Open ListVars window  
-**Alt + F12**: Window Spy
+**Control+Win+R**: Reload script  
+**Shift+F11**: Open ListVars window  
+**Alt+F12**: Window Spy
 **Capslock & A**: Google selected text + "autohotkey"  
 
 
