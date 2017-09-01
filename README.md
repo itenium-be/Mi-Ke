@@ -148,7 +148,7 @@ Dev Stuff
 ---------
 **Control+Win+R**: Reload script  
 **Shift+F11**: Open ListVars window  
-**Alt+F12**: Window Spy
+**Alt+F12**: Window Spy  
 **Capslock & A**: Google selected text + "autohotkey"  
 
 
