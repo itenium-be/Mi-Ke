@@ -126,7 +126,7 @@ Other Scripts
 
 **scripts\snippets.ahk**:  
 
-**Control+Shift+Win+C**: Append to clipboard (append-to-clipboard) 
+**Control+Shift+Win+C**: Append to clipboard (append-to-clipboard)  
 **Control+Win+X**: Put selected text to clipboard. Convert windows path to Unix style path (path-win-to-unix)  
 **Win+Alt+M**: Put selected text in Markdown code block (md-code-block-surround)  
 **Control+Win+Alt+M**: Create new Markdown code block (md-code-block-new)  
