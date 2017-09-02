@@ -1,5 +1,7 @@
-; quick-start-programs
-; WinActive("ahk_class CabinetWClass") or WinActive("ahk_class ExploreWClass")
+; The quick-start.programs.ini is read by quick-start-programs-loader.ahk
+; which creates hotkeys bound to the labels in these files (QuickStarterInfoExecutor and QuickStarterInfoCloserExecutor)
+; The loader converts the ini to "quickStarterz" objects (with props: hotkey, path, active, titleMatcher, ...)
+; The QuickStarterInfoExecutor finds the right quickStarter and converts the props to a Run Autohotkey command
 
 QuickStarterInfoExecutor:
 quickStarter := GetQuickStarterInfo()
@@ -22,9 +24,11 @@ GetQuickStarterInfo()
 
 RunHotkeyCore(path, quickStarter)
 {
+	;MsgBox %path%
 	;Notify("Run", path)
 	if (quickStarter.asAdmin and not A_IsAdmin) {
 			try {
+				; Start as admin with UAC dialog
 				Run *RunAs "%path%"
 			}
 		} else {
@@ -36,15 +40,25 @@ RunHotkeyCore(path, quickStarter)
 BuildHotkeyArgs(quickStarter, selectedFiles := "")
 {
 	newWindowFlag := quickStarter.newWindowFlag
+	if selectedFiles {
+		; selectedFiles = current path in Windows Explorer
+		; Attempt to pass the path/files as argument to the app to start
+		if InStr(newWindowFlag, "<path>") {
+			flag := StrReplace(newWindowFlag, "<path>", selectedFiles)
 
-	if not selectedFiles {
-		return quickStarter.path
+		} else if newWindowFlag {
+			flag = %newWindowFlag% %selectedFiles%
+
+		} else {
+			flag := selectedFiles
+		}
+
+	} else if newWindowFlag {
+		flag := newWindowFlag
 	}
 
-	if InStr(newWindowFlag, "<path>") {
-		flag := StrReplace(newWindowFlag, "<path>", selectedFiles)
-	} else {
-		flag = %newWindowFlag% %selectedFiles%
+	if not flag {
+		return quickStarter.path
 	}
 	return quickStarter.path " " flag
 }
@@ -57,7 +71,7 @@ RunHotkey(quickStarter) {
 		if quickStarter.passExplorerPathAsArgument = "dir"
 			selected := Explorer_GetPath()
 		else
-			selected := Explorer_GetSelected()
+			selected := Explorer_GetSelected("", quickStarter.explorerFilesSeparator)
 
 		toRun := BuildHotkeyArgs(quickStarter, selected)
 		RunHotkeyCore(toRun, quickStarter)
@@ -67,9 +81,11 @@ RunHotkey(quickStarter) {
 	titleMatcher := quickStarter.titleMatcher
 	if (titleMatcher and WinExist(titleMatcher)) {
 		if quickStarter.newWindowFlag {
+			; Open new instance of app
 			toRun := BuildHotkeyArgs(quickStarter)
 			RunHotkeyCore(toRun, quickStarter)
 		} else {
+			; Bring the existing window to the front
 			WinActivate
 		}
 		return

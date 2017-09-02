@@ -61,6 +61,8 @@ To start Mi-Ke when Windows starts:
 Put a `mike.ahk.lnk` in `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup`.  
 In the right click contextmenu of the Mi-Ke tray icon there is also an option to do this for you.
 
+More step by step instructions can be found
+in the [official docs FAQ](https://www.autohotkey.com/docs/FAQ.htm#Startup)
 
 
 # Customization
@@ -203,8 +205,14 @@ gui for managing favourite locations
 can define shortcut for opening location in explorer  
 or menu accessible from contextmenu  
 
+Disable Left Win going into Metro mode  
+Also disables shortcuts using Win key  
+LWin::Return  
 
 ## Accessibility
+
+Use a more convention based setup:  
+The ini, the labels, the quickstarter variables, they should all match...
 
 Build a script that creates the exe, zipped with the ini files  
 --> 2 zips (ahk/exe) should be added to releases in Github
@@ -230,18 +238,24 @@ disable anything not generic by default (active=0)
 
 ## Improvements
 
-- Waiting for windows -> use hwnd for more reliability
-- Also check about doing something waiting for other stuff (clipboard, ...)
+- Waiting for windows to start -> use hwnd for more reliability?
+- Also check other sleeps, there might be a more reliable way to do it (clipboard, ...)
+- The configuration is nice but quick-start-programs will become unwieldly pretty rapidly
+	- Some tests are in order there...
+	- There is already some weird mapping from ini -> behavior
 
 ## Unused snippets
+
+Alot of incredible Autohotkey scripts have been written but unfortunately
+most of them are found on the Autohotkey forums which contains only links
+to the sources and the downloads are pretty much all broken.
+
+Any script that may not be of use right away should be stored here
+as they could come in handy later...
 
 Included but not yet bound to a shortcut:  
 utilities/base64.ahk  
 utilities/eol-convert.ahk  
-
-Disable Left Win going into Metro mode  
-Also disables shortcuts using Win key  
-LWin::Return  
 
 Sitez:  
 - https://jacksautohotkeyblog.wordpress.com (http://www.computoredge.com/AutoHotkey/Downloads/)

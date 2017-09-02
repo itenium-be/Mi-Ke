@@ -43,6 +43,9 @@ Loop, 1000 {
 
 			} else if (key = "elevate" and value = 1) {
 				quickStarterInfo.asAdmin := true
+
+			} else if (key = "explorer-files-separator") {
+				quickStarterInfo.explorerFilesSeparator := value
 			}
 		}
 

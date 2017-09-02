@@ -65,9 +65,9 @@ Explorer_GetAll(hwnd="")
 	return Explorer_Get(hwnd)
 }
 
-Explorer_GetSelected(hwnd="")
+Explorer_GetSelected(hwnd="",separator="`n")
 {
-	return Explorer_Get(hwnd,true)
+	return Explorer_Get(hwnd,true,separator)
 }
 
 Explorer_GetWindow(hwnd="")
@@ -88,7 +88,7 @@ Explorer_GetWindow(hwnd="")
 		return "desktop" ; desktop found
 }
 
-Explorer_Get(hwnd="",selection=false)
+Explorer_Get(hwnd="",selection=false,separator="`n")
 {
 	if !(window := Explorer_GetWindow(hwnd))
 		return ErrorLevel := "ERROR"
@@ -103,7 +103,7 @@ Explorer_Get(hwnd="",selection=false)
 		{
 			path := base "\" A_LoopField
 			IfExist %path% ; ignore special icons like Computer (at least for now)
-				ret .= path "`n"
+				ret .= path separator
 		}
 	}
 	else
@@ -113,7 +113,8 @@ Explorer_Get(hwnd="",selection=false)
 		else
 			collection := window.document.Folder.Items
 		for item in collection
-			ret .= item.path "`n"
+			ret .= item.path separator
 	}
-	return Trim(ret,"`n")
+	;Notify(ret)
+	return Trim(ret,separator)
 }
