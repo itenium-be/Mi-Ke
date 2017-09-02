@@ -37,8 +37,7 @@ cd Mi-Ke
 # The scripts
 
 
-Script: memory-diff
--------------------
+## Diff 2 files in Windows explorer or the selected text elsewhere
 
 [scripts/memory-diff.ahk](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/memory-diff.ahk)
 
@@ -49,68 +48,123 @@ Script: memory-diff
 {% include kbd k="Control+Win+Numpad0" l="Open Diff tool with a Dropbox conflicted file vs the original" %}
 
 
-Script: apps/windows-explorer
------------------------------
-**AltGr+Win+D**: Open 2 explorers, one in download folder, one with USB stick (apps/windows-explorer-copy-download-to-usb)  
+## Windows Explorer enhancements
 
-**2x Esc**: Close active Explorer window  
-**2x Capslock**: Put full directory of selected file/folder to clipboard  
-**2x Shift+Capslock**: Put full selected filename to clipboard  
-**2x Control+Capslock**: Open the path currently on the clipboard in Explorer  
+{% include kbd k="AltGr+Win+D" l="Open 2 explorers, one in download folder, one with USB stick" github="apps/windows-explorer-copy-download-to-usb" %}
 
-**Control+Shift+N**: New directory (=Windows shortcut)  
-**Control+Shift+F**: New file  
-**Control+Shift+T**: New txt file  
+[scripts/apps/windows-explorer](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/apps/windows-explorer.ahk)
 
-**Control+Shift+3**: View => small icons  
-**Control+Shift+4**: View => three columns  
-**Control+Shift+6**: View => details list  
+{% include kbd k="2x Esc" l="Close active Explorer window" %}
+{% include kbd k="2x Capslock" l="Put full directory of selected file/folder to clipboard" %}
+{% include kbd k="2x Shift+Capslock" l="Put full selected filename to clipboard" %}
+{% include kbd k="2x Control+Capslock" l="Open the path currently on the clipboard in Explorer" %}
 
+{% include kbd k="Control+Shift+N" l="New directory (builtin)" %}
+{% include kbd k="Control+Shift+F" l="New file" %}
+{% include kbd k="Control+Shift+T" l="New txt file" %}
 
-Script: quick-start-programs
-----------------------------
-**Control+Win+S**: Start Sublime Text. When in Explorer: Open with active folder in Side Bar.  
-**Alt+Win+C**: Start Cmder  
-**Control+Win+C**: Start calculator (2x esc to close)  
-**Win+C**: Start Notepad++  
-**Control+Win+F**: Start FileZilla (or activate existing Window)  
-**CapsLock & S**: Start HeidiSql  
-**CapsLock & Q**: Start Robomongo  
-**Capslock & W**: New Chrome window  
-**Capslock & X**: Google selected text  
+Switch views:  
+{% include kbd k="Control+Shift+3" l="View => small icons" %}
+{% include kbd k="Control+Shift+4" l="View => three columns" %}
+{% include kbd k="Control+Shift+6" l="View => details list" %}
 
 
-Other Scripts
--------------
-**Chrome F1**: Open chrome://extensions in new tab (apps/chrome.ahk)  
+## Start programs with hotkeys
 
-**scripts\snippets.ahk**:  
+What quick starters are currently active is configured in [quick-start-programs.ini](https://github.com/Laoujin/Mi-Ke/blob/master/quick-start-programs.ini)
 
-**Control+Shift+Win+C**: Append to clipboard (append-to-clipboard)  
-**Control+Win+X**: Put selected text to clipboard. Convert windows path to Unix style path (path-win-to-unix)  
-**Win+Alt+M**: Put selected text in Markdown code block (md-code-block-surround)  
-**Control+Win+Alt+M**: Create new Markdown code block (md-code-block-new)  
+### Some default configurations
+
+{% include kbd k="Control+Win+C" l="Start calculator (2x esc to close)" %}
+```ini
+hotkey=^#c
+title-matcher=ahk_class CalcFrame
+path=<A_WINDIR>\System32\calc.exe
+double-press-closes=ESC
+```
 
 
-Script: change-sound-volume
----------------------------
-Change sound volume with 'funny' images.  
 
-**Win+PgUp**: Volume +10  
-**Win+PgDn**: Volume -10  
-**Win+Ctrl+PgDn/Up**: Volume +/-10 without images  
-**Win+Ctrl+Alt PgDn/Up**: Volume +/-1 without images  
-**Win+End**: Mute/Restore  
-**Win+Home**: Show sound volume  
+{% include kbd k="Win+C" l="Start Notepad++" %}
+Open file(s) selected in Windows Explorer.
+
+```ini
+hotkey=#c
+title-matcher=ahk_class Notepad++
+path=C:\Program Files (x86)\Notepad++\Notepad++.exe
+explorer-path-flag=file
+explorer-files-separator="
+```
+
+### Example configuration
+
+```ini
+[qs1]
+; Open PowerShell
+; Hotkey Alt+Win+R
+hotkey=!#r
+title-matcher=ahk_exe powershell.exe
+path=<A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+
+; When inside Windows Explorer, open in the current path
+explorer-path-flag=dir
+new-window-flag=-noexit -command "cd '<path>'"
+
+; RunAs Administrator
+elevate=1
+
+
+[qs2]
+; Open PowerShell ISE
+; Hotkey Control+Shift+R
+hotkey=^+R
+title-matcher=ahk_exe powershell_ise.exe
+path=<A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+
+; When inside Windows Explorer, open the selected files
+explorer-path-flag=file
+new-window-flag=-file "<path>"
+explorer-files-separator=,
+```
+
+
+## Other Scripts
+
+**Chrome**
+
+{% include kbd k="Chrome F1" l="Open chrome://extensions in new tab" github="apps/chrome.ahk" %}
+{% include kbd k="Capslock & W" l="New Chrome window" %}
+{% include kbd k="Capslock & X" l="Google selected text" %}
+
+[scripts\snippets.ahk](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/snippets.ahk)
+
+{% include kbd k="Control+Shift+Win+C" l="Append to clipboard" %}
+{% include kbd k="Control+Win+X" l="Put selected text to clipboard. Convert windows path to Unix style path" %}
+{% include kbd k="Win+Alt+M" l="Put selected text in Markdown code block" %}
+{% include kbd k="Control+Win+Alt+M" l="Create new Markdown code block" %}
+
+
+## change-sound-volume
+
+[Change sound volume](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/change-sound-volume.ahk) with 'funny' images.  
+
+{% include kbd k="Win+PgUp" l="Volume +10" %}
+{% include kbd k="Win+PgDn" l="Volume -10" %}
+{% include kbd k="Win+Ctrl+PgDn/Up" l="Volume +/-10 without images" %}
+{% include kbd k="Win+Ctrl+Alt PgDn/Up" l="Volume +/-1 without images" %}
+{% include kbd k="Win+End" l="Mute/Restore" %}
+{% include kbd k="Win+Home" l="Show sound volume" %}
 
 
 Dev Stuff
 ---------
-**Control+Win+R**: Reload script  
-**Shift+F11**: Open ListVars window  
-**Alt+F12**: Window Spy  
-**Capslock & A**: Google selected text + "autohotkey"  
 
+[apps/autohotkey-debugging.ahk](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/apps/autohotkey-debugging.ahk)
+
+{% include kbd k="Control+Win+R" l="Reload script" %}
+{% include kbd k="Shift+F11" l="Open ListVars window" %}
+{% include kbd k="Alt+F12" l="Window Spy" %}
+{% include kbd k="Capslock & A" l="Google selected text + autohotkey" %}
 
 
 # Other resources
