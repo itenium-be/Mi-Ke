@@ -1,10 +1,46 @@
 ---
 layout: default
 ---
+This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
+
+Two fancy ones:
+
+**Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
+**Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
+
+# What
+
+A script running in the background (tray icon) with little productivity boosters.
+
+- Hotstrings to reduce amount of typing (atm -> at the moment)
+- Shortcuts to start programs (win+o -> open solitaire.exe)
+- Enhancements to programs (cmd, windows explorer, ...)
+- Random scripts to do something I often do (did?) manually
+
+# Install
+
+## From source
+
+Requires [Autohotkey_L](https://autohotkey.com/download).
+
+PowerShell:
+```ps
+git clone https://github.com/Laoujin/Mi-Ke
+cd Mi-Ke
+
+# Create an initial setup with some examples
+.\init.ps1
+
+# If you do not want examples run the following instead
+# It will create the file(s) required to start only
+.\init.ps1 -bare
+
+# Start
+.\mike.ahk
+```
+
 
 # The scripts
-
-
 
 
 Script: memory-diff

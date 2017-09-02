@@ -3,3 +3,7 @@ description: A collection of Autohotkey scripts to make daily life in Windows le
 show_downloads: true
 google_analytics: UA-30075487-7
 theme: jekyll-theme-merlot
+
+company: itenium
+company_url: http://www.itenium.be
+company_github_url: https://github.com/itenium-be

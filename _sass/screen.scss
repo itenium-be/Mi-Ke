@@ -245,7 +245,7 @@ section#downloads a.zip {
   background-position: 0 0;
 }
 
-section#downloads a.tgz {
+section#downloads a.ahk {
   float: right;
   background-position: -275px 0;
 }
@@ -254,7 +254,7 @@ section#downloads a.zip:hover {
   background-position: 0 -197px;
 }
 
-section#downloads a.tgz:hover {
+section#downloads a.ahk:hover {
   background-position: -275px -197px;
 }
 
@@ -322,7 +322,6 @@ footer span.ribbon-inner a {
   bottom: -1px;
   color: #7eb0d2;
   font-family: 'Open Sans', Myriad, Calibri, sans-serif;
-  text-transform: uppercase;
   font-style: normal;
   font-weight: 800;
   font-size: 1.2em;
