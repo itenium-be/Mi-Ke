@@ -112,9 +112,16 @@ header, footer, section {
 
 /* STYLES */
 
+.shell-old {
+	display: block;
+	width: 500px;
+	margin: 0 auto;
+	margin-bottom: 75px;
+}
+
 div.shell {
   display: block;
-  width: 670px;
+  width: $window-size;
   margin: 0 auto;
 }
 
@@ -263,7 +270,7 @@ span.banner-fix {
   display: block;
   height: 19px;
   position: absolute;
-  width: 670px;
+  width: $window-size;
   top: 19px;
 }
 
@@ -278,7 +285,7 @@ section#main_content {
 footer {
   background: transparent url(../images/footer-ramp.jpg) center -1px no-repeat;
   padding-top: 104px;
-  margin: -94px auto 40px;
+  margin: 20px auto 40px;
   max-width: 560px;
   text-align: center;
 }

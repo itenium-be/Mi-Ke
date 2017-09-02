@@ -1,12 +1,6 @@
 ---
-layout: default
+layout: home
 ---
-This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
-
-Two fancy ones:
-
-**Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
-**Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
 
 # What
 
@@ -45,11 +39,15 @@ cd Mi-Ke
 
 Script: memory-diff
 -------------------
-**Control+Win+Left**: Put selected text in Desktop\left.txt  
-**Control+Win+Down**: Put selected text in Desktop\right.txt and open Diff tool  
-**Control+Win+Up**: Show current clipboard content  
-**Control+Win+Right**: Open Diff tool with current left/right.txt  
-**Control+Win+Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
+
+[scripts/memory-diff.ahk](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/memory-diff.ahk)
+
+{% include kbd k="Control+Win+Left" l="Put selected text in Desktop\left.txt" %}
+{% include kbd k="Control+Win+Down" l="Put selected text in Desktop\right.txt and open Diff tool" %}
+{% include kbd k="Control+Win+Up" l="Show current clipboard content" %}
+{% include kbd k="Control+Win+Right" l="Open Diff tool with current left/right.txt" %}
+{% include kbd k="Control+Win+Numpad0" l="Open Diff tool with a Dropbox conflicted file vs the original" %}
+
 
 Script: apps/windows-explorer
 -----------------------------

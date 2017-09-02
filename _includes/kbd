@@ -1,0 +1,21 @@
+<div style="display: block">
+	{% assign keyCombos = include.k | split: "," %}
+	{% for combo in keyCombos %}
+		{% assign keys = combo | split: "+" %}
+		{% for key in keys %}
+			<kbd>{{key}}</kbd>
+			{% if forloop.last == false %}
+				+
+			{% endif %}
+		{% endfor %}
+
+		{% if forloop.last == false %}
+			,
+		{% endif %}
+	{% endfor %}
+	: {{include.l}}
+	{% if include.github %}
+		<a href="https://github.com/Laoujin/Mi-Ke/blob/master/{{include.github}}">{{include.github}}</a>
+	{% endif %}
+
+</div>
