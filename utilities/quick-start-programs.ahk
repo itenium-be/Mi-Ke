@@ -70,8 +70,18 @@ RunHotkey(quickStarter) {
 		; Start with current Windows Explorer path opened
 		if quickStarter.passExplorerPathAsArgument = "dir"
 			selected := Explorer_GetPath()
-		else
+		else {
+			if quickStarter.explorerFilesSeparator = """" {
+				quickStarter.explorerFilesSeparator := """ """
+				Notify(quickStarter.explorerFilesSeparator)
+			}
 			selected := Explorer_GetSelected("", quickStarter.explorerFilesSeparator)
+			if quickStarter.explorerFilesSeparator = """ """ {
+				Notify(selected)
+				selected := """" selected """"
+				Notify(selected)
+			}
+		}
 
 		toRun := BuildHotkeyArgs(quickStarter, selected)
 		RunHotkeyCore(toRun, quickStarter)
