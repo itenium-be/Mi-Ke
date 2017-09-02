@@ -18,7 +18,7 @@ A script running in the background (tray icon) with little productivity boosters
 Requires [Autohotkey_L](https://autohotkey.com/download).
 
 PowerShell:
-```ps
+```bash
 git clone https://github.com/Laoujin/Mi-Ke
 cd Mi-Ke
 
@@ -78,30 +78,26 @@ What quick starters are currently active is configured in [quick-start-programs.
 {% include kbd k="Control+Win+C" l="Start calculator (2x esc to close)" %}
 ```ini
 hotkey=^#c
-title-matcher=ahk_class CalcFrame
 path=<A_WINDIR>\System32\calc.exe
 double-press-closes=ESC
 ```
 
 
-
 {% include kbd k="Win+C" l="Start Notepad++" %}
-Open file(s) selected in Windows Explorer.
 
 ```ini
 hotkey=#c
-title-matcher=ahk_class Notepad++
 path=C:\Program Files (x86)\Notepad++\Notepad++.exe
+
+; Open file(s) selected in Windows Explorer.
 explorer-path-flag=file
 explorer-files-separator="
 ```
 
 ### Example configuration
 
+{% include kbd k="Alt+Win+R" l="Open PowerShell" %}
 ```ini
-[qs1]
-; Open PowerShell
-; Hotkey Alt+Win+R
 hotkey=!#r
 title-matcher=ahk_exe powershell.exe
 path=<A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
@@ -112,11 +108,11 @@ new-window-flag=-noexit -command "cd '<path>'"
 
 ; RunAs Administrator
 elevate=1
+```
 
+{% include kbd k="Control+Shift+R" l="Open PowerShell ISE" %}
 
-[qs2]
-; Open PowerShell ISE
-; Hotkey Control+Shift+R
+```ini
 hotkey=^+R
 title-matcher=ahk_exe powershell_ise.exe
 path=<A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell_ise.exe
