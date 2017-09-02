@@ -9,6 +9,10 @@ FileReplacements(fileName)
 	StringReplace, fileName, fileName, <A_PROGRAMFILES>, %A_PROGRAMFILES%
 	StringReplace, fileName, fileName, <A_APPDATA>, %A_APPDATA%
 	StringReplace, fileName, fileName, <A_MYDOCUMENTS>, %A_MYDOCUMENTS%
+
+	SplitPath, A_AHKPATH, name, dir, ext, name_no_ext, drive
+	StringReplace, fileName, fileName, <A_AHKPATH>, %dir%
+
 	return fileName
 }
 

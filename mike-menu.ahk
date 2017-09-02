@@ -42,7 +42,8 @@ MiKeTrayDebug:
   return
 
 MiKeTraySpyWindow:
-  Run %A_PROGRAMFILES%\AutoHotkey\AU3_Spy.exe
+  spyWindow := FileReplacements("<A_AHKPATH>\AU3_Spy.exe")
+  Run %spyWindow%
   return
 
 MiKeTrayReload:
