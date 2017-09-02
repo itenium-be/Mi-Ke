@@ -1,5 +1,5 @@
 ; Config: mike.ini [tray-menu]
-; Dependencies: utilities/ini-read.ahk
+; https://autohotkey.com/docs/commands/Menu.htm
 
 Menu, Tray, NoStandard
 
@@ -21,11 +21,14 @@ Menu, Tray, Add, &Suspend script, MiKeTraySuspend
 Menu, Tray, Add
 
 ; Start Mi-Ke when windows starts
-startupLink = %A_APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\mike.ahk.lnk
-IfNotExist %startupLink%
+; Startup path = %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+startupItem = Start Mi-Ke when computer starts
+startupLink := A_Startup "\mike.ahk.lnk"
+Menu, Tray, Add, %startupItem%, MikeToggleStartupShortcut
+Menu, Tray, Add
+IfExist %startupLink%
 {
-	Menu, Tray, Add, Start Mi-Ke when computer starts, MikeCreateStartupShortcut
-	Menu, Tray, Add
+	Menu, Tray, ToggleCheck, %startupItem%
 }
 
 Menu, Tray, Add, E&xit, MiKeTrayExit
@@ -67,8 +70,16 @@ MiKeTraySourceGithub:
   run % BROWSER ( winExist("ahk_class Chrome_WidgetWin_1") ? " " BROWSER_NEWFLAG " " : " " ) githubUri
   return
 
-MikeCreateStartupShortcut:
-  FileCreateShortcut, %A_ScriptFullPath%, %startupLink%
+MikeToggleStartupShortcut:
+  IfNotExist %startupLink%
+  {
+    FileCreateShortcut, %A_ScriptFullPath%, %startupLink%
+  }
+  else
+  {
+    FileDelete, %startupLink%
+  }
+  Menu, Tray, ToggleCheck, %startupItem%
   return
 
 MiKeContinue:
