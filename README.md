@@ -4,8 +4,10 @@ This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey sc
 
 Two fancy ones:
 
-**Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer. (apps/windows-explorer-zip-directory)  
-**Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore. (windows-min-max)  
+**Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer.
+([apps/windows-explorer-zip-directory](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/apps/windows-explorer-zip-directory.ahk))  
+**Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore.
+([windows-min-max](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/windows-min-max.ahk))  
 
 # What
 
@@ -56,13 +58,8 @@ More step by step instructions can be found
 in the [official docs FAQ](https://www.autohotkey.com/docs/FAQ.htm#Startup)
 
 
-## Executable
+## Troubleshooting
 
-Download the zip from the [release tab](https://github.com/Laoujin/Mi-Ke/releases).  
-- Extract it
-- Run mike.exe
-- Much win
+If you get this when starting `mike.ahk`, then run `init.ps1`.
 
-ATTN: While you'll be able to customize the shortcuts in mike.ini,
-you will not be able to define any hotstrings and have the script
-pick them up.
+![](init-not-run.png)
