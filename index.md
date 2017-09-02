@@ -127,9 +127,9 @@ explorer-files-separator=,
 
 ## Other Scripts
 
-**Chrome**
+[Chrome](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/apps/chrome.ahk)
 
-{% include kbd k="Chrome F1" l="Open chrome://extensions in new tab" github="apps/chrome.ahk" %}
+{% include kbd k="Chrome F1" l="Open chrome://extensions in new tab" %}
 {% include kbd k="Capslock & W" l="New Chrome window" %}
 {% include kbd k="Capslock & X" l="Google selected text" %}
 
