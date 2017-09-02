@@ -9,28 +9,19 @@ Two fancy ones:
 
 # What
 
-A script running in the background with little productivity boosters.
+A script running in the background (tray icon) with little productivity boosters.
 
 - Hotstrings to reduce amount of typing (atm -> at the moment)
 - Shortcuts to start programs (win+o -> open solitaire.exe)
 - Enhancements to programs (cmd, windows explorer, ...)
 - Random scripts to do something I often do (did?) manually
 
+See the [Github Pages](http://laoujin.github.io/Mi-Ke) for a listing of
+all shortcuts and their default bindings.
+
+
 
 # Install
-
-
-## Executable
-
-Download the zip from the [release tab](https://github.com/Laoujin/Mi-Ke/releases).  
-- Extract it
-- Run mike.exe
-- Much win
-
-ATTN: While you'll be able to customize the shortcuts in mike.ini,
-you will not be able to define any hotstrings and have the script
-pick them up.
-
 
 
 ## From source
@@ -65,226 +56,13 @@ More step by step instructions can be found
 in the [official docs FAQ](https://www.autohotkey.com/docs/FAQ.htm#Startup)
 
 
-# Customization
-
-
-## Hotstrings
-
-Start from `hotstrings\_includes.ahk`.
-
-
-## Scripts
-
-Edit `mike.ini`.
-
-
-
-
-# The scripts
-
-
-Script: memory-diff
--------------------
-**Control+Win+Left**: Put selected text in Desktop\left.txt  
-**Control+Win+Down**: Put selected text in Desktop\right.txt and open Diff tool  
-**Control+Win+Up**: Show current clipboard content  
-**Control+Win+Right**: Open Diff tool with current left/right.txt  
-**Control+Win+Numpad0**: Open Diff tool with a Dropbox conflicted file vs the original  
-
-Script: apps/windows-explorer
------------------------------
-**AltGr+Win+D**: Open 2 explorers, one in download folder, one with USB stick (apps/windows-explorer-copy-download-to-usb)  
-
-**2x Esc**: Close active Explorer window  
-**2x Capslock**: Put full directory of selected file/folder to clipboard  
-**2x Shift+Capslock**: Put full selected filename to clipboard  
-**2x Control+Capslock**: Open the path currently on the clipboard in Explorer  
-
-**Control+Shift+N**: New directory (=Windows shortcut)  
-**Control+Shift+F**: New file  
-**Control+Shift+T**: New txt file  
-
-**Control+Shift+3**: View => small icons  
-**Control+Shift+4**: View => three columns  
-**Control+Shift+6**: View => details list  
-
-
-Script: quick-start-programs
-----------------------------
-**Control+Win+S**: Start Sublime Text. When in Explorer: Open with active folder in Side Bar.  
-**Alt+Win+C**: Start Cmder  
-**Control+Win+C**: Start calculator (2x esc to close)  
-**Win+C**: Start Notepad++  
-**Control+Win+F**: Start FileZilla (or activate existing Window)  
-**CapsLock & S**: Start HeidiSql  
-**CapsLock & Q**: Start Robomongo  
-**Capslock & W**: New Chrome window  
-**Capslock & X**: Google selected text  
-
-
-Other Scripts
--------------
-**Chrome F1**: Open chrome://extensions in new tab (apps/chrome.ahk)  
-
-**scripts\snippets.ahk**:  
-
-**Control+Shift+Win+C**: Append to clipboard (append-to-clipboard)  
-**Control+Win+X**: Put selected text to clipboard. Convert windows path to Unix style path (path-win-to-unix)  
-**Win+Alt+M**: Put selected text in Markdown code block (md-code-block-surround)  
-**Control+Win+Alt+M**: Create new Markdown code block (md-code-block-new)  
-
-
-Script: change-sound-volume
----------------------------
-Change sound volume with 'funny' images.  
-
-**Win+PgUp**: Volume +10  
-**Win+PgDn**: Volume -10  
-**Win+Ctrl+PgDn/Up**: Volume +/-10 without images  
-**Win+Ctrl+Alt PgDn/Up**: Volume +/-1 without images  
-**Win+End**: Mute/Restore  
-**Win+Home**: Show sound volume  
-
-
-Dev Stuff
----------
-**Control+Win+R**: Reload script  
-**Shift+F11**: Open ListVars window  
-**Alt+F12**: Window Spy  
-**Capslock & A**: Google selected text + "autohotkey"  
-
-
-# Other resources
-
-Looking for even more little productivity boosters?
-
-Look no further!
-
-- [Drugoy/Autohotkey-scripts-.ahk](https://github.com/Drugoy/Autohotkey-scripts-.ahk)
-- [denolfe/AutoHotkey](https://github.com/denolfe/AutoHotkey)
-- [Skrommel scripts](http://www.donationcoder.com/Software/Skrommel/index.html)
-	- [GoneIn60s](http://www.donationcoder.com/Software/Skrommel/index.html#GoneIn60s): Recover closed applications
-	- [IpUpload](http://www.donationcoder.com/Software/Skrommel/index.html#IpUpload): Upload current IP address to a FTP server
-	- [NoClose](http://www.donationcoder.com/Software/Skrommel/index.html#NoClose): Disable the Close button (X) of selected windows
-	- [MoveInactiveWin](http://www.donationcoder.com/Software/Skrommel/index.html#MoveInactiveWin): Move a window without activating it
-	- [WhatColor](http://www.donationcoder.com/Software/Skrommel/index.html#WhatColor): Show and copy the RRGGBB color under the cursor
-- [Jack's Autohotkey Blog](http://www.computoredge.com/AutoHotkey/Free_AutoHotkey_Scripts_and_Apps_for_Learning_and_Generating_Ideas.html)
-- [camerb/AHKs](https://github.com/camerb/AHKs)
-- [AutoHotkey-Util](https://github.com/cocobelgica/AutoHotkey-Util)
-
-And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awesome-AutoHotkey)!
-
-
-# TODO
-
--> Move this to gh-pages :p
-
-Interactive debugging?  
-https://autohotkey.com/docs/AHKL_DBGPClients.htm
-
-Top Autohotkey directives.. no idea what they do really :)
-NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.  
-WinActivateForce  
-
-## Script ideas
-
-- Shortcut to open contextmenu (also available from MiKe tray) to open favorite locations
-	- With button to go to GitHub, Explorer, IDE
-- Script to create a kramdown table from tabbed data
-- Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
-- hotstrings :A_SPACE:x:: so that you can choose not to expand (instead of the arrowing around atm)
-- Convert an ahk to exe
-- DynaRun: copy some Autohotkey and run it
-
-Subtitles: script to rename srt that looks like selected file to match selected file exactly  
-or if only one srt in directory, rename to same as selected file  
-http://www.yifysubtitles.com/  
-http://www.ondertitel.com/  
-
-Print dates in interesting formats :)  
-https://autohotkey.com/docs/Hotstrings.htm  
-:*:]d::  ; This hotstring replaces "]d" with the current date and time via the commands below.  
-FormatTime, CurrentDateTime,, M/d/yyyy h:mm tt  ; It will look like 9/1/2005 3:53 PM  
-SendInput %CurrentDateTime%  
-return  
-
-gui for managing favourite locations  
-can define shortcut for opening location in explorer  
-or menu accessible from contextmenu  
-
-Disable Left Win going into Metro mode  
-Also disables shortcuts using Win key  
-LWin::Return  
-
-## Accessibility
-
-Use a more convention based setup:  
-The ini, the labels, the quickstarter variables, they should all match...
-
-Build a script that creates the exe, zipped with the ini files  
---> 2 zips (ahk/exe) should be added to releases in Github
-
-- this readme is too long -> put stuff in gh-pages branch:  
-https://stackoverflow.com/questions/31969868/how-to-store-github-wiki-as-part-of-source
-
-disable anything not generic by default (active=0)
-
-- some gui screen with all active hotkeys
-- init.ps1 Exercise: New docker, git clone, init.ps1, and it should just work?
-	- Check that mike.ahk.lnk works on diff versions of Windows
-
-- apps-windows-explorer: double-tap=1 instead of hardcoded 2x capslock as is now
-- label= A HotKey label that should be executed... (could setup same way as hotstrings?)
-- If title-matcher is not provided, get the ahk_exe after opening for first time (is title-matcher used atm to )
-- <A_PROGRAMFILES>\Robo 3T 1.1.1\robo3t.exe -> support wildcards for versions...
-
-## Quick start programs
-
-- If title matcher is not provided, get the ahk_exe after opening for first time?
-- Shortcuts to open services.msc, uninstall software etc...?
-
-## Improvements
-
-- Waiting for windows to start -> use hwnd for more reliability?
-- Also check other sleeps, there might be a more reliable way to do it (clipboard, ...)
-- The configuration is nice but quick-start-programs will become unwieldly pretty rapidly
-	- Some tests are in order there...
-	- There is already some weird mapping from ini -> behavior
-
-## Unused snippets
-
-Alot of incredible Autohotkey scripts have been written but unfortunately
-most of them are found on the Autohotkey forums which contains only links
-to the sources and the downloads are pretty much all broken.
-
-Any script that may not be of use right away should be stored here
-as they could come in handy later...
-
-Included but not yet bound to a shortcut:  
-utilities/base64.ahk  
-utilities/eol-convert.ahk  
-
-Sitez:  
-- https://jacksautohotkeyblog.wordpress.com (http://www.computoredge.com/AutoHotkey/Downloads/)
-- https://github.com/jNizM/AHK_Scripts
-
-https://autohotkey.com/board/topic/33506-read-ini-file-in-one-go/
-
-
-Gui Creator?  
-https://autohotkey.com/boards/viewtopic.php?f=6&t=303&sid=4f44b6b191c1f6fe0df4f93944c39aa6  
-https://github.com/maestrith/GUI_Creator
-
-## Window moving
-
-- [bug.n](https://github.com/fuhsjr00/bug.n): Tiling Window Manager for Windows
-- [Min2Tray](http://junyx.breadfan.de/Min2Tray): Minimize window to tray & more
-- [NiftyWindows](http://www.enovatic.org/products/niftywindows/download): control of all basic window interactions such as snap-to-grid, "keep window aspect ratio", rolling up a window to its title bar, transparency control.
-- [WindowPad](https://github.com/hoppfrosch/WindowPadX)
-
-Window mover: Use https://github.com/fuhsjr00/bug.n  ?  
-Window mover: resize so not below taskbar or above screen (or left/right:)  
-Window mover: take away from all the edges a bit  
-Window mover: center at "semi" full screen  
-Window mover: for when screen has some weird size: take up half left/right of screen depending on where it currently is  
---> https://github.com/nimdahk/FillX-Windows/blob/master/FillX.ahk ?  
+## Executable
+
+Download the zip from the [release tab](https://github.com/Laoujin/Mi-Ke/releases).  
+- Extract it
+- Run mike.exe
+- Much win
+
+ATTN: While you'll be able to customize the shortcuts in mike.ini,
+you will not be able to define any hotstrings and have the script
+pick them up.
