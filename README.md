@@ -179,6 +179,13 @@ And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awes
 
 -> Move this to gh-pages :p
 
+Interactive debugging?  
+https://autohotkey.com/docs/AHKL_DBGPClients.htm
+
+Top Autohotkey directives.. no idea what they do really :)
+NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.  
+WinActivateForce  
+
 ## Script ideas
 
 - Shortcut to open contextmenu (also available from MiKe tray) to open favorite locations

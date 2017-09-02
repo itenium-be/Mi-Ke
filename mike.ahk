@@ -1,19 +1,21 @@
+; Global entry point
+
+; A few #Include files are not in the git repository
+; Create them by running .\init.ps1
+
+; .\hotkeys\_includes.ahk and .\hotstrings\_includes.ahk
+; are two entry points you can use to start experimenting.
+; Activate/deactivate and configure the scripts in mike.ini
+
+; Reload this script with Control+Win+R for ahk and ini changes to have effect
+
 #Persistent
 #SingleInstance force
 SetTitleMatchMode RegEx
-
-; Reload script with Control+Win+R (default shortcut)
-
-; Recommended for new scripts due to its superior speed and reliability.
 SendMode Input
-
-; Ensure a consistent starting directory.
 SetWorkingDir %A_ScriptDir%
 
-; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #WinActivateForce
-; DetectHiddenWindows, On
-
+; Configure your env in mike.ini
 EDITOR := ReadMikeIni("core", "editor", true)
 BROWSER := ReadMikeIni("core", "browser", true)
 BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
@@ -26,9 +28,10 @@ BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 ; All code that needs to be executed
 ; automatically should be above this
 
-; Load hotstrings
-#Include %A_Scriptdir%\hotstrings\hotstring-loader.ahk
+; A place to put your very own scripts!
+#Include %A_Scriptdir%\hotkeys\hotkey-loader.ahk
 return
+#Include %A_Scriptdir%\hotstrings\hotstring-loader.ahk
 
 ; Scripts
 #Include %A_Scriptdir%\scripts\change-sound-volume.ahk
