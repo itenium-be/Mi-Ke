@@ -40,6 +40,9 @@ Loop, 1000 {
 
 			} else if (key = "new-window-flag") {
 				quickStarterInfo.newWindowFlag := value
+
+			} else if (key = "elevate" and value = 1) {
+				quickStarterInfo.asAdmin := true
 			}
 		}
 

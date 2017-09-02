@@ -179,6 +179,8 @@ And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awes
 
 ## Script ideas
 
+- Shortcut to open contextmenu (also available from MiKe tray) to open favorite locations
+	- With button to go to GitHub, Explorer, IDE
 - Script to create a kramdown table from tabbed data
 - Make ctrl+a work when changing filename with f2 (take into account multi line when on desktop:)
 - hotstrings :A_SPACE:x:: so that you can choose not to expand (instead of the arrowing around atm)
@@ -210,6 +212,8 @@ Build a script that creates the exe, zipped with the ini files
 - this readme is too long -> put stuff in gh-pages branch:  
 https://stackoverflow.com/questions/31969868/how-to-store-github-wiki-as-part-of-source
 
+disable anything not generic by default (active=0)
+
 - some gui screen with all active hotkeys
 - init.ps1 Exercise: New docker, git clone, init.ps1, and it should just work?
 	- Check that mike.ahk.lnk works on diff versions of Windows
@@ -222,6 +226,7 @@ https://stackoverflow.com/questions/31969868/how-to-store-github-wiki-as-part-of
 ## Quick start programs
 
 - If title matcher is not provided, get the ahk_exe after opening for first time?
+- Shortcuts to open services.msc, uninstall software etc...?
 
 ## Improvements
 

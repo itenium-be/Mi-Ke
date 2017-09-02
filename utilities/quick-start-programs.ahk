@@ -20,12 +20,37 @@ GetQuickStarterInfo()
 	}
 }
 
+RunHotkeyCore(path, quickStarter)
+{
+	;Notify("Run", path)
+	if (quickStarter.asAdmin and not A_IsAdmin) {
+			try {
+				Run *RunAs "%path%"
+			}
+		} else {
+			Run %path%
+		}
+}
 
-RunHotkey(quickStarter) {
-	path := quickStarter.path
-	titleMatcher := quickStarter.titleMatcher
+
+BuildHotkeyArgs(quickStarter, selectedFiles := "")
+{
 	newWindowFlag := quickStarter.newWindowFlag
 
+	if not selectedFiles {
+		return quickStarter.path
+	}
+
+	if InStr(newWindowFlag, "<path>") {
+		flag := StrReplace(newWindowFlag, "<path>", selectedFiles)
+	} else {
+		flag = %newWindowFlag% %selectedFiles%
+	}
+	return quickStarter.path " " flag
+}
+
+
+RunHotkey(quickStarter) {
 	if (quickStarter.passExplorerPathAsArgument and WinActive("ahk_class (CabinetWClass|ExploreWClass)"))
 	{
 		; Start with current Windows Explorer path opened
@@ -34,27 +59,23 @@ RunHotkey(quickStarter) {
 		else
 			selected := Explorer_GetSelected()
 
-		if InStr(newWindowFlag, "<path>") {
-			flag := StrReplace(newWindowFlag, "<path>", selected)
-		} else {
-			flag = %newWindowFlag% %selected%
-		}
-		Run %path% %flag%
+		toRun := BuildHotkeyArgs(quickStarter, selected)
+		RunHotkeyCore(toRun, quickStarter)
 		return
 	}
 
+	titleMatcher := quickStarter.titleMatcher
 	if (titleMatcher and WinExist(titleMatcher)) {
-		if newWindowFlag {
-			Run %path% %newWindowFlag%
+		if quickStarter.newWindowFlag {
+			toRun := BuildHotkeyArgs(quickStarter)
+			RunHotkeyCore(toRun, quickStarter)
 		} else {
 			WinActivate
 		}
 		return
 	}
 
-	; Notify("Run", path)
-	Run %path%
-	; WinActivate
+	RunHotkeyCore(quickStarter.path, quickStarter)
 }
 
 QuickStarterInfoCloserExecutor:
