@@ -1,45 +1,90 @@
 ; The images are stored in scripts\change-sound-volume\*.jpg
 
+GetBigStep()
+{
+	return ReadMikeIni("change-sound-volume", "step-big")
+}
+
+GetSmallStep()
+{
+	return ReadMikeIni("change-sound-volume", "step-small")
+}
+
 ; Change music volume
 ; Hotkey: Windows+PageUp/Down
-#PgUp::SetAndDisplaySoundVolume("+10")
-#PgDn::SetAndDisplaySoundVolume("-10")
-#Home::DisplaySoundVolume()
+; #PgUp::
+ChangeSoundVolumeAddBig:
+SetAndDisplaySoundVolume("big", "+", true)
+return
+
+ChangeSoundVolumeMinBig:
+; #PgDn::
+SetAndDisplaySoundVolume("big", "-", true)
+return
+
+ChangeSoundVolumeSee:
+; #Home::
+DisplaySoundVolume()
+return
 
 lastVolumeLevel :=
-#End::
-if (lastVolumeLevel) {
-	SetAndDisplaySoundVolume(lastVolumeLevel)
-	lastVolumeLevel :=
-} else {
-	SoundGetWaveVolume, volume
-	SetAndDisplaySoundVolume(0)
-	lastVolumeLevel := volume
+ToggleMute(notify) {
+	global lastVolumeLevel
+	if (lastVolumeLevel) {
+		SetAndDisplaySoundVolume(lastVolumeLevel, "", notify)
+		lastVolumeLevel :=
+	} else {
+		SoundGetWaveVolume, volume
+		SetAndDisplaySoundVolume(0, "", notify)
+		lastVolumeLevel := volume
+	}
 }
+
+ChangeSoundToggleMute:
+; #End::
+ToggleMute(true)
 return
 
 ; Ctrl+Win+Alt: +/-1
-!^#PgUp::SoundSetWaveVolume, +1
-!^#PgDn::SoundSetWaveVolume, -1
-
-; +Control: Without the fancy image but better response
-^#PgUp::SoundSetWaveVolume, +10
-^#PgDn::SoundSetWaveVolume, -10
-^#End::
-if (lastVolumeLevel) {
-	SoundSetWaveVolume, lastVolumeLevel
-	lastVolumeLevel :=
-} else {
-	SoundGetWaveVolume, volume
-	SoundSetWaveVolume, 0
-	lastVolumeLevel := volume
-}
+ChangeSoundVolumeNoImageAddSmall:
+; !^#PgUp::
+SetAndDisplaySoundVolume("small", "+", false)
 return
 
-SetAndDisplaySoundVolume(volumeMod)
+ChangeSoundVolumeNoImageMinSmall:
+; !^#PgDn::
+SetAndDisplaySoundVolume("small", "-", false)
+return
+
+; +Control: Without the fancy image but better response
+ChangeSoundVolumeNoImageAddBig:
+; ^#PgUp::
+SetAndDisplaySoundVolume("big", "+", false)
+return
+
+ChangeSoundVolumeNoImageMinBig:
+; ^#PgDn::
+SetAndDisplaySoundVolume("big", "-", false)
+return
+
+ChangeSoundNoImageToggleMute:
+; ^#End::
+ToggleMute(false)
+return
+
+SetAndDisplaySoundVolume(volumeMod, operator, notify)
 {
+	; volumeMod: "big", "small" or a number
+	; operator: "+", "-" for big+small. Unused when volumeMod is a number
+
+	if (volumeMod = "big" or volumeMod = "small") {
+		volumeMod := volumeMod = "big" ? GetBigStep() : GetSmallStep()
+		volumeMod := operator volumeMod
+	}
+
 	SoundSetWaveVolume, % volumeMod
-	DisplaySoundVolume()
+	if notify
+		DisplaySoundVolume()
 }
 
 DisplaySoundVolume()

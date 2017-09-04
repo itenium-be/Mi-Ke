@@ -7,6 +7,7 @@
 ; Builtin: Control + End: clear after cursor
 ESC::
 Send ^{Home}
+Send ^{End}
 return
 
 #IfWinActive

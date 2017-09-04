@@ -1,15 +1,17 @@
 ; Config: mike.ini [copy-download-to-usb] (download folder defaults to %USERPROFILE%\Downloads)
+; Dependencies: vendor/WindowPad
 
 ; Opens 2 Explorers
 ; Newly downloaded files directory on the left
 ; USB drive on the right
 ; Hotkey: AltGr+Win+D
 ; Requires: WindowPad
-<^>!#d::
+CopyDownloadToUsb:
+; <^>!#d::
 usbDrive := GetUsbDrive()
 If usbDrive
 {
-	downloadPath := ReadMikeIni("copy-download-to-usb", "copy-from-path", true)
+	downloadPath := ReadMikeIni("apps-windows-explorer-copy-download-to-usb", "copy-from-path", true)
 	SplitPath, downloadPath, downloadDirName
 
 	IfWinNotExist %downloadDirName%

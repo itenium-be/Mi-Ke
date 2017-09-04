@@ -1,90 +1,57 @@
+; Global entry point
+
+; A few #Include files are not in the git repository
+; Create them by running .\init.ps1
+
+; .\hotkeys\_includes.ahk and .\hotstrings\_includes.ahk
+; are two entry points you can use to start experimenting.
+; Activate/deactivate and configure the scripts in mike.ini
+
+; Reload this script with Control+Win+R for ahk and ini changes to have effect
+
 #Persistent
 #SingleInstance force
 SetTitleMatchMode RegEx
-
-; Recommended for new scripts due to its superior speed and reliability.
 SendMode Input
-
-; Ensure a consistent starting directory.
 SetWorkingDir %A_ScriptDir%
 
-; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #WinActivateForce
-; DetectHiddenWindows, On
-
-; Numlock, Capslock, ScrollLock
-; TODO: Put in config... uhoh what have I gotten myself into
-SetNumlockState, on
-SetNumlockState, AlwaysOn
-
-
-#Include %A_Scriptdir%\utilities\ini-reader.ahk
+; Configure your env in mike.ini
 EDITOR := ReadMikeIni("core", "editor", true)
 BROWSER := ReadMikeIni("core", "browser", true)
-BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag", false)
+BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 
-; CreateMikeHotkey(sectionName, key, labelName)
-; {
-; 	IniRead, value, %A_Scriptdir%\mike.ini, %sectionName%, %key%
-; 	Hotkey, %memoryDiff%, %labelName%
-; }
-; CreateMikeHotkey("memory-diff", "hotkey-left", MemoryDiffSaveLeft)
-; CreateMikeHotkey("memory-diff", "hotkey-right-and-open", MemoryDiffSaveRightAndOpen)
-
-
-memoryDiff := ReadMikeIni("memory-diff", "hotkey-left", false)
-Hotkey, %memoryDiff%, MemoryDiffSaveLeft
-
-memoryDiff := ReadMikeIni("memory-diff", "hotkey-right-and-open", false)
-Hotkey, %memoryDiff%, MemoryDiffSaveRightAndOpen
-
-memoryDiff := ReadMikeIni("memory-diff", "hotkey-open", false)
-Hotkey, %memoryDiff%, MemoryDiffOpen
-
-memoryDiff := ReadMikeIni("memory-diff", "hotkey-dropbox-open", false)
-Hotkey, %memoryDiff%, MemoryDiffDropboxOpen
-
-memoryDiff := ReadMikeIni("memory-diff", "hotkey-see", false)
-Hotkey, %memoryDiff%, MemoryDiffSee
-
-
-; ATTN: Do not put shortcuts/hotstrings above the mike-menu
-; (or it will show the default menu instead)
+; Load scripts from mike.ini
+#Include %A_Scriptdir%\mike-loader.ahk
+#Include %A_Scriptdir%\utilities\quick-start-programs-loader.ahk
 #Include %A_Scriptdir%\mike-menu.ahk
 
-#Include %A_Scriptdir%\hotstrings\_start.ahk
+; All code that needs to be executed
+; automatically should be above this
 
-; TODO: SetWorkingDir for consistent path in \scripts folder?
-; https://autohotkey.com/docs/commands/SetWorkingDir.htm
+; A place to put your very own scripts!
+#Include %A_Scriptdir%\hotkeys\hotkey-loader.ahk
+return
+#Include %A_Scriptdir%\hotstrings\hotstring-loader.ahk
+
+; Scripts
 #Include %A_Scriptdir%\scripts\change-sound-volume.ahk
 #Include %A_Scriptdir%\scripts\memory-diff.ahk
-#Include %A_Scriptdir%\scripts\path-wintounix.ahk
-#Include %A_Scriptdir%\scripts\copy-download-to-usb.ahk
-#Include %A_Scriptdir%\scripts\zip-directory.ahk
-#Include %A_Scriptdir%\scripts\md-code-block.ahk
-#Include %A_Scriptdir%\scripts\windows-min-max.ahk
-#Include %A_Scriptdir%\scripts\quick-start-programs.ahk
-#Include %A_Scriptdir%\scripts\windowsexplorer.ahk
-#Include %A_Scriptdir%\scripts\WindowPad\source\WindowPad.ahk
 #Include %A_Scriptdir%\scripts\snippets.ahk
+#Include %A_Scriptdir%\scripts\windows-min-max.ahk
 
+#Include %A_Scriptdir%\scripts\apps\autohotkey-debugging.ahk
 #Include %A_Scriptdir%\scripts\apps\chrome.ahk
-#Include %A_Scriptdir%\scripts\apps\cmd.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-cmd.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer-builtin.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer-copy-download-to-usb.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer-zip-directory.ahk
+#Include %A_Scriptdir%\scripts\apps\windows-explorer.ahk
 
-#Include %A_Scriptdir%\utilities\windowsexplorer.ahk
-#Include %A_Scriptdir%\utilities\notify.ahk
+; Utilities
+#Include %A_Scriptdir%\utilities\ini-reader.ahk
+#Include %A_Scriptdir%\utilities\quick-start-programs.ahk
 
-; Debugging:
-; Some weird stuff...
-; A MsgBox shows when placed below #Include mike-menu but not when placed below #Include personal.ahk..?
-; Putting these 2 lines above #Include mike-menu.ahk and the default menu is loaded instead..?
-!F11::ListVars
-
-^#r::
-Notify("Script Reloaded")
-Reload
-return
-
-; Disable Left Win going into Metro mode
-; TODO: Also disables shortcuts using Win key
-; LWin::Return
+; Vendor
+#Include %A_Scriptdir%\vendor\WindowPad\source\WindowPad.ahk
+#Include %A_Scriptdir%\vendor\notify.ahk
+#Include %A_Scriptdir%\vendor\windows-explorer-util.ahk
