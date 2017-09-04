@@ -4,10 +4,8 @@
 
 ; Control + Shift + 6: Details View
 ; ~ = Do not block native function
-~^+6::
-	; Resize columns so that filenames are completely visible
-	Send {Control Down}{NumpadAdd}{Control Up}
-Return
+; Resize columns so that filenames are completely visible
+~^+6::Send {Control Down}{NumpadAdd}{Control Up}
 
 
 

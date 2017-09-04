@@ -11,12 +11,28 @@ function Create-File($file, $initial = "") {
 
 $path = Split-Path $SCRIPT:MyInvocation.MyCommand.Path -Parent
 
-Create-File "$($path)\hotkeys\_includes.ahk" @"
-; All code before your first hotkey or hotstring
-; will be executed when the script starts up.
+Create-File "$($path)\hotkeys\_auto-execute.ahk" @"
+;
+; Auto-execute section
 ;
 ; More info in the docs about "the auto-execute section"
 ; https://autohotkey.com/docs/Scripts.htm#auto
+;
+; Everything before the first return will be executed
+; at script startup
+
+; Notify("Starting Mi-Ke...")
+
+return
+"@
+
+
+Create-File "$($path)\hotkeys\_includes.ahk" @"
+;
+; Your scripts here
+;
+
+; !F5::Msgbox Pressed %A_ThisHotkey%
 "@
 
 if ($bare) {
@@ -64,7 +80,7 @@ Create-File "$($path)\hotstrings\sample.ahk" @"
 ; #Hotstring EndChars -()[]{}:;'"/\,.?!`n `t
 
 ; Expand imail only after pressing tab
-:´t:imail:your.name@glogle.com
+:``t:imail:your.name@glogle.com
 "@
 
 

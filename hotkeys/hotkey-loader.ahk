@@ -1,5 +1,10 @@
-; This file is in git. Do not add stuff to this file.
-; But do change _includes.ahk to your heart's content
+; These files are in git. Do not add stuff to them.
+
+; Auto-execute section
+; Code you want executed at script startup
+#Include %A_Scriptdir%\hotkeys\_auto-execute.ahk
+
+; A place to put your custom scripts
 #Include %A_Scriptdir%\hotkeys\_includes.ahk
 
 ; If you create a script that could be used by others,
