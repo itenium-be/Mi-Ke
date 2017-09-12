@@ -4,6 +4,9 @@ layout: default
 
 TODO: mdcodeblocked Does weird because it evaluates stuff?
 
+Display Stars for each github link...
+https://github.com/bevacqua/awesome-badges/blob/master/readme.markdown
+
 
 # TODO
 
