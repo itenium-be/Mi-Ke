@@ -52,7 +52,7 @@ MiKeTrayReload:
 
 MiKeTraySuspend:
   Suspend
-  Menu, Tray, % A_IsSuspended ? "Check" : "Uncheck", &Suspend
+  Menu, Tray, ToggleCheck, &Suspend script
   return
 
 MiKeTrayExit:
