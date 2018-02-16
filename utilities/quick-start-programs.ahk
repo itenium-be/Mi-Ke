@@ -33,6 +33,7 @@ RunHotkeyCore(path, quickStarter)
 			}
 		} else {
 			Run %path%
+			WinActivate
 		}
 }
 
