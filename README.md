@@ -63,3 +63,12 @@ in the [official docs FAQ](https://www.autohotkey.com/docs/FAQ.htm#Startup)
 If you get this when starting `mike.ahk`, then run `init.ps1`.
 
 ![](init-not-run.png)
+
+### Mi-Ke doesn't work in Visual Studio
+
+The scripts aren't working only when Visual Studio (or any other app) is running as administrator.  
+The solution would be to also start Mi-Ke as administrator when you want the scripts to be available
+in these applications.
+
+More info:  
+https://stackoverflow.com/questions/1890351/why-is-visual-studio-catching-key-events-before-autohotkey
