@@ -48,6 +48,12 @@ if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 	Copy-Item "$($path)\mike.default.ini" $iniPath
 }
 
+$iniPath = "$($path)\quick-start-programs.ini"
+if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
+	echo "Creating quick-start-programs.ini"
+	Copy-Item "$($path)\quick-start-programs.default.ini" $iniPath
+}
+
 
 
 echo "Creating some sample hotstrings"
