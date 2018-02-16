@@ -77,9 +77,7 @@ RunHotkey(quickStarter) {
 			}
 			selected := Explorer_GetSelected("", quickStarter.explorerFilesSeparator)
 			if quickStarter.explorerFilesSeparator = """ """ {
-				Notify(selected)
 				selected := """" selected """"
-				Notify(selected)
 			}
 		}
 
