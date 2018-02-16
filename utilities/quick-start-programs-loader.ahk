@@ -8,6 +8,7 @@ Loop, 1000 {
 
 	} else {
 		quickStarterInfo := {}
+
 		Loop, parse, quickStarter, `n
 		{
 			StringSplit, keyValue, A_LoopField, =
@@ -19,7 +20,8 @@ Loop, 1000 {
 				quickStarterInfo.hotkey := value
 
 			} else if (key = "path") {
-				quickStarterInfo.path := FileReplacements(value)
+				if FileExist(FileReplacements(value))
+					quickStarterInfo.path := FileReplacements(value)
 
 			} else if (key = "editor" and value = 1) {
 				quickStarterInfo.path := EDITOR
