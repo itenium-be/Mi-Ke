@@ -1,8 +1,10 @@
 ; Hotstrings: imail+TAB
-:`t:imail::laoujin@hotmail.com
+:`t:imail::wouter.van.schandevijl@itenium.be
+:`t:pimail::wouter@pongit.be
 :`t:nimail::woutervs@hotmail.com
 :`t:gimail::laoujin@gmail.com
 :`t:wimail::wouter.van.schandevijl@macadam.eu
+:`t:simail::steven.robijns@itenium.be
 
 :`t:itel::0476403502
 
