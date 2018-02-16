@@ -72,7 +72,9 @@ Switch views:
 
 ## Start programs with hotkeys
 
-What quick starters are currently active is configured in [quick-start-programs.ini](https://github.com/Laoujin/Mi-Ke/blob/master/quick-start-programs.ini)
+What quick starters are currently active is configured in [quick-start-programs.ini](https://github.com/Laoujin/Mi-Ke/blob/master/quick-start-programs.default.ini)
+
+If you do not have a custom `quick-start-programs.ini`, the default shortcuts as defined in `quick-start-programs.default.ini` will be loaded.
 
 ### Some default configurations
 
