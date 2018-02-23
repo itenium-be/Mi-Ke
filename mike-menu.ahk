@@ -3,6 +3,7 @@
 
 Menu, Tray, NoStandard
 
+; ----------------------------------------------------------------------------------------------- TRAY ICON
 trayIconPath := ReadMikeIni("tray-menu", "icon", true)
 IfNotExist, %trayIconPath%
 	trayIconPath = <A_ScriptDir>\iseedeadcode.ico
@@ -10,8 +11,22 @@ IfNotExist, %trayIconPath%
 trayIconPath := FileReplacements(trayIconPath)
 Menu, Tray, Icon, %trayIconPath%,, 1
 
-; TODO: Put this sentence in ini file. Could show instead: CPU/Memory Usage? User/Domain?
-Menu, Tray, Tip, Be nice to me or I will throw rocks to you
+; -------------------------------------------------------------------------------------------- TRAY TOOLTIP
+; https://autohotkey.com/docs/commands/OnMessage.htm
+; https://autohotkey.com/docs/misc/SendMessageList.htm
+OnMessage(0x404, "AHK_NOTIFYICON")
+AHK_NOTIFYICON(wParam, lParam)
+{
+	if (lParam = 0x200) ; WM_MOUSEMOVE
+	{
+		SetTimer, MikeTrayTooltip, -1
+		return 0
+	}
+}
+
+
+
+
 
 Menu, Tray, MainWindow
 Menu, Tray, Add, &Reload script and ini, MiKeTrayReload
@@ -41,9 +56,26 @@ Menu, Tray, Add
 Menu, Tray, Add, E&xit, MiKeTrayExit
 Menu, Tray, Default, &Reload script and ini
 
+
+
 Goto, MiKeContinue
 
+
+
 ; Tray menu subroutines
+
+
+MikeTrayTooltip:
+	memory := GetMemoryStatus()
+	; TODO: Put this sentence in ini file.
+	; Could configure lots of stuff like: CPU/Memory Usage? User/Domain? CPU Temperature?
+	trayContent := "CPU: " . CPULoad() . "%"
+	trayContent .= " | "
+	trayContent .= "RAM: " memory.ramPhysicalUsed . " of " . memory.ramPhysicalTotal . " (" . memory.ramPhysicalPercentage . "%)"
+	Menu, Tray, Tip, %trayContent%
+	return
+
+
 MikeChooseTrayIcon:
 	FileSelectFile, trayIconPath, 3, , Pick new tray icon, Icons (*.ico)
 	if trayIconPath {

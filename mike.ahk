@@ -1,4 +1,5 @@
 ; Global entry point
+; Mi-Ke: Be nice to me or I will throw rocks at you
 
 ; A few #Include files are not in the git repository
 ; Create them by running .\init.ps1
@@ -50,6 +51,7 @@ return
 ; Utilities
 #Include %A_Scriptdir%\utilities\ini-reader.ahk
 #Include %A_Scriptdir%\utilities\quick-start-programs.ahk
+#Include %A_Scriptdir%\utilities\system-info.ahk
 
 ; Vendor
 #Include %A_Scriptdir%\vendor\WindowPad\source\WindowPad.ahk
