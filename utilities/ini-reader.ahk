@@ -41,3 +41,12 @@ ReadMikeIni(sectionName, key := "", replacePaths := false)
 		return value
 	}
 }
+
+WriteMikeIni(value, sectionName, key)
+{
+	ini = %A_Scriptdir%\mike.ini
+	IfNotExist %ini%
+		ini = %A_Scriptdir%\mike.default.ini
+
+	IniWrite, %value%, %ini%, %sectionName%, %key%
+}
