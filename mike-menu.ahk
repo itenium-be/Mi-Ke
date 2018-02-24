@@ -29,8 +29,9 @@ AHK_NOTIFYICON(wParam, lParam)
 
 Menu, Tray, MainWindow
 
-Menu, Tray, Add, &Reload script and ini, MiKeTrayReload
-Menu, Tray, Add, &Suspend script, MiKeTraySuspend
+
+CreateMenuItemFromIni("dev-reload-script", "Reload script and ini", "MiKeTrayReload")
+CreateMenuItemFromIni("dev-suspend", "Suspend script", "MiKeTraySuspend")
 Menu, Tray, Add
 
 ; Start Mi-Ke when windows starts
@@ -50,14 +51,12 @@ Menu, Tray, Add, View source (IDE), MiKeTraySourceEditor
 Menu, Tray, Add, View source (Github), MiKeTraySourceGithub
 Menu, Tray, Add
 
-Menu, Tray, Add, &List hotkeys, MiKeListHotkeys
 
-
-
+CreateMenuItemFromIni("dev-list-vars", "List hotkeys", "MiKeListHotkeys")
 CreateQuickStartsMenuItem("Tray", "Spy window")
 Menu, Tray, Add
 
-Menu, tray, Add, System information, MikeTraySysInfo
+;Menu, tray, Add, System information, MikeTraySysInfo
 
 CreateQuickStartersMenu("Applications")
 CreateQuickStartersMenu("Consoles")
@@ -68,7 +67,7 @@ Menu, Tray, Add, E&xit, MiKeTrayExit
 
 ; 1=For one click to activate default (2=double click=default)
 Menu, Tray, Click, 1
-Menu, Tray, Default, System information
+;Menu, Tray, Default, System information
 
 ; Code if we want to do different things for tray single/double click
 ; OnMessage(0x404, "AHK_NOTIFYICON")
