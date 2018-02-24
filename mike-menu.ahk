@@ -52,44 +52,23 @@ Menu, Tray, Add
 
 Menu, Tray, Add, &List hotkeys, MiKeListHotkeys
 
-spyWindowQuickStarter := GetQuickStarterInfoByTitleMatcher("ahk_exe AU3_Spy.exe")
-spyWindowHotkey := HotkeyToString(spyWindowQuickStarter.hotkey)
-Menu, Tray, Add, Spy window`t%spyWindowHotkey%, MiKeTraySpyWindow
+
+
+CreateQuickStartsMenuItem("Tray", "Spy window")
 Menu, Tray, Add
 
-; CreateQuickStartersMenu(menu)
-; {
-; 	For index, quickStarter in quickStarterz
-; 	{
-; 		if (quickStarter.menu = menu) {
-; 			Menu, %menu%, add, quickStarter.name, MikeTraySysInfo
-; 			return
-; 		}
-; 	}
-; }
+Menu, tray, Add, System information, MikeTraySysInfo
 
-; CreateQuickStartersMenu("Consoles")
+CreateQuickStartersMenu("Applications")
+CreateQuickStartersMenu("Consoles")
 
-For index, quickStarter in quickStarterz
-{
-	if (quickStarter.menu = "Consoles") {
-		name := quickStarter.name
-		if quickStarter.hotkey
-			name .= "`t" . HotkeyToString(quickStarter.hotkey)
-		Menu, Consoles, add, %name%, MikeTraySysInfo
-	}
-}
-
-
-; Menu, tray, Add, System information, MikeTraySysInfo
-Menu, tray, Add, Consoles, :Consoles
 Menu, Tray, Add
 
 Menu, Tray, Add, E&xit, MiKeTrayExit
 
 ; 1=For one click to activate default (2=double click=default)
 Menu, Tray, Click, 1
-; Menu, Tray, Default, System information
+Menu, Tray, Default, System information
 
 ; Code if we want to do different things for tray single/double click
 ; OnMessage(0x404, "AHK_NOTIFYICON")
@@ -110,8 +89,12 @@ Goto, MiKeContinue
 
 ; ----------------------------------------------------------------------------------------------------- Tray Subroutines
 
-MikeTraySysInfo:
+QuickStarterConsoles:
+	Msgbox wheee
+	return
 
+
+MikeTraySysInfo:
 	return
 
 
