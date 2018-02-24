@@ -4,14 +4,22 @@
 ; The QuickStarterInfoExecutor finds the right quickStarter and converts the props to a Run Autohotkey command
 
 QuickStarterInfoExecutor:
-quickStarter := GetQuickStarterInfo()
+quickStarter := GetQuickStarterInfoByHotkey()
 if quickStarter
 	RunHotkey(quickStarter)
 else
 	Notify(A_ThisHotkey " not found")
 return
 
-GetQuickStarterInfo()
+MenuQuickStarterInfoExecutor:
+quickStarter := GetQuickStarterInfoByMenuItem()
+if quickStarter
+	RunHotkey(quickStarter)
+else
+	Notify(A_ThisMenuItem " not found")
+return
+
+GetQuickStarterInfoByHotkey()
 {
 	global quickStarterz
 	For index, quickStarter in quickStarterz
@@ -20,6 +28,76 @@ GetQuickStarterInfo()
 			return quickStarter
 		}
 	}
+}
+
+GetQuickStarterInfoByMenuItem()
+{
+	global quickStarterz
+	For index, quickStarter in quickStarterz
+	{
+		name := GetMenuName(quickStarter)
+		if (name = A_ThisMenuItem) {
+			return quickStarter
+		}
+	}
+}
+
+
+CreateQuickStartsMenuItem(menu, name)
+{
+	global quickStarterz
+	For index, quickStarter in quickStarterz
+	{
+		if (quickStarter.name = name) {
+			name := GetMenuName(quickStarter)
+			Menu, %menu%, add, %name%, MenuQuickStarterInfoExecutor
+			return
+		}
+	}
+}
+
+CreateMenuItemFromIni(iniName, name, label)
+{
+	hotkey := ReadMikeIni(iniName, "hotkey")
+	if hotkey
+		name .= "`t" . HotkeyToString(hotkey)
+
+	Menu, Tray, Add, %name%, %label%
+}
+
+GetMenuName(quickStarter)
+{
+	name := quickStarter.name
+	if quickStarter.hotkey
+		name .= "`t" . HotkeyToString(quickStarter.hotkey)
+	return, name
+}
+
+CreateQuickStartersMenu(menu)
+{
+	global quickStarterz
+	For index, quickStarter in quickStarterz
+	{
+		if (quickStarter.menu = menu and quickStarter.active) {
+			addMenu = true
+			name := GetMenuName(quickStarter)
+			Menu, %menu%, add, %name%, MenuQuickStarterInfoExecutor
+		}
+	}
+
+	if addMenu
+		Menu, tray, Add, %menu%, :%menu%
+}
+
+HotkeyToString(hotkey)
+{
+	StringUpper, hotkey, hotkey
+	StringReplace, hotkey, hotkey, +, Shift +
+	StringReplace, hotkey, hotkey, !, Alt +
+	StringReplace, hotkey, hotkey, ^, Control +
+	StringReplace, hotkey, hotkey, #, Win +
+	StringReplace, hotkey, hotkey, &, &&
+	return hotkey
 }
 
 RunHotkeyCore(path, quickStarter)

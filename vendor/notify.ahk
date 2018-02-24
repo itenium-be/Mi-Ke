@@ -29,6 +29,23 @@
 ;Notify("Title", "message",-3, "Style=balloontip")
 
 
+; Builtin in Autohotkey (apparently:)
+;TrayTip, I'm tha title, I'm the content`nMore content
+
+; Change TrayTip colors
+; TrayTip , Title, Text, 10, 1
+; WinGet, hWnd, ID, ahk_class tooltips_class32
+; SendMessage, 1043, 0xFF00FF, 0,, ahk_id %hWnd% ;1043=TTM_SETTIPBKCOLOR
+; SendMessage, 1044, 0xFFFFFF, 0,, ahk_id %hWnd% ;1044=TTM_SETTIPTEXTCOLOR
+; Sleep, 5000
+; TrayTip
+; ToolTip, blabla
+; WinGet, hWnd2, ID, ahk_class tooltips_class32
+; SendMessage, 1043, 0x0000FF, 0,, ahk_id %hWnd2%
+; SendMessage, 1044, 0xFF0000, 0,, ahk_id %hWnd2%
+; Sleep, 5000
+; ToolTip
+
 
 Notify(Title="Notify()",Message="",Duration=-4,Options="Style=Mine")
 {

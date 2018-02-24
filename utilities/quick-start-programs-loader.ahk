@@ -53,6 +53,12 @@ Loop, 1000 {
 
 			} else if (key = "explorer-files-separator") {
 				quickStarterInfo.explorerFilesSeparator := value
+
+			} else if (key = "menu") {
+				quickStarterInfo.menu := value
+
+			} else if (key = "name") {
+				quickStarterInfo.name := value
 			}
 		}
 
