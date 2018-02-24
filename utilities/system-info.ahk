@@ -50,7 +50,6 @@ CPULoad() ; by SKAN
 	DllCall("GetSystemTimes", "Int64P", CIT, "Int64P", CKT, "Int64P", CUT)
 	IdleTime := PIT - CIT, KernelTime := PKT - CKT, UserTime := PUT - CUT
 	SystemTime := KernelTime + UserTime
-	;MsgBox %IdleTime% %KernelTime% %UserTime%
 	return ((SystemTime - IdleTime) * 100) // SystemTime, PIT := CIT, PKT := CKT, PUT := CUT
 }
 

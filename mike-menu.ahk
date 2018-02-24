@@ -3,7 +3,7 @@
 
 Menu, Tray, NoStandard
 
-; ----------------------------------------------------------------------------------------------- TRAY ICON
+; ------------------------------------------------------------------------------------------------------------ TRAY ICON
 trayIconPath := ReadMikeIni("tray-menu", "icon", true)
 IfNotExist, %trayIconPath%
 	trayIconPath = <A_ScriptDir>\iseedeadcode.ico
@@ -11,7 +11,7 @@ IfNotExist, %trayIconPath%
 trayIconPath := FileReplacements(trayIconPath)
 Menu, Tray, Icon, %trayIconPath%,, 1
 
-; -------------------------------------------------------------------------------------------- TRAY TOOLTIP
+; --------------------------------------------------------------------------------------------------------- TRAY TOOLTIP
 ; https://autohotkey.com/docs/commands/OnMessage.htm
 ; https://autohotkey.com/docs/misc/SendMessageList.htm
 OnMessage(0x404, "AHK_NOTIFYICON")
@@ -25,19 +25,12 @@ AHK_NOTIFYICON(wParam, lParam)
 }
 
 
-
-
+; ------------------------------------------------------------------------------------------------------------ TRAY MENU
 
 Menu, Tray, MainWindow
+
 Menu, Tray, Add, &Reload script and ini, MiKeTrayReload
 Menu, Tray, Add, &Suspend script, MiKeTraySuspend
-Menu, Tray, Add
-Menu, Tray, Add, View source (Explorer), MiKeTraySource
-Menu, Tray, Add, View source (IDE), MiKeTraySourceEditor
-Menu, Tray, Add, View source (Github), MiKeTraySourceGithub
-Menu, Tray, Add
-Menu, Tray, Add, &Debug window, MiKeTrayDebug
-Menu, Tray, Add, Spy window, MiKeTraySpyWindow
 Menu, Tray, Add
 
 ; Start Mi-Ke when windows starts
@@ -49,12 +42,65 @@ IfExist %startupLink%
 {
 	Menu, Tray, ToggleCheck, %startupItem%
 }
-
 Menu, Tray, Add, Choose Tray Icon, MikeChooseTrayIcon
-
 Menu, Tray, Add
+
+Menu, Tray, Add, View source (Explorer), MiKeTraySource
+Menu, Tray, Add, View source (IDE), MiKeTraySourceEditor
+Menu, Tray, Add, View source (Github), MiKeTraySourceGithub
+Menu, Tray, Add
+
+Menu, Tray, Add, &List hotkeys, MiKeListHotkeys
+
+spyWindowQuickStarter := GetQuickStarterInfoByTitleMatcher("ahk_exe AU3_Spy.exe")
+spyWindowHotkey := HotkeyToString(spyWindowQuickStarter.hotkey)
+Menu, Tray, Add, Spy window`t%spyWindowHotkey%, MiKeTraySpyWindow
+Menu, Tray, Add
+
+; CreateQuickStartersMenu(menu)
+; {
+; 	For index, quickStarter in quickStarterz
+; 	{
+; 		if (quickStarter.menu = menu) {
+; 			Menu, %menu%, add, quickStarter.name, MikeTraySysInfo
+; 			return
+; 		}
+; 	}
+; }
+
+; CreateQuickStartersMenu("Consoles")
+
+For index, quickStarter in quickStarterz
+{
+	if (quickStarter.menu = "Consoles") {
+		name := quickStarter.name
+		if quickStarter.hotkey
+			name .= "`t" . HotkeyToString(quickStarter.hotkey)
+		Menu, Consoles, add, %name%, MikeTraySysInfo
+	}
+}
+
+
+; Menu, tray, Add, System information, MikeTraySysInfo
+Menu, tray, Add, Consoles, :Consoles
+Menu, Tray, Add
+
 Menu, Tray, Add, E&xit, MiKeTrayExit
-Menu, Tray, Default, &Reload script and ini
+
+; 1=For one click to activate default (2=double click=default)
+Menu, Tray, Click, 1
+; Menu, Tray, Default, System information
+
+; Code if we want to do different things for tray single/double click
+; OnMessage(0x404, "AHK_NOTIFYICON")
+; AHK_NotifyIcon(wParam, lParam) {
+; 	static Delay := 300, TimeSinceLastClick := A_TickCount
+; 	if (lParam = 0x202 && A_TickCount - TimeSinceLastClick > Delay) { ; WM_LBUTTONUP
+; 		TimeSinceLastClick := A_TickCount
+; 		Menu, Tray, Show   ; Show the menu
+; 	}
+; }
+
 
 
 
@@ -62,7 +108,11 @@ Goto, MiKeContinue
 
 
 
-; Tray menu subroutines
+; ----------------------------------------------------------------------------------------------------- Tray Subroutines
+
+MikeTraySysInfo:
+
+	return
 
 
 MikeTrayTooltip:
@@ -86,7 +136,8 @@ MikeChooseTrayIcon:
 	}
 	return
 
-MiKeTrayDebug:
+MiKeListHotkeys:
+	; TODO: Create a better hotkey display...
 	ListHotkeys
 	return
 

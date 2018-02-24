@@ -22,6 +22,26 @@ GetQuickStarterInfo()
 	}
 }
 
+GetQuickStarterInfoByTitleMatcher(titleMatcher)
+{
+	global quickStarterz
+	For index, quickStarter in quickStarterz
+	{
+		if (quickStarter.titleMatcher = titleMatcher) {
+			return quickStarter
+		}
+	}
+}
+
+HotkeyToString(hotkey)
+{
+	StringUpper, hotkey, hotkey
+	StringReplace, hotkey, hotkey, !, Alt +
+	StringReplace, hotkey, hotkey, ^, Control +
+	StringReplace, hotkey, hotkey, #, Win +
+	return hotkey
+}
+
 RunHotkeyCore(path, quickStarter)
 {
 	;MsgBox %path%
