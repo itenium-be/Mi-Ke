@@ -1,3 +1,8 @@
+TODO
+====
+
+**Usually this stuff should be posted here:**  
+https://github.com/Laoujin/Mi-Ke/issues
 
 Context menu:
 Go to special path
@@ -9,23 +14,23 @@ Go to special path
 - downloads
 --> configurable?
 
-
-#Include %A_Scriptdir%\scripts\fake-data.ahk
-
-
-; TODO: need stuff like:
-; --> html tidy, json tidy / lint?
-; --> base64 encode/decode
-; --> jwt token decode
-; --> color convert: HEX, RGB, ...
+Need to add instructions on how to add a new shortcut
+with all the possible parameters explained.
+This would be useful for me aswell...
+(wiki page?)
 
 
-Shortcut to format code
+Roadmap to v1
+-------------
 
 Should have screenshots in here...
 Releases should include the exe?
 Should have forms to edit the ini files before this can be actually useful...
 --> But functionality first... Once it has what I need, perhaps look into releasing something?
+
+
+Other custom libraries
+----------------------
 
 https://github.com/theborg3of5/ahk
 - Activate a shortcut only on certain machine?
@@ -45,3 +50,5 @@ https://github.com/twocucao/ChortHotKey
 https://github.com/RaptorX/AHK-ToolKit
 https://github.com/ewerybody/a2
 
+TODO: Add the most interesting of these on the website + add eveything to the github wiki?
+TODO: I don't think they were on the awesome autohotkey list: check & create pull request?
