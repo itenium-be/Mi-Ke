@@ -33,8 +33,13 @@ Other custom libraries
 ----------------------
 
 https://github.com/theborg3of5/ahk
+- "DEBUG" should be activateable
+- dateTime.ahk - generate dates / sql server & other dbs, ...
+- debug.ahk - generate form with keys pressed etc?
+- saveClipboardToFile, readFileToClipboard, 
 - Activate a shortcut only on certain machine?
-- Exactly like my… Lots of interesting stuff to find there probably…
+- mainConfig loadSettingFromFile has an IniObject which might be what I need for the hotkeys?
+- 
 
 https://github.com/jmaurier/AutoHotkey-Scripts
 https://github.com/sahilsehwag/AHK-VimifiedExplorer
