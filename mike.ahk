@@ -18,6 +18,7 @@ SetWorkingDir %A_ScriptDir%
 
 ; Configure your env in mike.ini
 EDITOR := ReadMikeIni("core", "editor", true)
+EDITOR_TITLEMATCHER := ReadMikeIni("core", "editor-title-matcher", true)
 BROWSER := ReadMikeIni("core", "browser", true)
 BROWSER_NEWFLAG := ReadMikeIni("core", "browser-new-window-flag")
 

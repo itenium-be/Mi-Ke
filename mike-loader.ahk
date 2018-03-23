@@ -92,3 +92,4 @@ Hotkey, IfWinActive
 ; DEV stuff
 CreateSingleMikeHotkey("dev-reload-script", "DevReloadScript")
 CreateSingleMikeHotkey("dev-list-vars", "DevListVars")
+CreateSingleMikeHotkey("dev-reload-script-on-save", "DevReloadScriptWhenSaved")
