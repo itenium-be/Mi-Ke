@@ -13,12 +13,6 @@ Go to special path
 #Include %A_Scriptdir%\scripts\fake-data.ahk
 
 
-Open file dialog box
---> Control + shift + 6 doesn't work?
---> automatically resize to something decent?
---> would be fun if it did NOT try to check network drives etc
-
-
 ; TODO: need stuff like:
 ; --> html tidy, json tidy / lint?
 ; --> base64 encode/decode
