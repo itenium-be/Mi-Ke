@@ -20,11 +20,20 @@ Return
 
 
 ; Alt + Enter for ContextMenu.Properties does not work for a Drive
-!enter::
-selectedFiles := ActiveFolderPath()
-isDrive := RegExMatch(selectedFiles, "\w:\\")
-if isDrive {
-	Run, properties "%selectedFiles%"
+; $ so that we can still use Send !{enter}
+$!enter::
+selectedFiles := Explorer_GetSelected("", " ")
+if (selectedFiles)
+{
+	Send !{enter}
+}
+else
+{
+	selectedFiles := ActiveFolderPath()
+	isDrive := RegExMatch(selectedFiles, "\w:\\")
+	if isDrive {
+		Run, properties "%selectedFiles%"
+	}
 }
 return
 

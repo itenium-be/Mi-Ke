@@ -10,11 +10,6 @@ Go to special path
 --> configurable?
 
 
-Windows Explorer:
-nu niet meer mogelijk om op c:\ alt+enter te doen
-Krijg niet top directory props maar van volledige drive...
---> check if selected file(s)?
-
 #Include %A_Scriptdir%\scripts\fake-data.ahk
 
 
