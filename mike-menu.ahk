@@ -134,7 +134,7 @@ MiKeTrayReload:
 
 MiKeTraySuspend:
 	Suspend
-	Menu, Tray, ToggleCheck, &Suspend script
+	Menu, Tray, ToggleCheck, Suspend script
 	return
 
 MiKeTrayExit:
