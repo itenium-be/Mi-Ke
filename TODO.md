@@ -61,16 +61,6 @@ program/chrome
 
 
 
-
-
-```
-:*:0uid::00000000-0000-0000-0000-000000000000
-:*:1uid::11111111-1111-1111-1111-111111111111
-:*:zuid::01234567-89AB-CDEF-0123-456789ABCDEF
-:*:ruid::Generate random GUID
-```
-
-
 https://github.com/lydell/dual
 
 

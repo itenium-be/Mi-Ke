@@ -40,6 +40,7 @@ return
 ; Scripts
 #Include %A_Scriptdir%\scripts\
 #Include change-sound-volume.ahk
+#Include developer.ahk
 #Include memory-diff.ahk
 #Include snippets.ahk
 #Include windows-min-max.ahk
@@ -62,5 +63,6 @@ return
 ; Vendor
 #Include %A_Scriptdir%\vendor\
 #Include WindowPad\source\WindowPad.ahk
+#Include guid.ahk
 #Include notify.ahk
 #Include windows-explorer-util.ahk
