@@ -2,8 +2,9 @@
 ; ^+#c::
 AppendToClipboard:
 	bak = %clipboard%
+	clipboard =
 	Send, ^c
-	Sleep, 50
+	ClipWait, 3
 	clipboard = %bak%`r`n%clipboard%
 	Notify("Appended to Clipboard")
 Return
@@ -13,8 +14,9 @@ Return
 ; Ctrl+Win+X: Translate C:\Users\ to /c/Users/
 ; ^#x::
 PathWinToUnix:
+	clipboard =
 	Send, ^c
-	Sleep, 100
+	ClipWait, 3
 
 	; Replace c:\path\ with c:/path/
 	StringReplace, path, clipboard, \, /, All
@@ -36,8 +38,9 @@ return
 ; !#m::
 MdCodeBlockSurround:
 	oldClip := clipboard
-	Send ^c
-	Sleep, 150
+	clipboard =
+	Send, ^c
+	ClipWait, 3
 	highlighted := clipboard
 	highlighted := RegExReplace(highlighted, "\r\n?|\n\r?", "`n")
 

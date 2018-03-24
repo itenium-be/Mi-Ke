@@ -16,6 +16,10 @@ Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 encodeKey = e
 decodeKey = d
 
+clipboard =
+Send, ^c
+ClipWait, 2
+
 Input key, I L1
 if key = %encodeKey%
 	result := Base64Encode(clipboard)

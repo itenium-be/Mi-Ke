@@ -49,8 +49,9 @@ DiffMergeOpenAppl()
 ; Control + Win + Left: Clipboard to left.txt
 ; ^#Left::
 MemoryDiffSaveLeft:
+clipboard =
 Send, ^c
-Sleep, 150
+ClipWait, 3
 PasteClipboardToFile(GetLeft(), clipboard)
 diffMergeContentLeftFile := clipboard
 
@@ -65,8 +66,9 @@ return
 ; Control + Win + Down: Clipboard to right.txt and open diff tool
 ; ^#Down::
 MemoryDiffSaveRightAndOpen:
+clipboard =
 Send, ^c
-Sleep, 150
+ClipWait, 3
 doCompare = false
 if (clipboard = diffMergeContentLeftFile)
 {
@@ -96,8 +98,9 @@ return
 ; In Windows Explorer, compare original file against "someFile (Bert's conflicted copy 2017-07-07).ext"
 ; ^#Numpad0::
 MemoryDiffDropboxOpen:
+clipboard =
 Send, ^c
-Sleep, 150
+ClipWait, 3
 clipContent := clipboard
 IfExist, %clipContent%
 {

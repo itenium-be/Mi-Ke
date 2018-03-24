@@ -33,7 +33,8 @@ return
 
 ; Capslock & A: Copy and google Autohotkey
 BrowserSearchAutohotkey:
+clipboard =
 Send, ^c
-Sleep 50
+ClipWait, 2
 Run, http://www.google.com/search?q=autohotkey+%clipboard%
 return
