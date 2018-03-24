@@ -37,7 +37,8 @@ return
 
 ; Capslock & X: Copy and open Google search
 BrowserSearch:
+clipboard =
 Send, ^c
-Sleep 50
+ClipWait, 2
 Run, http://www.google.com/search?q=%clipboard%
 return

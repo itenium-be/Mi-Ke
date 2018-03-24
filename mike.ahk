@@ -3,12 +3,14 @@
 
 ; A few #Include files are not in the git repository
 ; Create them by running .\init.ps1
+; (mike.ahk will not run as long as these files do not exist!)
 
 ; .\hotkeys\_includes.ahk and .\hotstrings\_includes.ahk
 ; are two entry points you can use to start experimenting.
-; Activate/deactivate and configure the scripts in mike.ini
+; Activate/deactivate and configure the scripts in mike.ini and quick-start-programs.ini
 
 ; Reload this script with Control+Win+R for ahk and ini changes to have effect
+; (might happen automatically on Control+S in IDE - see scripts\apps\autohotkey-debugging.ahk)
 
 #Persistent
 #SingleInstance force
@@ -36,25 +38,32 @@ return
 #Include %A_Scriptdir%\hotstrings\hotstring-loader.ahk
 
 ; Scripts
-#Include %A_Scriptdir%\scripts\change-sound-volume.ahk
-#Include %A_Scriptdir%\scripts\memory-diff.ahk
-#Include %A_Scriptdir%\scripts\snippets.ahk
-#Include %A_Scriptdir%\scripts\windows-min-max.ahk
+#Include %A_Scriptdir%\scripts\
+#Include change-sound-volume.ahk
+#Include developer.ahk
+#Include memory-diff.ahk
+#Include snippets.ahk
+#Include windows-min-max.ahk
 
-#Include %A_Scriptdir%\scripts\apps\autohotkey-debugging.ahk
-#Include %A_Scriptdir%\scripts\apps\chrome.ahk
-#Include %A_Scriptdir%\scripts\apps\windows-cmd.ahk
-#Include %A_Scriptdir%\scripts\apps\windows-explorer-builtin.ahk
-#Include %A_Scriptdir%\scripts\apps\windows-explorer-copy-download-to-usb.ahk
-#Include %A_Scriptdir%\scripts\apps\windows-explorer-zip-directory.ahk
-#Include %A_Scriptdir%\scripts\apps\windows-explorer.ahk
+#Include %A_Scriptdir%\scripts\apps\
+#Include autohotkey-debugging.ahk
+#Include chrome.ahk
+#Include windows-cmd.ahk
+#Include windows-explorer-builtin.ahk
+#Include windows-explorer-copy-download-to-usb.ahk
+#Include windows-explorer-zip-directory.ahk
+#Include windows-explorer.ahk
 
 ; Utilities
-#Include %A_Scriptdir%\utilities\ini-reader.ahk
-#Include %A_Scriptdir%\utilities\quick-start-programs.ahk
-#Include %A_Scriptdir%\utilities\system-info.ahk
+#Include %A_Scriptdir%\utilities\
+#Include ini-reader.ahk
+#Include quick-start-programs.ahk
+#Include system-info.ahk
 
 ; Vendor
-#Include %A_Scriptdir%\vendor\WindowPad\source\WindowPad.ahk
-#Include %A_Scriptdir%\vendor\notify.ahk
-#Include %A_Scriptdir%\vendor\windows-explorer-util.ahk
+#Include %A_Scriptdir%\vendor\
+#Include WindowPad\source\WindowPad.ahk
+#Include base64.ahk
+#Include guid.ahk
+#Include notify.ahk
+#Include windows-explorer-util.ahk
