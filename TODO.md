@@ -85,6 +85,39 @@ Display Stars for each github link...
 https://github.com/bevacqua/awesome-badges/blob/master/readme.markdown
 
 
+
+https://autohotkey.com/board/topic/15574-morse-find-hotkey-press-and-hold-patterns/
+```
+Morse(timeout = 400) { ;
+   tout := timeout/1000
+   key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
+   Loop {
+      t := A_TickCount
+      KeyWait %key%
+      Pattern .= A_TickCount-t > timeout
+      KeyWait %key%,DT%tout%
+      If (ErrorLevel)
+         Return Pattern
+   }
+}
+
+BS::MsgBox % "Morse press pattern " Morse()
+
+!z::
+   p := Morse()
+   If (p = "0")
+      MsgBox Short press
+   Else If (p = "00")
+      MsgBox Two short presses
+   Else If (p = "01")
+      MsgBox Short+Long press
+   Else
+      MsgBox Press pattern %p%
+Return
+```
+
+
+
 # TODO
 
 Interactive debugging?  

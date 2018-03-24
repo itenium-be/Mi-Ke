@@ -63,6 +63,7 @@ return
 ; Vendor
 #Include %A_Scriptdir%\vendor\
 #Include WindowPad\source\WindowPad.ahk
+#Include base64.ahk
 #Include guid.ahk
 #Include notify.ahk
 #Include windows-explorer-util.ahk
