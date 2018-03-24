@@ -89,12 +89,9 @@ Goto, MiKeContinue
 
 ; ----------------------------------------------------------------------------------------------------- Tray Subroutines
 
-QuickStarterConsoles:
-	Msgbox wheee
-	return
-
 
 MikeTraySysInfo:
+	; https://github.com/itenium-be/Mi-Ke/issues/5
 	return
 
 
