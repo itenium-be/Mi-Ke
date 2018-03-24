@@ -20,7 +20,7 @@ Requires [Autohotkey_L](https://autohotkey.com/download).
 
 PowerShell:
 ```bash
-git clone https://github.com/Laoujin/Mi-Ke
+git clone https://github.com/itenium-be/Mi-Ke
 cd Mi-Ke
 
 # Create an initial setup with some examples
@@ -40,7 +40,7 @@ cd Mi-Ke
 
 ## Diff 2 files in Windows explorer or the selected text elsewhere
 
-[scripts/memory-diff.ahk](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/memory-diff.ahk)
+[scripts/memory-diff.ahk](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/memory-diff.ahk)
 
 {% include kbd k="Control+Win+Left" l="Put selected text in Desktop\left.txt" %}
 {% include kbd k="Control+Win+Down" l="Put selected text in Desktop\right.txt and open Diff tool" %}
@@ -53,7 +53,7 @@ cd Mi-Ke
 
 {% include kbd k="AltGr+Win+D" l="Open 2 explorers, one in download folder, one with USB stick" github="apps/windows-explorer-copy-download-to-usb" %}
 
-[scripts/apps/windows-explorer](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/apps/windows-explorer.ahk)
+[scripts/apps/windows-explorer](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/apps/windows-explorer.ahk)
 
 {% include kbd k="2x Esc" l="Close active Explorer window" %}
 {% include kbd k="2x Capslock" l="Put full directory of selected file/folder to clipboard" %}
@@ -72,7 +72,7 @@ Switch views:
 
 ## Start programs with hotkeys
 
-What quick starters are currently active is configured in [quick-start-programs.ini](https://github.com/Laoujin/Mi-Ke/blob/master/quick-start-programs.default.ini)
+What quick starters are currently active is configured in [quick-start-programs.ini](https://github.com/itenium-be/Mi-Ke/blob/master/quick-start-programs.default.ini)
 
 If you do not have a custom `quick-start-programs.ini`, the default shortcuts as defined in `quick-start-programs.default.ini` will be loaded.
 
@@ -129,13 +129,13 @@ explorer-files-separator=,
 
 ## Other Scripts
 
-[Chrome](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/apps/chrome.ahk)
+[Chrome](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/apps/chrome.ahk)
 
 {% include kbd k="Chrome F1" l="Open chrome://extensions in new tab" %}
 {% include kbd k="Capslock & W" l="New Chrome window" %}
 {% include kbd k="Capslock & X" l="Google selected text" %}
 
-[scripts\snippets.ahk](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/snippets.ahk)
+[scripts\snippets.ahk](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/snippets.ahk)
 
 {% include kbd k="Control+Shift+Win+C" l="Append to clipboard" %}
 {% include kbd k="Control+Win+X" l="Put selected text to clipboard. Convert windows path to Unix style path" %}
@@ -145,7 +145,7 @@ explorer-files-separator=,
 
 ## change-sound-volume
 
-[Change sound volume](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/change-sound-volume.ahk) with 'funny' images.  
+[Change sound volume](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/change-sound-volume.ahk) with 'funny' images.  
 
 {% include kbd k="Win+PgUp" l="Volume +10" %}
 {% include kbd k="Win+PgDn" l="Volume -10" %}
@@ -158,7 +158,7 @@ explorer-files-separator=,
 Dev Stuff
 ---------
 
-[apps/autohotkey-debugging.ahk](https://github.com/Laoujin/Mi-Ke/blob/master/scripts/apps/autohotkey-debugging.ahk)
+[apps/autohotkey-debugging.ahk](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/apps/autohotkey-debugging.ahk)
 
 {% include kbd k="Control+Win+R" l="Reload script" %}
 {% include kbd k="Shift+F11" l="Open ListVars window" %}
