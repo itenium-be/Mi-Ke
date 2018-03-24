@@ -2,7 +2,7 @@ TODO
 ====
 
 **Usually this stuff should be posted here:**  
-https://github.com/Laoujin/Mi-Ke/issues
+https://github.com/itenium-be/Mi-Ke/issues
 
 Context menu:
 Go to special path
