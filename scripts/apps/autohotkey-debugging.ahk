@@ -14,6 +14,22 @@ DevListVars:
 ListVars
 return
 
+DevKeyHistory:
+;!F10::
+KeyHistory
+return
+
+; Control + S: Auto-reload script when it's saved.
+; (we assume the file path is in the Window title)
+DevReloadScriptWhenSaved:
+if (!WinActive(EDITOR_TITLEMATCHER))
+	return
+
+WinGetActiveTitle, winTitle
+if (InStr(winTitle, A_Scriptdir))
+	Goto DevReloadScript
+return
+
 
 ; Capslock & A: Copy and google Autohotkey
 BrowserSearchAutohotkey:
