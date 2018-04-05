@@ -10,6 +10,16 @@ AppendToClipboard:
 Return
 
 
+; ^#t
+ConvertToTitleCase:
+	clipboard =
+	Send, ^c
+	ClipWait, 3
+	StringUpper titleCased, Clipboard, T
+	Send %titleCased%
+Return
+
+
 
 ; Ctrl+Win+X: Translate C:\Users\ to /c/Users/
 ; ^#x::
