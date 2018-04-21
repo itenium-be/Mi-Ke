@@ -65,6 +65,7 @@ CreateSingleMikeHotkey("windows-min-max", "WindowsMinMax")
 ; snippets
 CreateSingleMikeHotkey("snippets-append-to-clipboard", "AppendToClipboard")
 CreateSingleMikeHotkey("snippets-convert-to-title-case", "ConvertToTitleCase")
+CreateSingleMikeHotkey("snippets-explorer-last-downloaded-file", "ExplorerLastDownloadedFile")
 CreateSingleMikeHotkey("snippets-path-win-to-unix", "PathWinToUnix")
 CreateSingleMikeHotkey("snippets-md-code-block-surround", "MdCodeBlockSurround")
 CreateSingleMikeHotkey("snippets-md-code-block-new", "MdCodeBlockNew")
