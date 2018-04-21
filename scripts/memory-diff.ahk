@@ -2,7 +2,7 @@
 ; Dependencies: vendor/windows-explorer-util.ahk, utilities/ini-reader.ahk, notify.ahk
 
 ; Copy two blocks of text and compare them in a diff program
-; Select a file in Explorer to compare the contents
+; Select a file/folder in Explorer to compare the contents
 
 ; Control + Windows + Left Arrow: Copy selected text and put in %A_Desktop%\left.txt
 ; Control + Windows + Down Arrow: Copy selected text in %A_Desktop%\right.txt and open diff program
@@ -25,6 +25,10 @@ PasteClipboardToFile(file, clipContent)
 {
 	IfExist, %clipContent%
 	{
+		If (InStr(FileExist(clipContent), "D"))
+		{
+			return "DIRECTORY-COMPARE"
+		}
 		fileName := clipContent
 		FileRead, clipContent, %clipContent%
 		clipContent = %fileName%`n%clipContent%
@@ -35,10 +39,12 @@ PasteClipboardToFile(file, clipContent)
 	FileAppend, %clipContent%, %file%
 }
 
-DiffMergeOpenAppl()
+DiffMergeOpenAppl(left := "", right := "")
 {
-	left := GetLeft()
-	right := GetRight()
+	if (!left and !right) {
+		left := GetLeft()
+		right := GetRight()
+	}
 
 	mergeTool := ReadMikeIni("memory-diff", "merge-tool", true)
 	StringReplace, mergeTool, mergeTool, <left>, %left%
@@ -72,7 +78,7 @@ ClipWait, 3
 doCompare = false
 if (clipboard = diffMergeContentLeftFile)
 {
-	MsgBox, 4, Identical, Clipboards are identical. Do you want to open DiffMerge anyway?, 1
+	MsgBox, 4, Identical, Clipboards are identical. Do you want to open diff anyway?, 1
 	IfMsgBox, Yes
 		doCompare = true
 }
@@ -81,8 +87,12 @@ else
 
 if doCompare = true
 {
-	PasteClipboardToFile(GetRight(), clipboard)
-	DiffMergeOpenAppl()
+	result := PasteClipboardToFile(GetRight(), clipboard)
+	if (result = "DIRECTORY-COMPARE" and InStr(FileExist(diffMergeContentLeftFile), "D")) {
+		DiffMergeOpenAppl(diffMergeContentLeftFile, clipboard)
+	} else {
+		DiffMergeOpenAppl()
+	}
 }
 return
 
