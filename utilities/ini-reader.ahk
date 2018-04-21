@@ -24,12 +24,10 @@ ReadMikeIni(sectionName, key := "", replacePaths := false)
 	{
 		IniRead, value, %ini%, %sectionName%, %key%
 	}
-	else
+
+	if (value = "ERROR" or value = "")
 	{
 		IniRead, value, %A_Scriptdir%\mike.default.ini, %sectionName%, %key%
-		if (value = "ERROR") {
-			IniRead, value, %ini%, %sectionName%, %key%
-		}
 	}
 
 	if (value = "ERROR" or (value = "" and key = "")) {
