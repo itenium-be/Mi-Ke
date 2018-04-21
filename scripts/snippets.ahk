@@ -24,7 +24,6 @@ Return
 ExplorerLastDownloadedFile:
 	Loop, Files, C:\Users\%A_Username%\Downloads\*, DF
 	{
-		Msgbox %A_LoopFileFullPath%
 		FileGetTime, Time, %A_LoopFileFullPath%, C
 		If (Time > Time_Orig)
 		{
