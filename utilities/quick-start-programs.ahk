@@ -137,13 +137,27 @@ BuildHotkeyArgs(quickStarter, selected := "")
 
 
 RunHotkey(quickStarter) {
-	if (quickStarter.passExplorerPathAsArgument and WinActive("ahk_class (CabinetWClass|ExploreWClass)"))
+	if (quickStarter.passExplorerPathAsArgument)
 	{
-		; Start with current what is currently selected in Windows Explorer
-		selected := {}
-		selected.path := Explorer_GetPath()
-		if (quickStarter.passExplorerPathAsArgument = "file") {
-			selected.files := Explorer_GetSelected("", quickStarter.explorerFilesSeparator)
+		if (WinActive("ahk_class (CabinetWClass|ExploreWClass)")) {
+			; Start with current what is currently selected in Windows Explorer
+			selected := {}
+			selected.path := Explorer_GetPath()
+			if (quickStarter.passExplorerPathAsArgument = "file") {
+				selected.files := Explorer_GetSelected("", quickStarter.explorerFilesSeparator)
+			}
+
+		} else {
+			selected := {}
+
+			WinGetTitle, winTitle, A
+			SplitPath, winTitle, name, dir, ext, name_no_ext
+			selected.path := dir
+
+			FoundPos := InStr(ext, " ")
+			FoundPos := FoundPos = 0 ? 3 : FoundPos
+			StringMid, ext, ext, 1, FoundPos
+			selected.files := name_no_ext "." ext
 		}
 
 		toRun := BuildHotkeyArgs(quickStarter, selected)
