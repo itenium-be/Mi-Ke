@@ -6,7 +6,7 @@ Menu, Tray, NoStandard
 ; ------------------------------------------------------------------------------------------------------------ TRAY ICON
 trayIconPath := ReadMikeIni("tray-menu", "icon", true)
 IfNotExist, %trayIconPath%
-	trayIconPath = <A_ScriptDir>\iseedeadcode.ico
+	trayIconPath = <A_ScriptDir>\config\iseedeadcode.ico
 
 trayIconPath := FileReplacements(trayIconPath)
 Menu, Tray, Icon, %trayIconPath%,, 1
@@ -109,10 +109,10 @@ MikeTrayTooltip:
 MikeChooseTrayIcon:
 	FileSelectFile, trayIconPath, 3, , Pick new tray icon, Icons (*.ico)
 	if trayIconPath {
-		customTrayIconPath = %A_ScriptDir%\mike.ico
+		customTrayIconPath = %A_ScriptDir%\config\mike.ico
 		FileCopy, %trayIconPath%, %customTrayIconPath%, 1
 		Menu, Tray, Icon, %customTrayIconPath%,, 1
-		WriteMikeIni("<A_ScriptDir>\mike.ico", "tray-menu", "icon")
+		WriteMikeIni("<A_ScriptDir>\config\mike.ico", "tray-menu", "icon")
 	}
 	return
 
