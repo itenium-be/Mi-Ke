@@ -43,26 +43,18 @@ GetQuickStarterInfoByMenuItem()
 }
 
 
-CreateQuickStartsMenuItem(menu, name)
+CreateQuickStartsMenuItem(labelName, menu := "Tray")
 {
 	global quickStarterz
 	For index, quickStarter in quickStarterz
 	{
-		if (quickStarter.name = name) {
-			name := GetMenuName(quickStarter)
-			Menu, %menu%, add, %name%, MenuQuickStarterInfoExecutor
+		if (quickStarter.label = labelName || quickStarter.name = labelName) {
+			labelName := GetMenuName(quickStarter)
+			thaLabel := quickStarter.label <> "" ? quickStarter.label : "MenuQuickStarterInfoExecutor"
+			Menu, %menu%, add, %labelName%, %thaLabel%
 			return
 		}
 	}
-}
-
-CreateMenuItemFromIni(iniName, name)
-{
-	hotkey := ReadMikeIni(iniName, "hotkey")
-	if hotkey
-		name .= "`t" . HotkeyToString(hotkey)
-
-	Menu, Tray, Add, %name%, %iniName%
 }
 
 GetMenuName(quickStarter)

@@ -98,9 +98,3 @@ CreateSingleMikeHotkey("ExplorerNewTextFile")
 CreateSingleMikeHotkey("ExplorerSelectedFileDirToClipboard")
 CreateSingleMikeHotkey("ExplorerSelectedFilePathToClipboard")
 Hotkey, IfWinActive
-
-; DEV stuff
-CreateSingleMikeHotkey("DevReloadScript")
-CreateSingleMikeHotkey("DevListVars")
-CreateSingleMikeHotkey("DevKeyHistory")
-CreateSingleMikeHotkey("DevReloadScriptWhenSaved")

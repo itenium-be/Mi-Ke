@@ -48,7 +48,7 @@ Loop, 1000 {
 			} else if (key = "new-window-flag") {
 				quickStarterInfo.newWindowFlag := value
 
-			} else if (key = "elevate" and value = 1) {
+			} else if (key = "asAdmin" and value = 1) {
 				quickStarterInfo.asAdmin := true
 
 			} else if (key = "explorer-files-separator") {
@@ -59,12 +59,17 @@ Loop, 1000 {
 
 			} else if (key = "name") {
 				quickStarterInfo.name := value
+
+			} else if (key = "label") {
+				quickStarterInfo.label := value
 			}
 		}
 
-		if (quickStarterInfo.hotkey and quickStarterInfo.path and quickStarterInfo.active != 0) {
-			if not FileExist(quickStarterInfo.path) {
+		if ((quickStarterInfo.path or quickStarterInfo.label) and quickStarterInfo.active != 0) {
+			if (quickStarterInfo.path <> "" and not FileExist(quickStarterInfo.path)) {
 				Notify("Path does not exist", quickStarterInfo.path)
+			} else if (quickStarterInfo.label <> "" and not IsLabel(quickStarterInfo.label)) {
+				Notify("Label does not exist", quickStarterInfo.label)
 			}
 
 			quickStarterz.Push(quickStarterInfo)
@@ -83,7 +88,8 @@ Loop, 1000 {
 			; Notify(quickStarterInfo.doublePressCloseHotkey " => " quickStarterInfo.path)
 
 			thaHotkey := quickStarterInfo.hotkey
-			Hotkey, %thaHotkey%, QuickStarterInfoExecutor
+			thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
+			Hotkey, %thaHotkey%, %thaLabel%
 		}
 	}
 }

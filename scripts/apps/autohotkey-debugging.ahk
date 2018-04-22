@@ -2,22 +2,33 @@
 
 
 DevReloadScript:
-;^#r::
-; Double click tray icon to reload also
 Notify("Script Reloaded")
 Reload
 return
 
 
 DevListVars:
-;!F11::
 ListVars
 return
 
+
 DevKeyHistory:
-;!F10::
 KeyHistory
 return
+
+
+DevListHotkeys:
+ListHotkeys
+return
+
+
+DevSuspend:
+Suspend
+quickStarter := GetQuickStarterInfoByMenuItem()
+menuText := GetMenuName(quickStarter)
+Menu, Tray, ToggleCheck, %menuText%
+return
+
 
 ; Control + S: Auto-reload script when it's saved.
 ; (we assume the file path is in the Window title)

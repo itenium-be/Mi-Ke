@@ -30,8 +30,8 @@ AHK_NOTIFYICON(wParam, lParam)
 Menu, Tray, MainWindow
 
 
-CreateMenuItemFromIni("DevReloadScript", "Reload script and ini")
-CreateMenuItemFromIni("MiKeTraySuspend", "Suspend script")
+CreateQuickStartsMenuItem("DevReloadScript")
+CreateQuickStartsMenuItem("DevSuspend")
 Menu, Tray, Add
 
 ; Start Mi-Ke when windows starts
@@ -52,12 +52,11 @@ Menu, Tray, Add, View source (Github), MiKeTraySourceGithub
 Menu, Tray, Add
 
 
-CreateMenuItemFromIni("DevKeyHistory", "Key history")
-CreateMenuItemFromIni("DevListVars", "List hotkeys")
-CreateQuickStartsMenuItem("Tray", "Spy window")
+CreateQuickStartsMenuItem("DevListHotkeys")
+CreateQuickStartsMenuItem("DevKeyHistory")
+CreateQuickStartsMenuItem("DevListVars")
+CreateQuickStartsMenuItem("Spy window")
 Menu, Tray, Add
-
-;Menu, tray, Add, System information, MikeTraySysInfo
 
 CreateQuickStartersMenu("Applications")
 CreateQuickStartersMenu("Consoles")
@@ -67,8 +66,8 @@ Menu, Tray, Add
 Menu, Tray, Add, E&xit, MiKeTrayExit
 
 ; 1=For one click to activate default (2=double click=default)
-Menu, Tray, Click, 1
-;Menu, Tray, Default, System information
+;Menu, Tray, Click, 1
+;Menu, Tray, Default, Open UI
 
 ; Code if we want to do different things for tray single/double click
 ; OnMessage(0x404, "AHK_NOTIFYICON")
@@ -90,11 +89,6 @@ Goto, MiKeContinue
 ; ----------------------------------------------------------------------------------------------------- Tray Subroutines
 
 
-MikeTraySysInfo:
-	; https://github.com/itenium-be/Mi-Ke/issues/5
-	return
-
-
 MikeTrayTooltip:
 	memory := GetMemoryStatus()
 	trayContent := "CPU: " . CPULoad() . "%"
@@ -112,20 +106,6 @@ MikeChooseTrayIcon:
 		Menu, Tray, Icon, %customTrayIconPath%,, 1
 		WriteMikeIni("<A_ScriptDir>\config\mike.ico", "tray-menu", "icon")
 	}
-	return
-
-MiKeListHotkeys:
-	ListHotkeys
-	return
-
-MiKeTraySpyWindow:
-	spyWindow := FileReplacements("<A_AHKPATH>\AU3_Spy.exe")
-	Run %spyWindow%
-	return
-
-MiKeTraySuspend:
-	Suspend
-	Menu, Tray, ToggleCheck, Suspend script
 	return
 
 MiKeTrayExit:
