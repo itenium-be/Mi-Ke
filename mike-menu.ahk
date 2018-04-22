@@ -46,18 +46,19 @@ IfExist %startupLink%
 Menu, Tray, Add, Choose Tray Icon, MikeChooseTrayIcon
 Menu, Tray, Add
 
+; More icons?
+; https://www.digitalcitizen.life/where-find-most-windows-10s-native-icons
+; http://www.glennslayden.com/code/shell32_icons.jpg
+
 Menu, Tray, Add, View source (Explorer), MiKeTraySource
+Menu, Tray, Icon, View source (Explorer), %A_WINDIR%\explorer.exe
 Menu, Tray, Add, View source (IDE), MiKeTraySourceEditor
+Menu, Tray, Icon, View source (IDE), %EDITOR%
 Menu, Tray, Add, View source (Github), MiKeTraySourceGithub
 Menu, Tray, Add
 
 
-CreateQuickStartsMenuItem("DevListHotkeys")
-CreateQuickStartsMenuItem("DevKeyHistory")
-CreateQuickStartsMenuItem("DevListVars")
-CreateQuickStartsMenuItem("Spy window")
-Menu, Tray, Add
-
+CreateQuickStartersMenu("Autohotkey")
 CreateQuickStartersMenu("Applications")
 CreateQuickStartersMenu("Consoles")
 

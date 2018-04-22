@@ -73,7 +73,12 @@ CreateQuickStartersMenu(menu)
 		if (quickStarter.menu = menu and quickStarter.active) {
 			addMenu = true
 			name := GetMenuName(quickStarter)
-			Menu, %menu%, add, %name%, MenuQuickStarterInfoExecutor
+			thaLabel := quickStarter.label <> "" ? quickStarter.label : "MenuQuickStarterInfoExecutor"
+			Menu, %menu%, add, %name%, %thaLabel%
+			if quickStarter.path {
+				path := quickStarter.path
+				Menu, %menu%, Icon, %name%, %path%, 1
+			}
 		}
 	}
 
