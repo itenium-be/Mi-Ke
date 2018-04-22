@@ -33,25 +33,25 @@ Loop, 1000 {
 				quickStarterInfo.titleMatcher := ReadMikeIni("core", "editor-title-matcher")
 				quickStarterInfo.newWindowFlag := ReadMikeIni("core", "editor-new-window-flag")
 
-			} else if (key = "double-press-closes") {
+			} else if (key = "doublePressCloseHotkey") {
 				quickStarterInfo.doublePressCloseHotkey := value
 
-			} else if (key = "title-matcher") {
+			} else if (key = "titleMatcher") {
 				quickStarterInfo.titleMatcher := value
 
 			} else if (key = "active") {
 				quickStarterInfo.active := value
 
-			} else if (key = "explorer-path-flag" and (value = "dir" or value = "file")) {
+			} else if (key = "passExplorerPathAsArgument" and (value = "dir" or value = "file")) {
 				quickStarterInfo.passExplorerPathAsArgument := value
 
-			} else if (key = "new-window-flag") {
+			} else if (key = "newWindowFlag") {
 				quickStarterInfo.newWindowFlag := value
 
 			} else if (key = "asAdmin" and value = 1) {
 				quickStarterInfo.asAdmin := true
 
-			} else if (key = "explorer-files-separator") {
+			} else if (key = "explorerFilesSeparator") {
 				quickStarterInfo.explorerFilesSeparator := value
 
 			} else if (key = "menu") {
