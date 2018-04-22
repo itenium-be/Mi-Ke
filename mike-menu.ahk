@@ -97,8 +97,6 @@ MikeTraySysInfo:
 
 MikeTrayTooltip:
 	memory := GetMemoryStatus()
-	; TODO: Put this sentence in ini file.
-	; Could configure lots of stuff like: CPU/Memory Usage? User/Domain? CPU Temperature?
 	trayContent := "CPU: " . CPULoad() . "%"
 	trayContent .= " | "
 	trayContent .= "RAM: " memory.ramPhysicalUsed . " of " . memory.ramPhysicalTotal . " (" . memory.ramPhysicalPercentage . "%)"
@@ -117,7 +115,6 @@ MikeChooseTrayIcon:
 	return
 
 MiKeListHotkeys:
-	; TODO: Create a better hotkey display...
 	ListHotkeys
 	return
 

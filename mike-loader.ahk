@@ -22,12 +22,18 @@ Loop, parse, lockStates, `n
 ; ----- Hotkeyed scripts
 ; Hotkey mapping to their source code labels
 
-CreateMikeHotkey(sectionName, key, labelName)
+CreateMikeHotkey(sectionName, key, labelName := "")
 {
+	if (!labelName) {
+		; Assume the key is both the ini key and the Autohotkey label name
+		labelName := key
+	}
+
 	value := ReadMikeIni(sectionName, key)
 	if value
 		Hotkey, %value%, %labelName%
 }
+
 
 CreateSingleMikeHotkey(sectionName, labelName)
 {
@@ -38,25 +44,25 @@ CreateSingleMikeHotkey(sectionName, labelName)
 
 
 if ReadMikeIni("change-sound-volume", "active") {
-	CreateMikeHotkey("change-sound-volume", "hotkey-add-big", "ChangeSoundVolumeAddBig")
-	CreateMikeHotkey("change-sound-volume", "hotkey-min-big", "ChangeSoundVolumeMinBig")
-	CreateMikeHotkey("change-sound-volume", "hotkey-see", "ChangeSoundVolumeSee")
-	CreateMikeHotkey("change-sound-volume", "hotkey-toggle-mute", "ChangeSoundToggleMute")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeAddBig")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeMinBig")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeSee")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundToggleMute")
 
-	CreateMikeHotkey("change-sound-volume", "hotkey-no-image-add-big", "ChangeSoundVolumeNoImageAddBig")
-	CreateMikeHotkey("change-sound-volume", "hotkey-no-image-min-big", "ChangeSoundVolumeNoImageMinBig")
-	CreateMikeHotkey("change-sound-volume", "hotkey-no-image-toggle-mute", "ChangeSoundNoImageToggleMute")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeNoImageAddBig")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeNoImageMinBig")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundNoImageToggleMute")
 
-	CreateMikeHotkey("change-sound-volume", "hotkey-no-image-add-small", "ChangeSoundVolumeNoImageAddSmall")
-	CreateMikeHotkey("change-sound-volume", "hotkey-no-image-min-small", "ChangeSoundVolumeNoImageMinSmall")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeNoImageAddSmall")
+	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeNoImageMinSmall")
 }
 
 if ReadMikeIni("memory-diff", "active") {
-	CreateMikeHotkey("memory-diff", "hotkey-left", "MemoryDiffSaveLeft")
-	CreateMikeHotkey("memory-diff", "hotkey-right-and-open", "MemoryDiffSaveRightAndOpen")
-	CreateMikeHotkey("memory-diff", "hotkey-open", "MemoryDiffOpen")
-	CreateMikeHotkey("memory-diff", "hotkey-dropbox-open", "MemoryDiffDropboxOpen")
-	CreateMikeHotkey("memory-diff", "hotkey-see", "MemoryDiffSee")
+	CreateMikeHotkey("memory-diff", "MemoryDiffSaveLeft")
+	CreateMikeHotkey("memory-diff", "MemoryDiffSaveRightAndOpen")
+	CreateMikeHotkey("memory-diff", "MemoryDiffOpen")
+	CreateMikeHotkey("memory-diff", "MemoryDiffDropboxOpen")
+	CreateMikeHotkey("memory-diff", "MemoryDiffSee")
 }
 
 CreateSingleMikeHotkey("windows-min-max", "WindowsMinMax")
@@ -73,9 +79,9 @@ CreateSingleMikeHotkey("snippets-md-code-block-new", "MdCodeBlockNew")
 
 ; -- apps
 ; browser
-CreateMikeHotkey("core", "browser-hotkey-open", "BrowserOpen")
-CreateMikeHotkey("core", "browser-hotkey-search", "BrowserSearch")
-CreateMikeHotkey("core", "browser-hotkey-search-autohotkey", "BrowserSearchAutohotkey")
+CreateMikeHotkey("core", "BrowserOpen")
+CreateMikeHotkey("core", "BrowserSearch")
+CreateMikeHotkey("core", "BrowserSearchAutohotkey")
 
 ; windows-cmd
 

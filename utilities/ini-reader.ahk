@@ -42,6 +42,7 @@ ReadMikeIni(sectionName, key := "", replacePaths := false)
 
 WriteMikeIni(value, sectionName, key)
 {
+	; mike.ini should've been created with init.ps1
 	ini = %A_Scriptdir%\config\mike.ini
 	IfNotExist %ini%
 		FileAppend, `; Overwrite settings here, %ini%
