@@ -18,7 +18,7 @@ A script running in the background (tray icon) with little productivity boosters
 - Enhancements to programs (cmd, windows explorer, ...)
 - Random scripts to do something I often do (did?) manually
 
-See the [Github Pages](http://laoujin.github.io/Mi-Ke) for a listing of
+See the [Github Pages](http://itenium.be/Mi-Ke) for a listing of
 all shortcuts and their default bindings.
 
 

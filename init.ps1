@@ -42,16 +42,16 @@ if ($bare) {
 
 
 # Copy *.default.ini
-$iniPath = "$($path)\mike.ini"
+$iniPath = "$($path)\config\mike.ini"
 if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
-	echo "Creating mike.ini"
-	Copy-Item "$($path)\mike.default.ini" $iniPath
+	echo "Creating config\mike.ini"
+	Copy-Item "$($path)\config\mike.default.ini" $iniPath
 }
 
-$iniPath = "$($path)\quick-start-programs.ini"
+$iniPath = "$($path)\config\quick-start-programs.ini"
 if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
-	echo "Creating quick-start-programs.ini"
-	Copy-Item "$($path)\quick-start-programs.default.ini" $iniPath
+	echo "Creating config\quick-start-programs.ini"
+	Copy-Item "$($path)\config\quick-start-programs.default.ini" $iniPath
 }
 
 
@@ -148,5 +148,5 @@ echo "Done"
 echo ""
 echo "Run mike.ahk to launch the Autohotkey script"
 echo "It will run in the tray menu"
-echo "Configure hotkeys by modifying mike.ini"
+echo "Configure hotkeys by modifying config\mike.ini"
 echo "Check the samples created to get started with hotstrings"

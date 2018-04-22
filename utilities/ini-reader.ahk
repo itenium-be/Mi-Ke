@@ -19,7 +19,7 @@ FileReplacements(fileName)
 
 ReadMikeIni(sectionName, key := "", replacePaths := false)
 {
-	ini = %A_Scriptdir%\mike.ini
+	ini = %A_Scriptdir%\config\mike.ini
 	IfExist %ini%
 	{
 		IniRead, value, %ini%, %sectionName%, %key%
@@ -27,7 +27,7 @@ ReadMikeIni(sectionName, key := "", replacePaths := false)
 
 	if (value = "ERROR" or value = "")
 	{
-		IniRead, value, %A_Scriptdir%\mike.default.ini, %sectionName%, %key%
+		IniRead, value, %A_Scriptdir%\config\mike.default.ini, %sectionName%, %key%
 	}
 
 	if (value = "ERROR" or (value = "" and key = "")) {
@@ -42,9 +42,10 @@ ReadMikeIni(sectionName, key := "", replacePaths := false)
 
 WriteMikeIni(value, sectionName, key)
 {
-	ini = %A_Scriptdir%\mike.ini
+	ini = %A_Scriptdir%\config\mike.ini
 	IfNotExist %ini%
-		ini = %A_Scriptdir%\mike.default.ini
+		FileAppend, `; Overwrite settings here, %ini%
+		; ini = %A_Scriptdir%\config\mike.default.ini
 
 	IniWrite, %value%, %ini%, %sectionName%, %key%
 }
