@@ -9,7 +9,7 @@ else
 	; Open new tab
 	Send ^t
 
-SendInput chrome`:`/`/chrome`/extensions`/{Enter}
+SendInput chrome`:`/`/extensions`/{Enter}
 
 ; Other chrome:// uris
 ; chrome://settings
