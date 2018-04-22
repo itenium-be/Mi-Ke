@@ -94,8 +94,8 @@ HotkeyToString(hotkey)
 
 RunHotkeyCore(path, quickStarter)
 {
-	;MsgBox %path%
-	;Notify("Run", path)
+	; MsgBox %path%
+	; Notify("Run", path)
 	if (quickStarter.asAdmin and not A_IsAdmin) {
 			try {
 				; Start as admin with UAC dialog
@@ -108,48 +108,37 @@ RunHotkeyCore(path, quickStarter)
 }
 
 
-BuildHotkeyArgs(quickStarter, selectedFiles := "")
+BuildHotkeyArgs(quickStarter, selected := "")
 {
-	newWindowFlag := quickStarter.newWindowFlag
-	if selectedFiles {
-		; selectedFiles = current path in Windows Explorer
+	openWithPathArgs := quickStarter.openWithPathArgs
+	if (selected and openWithPathArgs) {
+		; selected: {path, files} = as currently selected in Windows Explorer
 		; Attempt to pass the path/files as argument to the app to start
-		if InStr(newWindowFlag, "<path>") {
-			flag := StrReplace(newWindowFlag, "<path>", selectedFiles)
 
-		} else if newWindowFlag {
-			flag = %newWindowFlag% %selectedFiles%
+		result := openWithPathArgs
+		result := StrReplace(result, "<selectedFiles>", selected.files)
+		result := StrReplace(result, "<path>", selected.path)
+		result := StrReplace(result, "<exe>", quickStarter.path)
+		result := StrReplace(result, "<exeParams>", quickStarter.pathParams)
 
-		} else {
-			flag := selectedFiles
-		}
+		return result
 
-	} else if newWindowFlag {
-		flag := newWindowFlag
+	} else if quickStarter.pathParams {
+		return quickStarter.path " " quickStarter.pathParams
 	}
 
-	if not flag {
-		return quickStarter.path
-	}
-	return quickStarter.path " " flag
+	return quickStarter.path
 }
 
 
 RunHotkey(quickStarter) {
 	if (quickStarter.passExplorerPathAsArgument and WinActive("ahk_class (CabinetWClass|ExploreWClass)"))
 	{
-		; Start with current Windows Explorer path opened
-		if quickStarter.passExplorerPathAsArgument = "dir"
-			selected := Explorer_GetPath()
-		else {
-			if quickStarter.explorerFilesSeparator = """" {
-				quickStarter.explorerFilesSeparator := """ """
-				Notify(quickStarter.explorerFilesSeparator)
-			}
-			selected := Explorer_GetSelected("", quickStarter.explorerFilesSeparator)
-			if quickStarter.explorerFilesSeparator = """ """ {
-				selected := """" selected """"
-			}
+		; Start with current what is currently selected in Windows Explorer
+		selected := {}
+		selected.path := Explorer_GetPath()
+		if (quickStarter.passExplorerPathAsArgument = "file") {
+			selected.files := Explorer_GetSelected("", quickStarter.explorerFilesSeparator)
 		}
 
 		toRun := BuildHotkeyArgs(quickStarter, selected)
@@ -159,18 +148,13 @@ RunHotkey(quickStarter) {
 
 	titleMatcher := quickStarter.titleMatcher
 	if (titleMatcher and WinExist(titleMatcher)) {
-		if quickStarter.newWindowFlag {
-			; Open new instance of app
-			toRun := BuildHotkeyArgs(quickStarter)
-			RunHotkeyCore(toRun, quickStarter)
-		} else {
-			; Bring the existing window to the front
-			WinActivate
-		}
+		; Bring the existing window to the front
+		WinActivate
 		return
 	}
 
-	RunHotkeyCore(quickStarter.path, quickStarter)
+	toRun := BuildHotkeyArgs(quickStarter)
+	RunHotkeyCore(toRun, quickStarter)
 }
 
 QuickStarterInfoCloserExecutor:

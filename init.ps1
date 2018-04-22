@@ -69,8 +69,8 @@ if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 editor=<A_PROGRAMFILES>\Sublime Text 3\subl.exe
 ; Discover ahk_class with Window Spy (Alt+F12)
 ; c:\Program Files\AutoHotkey\AU3_Spy.exe
-editor-title-matcher=ahk_class PX_WINDOW_CLASS
-editor-new-window-flag=--new-window "<path>"
+editor-titleMatcher=ahk_class PX_WINDOW_CLASS
+editor-openWithPathArgs=<exe> --new-window "<path>"
 "@
 	# Copy-Item "$($path)\config\mike.default.ini" $iniPath
 }

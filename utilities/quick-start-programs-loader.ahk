@@ -28,10 +28,13 @@ Loop, 1000 {
 				if FileExist(FileReplacements(value))
 					quickStarterInfo.path := FileReplacements(value)
 
+			} else if (key = "pathParams") {
+				quickStarterInfo.pathParams := value
+
 			} else if (key = "editor" and value = 1) {
 				quickStarterInfo.path := EDITOR
-				quickStarterInfo.titleMatcher := ReadMikeIni("core", "editor-title-matcher")
-				quickStarterInfo.newWindowFlag := ReadMikeIni("core", "editor-new-window-flag")
+				quickStarterInfo.titleMatcher := ReadMikeIni("core", "editor-titleMatcher")
+				quickStarterInfo.openWithPathArgs := ReadMikeIni("core", "editor-openWithPathArgs")
 
 			} else if (key = "doublePressCloseHotkey") {
 				quickStarterInfo.doublePressCloseHotkey := value
@@ -45,8 +48,8 @@ Loop, 1000 {
 			} else if (key = "passExplorerPathAsArgument" and (value = "dir" or value = "file")) {
 				quickStarterInfo.passExplorerPathAsArgument := value
 
-			} else if (key = "newWindowFlag") {
-				quickStarterInfo.newWindowFlag := value
+			} else if (key = "openWithPathArgs") {
+				quickStarterInfo.openWithPathArgs := value
 
 			} else if (key = "asAdmin" and value = 1) {
 				quickStarterInfo.asAdmin := true
@@ -62,7 +65,11 @@ Loop, 1000 {
 
 			} else if (key = "label") {
 				quickStarterInfo.label := value
+
+			} else {
+				Notify("Didn't find key", key "=" value)
 			}
+
 		}
 
 		if ((quickStarterInfo.path or quickStarterInfo.label) and quickStarterInfo.active != 0) {
