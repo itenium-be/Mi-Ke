@@ -41,11 +41,38 @@ if ($bare) {
 }
 
 
-# Copy *.default.ini
+# Create config ini files
 $iniPath = "$($path)\config\mike.ini"
 if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 	echo "Creating config\mike.ini"
-	Copy-Item "$($path)\config\mike.default.ini" $iniPath
+	Create-File "$($path)\config\mike.ini" @"
+; Use Control+Win+R to reload the script
+; Configure your editor to reload the script on save (expects A_SCRIPTDIR in the window title)
+
+; Paths supports some substitutions
+; Defined in ini-reader.ahk::FileReplacements
+; <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>
+
+; Hotkey syntax:
+; ^ = Control
+; # = Win
+; + = Shift
+; ! = Alt
+; <# = Left Win
+; #> = Right Win
+; <^>! = AltGr
+
+; Prefix a hotkey with ~ to not block the native function
+; Numpad0 & Numpad2 = When pressed together
+
+[core]
+editor=<A_PROGRAMFILES>\Sublime Text 3\subl.exe
+; Discover ahk_class with Window Spy (Alt+F12)
+; c:\Program Files\AutoHotkey\AU3_Spy.exe
+editor-title-matcher=ahk_class PX_WINDOW_CLASS
+editor-new-window-flag=--new-window "<path>"
+"@
+	# Copy-Item "$($path)\config\mike.default.ini" $iniPath
 }
 
 $iniPath = "$($path)\config\quick-start-programs.ini"
