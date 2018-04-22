@@ -1,0 +1,9 @@
+{% assign url = 'https://github.com/' | append: include.url %}
+{% assign repoName = include.url %}
+
+<li>
+	<a href="{{ url }}" class="github">
+		<img src="https://img.shields.io/github/stars/{{ include.url }}.svg?style=social&label=Star" />
+	</a>
+	<a href="https://github.com/{{ include.url }}">{{ include.url }}</a>
+</li>

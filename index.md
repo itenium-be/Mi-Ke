@@ -172,8 +172,27 @@ Looking for even more little productivity boosters?
 
 Look no further!
 
-- [Drugoy/Autohotkey-scripts-.ahk](https://github.com/Drugoy/Autohotkey-scripts-.ahk)
-- [denolfe/AutoHotkey](https://github.com/denolfe/AutoHotkey)
+<ul>
+{% include github-stars.html url="ahkscript/awesome-AutoHotkey" %}
+{% include github-stars.html url="Drugoy/Autohotkey-scripts-.ahk" %}
+{% include github-stars.html url="denolfe/AutoHotkey" %}
+{% include github-stars.html url="camerb/AHKs" %}
+{% include github-stars.html url="cocobelgica/AutoHotkey-Util" %}
+{% include github-stars.html url="jNizM/AHK_Scripts" %}
+{% include github-stars.html url="theborg3of5/ahk" %}
+</ul>
+
+Developer tooling
+
+<ul>
+{% include github-stars.html url="babin101/DevKeyboard" %}
+{% include github-stars.html url="7plus/7plus" %}
+{% include github-stars.html url="RaptorX/AHK-ToolKit" %}
+</ul>
+
+
+Outside Github:
+
 - [Skrommel scripts](http://www.donationcoder.com/Software/Skrommel/index.html)
 	- [GoneIn60s](http://www.donationcoder.com/Software/Skrommel/index.html#GoneIn60s): Recover closed applications
 	- [IpUpload](http://www.donationcoder.com/Software/Skrommel/index.html#IpUpload): Upload current IP address to a FTP server
@@ -181,7 +200,3 @@ Look no further!
 	- [MoveInactiveWin](http://www.donationcoder.com/Software/Skrommel/index.html#MoveInactiveWin): Move a window without activating it
 	- [WhatColor](http://www.donationcoder.com/Software/Skrommel/index.html#WhatColor): Show and copy the RRGGBB color under the cursor
 - [Jack's Autohotkey Blog](http://www.computoredge.com/AutoHotkey/Free_AutoHotkey_Scripts_and_Apps_for_Learning_and_Generating_Ideas.html)
-- [camerb/AHKs](https://github.com/camerb/AHKs)
-- [AutoHotkey-Util](https://github.com/cocobelgica/AutoHotkey-Util)
-
-And of course there is an [Awesome AutoHotkey](https://github.com/ahkscript/awesome-AutoHotkey)!
