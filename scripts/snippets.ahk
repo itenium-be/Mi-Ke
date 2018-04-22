@@ -22,7 +22,7 @@ Return
 
 ; Control + Alt + D
 ExplorerLastDownloadedFile:
-	Loop, Files, C:\Users\%A_Username%\Downloads\*, DF
+	Loop, Files, %USERPROFILE%\Downloads\*, DF
 	{
 		FileGetTime, Time, %A_LoopFileFullPath%, C
 		If (Time > Time_Orig)
