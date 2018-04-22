@@ -56,13 +56,13 @@ CreateQuickStartsMenuItem(menu, name)
 	}
 }
 
-CreateMenuItemFromIni(iniName, name, label)
+CreateMenuItemFromIni(iniName, name)
 {
 	hotkey := ReadMikeIni(iniName, "hotkey")
 	if hotkey
 		name .= "`t" . HotkeyToString(hotkey)
 
-	Menu, Tray, Add, %name%, %label%
+	Menu, Tray, Add, %name%, %iniName%
 }
 
 GetMenuName(quickStarter)

@@ -24,12 +24,15 @@ Loop, parse, lockStates, `n
 ; ----- Hotkeyed scripts
 ; Hotkey mapping to their source code labels
 
-CreateMikeHotkey(sectionName, key)
+CreateMikeHotkey(sectionName, key, labelName := "")
 {
 	; Assumed that key is both the ini key and the Autohotkey label name
+	if (!labelName) {
+		labelName := key
+	}
 	value := ReadMikeIni(sectionName, key)
 	if value
-		Hotkey, %value%, %key%
+		Hotkey, %value%, %labelName%
 }
 
 
@@ -37,7 +40,7 @@ CreateSingleMikeHotkey(sectionName)
 {
 	; Assumed that ini sectionName is also the Autohotkey label name
 	if ReadMikeIni(sectionName, "active") {
-		CreateMikeHotkey(sectionName, "hotkey")
+		CreateMikeHotkey(sectionName, "hotkey", sectionName)
 	}
 }
 

@@ -30,8 +30,8 @@ AHK_NOTIFYICON(wParam, lParam)
 Menu, Tray, MainWindow
 
 
-CreateMenuItemFromIni("dev-reload-script", "Reload script and ini", "DevReloadScript")
-CreateMenuItemFromIni("dev-suspend-script", "Suspend script", "MiKeTraySuspend")
+CreateMenuItemFromIni("DevReloadScript", "Reload script and ini")
+CreateMenuItemFromIni("MiKeTraySuspend", "Suspend script")
 Menu, Tray, Add
 
 ; Start Mi-Ke when windows starts
@@ -52,8 +52,8 @@ Menu, Tray, Add, View source (Github), MiKeTraySourceGithub
 Menu, Tray, Add
 
 
-CreateMenuItemFromIni("dev-key-history", "Key history", "DevKeyHistory")
-CreateMenuItemFromIni("dev-list-vars", "List hotkeys", "MiKeListHotkeys")
+CreateMenuItemFromIni("DevKeyHistory", "Key history")
+CreateMenuItemFromIni("DevListVars", "List hotkeys")
 CreateQuickStartsMenuItem("Tray", "Spy window")
 Menu, Tray, Add
 
