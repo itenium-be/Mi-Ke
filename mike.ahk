@@ -56,6 +56,7 @@ return
 
 ; Utilities
 #Include %A_Scriptdir%\utilities\
+#Include autoByteFormat.ahk
 #Include ini-reader.ahk
 #Include quick-start-programs.ahk
 #Include system-info.ahk
@@ -64,6 +65,7 @@ return
 #Include %A_Scriptdir%\vendor\
 #Include WindowPad\source\WindowPad.ahk
 #Include base64.ahk
+#Include Gdip2.ahk
 #Include guid.ahk
 #Include notify.ahk
 #Include windows-explorer-util.ahk
