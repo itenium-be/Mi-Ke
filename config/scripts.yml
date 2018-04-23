@@ -1,0 +1,56 @@
+WindowsMinMax:
+	label: WindowsMinMax
+	hotkey: ^!#D
+
+
+AppendToClipboard:
+	label: AppendToClipboard
+	hotkey: ^+#c
+
+
+ConvertToTitleCase:
+	label: ConvertToTitleCase
+	hotkey: ^#t
+
+
+ExplorerLastDownloadedFile:
+	label: ExplorerLastDownloadedFile
+	hotkey: ^!d
+
+
+PathWinToUnix:
+	label: PathWinToUnix
+	hotkey: ^#x
+
+
+MdCodeBlockSurround:
+	label: MdCodeBlockSurround
+	hotkey: !#m
+
+
+MdCodeBlockNew:
+	label: MdCodeBlockNew
+	hotkey: ^#!m
+
+
+
+
+
+
+BrowserOpen:
+	label: BrowserOpen
+	hotkey: Capslock & W
+
+
+BrowserSearch:
+	label: BrowserSearch
+	hotkey: Capslock & X
+
+
+BrowserSearchAutohotkey:
+	label: BrowserSearchAutohotkey
+	hotkey: Capslock & A
+
+
+
+

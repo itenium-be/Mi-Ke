@@ -43,23 +43,7 @@ if ReadMikeIni("memory-diff", "active") {
 	CreateMikeHotkey("memory-diff", "MemoryDiffSee")
 }
 
-CreateSingleMikeHotkey("WindowsMinMax")
 
-
-; snippets
-CreateSingleMikeHotkey("AppendToClipboard")
-CreateSingleMikeHotkey("ConvertToTitleCase")
-CreateSingleMikeHotkey("ExplorerLastDownloadedFile")
-CreateSingleMikeHotkey("PathWinToUnix")
-CreateSingleMikeHotkey("MdCodeBlockSurround")
-CreateSingleMikeHotkey("MdCodeBlockNew")
-
-
-; -- apps
-; browser
-CreateMikeHotkey("core", "BrowserOpen")
-CreateMikeHotkey("core", "BrowserSearch")
-CreateMikeHotkey("core", "BrowserSearchAutohotkey")
 
 ; windows-explorer
 CreateSingleMikeHotkey("CopyDownloadToUsb")
