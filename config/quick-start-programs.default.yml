@@ -125,6 +125,12 @@ Explorer:
 	menu: Browsers
 
 
+Edge:
+	label: BrowserOpenEdge
+	active: 1
+	menu: Browsers
+	ico: C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe
+
 
 
 # ------------------------------------------------------------------------------------------------------------- CONSOLES

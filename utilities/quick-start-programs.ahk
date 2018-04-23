@@ -65,6 +65,25 @@ GetMenuName(quickStarter)
 	return, name
 }
 
+GetQuickStarterIcon(quickStarter)
+{
+	if (quickStarter.ico) {
+		return quickStarter.ico
+	} else if (quickStarter.path) {
+		path := quickStarter.path
+		SplitPath, path, , , OutExtension
+		if (OutExtension = "ahk") {
+			return %A_AHKPATH%
+
+		} else if (OutExtension = "bat") {
+			return %A_WINDIR% "\System32\cmd.exe"
+
+		} else if (FileExist(path)) {
+			return %path%
+		}
+	}
+}
+
 CreateQuickStartersMenu(menu)
 {
 	global quickStarterz
@@ -75,18 +94,9 @@ CreateQuickStartersMenu(menu)
 			name := GetMenuName(quickStarter)
 			thaLabel := quickStarter.label <> "" ? quickStarter.label : "MenuQuickStarterInfoExecutor"
 			Menu, %menu%, add, %name%, %thaLabel%
-			if (quickStarter.path) {
-				path := quickStarter.path
-				SplitPath, path, , , OutExtension
-				if (OutExtension = "ahk") {
-					Menu, %menu%, Icon, %name%, %A_AHKPATH%, 1
-
-				} else if (OutExtension = "bat") {
-					Menu, %menu%, Icon, %name%, %A_WINDIR%\System32\cmd.exe, 1
-
-				} else if (FileExist(path)) {
-					Menu, %menu%, Icon, %name%, %path%, 1
-				}
+			icon := GetQuickStarterIcon(quickStarter)
+			if (icon) {
+				Menu, %menu%, Icon, %name%, %icon%, 1
 			}
 		}
 	}
