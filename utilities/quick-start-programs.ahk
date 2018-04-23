@@ -75,9 +75,15 @@ CreateQuickStartersMenu(menu)
 			name := GetMenuName(quickStarter)
 			thaLabel := quickStarter.label <> "" ? quickStarter.label : "MenuQuickStarterInfoExecutor"
 			Menu, %menu%, add, %name%, %thaLabel%
-			if quickStarter.path {
+			if (quickStarter.path) {
 				path := quickStarter.path
-				Menu, %menu%, Icon, %name%, %path%, 1
+				SplitPath, path, , , OutExtension
+				if (OutExtension = "ahk") {
+					Menu, %menu%, Icon, %name%, %A_AHKPATH%, 1
+
+				} else {
+					Menu, %menu%, Icon, %name%, %path%, 1
+				}
 			}
 		}
 	}
