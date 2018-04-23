@@ -26,6 +26,7 @@ for key in content
 	quickStarterInfo.menu := qs.menu
 	quickStarterInfo.label := qs.label
 	quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
+	quickStarterInfo.ico := qs.ico
 
 	value := qs.passExplorerPathAsArgument
 	if (value <> "" and value <> "dir" and value <> "file") {

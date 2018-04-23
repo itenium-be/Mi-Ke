@@ -35,6 +35,11 @@ BrowserOpen:
 Run %BROWSER%
 return
 
+BrowserOpenEdge:
+Run microsoft-edge:
+; RUN microsoft-edge:http://google.com
+return
+
 ; Capslock & X: Copy and open Google search
 BrowserSearch:
 clipboard =
