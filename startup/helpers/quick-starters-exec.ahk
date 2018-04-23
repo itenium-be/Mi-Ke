@@ -27,6 +27,16 @@ QuickStarterInfoCloserExecutor:
 Return
 
 
+GetQuickStarterInfoByName(name) {
+	global quickStarterz
+	For index, quickStarter in quickStarterz
+	{
+		if (quickStarter.name = name) {
+			return quickStarter
+		}
+	}
+}
+
 
 GetQuickStarterInfoByHotkey() {
 	global quickStarterz

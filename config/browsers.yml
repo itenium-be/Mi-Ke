@@ -1,31 +1,28 @@
+# ATTN: Make changes in _custom.yml (created with init.ps1)
+
 Chrome:
 	path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 	# titleMatcher: ahk_class Chrome_WidgetWin_1
 	# newWindowFlag: -new
-	active: 1
 	menu: Browsers
 
 
 Firefox:
 	path: C:\Program Files\Mozilla Firefox\firefox.exe
-	active: 1
 	menu: Browsers
 
 
 Opera:
 	path: C:\Program Files\Opera\launcher.exe
-	active: 1
 	menu: Browsers
 
 
 Edge:
 	label: BrowserOpenEdge
-	active: 1
 	menu: Browsers
 	ico: C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe
 
 
 Explorer:
 	path: C:\Program Files (x86)\Internet Explorer\iexplore.exe
-	active: 1
 	menu: Browsers

@@ -1,30 +1,10 @@
-#
-# Quick start applications
-#
-
-# A textual description:
-# 	menu: Contextmenu name
-# 	hotkey:
-# 	path: path to the exe to start (string | array)
-# 	pathParams: params passed to the exe
-# 	label: either specify a path or this, an existing Autohotkey label
-# 	titleMatcher:  ahk_class, ahk_exe or Regex
-# 	doublePressCloseHotkey: ESC ; requires titleMatcher
-# 	passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
-# 	active: 0 ; To disable it
-# 	asAdmin: 1
-# 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
-
-
-
-# --------------------------------------------------------------------------------------------------------- APPLICATIONS
+# ATTN: Make changes in _custom.yml (created with init.ps1)
 
 Calculator:
 	hotkey: ^#c
 	path: <A_WINDIR>\System32\calc.exe
 	titleMatcher: ahk_class CalcFrame
 	doublePressCloseHotkey: ~ESC # ~ --> First ESC should still clear the calc input
-	active: 1
 	menu: Applications
 
 
@@ -32,7 +12,6 @@ Paint.NET:
 	hotkey: ^#d
 	titleMatcher: ahk_exe PaintDotNet.exe
 	path: <A_PROGRAMFILES>\paint.net\PaintDotNet.exe
-	active: 1
 	menu: Applications
 
 
@@ -40,7 +19,6 @@ Robo 3T (ex Robomongo):
 	hotkey: CapsLock & Q
 	titleMatcher: ahk_exe robo3t.exe
 	path: <A_PROGRAMFILES>\Robo 3T 1.1.1\robo3t.exe
-	active: 1
 	menu: Applications
 
 
@@ -48,14 +26,12 @@ HeidiSql:
 	hotkey: CapsLock & S
 	titleMatcher: ahk_exe heidisql.exe
 	path: <A_PROGRAMFILES>\HeidiSQL\heidisql.exe
-	active: 1
 	menu: Applications
 
 
 DBeaver:
 	path: <USERPROFILE>\AppData\Local\DBeaver\dbeaver.exe
 	pathParams: -nl en
-	active: 0
 	menu: Applications
 
 
@@ -65,20 +41,17 @@ FileZilla:
 	path:
 		- C:\Program Files\FileZilla FTP Client\filezilla.exe
 		- C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe
-	active: 1
 	menu: Applications
 
 
 7-Zip:
 	titleMatcher: ahk_exe 7zFM.exe
 	path: <A_PROGRAMFILES>\7-zip\7zFM.exe
-	active: 1
 	menu: Applications
 
 
 VLC:
 	path: <A_PROGRAMFILES>\VideoLAN\VLC\vlc.exe
-	active: 1
 	menu: Applications
 
 
@@ -86,13 +59,11 @@ Beyond Compare:
 	path:
 		- C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
 		- C:\Program Files (x86)\Beyond Compare 4\BCompare.exe
-	active: 1
 	menu: Applications
 
 
 DiffMerge:
 	path: C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe
-	active: 1
 	menu: Applications
 
 
@@ -100,13 +71,11 @@ IrfanView:
 	path:
 		- C:\Program Files (x86)\IrfanView\i_view32.exe
 		- C:\Program Files\IrfanView\i_view32.exe
-	active: 1
 	menu: Applications
 
 
 TeamViewer:
 	path: C:\Program Files (x86)\TeamViewer\TeamViewer.exe
-	active: 1
 	menu: Applications
 
 
@@ -114,7 +83,6 @@ dotPeek:
 	path:
 		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek09\dotPeek64.exe
 		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek11\dotPeek64.exe
-	active: 1
 	menu: Applications
 
 
@@ -122,5 +90,4 @@ Ditto:
 	path:
 		- C:\Program Files (x86)\Ditto\Ditto.exe
 		- C:\Program Files\Ditto\Ditto.exe
-	active: 1
 	menu: Applications
