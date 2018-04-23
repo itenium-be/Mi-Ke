@@ -1,27 +1,3 @@
-; Reads config\mike.ini to configure Mi-Ke at startup
-
-; ----- Keyboard
-; Numlock, Capslock, ScrollLock
-lockStates := ReadMikeIni("keyboard-lockstate")
-Loop, parse, lockStates, `n
-{
-	StringSplit, keyValue, A_LoopField, =
-	key := keyValue1
-	value := keyValue2
-
-	if (value) {
-		if (key = "NumlockState") {
-			SetNumlockState %value%
-		} else if (key = "CapsLockState") {
-			SetCapsLockState %value%
-		} else if (key = "ScrollLockState") {
-			SetScrollLockState %value%
-		}
-	}
-}
-
-
-; ----- Hotkeyed scripts
 ; Hotkey mapping to their source code labels
 
 CreateMikeHotkey(sectionName, key, labelName := "")
@@ -84,8 +60,6 @@ CreateSingleMikeHotkey("MdCodeBlockNew")
 CreateMikeHotkey("core", "BrowserOpen")
 CreateMikeHotkey("core", "BrowserSearch")
 CreateMikeHotkey("core", "BrowserSearchAutohotkey")
-
-; windows-cmd
 
 ; windows-explorer
 CreateSingleMikeHotkey("CopyDownloadToUsb")

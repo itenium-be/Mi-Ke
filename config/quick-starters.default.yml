@@ -1,0 +1,346 @@
+#
+# Quick start applications
+#
+
+# A textual description:
+# 	menu: Contextmenu name
+# 	hotkey:
+# 	path: path to the exe to start (string | array)
+# 	pathParams: params passed to the exe
+# 	newWindowFlag: pathParams for starting a new instance when already active
+# 	label: either specify a path or this, an existing Autohotkey label
+# 	titleMatcher:  ahk_class, ahk_exe or Regex
+# 	doublePressCloseHotkey: ESC ; requires titleMatcher
+# 	passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
+# 	active: 0 ; To disable it
+# 	asAdmin: 1
+# 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
+
+
+
+
+# -------------------------------------------------------------------------------------------------------------- EDITORS
+
+
+# Ctrl+Win+S: Default editor (see mike.ini)
+Default Editor:
+	hotkey: ^#s
+	editor: 1
+	passExplorerPathAsArgument: dir
+	active: 1
+	menu: Editors
+
+
+# Win+C: Notepad++. C=Code? :) (N is already mapped to OneNote)
+Notepad++:
+	hotkey: "#c"
+	titleMatcher: ahk_class Notepad++
+	path:
+		- C:\Program Files (x86)\Notepad++\Notepad++.exe
+		- C:\Program Files\Notepad++\Notepad++.exe
+	passExplorerPathAsArgument: file
+	explorerFilesSeparator: \"
+	active: 1
+	menu: Editors
+
+
+Notepad++ (New Window):
+	hotkey: ^#!c
+	titleMatcher: ahk_class Notepad++
+	path:
+		- C:\Program Files (x86)\Notepad++\Notepad++.exe
+		- C:\Program Files\Notepad++\Notepad++.exe
+	pathParams: -multiInst
+	active: 1
+	menu: Editors
+
+
+PowerShell ISE:
+	hotkey: !#r
+	titleMatcher: ahk_exe powershell_ise.exe
+	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+	openWithPathArgs: cmd.exe /s /c start /D "<path>" <exe> -file "<selectedFiles>"
+	# Other ISE CLI arg: -NoProfile
+	passExplorerPathAsArgument: file
+	explorerFilesSeparator: ,
+	active: 1
+	menu: Editors
+
+
+
+Visual Studio Code:
+	path: C:\Program Files\Microsoft VS Code\Code.exe
+	openWithPathArgs: <exe> "<selectedFiles>"
+	passExplorerPathAsArgument: file
+	active: 1
+	menu: Editors
+
+
+LINQPad:
+	path:
+		- C:\Program Files (x86)\LINQPad4\LINQPad.exe
+		- C:\Program Files (x86)\LINQPad5\LINQPad.exe
+	active: 1
+	menu: Editors
+
+
+MarkdownPad:
+	path: C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe
+	active: 1
+	menu: Editors
+
+
+Visual Studio 2017:
+	path:
+		- C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
+	active: 1
+	menu: Editors
+
+
+
+# ------------------------------------------------------------------------------------------------------------- CONSOLES
+# TODO: cant open cmder with specific path:
+# https://github.com/cmderdev/cmder/issues/91
+Cmder:
+	hotkey: +#c
+	titleMatcher: ahk_exe ConEmu64.exe
+	path:
+		- C:\bin\cmder\Cmder.exe
+		- C:\tools\cmder\Cmder.exe
+	openWithPathArgs: <exe> /start <path>
+	passExplorerPathAsArgument: dir
+	active: 1
+	menu: Consoles
+
+
+# https://stackoverflow.com/questions/60904/how-can-i-open-a-cmd-window-in-a-specific-location
+Command Prompt:
+	hotkey: !#c
+	titleMatcher: ahk_class ConsoleWindowClass
+	path: C:\Windows\System32\cmd.exe
+	passExplorerPathAsArgument: dir
+	openWithPathArgs: <exe> /K "cd /d <path>"
+	active: 1
+	menu: Consoles
+
+
+Command Prompt (Admin):
+	hotkey: +!#c
+	titleMatcher: ahk_class ConsoleWindowClass
+	path: C:\Windows\System32\cmd.exe
+	passExplorerPathAsArgument: dir
+	openWithPathArgs: <exe> /K "cd /d <path>"
+	asAdmin: 1
+	active: 1
+	menu: Consoles
+
+
+PowerShell:
+	hotkey: !#p
+	titleMatcher: ahk_exe powershell.exe
+	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+	passExplorerPathAsArgument: dir
+	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
+	active: 1
+	menu: Consoles
+
+
+PowerShell (Admin):
+	hotkey: ^!#p
+	titleMatcher: ahk_exe powershell.exe
+	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+	passExplorerPathAsArgument: dir
+	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
+	asAdmin: 1
+	active: 1
+	menu: Consoles
+
+
+Git Bash:
+	path: C:\Program Files (x86)\Git\git-bash.exe
+	active: 1
+	menu: Consoles
+
+
+VS2017 Command Prompt:
+	path: C:\Windows\System32\cmd.exe
+	pathParams: /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+	active: 1
+	menu: Consoles
+
+
+
+# --------------------------------------------------------------------------------------------------------- APPLICATIONS
+
+Calculator:
+	hotkey: ^#c
+	path: <A_WINDIR>\System32\calc.exe
+	titleMatcher: ahk_class CalcFrame
+	doublePressCloseHotkey: ~ESC # ~ --> First ESC should still clear the calc input
+	active: 1
+	menu: Applications
+
+
+Paint.NET:
+	hotkey: ^#d
+	titleMatcher: ahk_exe PaintDotNet.exe
+	path: <A_PROGRAMFILES>\paint.net\PaintDotNet.exe
+	active: 1
+	menu: Applications
+
+
+Robo 3T (ex Robomongo):
+	hotkey: CapsLock & Q
+	titleMatcher: ahk_exe robo3t.exe
+	path: <A_PROGRAMFILES>\Robo 3T 1.1.1\robo3t.exe
+	active: 1
+	menu: Applications
+
+
+HeidiSql:
+	hotkey: CapsLock & S
+	titleMatcher: ahk_exe heidisql.exe
+	path: <A_PROGRAMFILES>\HeidiSQL\heidisql.exe
+	active: 1
+	menu: Applications
+
+
+DBeaver:
+	path: <USERPROFILE>\AppData\Local\DBeaver\dbeaver.exe
+	pathParams: -nl en
+	active: 0
+	menu: Applications
+
+
+FileZilla:
+	hotkey: ^#f
+	titleMatcher: ahk_exe filezilla.exe
+	path:
+		- C:\Program Files\FileZilla FTP Client\filezilla.exe
+		- C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe
+	active: 1
+	menu: Applications
+
+
+7-Zip:
+	titleMatcher: ahk_exe 7zFM.exe
+	path: <A_PROGRAMFILES>\7-zip\7zFM.exe
+	active: 1
+	menu: Applications
+
+
+VLC:
+	path: <A_PROGRAMFILES>\VideoLAN\VLC\vlc.exe
+	active: 1
+	menu: Applications
+
+
+Beyond Compare:
+	path:
+		- C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
+		- C:\Program Files (x86)\Beyond Compare 4\BCompare.exe
+	active: 1
+	menu: Applications
+
+
+DiffMerge:
+	path: C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe
+	active: 1
+	menu: Applications
+
+
+IrfanView:
+	path:
+		- C:\Program Files (x86)\IrfanView\i_view32.exe
+		- C:\Program Files\IrfanView\i_view32.exe
+	active: 1
+	menu: Applications
+
+
+TeamViewer:
+	path: C:\Program Files (x86)\TeamViewer\TeamViewer.exe
+	active: 1
+	menu: Applications
+
+
+dotPeek:
+	path:
+		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek09\dotPeek64.exe
+		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek11\dotPeek64.exe
+	active: 1
+	menu: Applications
+
+
+Ditto:
+	path:
+		- C:\Program Files (x86)\Ditto\Ditto.exe
+		- C:\Program Files\Ditto\Ditto.exe
+	active: 1
+	menu: Applications
+
+
+
+
+# ------------------------------------------------------------------------------------------------------------ DEV TOOLS
+
+
+Reload script and ini:
+	active: 1
+	hotkey: ^#r
+	label: DevReloadScript
+
+
+Reload script when saved:
+	active: 1
+	hotkey: ~^s
+	label: DevReloadScriptWhenSaved
+
+
+Reload script and ini:
+	active: 1
+	hotkey: ^#r
+	label: DevReloadScript
+
+
+Suspend script:
+	active: 1
+	hotkey: ^#!r
+	label: DevSuspend
+
+
+List hotkeys:
+	active: 1
+	hotkey: !F9
+	label: DevListHotkeys
+	menu: Autohotkey
+
+
+Key history:
+	active: 1
+	hotkey: !F10
+	label: DevKeyHistory
+	menu: Autohotkey
+
+
+List vars:
+	active: 1
+	hotkey: !F11
+	label: DevListVars
+	menu: Autohotkey
+
+
+Spy window:
+	hotkey: !F12
+	titleMatcher: ahk_exe AU3_Spy.exe
+	path:
+		- <A_AHKPATH>\AU3_Spy.exe
+		- <A_AHKPATH>\WindowSpy.ahk
+	doublePressCloseHotkey: ESC
+	active: 1
+	menu: Autohotkey
+
+
+Autohotkey Documentation:
+	path: <A_AHKEXEPATH>
+	active: 1
+	menu: Autohotkey
