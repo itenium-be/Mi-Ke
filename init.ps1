@@ -75,10 +75,10 @@ editor-openWithPathArgs=<exe> --new-window "<path>"
 	# Copy-Item "$($path)\config\mike.default.ini" $iniPath
 }
 
-$qsPath = "$($path)\config\quick-start-programs.yml"
+$qsPath = "$($path)\config\quick-starters.yml"
 if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
-	echo "Creating config\quick-start-programs.yml"
-	Copy-Item "$($path)\config\quick-start-programs.default.yml" $qsPath
+	echo "Creating config\quick-starters.yml"
+	Copy-Item "$($path)\config\quick-starters.default.yml" $qsPath
 }
 
 

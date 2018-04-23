@@ -40,12 +40,3 @@ WinGetActiveTitle, winTitle
 if (InStr(winTitle, A_Scriptdir))
 	Goto DevReloadScript
 return
-
-
-; Capslock & A: Copy and google Autohotkey
-BrowserSearchAutohotkey:
-clipboard =
-Send, ^c
-ClipWait, 2
-Run, http://www.google.com/search?q=autohotkey+%clipboard%
-return
