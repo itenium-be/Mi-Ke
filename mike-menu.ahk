@@ -59,7 +59,9 @@ Menu, Tray, Add
 
 
 CreateQuickStartersMenu("Autohotkey")
+CreateQuickStartersMenu("Browsers")
 CreateQuickStartersMenu("Applications")
+CreateQuickStartersMenu("Editors")
 CreateQuickStartersMenu("Consoles")
 
 Menu, Tray, Add

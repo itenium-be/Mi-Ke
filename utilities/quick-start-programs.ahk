@@ -81,6 +81,9 @@ CreateQuickStartersMenu(menu)
 				if (OutExtension = "ahk") {
 					Menu, %menu%, Icon, %name%, %A_AHKPATH%, 1
 
+				} else if (OutExtension = "bat") {
+					Menu, %menu%, Icon, %name%, %A_WINDIR%\System32\cmd.exe, 1
+
 				} else if (FileExist(path)) {
 					Menu, %menu%, Icon, %name%, %path%, 1
 				}

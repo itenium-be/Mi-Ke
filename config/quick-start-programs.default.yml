@@ -22,12 +22,12 @@
 
 
 # Ctrl+Win+S: Default editor (see mike.ini)
-Editor:
+Default Editor:
 	hotkey: ^#s
 	editor: 1
 	passExplorerPathAsArgument: dir
 	active: 1
-	menu: Applications
+	menu: Editors
 
 
 # Win+C: Notepad++. C=Code? :) (N is already mapped to OneNote)
@@ -40,7 +40,7 @@ Notepad++:
 	passExplorerPathAsArgument: file
 	explorerFilesSeparator: \"
 	active: 1
-	menu: Applications
+	menu: Editors
 
 
 Notepad++ (New Window):
@@ -51,7 +51,7 @@ Notepad++ (New Window):
 		- C:\Program Files\Notepad++\Notepad++.exe
 	pathParams: -multiInst
 	active: 1
-	menu: Applications
+	menu: Editors
 
 
 PowerShell ISE:
@@ -63,7 +63,66 @@ PowerShell ISE:
 	passExplorerPathAsArgument: file
 	explorerFilesSeparator: ,
 	active: 1
-	menu: Applications
+	menu: Editors
+
+
+
+Visual Studio Code:
+	path: C:\Program Files\Microsoft VS Code\Code.exe
+	openWithPathArgs: <exe> "<selectedFiles>"
+	passExplorerPathAsArgument: file
+	active: 1
+	menu: Editors
+
+
+LINQPad:
+	path:
+		- C:\Program Files (x86)\LINQPad4\LINQPad.exe
+		- C:\Program Files (x86)\LINQPad5\LINQPad.exe
+	active: 1
+	menu: Editors
+
+
+MarkdownPad:
+	path: C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe
+	active: 1
+	menu: Editors
+
+
+Visual Studio 2017:
+	path:
+		- C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
+	active: 1
+	menu: Editors
+
+
+
+
+# ------------------------------------------------------------------------------------------------------------- BROWSERS
+
+
+Firefox:
+	path: C:\Program Files\Mozilla Firefox\firefox.exe
+	active: 1
+	menu: Browsers
+
+
+Opera:
+	path: C:\Program Files\Opera\launcher.exe
+	active: 1
+	menu: Browsers
+
+
+Chrome:
+	path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+	active: 1
+	menu: Browsers
+
+
+Explorer:
+	path: C:\Program Files (x86)\Internet Explorer\iexplore.exe
+	active: 1
+	menu: Browsers
 
 
 
@@ -126,6 +185,18 @@ PowerShell (Admin):
 	menu: Consoles
 
 
+Git Bash:
+	path: C:\Program Files (x86)\Git\git-bash.exe
+	active: 1
+	menu: Consoles
+
+
+VS2017 Command Prompt:
+	path: C:\Windows\System32\cmd.exe
+	pathParams: /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+	active: 1
+	menu: Consoles
+
 
 
 # --------------------------------------------------------------------------------------------------------- APPLICATIONS
@@ -163,10 +234,70 @@ HeidiSql:
 	menu: Applications
 
 
+DBeaver:
+	path: <USERPROFILE>\AppData\Local\DBeaver\dbeaver.exe
+	pathParams: -nl en
+	active: 1
+	menu: Applications
+
+
 FileZilla:
 	hotkey: ^#f
 	titleMatcher: ahk_exe filezilla.exe
-	path: <A_PROGRAMFILES>\FileZilla FTP Client\filezilla.exe
+	path:
+		- C:\Program Files\FileZilla FTP Client\filezilla.exe
+		- C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe
+	active: 1
+	menu: Applications
+
+
+7-Zip:
+	titleMatcher: ahk_exe 7zFM.exe
+	path: <A_PROGRAMFILES>\7-zip\7zFM.exe
+	active: 1
+	menu: Applications
+
+
+VLC:
+	path: <A_PROGRAMFILES>\VideoLAN\VLC\vlc.exe
+	active: 1
+	menu: Applications
+
+
+Beyond Compare:
+	path:
+		- C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
+		- C:\Program Files (x86)\Beyond Compare 4\BCompare.exe
+	active: 1
+	menu: Applications
+
+
+DiffMerge:
+	path: C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe
+	active: 1
+	menu: Applications
+
+
+IrfanView:
+	path: C:\Program Files (x86)\IrfanView\i_view32.exe
+	active: 1
+	menu: Applications
+
+
+TeamViewer:
+	path: C:\Program Files (x86)\TeamViewer\TeamViewer.exe
+	active: 1
+	menu: Applications
+
+
+dotPeek:
+	path: <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek11\dotPeek64.exe
+	active: 1
+	menu: Applications
+
+
+Ditto:
+	path: C:\Program Files (x86)\Ditto\Ditto.exe
 	active: 1
 	menu: Applications
 
@@ -228,5 +359,11 @@ Spy window:
 		- <A_AHKPATH>\AU3_Spy.exe
 		- <A_AHKPATH>\WindowSpy.ahk
 	doublePressCloseHotkey: ESC
+	active: 1
+	menu: Autohotkey
+
+
+Documentation:
+	path: <A_AHKEXEPATH>
 	active: 1
 	menu: Autohotkey
