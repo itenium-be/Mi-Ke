@@ -1,15 +1,12 @@
-ConvertYamlToQuickStarters(yamlFile) {
+ConvertYamlToQuickStarters(yaml) {
 	global quickStarterz
 
-	content := Yaml(yamlFile)
-	; Notify("aargh", content.Dump())
-
-	for key in content
+	for key in yaml
 	{
 		quickStarterInfo := {}
 		quickStarterInfo.name := key
 
-		qs := content[key]
+		qs := yaml[key]
 		quickStarterInfo.hotkey := qs.hotkey
 		quickStarterInfo.pathParams := qs.pathParams
 		quickStarterInfo.doublePressCloseHotkey := qs.doublePressCloseHotkey

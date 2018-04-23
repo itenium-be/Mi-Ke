@@ -1,5 +1,5 @@
 hotstrings/
 hotkeys/
-mike.ini
-quick-starters.yml
+/config/mike.ini
+/config/_custom.yml
 /config/*.ico

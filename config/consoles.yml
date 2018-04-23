@@ -1,3 +1,5 @@
+# ATTN: Make changes in _custom.yml (created with init.ps1)
+
 # TODO: cant open cmder with specific path:
 # https://github.com/cmderdev/cmder/issues/91
 Cmder:
@@ -8,7 +10,6 @@ Cmder:
 		- C:\tools\cmder\Cmder.exe
 	openWithPathArgs: <exe> /start <path>
 	passExplorerPathAsArgument: dir
-	active: 1
 	menu: Consoles
 
 
@@ -19,7 +20,6 @@ Command Prompt:
 	path: C:\Windows\System32\cmd.exe
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> /K "cd /d <path>"
-	active: 1
 	menu: Consoles
 
 
@@ -30,7 +30,6 @@ Command Prompt (Admin):
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> /K "cd /d <path>"
 	asAdmin: 1
-	active: 1
 	menu: Consoles
 
 
@@ -40,7 +39,6 @@ PowerShell:
 	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
-	active: 1
 	menu: Consoles
 
 
@@ -51,18 +49,15 @@ PowerShell (Admin):
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
 	asAdmin: 1
-	active: 1
 	menu: Consoles
 
 
 Git Bash:
 	path: C:\Program Files (x86)\Git\git-bash.exe
-	active: 1
 	menu: Consoles
 
 
 VS2017 Command Prompt:
 	path: C:\Windows\System32\cmd.exe
 	pathParams: /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
-	active: 1
 	menu: Consoles

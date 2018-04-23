@@ -1,3 +1,5 @@
+# ATTN: Make changes in _custom.yml (created with init.ps1)
+
 # Ctrl+Win+S: Sublime Text
 Sublime Text:
 	hotkey: ^#s
@@ -5,7 +7,6 @@ Sublime Text:
 	path: <A_PROGRAMFILES>\Sublime Text 3\sublime_text.exe
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> --new-window "<path>"
-	active: 1
 	menu: Editors
 
 
@@ -18,7 +19,6 @@ Notepad++:
 		- C:\Program Files\Notepad++\Notepad++.exe
 	passExplorerPathAsArgument: file
 	explorerFilesSeparator: \"
-	active: 1
 	menu: Editors
 
 
@@ -29,7 +29,6 @@ Notepad++ (New Window):
 		- C:\Program Files (x86)\Notepad++\Notepad++.exe
 		- C:\Program Files\Notepad++\Notepad++.exe
 	pathParams: -multiInst
-	active: 1
 	menu: Editors
 
 
@@ -41,7 +40,6 @@ PowerShell ISE:
 	# Other ISE CLI arg: -NoProfile
 	passExplorerPathAsArgument: file
 	explorerFilesSeparator: ,
-	active: 1
 	menu: Editors
 
 
@@ -50,7 +48,6 @@ Visual Studio Code:
 	path: C:\Program Files\Microsoft VS Code\Code.exe
 	openWithPathArgs: <exe> "<selectedFiles>"
 	passExplorerPathAsArgument: file
-	active: 1
 	menu: Editors
 
 
@@ -58,18 +55,15 @@ LINQPad:
 	path:
 		- C:\Program Files (x86)\LINQPad4\LINQPad.exe
 		- C:\Program Files (x86)\LINQPad5\LINQPad.exe
-	active: 1
 	menu: Editors
 
 
 MarkdownPad:
 	path: C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe
-	active: 1
 	menu: Editors
 
 
 Visual Studio 2017:
 	path:
 		- C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
-	active: 1
 	menu: Editors

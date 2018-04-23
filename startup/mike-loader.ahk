@@ -5,12 +5,7 @@
 
 
 ; Default editor/IDE
-For index, quickStarter in quickStarterz
-{
-	if (quickStarter.name = EDITOR_NAME) {
-		EDITOR := quickStarter
-	}
-}
+EDITOR := GetQuickStarterInfoByName(EDITOR_NAME)
 
 
 #Include hotkeys-loader.ahk

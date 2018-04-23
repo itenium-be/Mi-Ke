@@ -2,7 +2,7 @@ CreateQuickStartersMenu(menu) {
 	global quickStarterz
 	For index, quickStarter in quickStarterz
 	{
-		if (quickStarter.menu = menu and quickStarter.active) {
+		if (quickStarter.menu = menu and quickStarter.active != 0) {
 			addMenu = true
 			name := GetMenuName(quickStarter)
 			thaLabel := quickStarter.label <> "" ? quickStarter.label : "MenuQuickStarterInfoExecutor"

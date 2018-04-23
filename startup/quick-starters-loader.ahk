@@ -1,13 +1,24 @@
 quickStarterz := []
 
-configFile = %A_Scriptdir%\config\quick-starters.yml
-IfNotExist %configFile%
-	configFile = %A_Scriptdir%\config\quick-starters.default.yml
+qsYaml := Yaml("", 0)
+Loop, Files, %A_Scriptdir%\config\*.yml
+{
+	if (A_LoopFileName = "_custom.yml")
+		continue
 
-ConvertYamlToQuickStarters(configFile)
+	fileYaml := Yaml(A_LoopFileFullPath)
+	Yaml_Merge(qsYaml, fileYaml)
+}
 
 
-ConvertYamlToQuickStarters(A_Scriptdir "\config\browsers.yml")
-ConvertYamlToQuickStarters(A_Scriptdir "\config\consoles.yml")
-ConvertYamlToQuickStarters(A_Scriptdir "\config\dev-tools.yml")
-ConvertYamlToQuickStarters(A_Scriptdir "\config\editors.yml")
+; customConfig = Yaml(A_Scriptdir "\config\_custom.yml")
+; Yaml_Merge(qsYaml, customConfig)
+
+; Notify("DBeaver", qsYaml.DBeaver.Dump(), 8)
+
+
+ConvertYamlToQuickStarters(qsYaml)
+
+
+; uhoh := GetQuickStarterInfoByName("Calculator")
+; Notify("wuuk", uhoh.name ": " uhoh.hotkey)

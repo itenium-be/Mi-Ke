@@ -68,13 +68,43 @@ if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 [core]
 editor=Sublime Text
 "@
-	# Copy-Item "$($path)\config\mike.default.ini" $iniPath
 }
 
-$qsPath = "$($path)\config\quick-starters.yml"
+$qsPath = "$($path)\config\_custom.yml"
 if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
-	echo "Creating config\quick-starters.yml"
-	Copy-Item "$($path)\config\quick-starters.default.yml" $qsPath
+	echo "Creating config\_custom.yml"
+	Create-File $qsPath @"
+#
+# Quick start applications
+# Overwrite the other yml files here
+# (apps.yml, editors.yml, ...)
+#
+
+# Template for a new quick starter:
+# A textual description:
+# 	menu: Contextmenu name
+# 	hotkey:
+# 	path: path to the exe to start (string | array)
+# 	pathParams: params passed to the exe
+# 	label: either specify a path or this, an existing Autohotkey label
+# 	titleMatcher:  ahk_class, ahk_exe or Regex
+# 	doublePressCloseHotkey: ESC ; requires titleMatcher
+# 	passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
+# 	active: 0 ; To disable it
+# 	asAdmin: 1
+# 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
+
+
+# Disable an application
+DBeaver:
+	active: 0
+
+
+# Change the hotkey
+Calculator:
+	hotkey: ^#c
+
+"@
 }
 
 
