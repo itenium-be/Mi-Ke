@@ -1,8 +1,10 @@
-# Ctrl+Win+S: Default editor (see mike.ini)
-Default Editor:
+# Ctrl+Win+S: Sublime Text
+Sublime Text:
 	hotkey: ^#s
-	editor: 1
+	titleMatcher: ahk_class PX_WINDOW_CLASS
+	path: <A_PROGRAMFILES>\Sublime Text 3\sublime_text.exe
 	passExplorerPathAsArgument: dir
+	openWithPathArgs: <exe> --new-window "<path>"
 	active: 1
 	menu: Editors
 
@@ -43,8 +45,8 @@ PowerShell ISE:
 	menu: Editors
 
 
-
 Visual Studio Code:
+	titleMatcher: ahk_exe Code.exe
 	path: C:\Program Files\Microsoft VS Code\Code.exe
 	openWithPathArgs: <exe> "<selectedFiles>"
 	passExplorerPathAsArgument: file

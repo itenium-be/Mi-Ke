@@ -53,7 +53,10 @@ Menu, Tray, Add
 Menu, Tray, Add, View source (Explorer), MiKeTraySource
 Menu, Tray, Icon, View source (Explorer), %A_WINDIR%\explorer.exe
 Menu, Tray, Add, View source (IDE), MiKeTraySourceEditor
-Menu, Tray, Icon, View source (IDE), %EDITOR%
+editorIcon := GetMenuIcon(EDITOR)
+if (editorIcon) {
+	Menu, Tray, Icon, View source (IDE), %editorIcon%
+}
 Menu, Tray, Add, View source (Github), MiKeTraySourceGithub
 Menu, Tray, Add
 
@@ -119,7 +122,8 @@ MiKeTraySource:
 	return
 
 MiKeTraySourceEditor:
-	Run, "%EDITOR%" %A_ScriptDir%
+	path := EDITOR.path
+	Run, "%path%" %A_ScriptDir%
 	return
 
 MikeToggleStartupShortcut:
