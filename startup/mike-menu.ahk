@@ -8,7 +8,7 @@ trayIconPath := ReadMikeIni("tray-menu", "icon", true)
 IfNotExist, %trayIconPath%
 	trayIconPath = <A_ScriptDir>\config\iseedeadcode.ico
 
-trayIconPath := FileReplacements(trayIconPath)
+trayIconPath := PathReplacements(trayIconPath)
 Menu, Tray, Icon, %trayIconPath%,, 1
 
 ; --------------------------------------------------------------------------------------------------------- TRAY TOOLTIP

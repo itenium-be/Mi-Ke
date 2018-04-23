@@ -8,3 +8,6 @@ ConvertYamlToQuickStarters(configFile)
 
 
 ConvertYamlToQuickStarters(A_Scriptdir "\config\browsers.yml")
+ConvertYamlToQuickStarters(A_Scriptdir "\config\consoles.yml")
+ConvertYamlToQuickStarters(A_Scriptdir "\config\dev-tools.yml")
+ConvertYamlToQuickStarters(A_Scriptdir "\config\editors.yml")
