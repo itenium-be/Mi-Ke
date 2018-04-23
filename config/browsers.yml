@@ -1,7 +1,7 @@
 Chrome:
 	path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-	titleMatcher: ahk_class Chrome_WidgetWin_1
-	newWindowFlag: -new
+	# titleMatcher: ahk_class Chrome_WidgetWin_1
+	# newWindowFlag: -new
 	active: 1
 	menu: Browsers
 
