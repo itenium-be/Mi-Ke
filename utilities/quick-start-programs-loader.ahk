@@ -76,8 +76,10 @@ for key in content
 			; Notify(quickStarterInfo.doublePressCloseHotkey " => " quickStarterInfo.path)
 
 			thaHotkey := quickStarterInfo.hotkey
-			thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
-			Hotkey, %thaHotkey%, %thaLabel%
+			if (thaHotkey) {
+				thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
+				Hotkey, %thaHotkey%, %thaLabel%
+			}
 		}
 	}
 }

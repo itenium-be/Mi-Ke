@@ -12,6 +12,7 @@ FileReplacements(fileName)
 
 	SplitPath, A_AHKPATH, name, dir, ext, name_no_ext, drive
 	StringReplace, fileName, fileName, <A_AHKPATH>, %dir%
+	StringReplace, fileName, fileName, <A_AHKEXEPATH>, %A_AHKPATH%
 
 	return fileName
 }
