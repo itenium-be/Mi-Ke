@@ -66,11 +66,7 @@ if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 ; Numpad0 & Numpad2 = When pressed together
 
 [core]
-editor=<A_PROGRAMFILES>\Sublime Text 3\sublime_text.exe
-; Discover ahk_class with Window Spy (Alt+F12)
-; c:\Program Files\AutoHotkey\AU3_Spy.exe
-editor-titleMatcher=ahk_class PX_WINDOW_CLASS
-editor-openWithPathArgs=<exe> --new-window "<path>"
+editor=Sublime Text
 "@
 	# Copy-Item "$($path)\config\mike.default.ini" $iniPath
 }

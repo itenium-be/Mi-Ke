@@ -43,13 +43,6 @@ ConvertYamlToQuickStarters(yamlFile) {
 			}
 		}
 
-		if (qs.editor = 1) {
-			quickStarterInfo.path := EDITOR
-			quickStarterInfo.titleMatcher := ReadMikeIni("core", "editor-titleMatcher")
-			quickStarterInfo.openWithPathArgs := ReadMikeIni("core", "editor-openWithPathArgs")
-		}
-
-
 		if ((quickStarterInfo.path or quickStarterInfo.label) and quickStarterInfo.active != 0) {
 			if (quickStarterInfo.path <> "" and not FileExist(quickStarterInfo.path)) {
 				Notify("Path does not exist", quickStarterInfo.path)

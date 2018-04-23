@@ -33,7 +33,7 @@ return
 ; Control + S: Auto-reload script when it's saved.
 ; (we assume the file path is in the Window title)
 DevReloadScriptWhenSaved:
-if (!WinActive(EDITOR_TITLEMATCHER))
+if (!EDITOR or !WinActive(EDITOR.titleMatcher))
 	return
 
 WinGetActiveTitle, winTitle
