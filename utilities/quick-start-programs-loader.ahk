@@ -1,102 +1,83 @@
 quickStarterz := []
 
-Loop, 1000 {
-	sectionName = qs%A_Index%
+configFile = %A_Scriptdir%\config\quick-start-programs.yml
+IfNotExist %configFile%
+	configFile = %A_Scriptdir%\config\quick-start-programs.default.yml
 
-	ini = %A_Scriptdir%\config\quick-start-programs.ini
-	IfNotExist %ini%
-		ini = %A_Scriptdir%\config\quick-start-programs.default.ini
 
-	IniRead, quickStarter, %ini%, %sectionName%
-	if (quickStarter = "ERROR") {
-		break
+content := Yaml(configFile)
+; Notify(content.Dump())
 
-	} else {
-		quickStarterInfo := {}
 
-		Loop, parse, quickStarter, `n
-		{
-			StringSplit, keyValue, A_LoopField, =
-			key := keyValue1
-			value := keyValue2
+for key in content
+{
+	quickStarterInfo := {}
+	quickStarterInfo.name := key
 
-			; quickStarterInfo.sectionName = %sectionName%
-			if (key = "hotkey") {
-				quickStarterInfo.hotkey := value
+	qs := content[key]
+	quickStarterInfo.hotkey := qs.hotkey
+	quickStarterInfo.pathParams := qs.pathParams
+	quickStarterInfo.doublePressCloseHotkey := qs.doublePressCloseHotkey
+	quickStarterInfo.titleMatcher := qs.titleMatcher
+	quickStarterInfo.active := qs.active
+	quickStarterInfo.openWithPathArgs := qs.openWithPathArgs
+	quickStarterInfo.asAdmin := qs.asAdmin
+	quickStarterInfo.explorerFilesSeparator := qs.explorerFilesSeparator
+	quickStarterInfo.menu := qs.menu
+	quickStarterInfo.label := qs.label
+	quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
 
-			} else if (key = "path") {
-				if FileExist(FileReplacements(value))
-					quickStarterInfo.path := FileReplacements(value)
+	value := qs.passExplorerPathAsArgument
+	if (value <> "" and value <> "dir" and value <> "file") {
+		Notify("Unknown value passExplorerPathAsArgument: " value)
+	}
 
-			} else if (key = "pathParams") {
-				quickStarterInfo.pathParams := value
-
-			} else if (key = "editor" and value = 1) {
-				quickStarterInfo.path := EDITOR
-				quickStarterInfo.titleMatcher := ReadMikeIni("core", "editor-titleMatcher")
-				quickStarterInfo.openWithPathArgs := ReadMikeIni("core", "editor-openWithPathArgs")
-
-			} else if (key = "doublePressCloseHotkey") {
-				quickStarterInfo.doublePressCloseHotkey := value
-
-			} else if (key = "titleMatcher") {
-				quickStarterInfo.titleMatcher := value
-
-			} else if (key = "active") {
-				quickStarterInfo.active := value
-
-			} else if (key = "passExplorerPathAsArgument" and (value = "dir" or value = "file")) {
-				quickStarterInfo.passExplorerPathAsArgument := value
-
-			} else if (key = "openWithPathArgs") {
-				quickStarterInfo.openWithPathArgs := value
-
-			} else if (key = "asAdmin" and value = 1) {
-				quickStarterInfo.asAdmin := true
-
-			} else if (key = "explorerFilesSeparator") {
-				quickStarterInfo.explorerFilesSeparator := value
-
-			} else if (key = "menu") {
-				quickStarterInfo.menu := value
-
-			} else if (key = "name") {
-				quickStarterInfo.name := value
-
-			} else if (key = "label") {
-				quickStarterInfo.label := value
-
-			} else {
-				Notify("Didn't find key", key "=" value)
+	if (qs.path) {
+		if qs.path.() {
+			; Path array
+			Loop % qs.path.()
+			{
+				path := FileReplacements(qs.path.(A_INDEX))
+				if (FileExist(path))
+					quickStarterInfo.path := path
 			}
+		} else {
+			; Path string
+			quickStarterInfo.path := FileReplacements(qs.path)
+		}
+	}
 
+	if (qs.editor = 1) {
+		quickStarterInfo.path := EDITOR
+		quickStarterInfo.titleMatcher := ReadMikeIni("core", "editor-titleMatcher")
+		quickStarterInfo.openWithPathArgs := ReadMikeIni("core", "editor-openWithPathArgs")
+	}
+
+
+	if ((quickStarterInfo.path or quickStarterInfo.label) and quickStarterInfo.active != 0) {
+		if (quickStarterInfo.path <> "" and not FileExist(quickStarterInfo.path)) {
+			Notify("Path does not exist", quickStarterInfo.path)
+		} else if (quickStarterInfo.label <> "" and not IsLabel(quickStarterInfo.label)) {
+			Notify("Label does not exist", quickStarterInfo.label)
 		}
 
-		if ((quickStarterInfo.path or quickStarterInfo.label) and quickStarterInfo.active != 0) {
-			if (quickStarterInfo.path <> "" and not FileExist(quickStarterInfo.path)) {
-				Notify("Path does not exist", quickStarterInfo.path)
-			} else if (quickStarterInfo.label <> "" and not IsLabel(quickStarterInfo.label)) {
-				Notify("Label does not exist", quickStarterInfo.label)
-			}
+		quickStarterz.Push(quickStarterInfo)
 
-			quickStarterz.Push(quickStarterInfo)
+		if (quickStarterInfo.doublePressCloseHotkey and quickStarterInfo.titleMatcher) {
+			ahkClass := quickStarterInfo.titleMatcher
+			Hotkey, IfWinActive, %ahkClass%
 
-			if (quickStarterInfo.doublePressCloseHotkey and quickStarterInfo.titleMatcher) {
-				ahkClass := quickStarterInfo.titleMatcher
-				Hotkey, IfWinActive, %ahkClass%
+			thaHotkey := quickStarterInfo.doublePressCloseHotkey
+			Hotkey, %thaHotkey%, QuickStarterInfoCloserExecutor
 
-				thaHotkey := quickStarterInfo.doublePressCloseHotkey
-				Hotkey, %thaHotkey%, QuickStarterInfoCloserExecutor
-
-				Hotkey, IfWinActive
-			}
-
-			; Notify(quickStarterInfo.hotkey " => " quickStarterInfo.path)
-			; Notify(quickStarterInfo.doublePressCloseHotkey " => " quickStarterInfo.path)
-
-			thaHotkey := quickStarterInfo.hotkey
-			thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
-			Hotkey, %thaHotkey%, %thaLabel%
+			Hotkey, IfWinActive
 		}
+
+		; Notify(quickStarterInfo.hotkey " => " quickStarterInfo.path)
+		; Notify(quickStarterInfo.doublePressCloseHotkey " => " quickStarterInfo.path)
+
+		thaHotkey := quickStarterInfo.hotkey
+		thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
+		Hotkey, %thaHotkey%, %thaLabel%
 	}
 }

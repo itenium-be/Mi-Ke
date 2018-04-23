@@ -69,3 +69,4 @@ return
 #Include guid.ahk
 #Include notify.ahk
 #Include windows-explorer-util.ahk
+#Include yaml.ahk

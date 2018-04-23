@@ -41,7 +41,7 @@ if ($bare) {
 }
 
 
-# Create config ini files
+# Create config files
 $iniPath = "$($path)\config\mike.ini"
 if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 	echo "Creating config\mike.ini"
@@ -75,10 +75,10 @@ editor-openWithPathArgs=<exe> --new-window "<path>"
 	# Copy-Item "$($path)\config\mike.default.ini" $iniPath
 }
 
-$iniPath = "$($path)\config\quick-start-programs.ini"
-if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
-	echo "Creating config\quick-start-programs.ini"
-	Copy-Item "$($path)\config\quick-start-programs.default.ini" $iniPath
+$qsPath = "$($path)\config\quick-start-programs.yml"
+if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
+	echo "Creating config\quick-start-programs.yml"
+	Copy-Item "$($path)\config\quick-start-programs.default.yml" $qsPath
 }
 
 
