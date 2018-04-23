@@ -81,7 +81,7 @@ CreateQuickStartersMenu(menu)
 				if (OutExtension = "ahk") {
 					Menu, %menu%, Icon, %name%, %A_AHKPATH%, 1
 
-				} else {
+				} else if (FileExist(path)) {
 					Menu, %menu%, Icon, %name%, %path%, 1
 				}
 			}

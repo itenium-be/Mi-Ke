@@ -59,25 +59,25 @@ for key in content
 			Notify("Path does not exist", quickStarterInfo.path)
 		} else if (quickStarterInfo.label <> "" and not IsLabel(quickStarterInfo.label)) {
 			Notify("Label does not exist", quickStarterInfo.label)
+		} else {
+			quickStarterz.Push(quickStarterInfo)
+
+			if (quickStarterInfo.doublePressCloseHotkey and quickStarterInfo.titleMatcher) {
+				ahkClass := quickStarterInfo.titleMatcher
+				Hotkey, IfWinActive, %ahkClass%
+
+				thaHotkey := quickStarterInfo.doublePressCloseHotkey
+				Hotkey, %thaHotkey%, QuickStarterInfoCloserExecutor
+
+				Hotkey, IfWinActive
+			}
+
+			; Notify(quickStarterInfo.hotkey " => " quickStarterInfo.path)
+			; Notify(quickStarterInfo.doublePressCloseHotkey " => " quickStarterInfo.path)
+
+			thaHotkey := quickStarterInfo.hotkey
+			thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
+			Hotkey, %thaHotkey%, %thaLabel%
 		}
-
-		quickStarterz.Push(quickStarterInfo)
-
-		if (quickStarterInfo.doublePressCloseHotkey and quickStarterInfo.titleMatcher) {
-			ahkClass := quickStarterInfo.titleMatcher
-			Hotkey, IfWinActive, %ahkClass%
-
-			thaHotkey := quickStarterInfo.doublePressCloseHotkey
-			Hotkey, %thaHotkey%, QuickStarterInfoCloserExecutor
-
-			Hotkey, IfWinActive
-		}
-
-		; Notify(quickStarterInfo.hotkey " => " quickStarterInfo.path)
-		; Notify(quickStarterInfo.doublePressCloseHotkey " => " quickStarterInfo.path)
-
-		thaHotkey := quickStarterInfo.hotkey
-		thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
-		Hotkey, %thaHotkey%, %thaLabel%
 	}
 }
