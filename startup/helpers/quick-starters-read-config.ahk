@@ -33,13 +33,13 @@ ConvertYamlToQuickStarters(yamlFile) {
 				; Path array
 				Loop % qs.path.()
 				{
-					path := FileReplacements(qs.path.(A_INDEX))
+					path := PathReplacements(qs.path.(A_INDEX))
 					if (FileExist(path))
 						quickStarterInfo.path := path
 				}
 			} else {
 				; Path string
-				quickStarterInfo.path := FileReplacements(qs.path)
+				quickStarterInfo.path := PathReplacements(qs.path)
 			}
 		}
 

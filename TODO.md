@@ -1,7 +1,6 @@
 TODO
 ====
 
-Windows + E: Also check current path and open explorer in that location...
 
 **Usually this stuff should be posted here:**  
 https://github.com/itenium-be/Mi-Ke/issues

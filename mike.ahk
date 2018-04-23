@@ -61,6 +61,7 @@ return
 #Include auto-byte-format.ahk
 #Include hotkey-to-string.ahk
 #Include ini-reader.ahk
+#Include path-replacements.ahk
 #Include system-info.ahk
 
 ; Vendor

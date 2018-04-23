@@ -50,7 +50,7 @@ if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 ; Configure your editor to reload the script on save (expects A_SCRIPTDIR in the window title)
 
 ; Paths supports some substitutions
-; Defined in ini-reader.ahk::FileReplacements
+; Defined in path-replacements.ahk
 ; <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>
 
 ; Hotkey syntax:
