@@ -11,6 +11,8 @@ Loop, Files, %A_Scriptdir%\config\*.yml
 }
 
 
+; TODO: Still need to merge _custom.yml into qsYaml
+
 ; customConfig = Yaml(A_Scriptdir "\config\_custom.yml")
 ; Yaml_Merge(qsYaml, customConfig)
 

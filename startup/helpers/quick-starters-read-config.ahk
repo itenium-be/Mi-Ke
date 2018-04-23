@@ -44,7 +44,7 @@ ConvertYamlToQuickStarters(yaml) {
 			if (quickStarterInfo.path <> "" and not FileExist(quickStarterInfo.path)) {
 				Notify("Path does not exist", quickStarterInfo.path)
 			} else if (quickStarterInfo.label <> "" and not IsLabel(quickStarterInfo.label)) {
-				Notify("Label does not exist", quickStarterInfo.label)
+				Notify("Label '" quickStarterInfo.label "' does not exist", quickStarterInfo.name)
 			} else {
 				quickStarterz.Push(quickStarterInfo)
 
