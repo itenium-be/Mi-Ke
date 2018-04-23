@@ -1,0 +1,60 @@
+Reload script and ini:
+	active: 1
+	hotkey: ^#r
+	label: DevReloadScript
+
+
+Reload script when saved:
+	active: 1
+	hotkey: ~^s
+	label: DevReloadScriptWhenSaved
+
+
+Reload script and ini:
+	active: 1
+	hotkey: ^#r
+	label: DevReloadScript
+
+
+Suspend script:
+	active: 1
+	hotkey: ^#!r
+	label: DevSuspend
+
+
+List hotkeys:
+	active: 1
+	hotkey: !F9
+	label: DevListHotkeys
+	menu: Autohotkey
+
+
+Key history:
+	active: 1
+	hotkey: !F10
+	label: DevKeyHistory
+	menu: Autohotkey
+
+
+List vars:
+	active: 1
+	hotkey: !F11
+	label: DevListVars
+	menu: Autohotkey
+
+
+Spy window:
+	hotkey: !F12
+	titleMatcher: ahk_exe AU3_Spy.exe
+	path:
+		- <A_AHKPATH>\AU3_Spy.exe
+		- <A_AHKPATH>\WindowSpy.ahk
+	doublePressCloseHotkey: ESC
+	active: 1
+	menu: Autohotkey
+
+
+Autohotkey Documentation:
+	path: <A_AHKEXEPATH>
+	active: 1
+	menu: Autohotkey
