@@ -10,9 +10,8 @@ Autohotkey Documentation:
 Reload script and ini:
 	hotkey: ^#r
 	label: DevReloadScript
+	menu: top
 
-
-# TODO: menu: top ....
 
 Reload script when saved:
 	hotkey: ~^s
@@ -22,6 +21,7 @@ Reload script when saved:
 Suspend script:
 	hotkey: ^#!r
 	label: DevSuspend
+	menu: top
 
 
 # --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY
