@@ -7,11 +7,10 @@
 ; Hotkey: AltGr+Win+D
 ; Requires: WindowPad
 CopyDownloadToUsb:
-; <^>!#d::
 usbDrive := GetUsbDrive()
 If usbDrive
 {
-	downloadPath := ReadMikeIni("apps-windows-explorer-copy-download-to-usb", "copy-from-path", true)
+	downloadPath := DOWNLOAD_FOLDER
 	SplitPath, downloadPath, downloadDirName
 
 	IfWinNotExist %downloadDirName%

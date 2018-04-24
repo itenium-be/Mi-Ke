@@ -12,18 +12,16 @@ GetSmallStep()
 
 ; Change music volume
 ; Hotkey: Windows+PageUp/Down
-; #PgUp::
 ChangeSoundVolumeAddBig:
 SetAndDisplaySoundVolume("big", "+", true)
 return
 
 ChangeSoundVolumeMinBig:
-; #PgDn::
 SetAndDisplaySoundVolume("big", "-", true)
 return
 
+; Windows + Home
 ChangeSoundVolumeSee:
-; #Home::
 DisplaySoundVolume()
 return
 
@@ -40,35 +38,30 @@ ToggleMute(notify) {
 	}
 }
 
+; Windows + End
 ChangeSoundToggleMute:
-; #End::
 ToggleMute(true)
 return
 
 ; Ctrl+Win+Alt: +/-1
 ChangeSoundVolumeNoImageAddSmall:
-; !^#PgUp::
 SetAndDisplaySoundVolume("small", "+", false)
 return
 
 ChangeSoundVolumeNoImageMinSmall:
-; !^#PgDn::
 SetAndDisplaySoundVolume("small", "-", false)
 return
 
 ; +Control: Without the fancy image but better response
 ChangeSoundVolumeNoImageAddBig:
-; ^#PgUp::
 SetAndDisplaySoundVolume("big", "+", false)
 return
 
 ChangeSoundVolumeNoImageMinBig:
-; ^#PgDn::
 SetAndDisplaySoundVolume("big", "-", false)
 return
 
 ChangeSoundNoImageToggleMute:
-; ^#End::
 ToggleMute(false)
 return
 

@@ -6,7 +6,6 @@ windowThatWasActive :=
 
 ; Alt+Win+D: minimize all/restore minimized windows on active monitor
 WindowsMinMax:
-; !#D::
 ; Determine which monitor contains the center of the active window
 WinGetPos, x, y, w, h, A
 activeMonitor := wp_GetMonitorAt(x+w/2, y+h/2)

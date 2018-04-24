@@ -93,6 +93,7 @@ if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
 # 	active: 0 ; To disable it
 # 	asAdmin: 1
 # 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
+# 	context: explorer | ahk_class ... (only active in this app)
 
 
 # Disable an application

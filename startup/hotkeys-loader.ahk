@@ -12,15 +12,6 @@ CreateMikeHotkey(sectionName, key, labelName := "")
 }
 
 
-CreateSingleMikeHotkey(sectionName)
-{
-	; Assumed that ini sectionName is also the Autohotkey label name
-	if ReadMikeIni(sectionName, "active") {
-		CreateMikeHotkey(sectionName, "hotkey", sectionName)
-	}
-}
-
-
 if ReadMikeIni("change-sound-volume", "active") {
 	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeAddBig")
 	CreateMikeHotkey("change-sound-volume", "ChangeSoundVolumeMinBig")
@@ -42,17 +33,3 @@ if ReadMikeIni("memory-diff", "active") {
 	CreateMikeHotkey("memory-diff", "MemoryDiffDropboxOpen")
 	CreateMikeHotkey("memory-diff", "MemoryDiffSee")
 }
-
-
-
-; windows-explorer
-CreateSingleMikeHotkey("CopyDownloadToUsb")
-CreateSingleMikeHotkey("OpenExplorerInClipboardPath")
-
-Hotkey, IfWinActive, ahk_class (CabinetWClass|ExploreWClass)
-CreateSingleMikeHotkey("ZipDirectory")
-CreateSingleMikeHotkey("ExplorerNewFile")
-CreateSingleMikeHotkey("ExplorerNewTextFile")
-CreateSingleMikeHotkey("ExplorerSelectedFileDirToClipboard")
-CreateSingleMikeHotkey("ExplorerSelectedFilePathToClipboard")
-Hotkey, IfWinActive
