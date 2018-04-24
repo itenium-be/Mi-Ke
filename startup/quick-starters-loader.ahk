@@ -11,16 +11,14 @@ Loop, Files, %A_Scriptdir%\config\*.yml
 }
 
 
-; TODO: Still need to merge _custom.yml into qsYaml
+customConfig := Yaml(A_Scriptdir "\config\_custom.yml")
+Yaml_Merge(qsYaml, customConfig)
 
-; customConfig = Yaml(A_Scriptdir "\config\_custom.yml")
-; Yaml_Merge(qsYaml, customConfig)
-
-; Notify("DBeaver", qsYaml.DBeaver.Dump(), 8)
+; Notify("customConfig", customConfig.Dump(), 8)
 
 
 ConvertYamlToQuickStarters(qsYaml)
 
 
-; uhoh := GetQuickStarterInfoByName("Calculator")
-; Notify("wuuk", uhoh.name ": " uhoh.hotkey)
+; shouldHaveChanged := GetQuickStarterInfoByName("Calculator")
+; Notify("Calculator", shouldHaveChanged.name ": " shouldHaveChanged.hotkey)
