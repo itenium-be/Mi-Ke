@@ -218,7 +218,10 @@ Class PleasantNotify
 	Destroy()
 	{
 		this.winfade("ahk_id " PN_hwnd,0,5)
-		Gui, % this.PN_Hwnd ": Destroy"
+		; TODO: A previous commit makes this crash
+		; commit = convertion from labels to functions?
+		; Probably have a memory leak now?
+		; Gui, % this.PN_Hwnd ": Destroy"
 	}
 
 	WinMove(hwnd,position)
