@@ -30,8 +30,7 @@ AHK_NOTIFYICON(wParam, lParam)
 Menu, Tray, MainWindow
 
 
-CreateQuickStartsMenuItem("DevReloadScript")
-CreateQuickStartsMenuItem("DevSuspend")
+CreateQuickStartersMenu("top", "Tray")
 Menu, Tray, Add
 
 ; Start Mi-Ke when windows starts

@@ -1,20 +1,24 @@
-CreateQuickStartersMenu(menu) {
+CreateQuickStartersMenu(menu, addToMenu := "") {
+	; addToMenu: If provided, add to that menu. If not, create a submenu called %menu%
+
 	global quickStarterz
 	For index, quickStarter in quickStarterz
 	{
 		if (quickStarter.menu = menu and quickStarter.active != 0) {
-			addMenu = true
 			name := GetMenuName(quickStarter)
 			thaLabel := quickStarter.label <> "" ? quickStarter.label : "MenuQuickStarterInfoExecutor"
-			Menu, %menu%, add, %name%, %thaLabel%
+
+			addTo := addToMenu ? addToMenu : menu
+
+			Menu, %addTo%, add, %name%, %thaLabel%
 			icon := GetMenuIcon(quickStarter)
 			if (icon) {
-				Menu, %menu%, Icon, %name%, %icon%, 1
+				Menu, %addTo%, Icon, %name%, %icon%, 1
 			}
 		}
 	}
 
-	if addMenu
+	if !addToMenu
 		Menu, tray, Add, %menu%, :%menu%
 }
 
