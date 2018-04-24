@@ -1,0 +1,8 @@
+# Disable an application
+DBeaver:
+	active: 0
+
+
+# Change the hotkey
+Calculator:
+	hotkey: ^#!c
