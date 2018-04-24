@@ -6,7 +6,6 @@
 ; Select just a few files to put those only to the zip archive
 ; Control + Win + Z
 ZipDirectory:
-; ^#z::
 	currentPath := ActiveFolderPath()
 	if currentPath =
 		return
@@ -84,7 +83,7 @@ ZipDirectory:
 	; The actual zipping :)
 	fullZipName = %currentPath%\%zipFileName%.zip
 
-	downloadPath := ReadMikeIni("apps-windows-explorer-zip-directory", "cmd", true)
+	downloadPath := ReadMikeIni("core", "zipper", true)
 	StringReplace, downloadPath, downloadPath, <fullZipName>, %fullZipName%
 	StringReplace, downloadPath, downloadPath, <toZip>, %toZip%
 

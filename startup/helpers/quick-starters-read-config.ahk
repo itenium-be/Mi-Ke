@@ -1,6 +1,8 @@
 ConvertYamlToQuickStarters(yaml) {
 	global quickStarterz
 
+	; TODO: check for double entries
+
 	for key in yaml
 	{
 		quickStarterInfo := {}
@@ -19,6 +21,7 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.label := qs.label
 		quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
 		quickStarterInfo.ico := qs.ico
+		quickStarterInfo.context := qs.context
 
 		value := qs.passExplorerPathAsArgument
 		if (value <> "" and value <> "dir" and value <> "file") {
@@ -49,12 +52,12 @@ ConvertYamlToQuickStarters(yaml) {
 				quickStarterz.Push(quickStarterInfo)
 
 				if (quickStarterInfo.doublePressCloseHotkey and quickStarterInfo.titleMatcher) {
+					; Double press close app
 					ahkClass := quickStarterInfo.titleMatcher
-					Hotkey, IfWinActive, %ahkClass%
 
+					Hotkey, IfWinActive, %ahkClass%
 					thaHotkey := quickStarterInfo.doublePressCloseHotkey
 					Hotkey, %thaHotkey%, QuickStarterInfoCloserExecutor
-
 					Hotkey, IfWinActive
 				}
 
@@ -64,9 +67,28 @@ ConvertYamlToQuickStarters(yaml) {
 				thaHotkey := quickStarterInfo.hotkey
 				if (thaHotkey) {
 					thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
+
+					if (quickStarterInfo.context) {
+						context := TranslateIfWinActive(quickStarterInfo.context)
+						Hotkey, IfWinActive, %context%
+					}
+
 					Hotkey, %thaHotkey%, %thaLabel%
+
+					if (quickStarterInfo.context) {
+						Hotkey, IfWinActive
+					}
 				}
 			}
 		}
 	}
+}
+
+
+TranslateIfWinActive(context) {
+	if (context = "explorer") {
+		return "ahk_class (CabinetWClass|ExploreWClass)"
+	}
+
+	return context
 }

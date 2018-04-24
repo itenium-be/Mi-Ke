@@ -1,16 +1,15 @@
 ; Control+Shift+Win+C: Append to clipboard
-; ^+#c::
 AppendToClipboard:
 	bak = %clipboard%
 	clipboard =
 	Send, ^c
 	ClipWait, 3
 	clipboard = %bak%`r`n%clipboard%
-	Notify("Appended to Clipboard")
+	Notify("Appended to Clipboard", clipboard)
 Return
 
 
-; ^#t
+; Control+Win+T: To TitleCase
 ConvertToTitleCase:
 	clipboard =
 	Send, ^c
@@ -20,24 +19,8 @@ ConvertToTitleCase:
 Return
 
 
-; Control + Alt + D
-ExplorerLastDownloadedFile:
-	Loop, Files, %USERPROFILE%\Downloads\*, DF
-	{
-		FileGetTime, Time, %A_LoopFileFullPath%, C
-		If (Time > Time_Orig)
-		{
-			Time_Orig := Time
-			File := A_LoopFileFullPath
-		}
-	}
-	Run, explorer.exe /select`,"%File%"
-Return
-
-
 
 ; Ctrl+Win+X: Translate C:\Users\ to /c/Users/
-; ^#x::
 PathWinToUnix:
 	clipboard =
 	Send, ^c
@@ -54,13 +37,13 @@ PathWinToUnix:
 	; Quote directories with spaces in them
 	path := RegExReplace(path, "(?<=/)(([^\\/:*?""<>|]+) (?2))(?=/)" , """$1""")
 
+	Notify("New path", path)
 	clipboard = %path%
 return
 
 
 
 ; Alt+Win+m: Surround selected text with Markdown code block
-; !#m::
 MdCodeBlockSurround:
 	oldClip := clipboard
 	clipboard =
@@ -84,7 +67,6 @@ return
 
 
 ; Ctrl+Win+Alt+m: New Markdown code block
-; ^#!m::
 MdCodeBlockNew:
 	Send, {enter}
 	Send, ``````{space}

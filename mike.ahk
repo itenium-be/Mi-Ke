@@ -19,8 +19,9 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 
 ; Configure your env in mike.ini
-EDITOR_NAME := ReadMikeIni("core", "editor", true)
+EDITOR_NAME := ReadMikeIni("core", "editor")
 EDITOR :=
+DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
 
 ; Load configuration & Startup stuff
 #Include %A_Scriptdir%\startup\mike-loader.ahk

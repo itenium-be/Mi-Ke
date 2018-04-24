@@ -2,7 +2,6 @@
 
 ; Control + Shift + N: New directory (builtin)
 ; Control + Shift + F: New file
-; ^+f::
 ExplorerNewFile:
 	DeselectSelectedFiles()
 	Send {Appskey}
@@ -13,7 +12,6 @@ Return
 
 
 ; Control + Shift + T: New txt file
-; ^+t::
 ExplorerNewTextFile:
 	DeselectSelectedFiles()
 	Send {Appskey}
@@ -34,10 +32,23 @@ DeselectSelectedFiles()
 
 
 
+; Control + Alt + D: Open last downloaded file
+ExplorerLastDownloadedFile:
+	Loop, Files, %DOWNLOAD_FOLDER%\*, DF
+	{
+		FileGetTime, Time, %A_LoopFileFullPath%, C
+		If (Time > Time_Orig)
+		{
+			Time_Orig := Time
+			File := A_LoopFileFullPath
+		}
+	}
+	Run, explorer.exe /select`,"%File%"
+Return
+
 
 
 ; 2x Capslock: put path of selected file to clipboard
-;CapsLock::
 ExplorerSelectedFileDirToClipboard:
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 	{
@@ -48,7 +59,6 @@ Return
 
 
 ; 2x Shift+Capslock: put path + filename to clipboard
-; Shift & CapsLock::
 ExplorerSelectedFilePathToClipboard:
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
 	{
@@ -69,14 +79,17 @@ ToClipboardAndNotify(toClipboard)
 
 
 
-; 2x Control+Capslock: Open path on the clipboard in Explorer
-;Control & CapsLock::
+; Control+Capslock: Open selected text clipboard in Explorer
 OpenExplorerInClipboardPath:
-	if (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500 and FileExist(clipboard))
-	{
-		explorerCmd := "explorer /select," clipboard
-		Run, %explorerCmd%
-		Sleep 400
-		Send {Enter}
-	}
+	oldClip := clipboard
+	clipboard =
+	Send, ^c
+	ClipWait, 3
+
+	explorerCmd := "explorer /select," clipboard
+	Run, %explorerCmd%
+	Sleep 400
+	Send {Enter}
+
+	clipboard := oldClip
 Return

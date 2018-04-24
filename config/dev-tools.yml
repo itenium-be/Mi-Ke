@@ -1,53 +1,17 @@
 # ATTN: Make changes in _custom.yml (created with init.ps1)
 
-Reload script and ini:
-	hotkey: ^#r
-	label: DevReloadScript
+ConvertToTitleCase:
+	label: ConvertToTitleCase
+	hotkey: ^#t
 
 
-Reload script when saved:
-	hotkey: ~^s
-	label: DevReloadScriptWhenSaved
+
+Surround selected text with Markdown code block:
+	label: MdCodeBlockSurround
+	hotkey: !#m
 
 
-Reload script and ini:
-	hotkey: ^#r
-	label: DevReloadScript
+New Markdown code block:
+	label: MdCodeBlockNew
+	hotkey: ^#!m
 
-
-Suspend script:
-	hotkey: ^#!r
-	label: DevSuspend
-
-
-List hotkeys:
-	hotkey: !F9
-	label: DevListHotkeys
-	menu: Autohotkey
-
-
-Key history:
-	hotkey: !F10
-	label: DevKeyHistory
-	menu: Autohotkey
-
-
-List vars:
-	hotkey: !F11
-	label: DevListVars
-	menu: Autohotkey
-
-
-Spy window:
-	hotkey: !F12
-	titleMatcher: ahk_exe AU3_Spy.exe
-	path:
-		- <A_AHKPATH>\AU3_Spy.exe
-		- <A_AHKPATH>\WindowSpy.ahk
-	doublePressCloseHotkey: ESC
-	menu: Autohotkey
-
-
-Autohotkey Documentation:
-	path: <A_AHKEXEPATH>
-	menu: Autohotkey

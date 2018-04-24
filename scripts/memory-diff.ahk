@@ -53,7 +53,6 @@ DiffMergeOpenAppl(left := "", right := "")
 }
 
 ; Control + Win + Left: Clipboard to left.txt
-; ^#Left::
 MemoryDiffSaveLeft:
 clipboard =
 Send, ^c
@@ -70,7 +69,6 @@ return
 
 
 ; Control + Win + Down: Clipboard to right.txt and open diff tool
-; ^#Down::
 MemoryDiffSaveRightAndOpen:
 clipboard =
 Send, ^c
@@ -98,7 +96,6 @@ return
 
 
 ; Control + Win + Right: Open diff tool
-; ^#Right::
 MemoryDiffOpen:
 DiffMergeOpenAppl()
 return
@@ -106,7 +103,6 @@ return
 
 ; Control + Win + 0: Compare with Dropbox unconflicted file
 ; In Windows Explorer, compare original file against "someFile (Bert's conflicted copy 2017-07-07).ext"
-; ^#Numpad0::
 MemoryDiffDropboxOpen:
 clipboard =
 Send, ^c
@@ -130,7 +126,6 @@ return
 
 
 ; Control + Win + Up: See clipboard
-; ^#Up::
 MemoryDiffSee:
 if IsFunc("Notify")
 {

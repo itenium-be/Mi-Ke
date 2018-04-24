@@ -1,0 +1,55 @@
+# ATTN: Make changes in _custom.yml (created with init.ps1)
+
+Autohotkey Documentation:
+	path: <A_AHKEXEPATH>
+	menu: Autohotkey
+
+
+# --------------------------------------- SCRIPT CONTROL
+
+Reload script and ini:
+	hotkey: ^#r
+	label: DevReloadScript
+
+
+# TODO: menu: top ....
+
+Reload script when saved:
+	hotkey: ~^s
+	label: DevReloadScriptWhenSaved
+
+
+Suspend script:
+	hotkey: ^#!r
+	label: DevSuspend
+
+
+# --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY
+
+
+List hotkeys:
+	hotkey: !F9
+	label: DevListHotkeys
+	menu: Autohotkey
+
+
+Key history:
+	hotkey: !F10
+	label: DevKeyHistory
+	menu: Autohotkey
+
+
+List vars:
+	hotkey: !F11
+	label: DevListVars
+	menu: Autohotkey
+
+
+Spy window:
+	hotkey: !F12
+	titleMatcher: ahk_exe AU3_Spy.exe
+	path:
+		- <A_AHKPATH>\AU3_Spy.exe
+		- <A_AHKPATH>\WindowSpy.ahk
+	doublePressCloseHotkey: ESC
+	menu: Autohotkey
