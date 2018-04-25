@@ -3,6 +3,6 @@ DBeaver:
 	active: 0
 
 
-# Change the hotkey
-Calculator:
-	hotkey: ^#!c
+# # Change the hotkey
+# Calculator:
+# 	hotkey: ^#c
