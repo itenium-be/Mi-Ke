@@ -7,7 +7,7 @@
 
 ; .\hotkeys\_includes.ahk and .\hotstrings\_includes.ahk
 ; are two entry points you can use to start experimenting.
-; Activate/deactivate and configure the scripts in config ini and yml files
+; Activate/deactivate and configure the scripts in config\mike.ini and _custom.yml files
 
 ; Reload this script with Control+Win+R for ahk and ini changes to have effect
 ; (might happen automatically on Control+S in IDE - see scripts\apps\autohotkey-debugging.ahk)
@@ -29,10 +29,13 @@ DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
 ; All code that needs to be executed
 ; automatically should be above this
 
+; ------------------------------------------------------ USER SPACE
 ; A place to put your very own scripts!
+; Put your personal customization here:
 #Include %A_Scriptdir%\hotkeys\hotkey-loader.ahk
 return
 #Include %A_Scriptdir%\hotstrings\hotstring-loader.ahk
+; ------------------------------------------------------ USER SPACE
 
 ; Startup helpers
 #Include %A_Scriptdir%\startup\helpers
@@ -40,22 +43,30 @@ return
 #Include quick-starters-menu.ahk
 #Include quick-starters-read-config.ahk
 
-; Scripts
-#Include %A_Scriptdir%\scripts\
+; ------------------------------------------------------- THE SCRIPTS
+#Include %A_Scriptdir%\scripts-dev-tools\
+#Include ahk-tools.ahk
+#Include base64.ahk
+#Include guids.ahk
+#Include md-tools.ahk
+#Include path-win-to-unix.ahk
+#Include text-transform.ahk
+#Include windows-cmd.ahk
+
+#Include %A_Scriptdir%\scripts-other\
+#Include browsers.ahk
 #Include change-sound-volume.ahk
-#Include developer.ahk
+#Include clipboard.ahk
 #Include memory-diff.ahk
-#Include snippets.ahk
 #Include windows-min-max.ahk
 
-#Include %A_Scriptdir%\scripts\apps\
-#Include autohotkey-debugging.ahk
-#Include browsers.ahk
-#Include windows-cmd.ahk
+#Include %A_Scriptdir%\scripts-windows-explorer\
+#Include windows-explorer-util.ahk
 #Include windows-explorer-builtin.ahk
 #Include windows-explorer-copy-download-to-usb.ahk
 #Include windows-explorer-zip-directory.ahk
 #Include windows-explorer.ahk
+
 
 ; Utilities
 #Include %A_Scriptdir%\utilities\
@@ -68,9 +79,6 @@ return
 ; Vendor
 #Include %A_Scriptdir%\vendor\
 #Include WindowPad\source\WindowPad.ahk
-#Include base64.ahk
 #Include Gdip2.ahk
-#Include guid.ahk
 #Include notify.ahk
-#Include windows-explorer-util.ahk
 #Include yaml.ahk

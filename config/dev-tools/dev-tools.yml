@@ -5,6 +5,10 @@ ConvertToTitleCase:
 	hotkey: ^#t
 
 
+Translate C:\Users\ to /c/Users/:
+	label: PathWinToUnix
+	hotkey: ^#x
+
 
 Surround selected text with Markdown code block:
 	label: MdCodeBlockSurround
@@ -15,3 +19,6 @@ New Markdown code block:
 	label: MdCodeBlockNew
 	hotkey: ^#!m
 
+Encode/Decode Base64 (follow hotkey with 'e' or 'd'):
+	label: EncodeDecodeBase64
+	hotkey: ^#b
