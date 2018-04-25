@@ -1,3 +1,4 @@
+; Encode/Decode selected text and put on clipboard
 EncodeDecodeBase64:
 ; Control + Win + B ; followed by 'e' or 'd'
 Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/

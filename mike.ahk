@@ -71,6 +71,7 @@ return
 ; Utilities
 #Include %A_Scriptdir%\utilities\
 #Include auto-byte-format.ahk
+#Include clipboard-copy-restore.ahk
 #Include hotkey-to-string.ahk
 #Include ini-reader.ahk
 #Include path-replacements.ahk
