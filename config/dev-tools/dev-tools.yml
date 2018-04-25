@@ -5,7 +5,7 @@ ConvertToTitleCase:
 	hotkey: ^#t
 
 
-Translate C:\Users\ to /c/Users/:
+Translate C\Users\ to /c/Users/:
 	label: PathWinToUnix
 	hotkey: ^#x
 
