@@ -1,6 +1,11 @@
+:*:0uid::00000000-0000-0000-0000-000000000000
+:*:1uid::11111111-1111-1111-1111-111111111111
+:*:ruid::
+Send % GUID()
+return
+
 ; ijprest/guidgen.ahk
 ; https://gist.github.com/ijprest/3845947
-
 GUID()
 {
    format = %A_FormatInteger%       ; save original integer format

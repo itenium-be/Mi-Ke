@@ -1,7 +1,7 @@
 quickStarterz := []
 
 qsYaml := Yaml("", 0)
-Loop, Files, %A_Scriptdir%\config\*.yml
+Loop, Files, %A_Scriptdir%\config\*.yml, R
 {
 	if (A_LoopFileName = "_custom.yml")
 		continue

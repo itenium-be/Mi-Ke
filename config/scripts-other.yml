@@ -1,0 +1,16 @@
+# ATTN: Make changes in _custom.yml (created with init.ps1)
+
+# --------------------------------------- WINDOW MANAGEMENT
+
+Minimize all/restore minimized windows on active monitor:
+	label: WindowsMinMax
+	hotkey: ^!#D
+
+
+# ----------------------------------------- CLIPBOARD STUFF
+
+
+Append selected text to clipboard:
+	label: AppendToClipboard
+	hotkey: ^+#c
+
