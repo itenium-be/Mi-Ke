@@ -1,10 +1,7 @@
 ; Alt+Win+m: Surround selected text with Markdown code block
 MdCodeBlockSurround:
-	oldClip := clipboard
-	clipboard =
-	Send, ^c
-	ClipWait, 3
-	highlighted := clipboard
+	clipVal := CopyAndSaveClip()
+	highlighted := clipVal
 	highlighted := RegExReplace(highlighted, "\r\n?|\n\r?", "`n")
 
 	if InStr(highlighted, "`n") > 0 {
@@ -17,7 +14,7 @@ MdCodeBlockSurround:
 		; Single line
 		Send, ``{space}%highlighted%``{space}
 	}
-	clipboard := oldClip
+	RestoreClip()
 return
 
 

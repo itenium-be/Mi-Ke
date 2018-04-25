@@ -1,11 +1,9 @@
 ; Ctrl+Win+X: Translate C:\Users\ to /c/Users/
 PathWinToUnix:
-	clipboard =
-	Send, ^c
-	ClipWait, 3
+	clipVal := CopyAndSaveClip()
 
 	; Replace c:\path\ with c:/path/
-	StringReplace, path, clipboard, \, /, All
+	StringReplace, path, clipVal, \, /, All
 
 	; Replace C:/ with c/
 	StringReplace, path, path, :

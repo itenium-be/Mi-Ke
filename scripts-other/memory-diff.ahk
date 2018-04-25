@@ -54,27 +54,22 @@ DiffMergeOpenAppl(left := "", right := "")
 
 ; Control + Win + Left: Clipboard to left.txt
 MemoryDiffSaveLeft:
-clipboard =
-Send, ^c
-ClipWait, 3
-PasteClipboardToFile(GetLeft(), clipboard)
-diffMergeContentLeftFile := clipboard
+clipVal := CopyAndSaveClip()
+PasteClipboardToFile(GetLeft(), clipVal)
+diffMergeContentLeftFile := clipVal
 
-if IsFunc("Notify")
-{
-	trimmedContent := TrimContent(diffMergeContentLeftFile)
-	Notify("left.txt", trimmedContent)
-}
+trimmedContent := TrimContent(diffMergeContentLeftFile)
+Notify("left.txt", trimmedContent)
+
+RestoreClip()
 return
 
 
 ; Control + Win + Down: Clipboard to right.txt and open diff tool
 MemoryDiffSaveRightAndOpen:
-clipboard =
-Send, ^c
-ClipWait, 3
+clipVal := CopyAndSaveClip()
 doCompare = false
-if (clipboard = diffMergeContentLeftFile)
+if (clipVal = diffMergeContentLeftFile)
 {
 	MsgBox, 4, Identical, Clipboards are identical. Do you want to open diff anyway?, 1
 	IfMsgBox, Yes
@@ -85,13 +80,14 @@ else
 
 if doCompare = true
 {
-	result := PasteClipboardToFile(GetRight(), clipboard)
+	result := PasteClipboardToFile(GetRight(), clipVal)
 	if (result = "DIRECTORY-COMPARE" and InStr(FileExist(diffMergeContentLeftFile), "D")) {
-		DiffMergeOpenAppl(diffMergeContentLeftFile, clipboard)
+		DiffMergeOpenAppl(diffMergeContentLeftFile, clipVal)
 	} else {
 		DiffMergeOpenAppl()
 	}
 }
+RestoreClip()
 return
 
 
@@ -104,34 +100,30 @@ return
 ; Control + Win + 0: Compare with Dropbox unconflicted file
 ; In Windows Explorer, compare original file against "someFile (Bert's conflicted copy 2017-07-07).ext"
 MemoryDiffDropboxOpen:
-clipboard =
-Send, ^c
-ClipWait, 3
-clipContent := clipboard
-IfExist, %clipContent%
+clipVal := CopyAndSaveClip()
+IfExist, %clipVal%
 {
 	fileConflictRegex := ReadMikeIni("memory-diff", "dropbox-conflict-regex")
-	isConflictFile := RegExMatch(clipContent, fileConflictRegex)
+	isConflictFile := RegExMatch(clipVal, fileConflictRegex)
 	if isConflictFile
 	{
-		PasteClipboardToFile(GetRight(), clipContent)
+		PasteClipboardToFile(GetRight(), clipVal)
 
-		originalFileName := RegExReplace(clipContent, fileConflictRegex, "")
+		originalFileName := RegExReplace(clipVal, fileConflictRegex, "")
 		PasteClipboardToFile(GetLeft(), originalFileName)
 
 		DiffMergeOpenAppl()
 	}
 }
+RestoreClip()
 return
 
 
 ; Control + Win + Up: See clipboard
 MemoryDiffSee:
-if IsFunc("Notify")
-{
-	trimmedContent := TrimContent(Clipboard)
-	Notify("Clipboard contents", trimmedContent)
-}
+trimmedContent := TrimContent(Clipboard)
+Notify("Clipboard contents", trimmedContent)
+return
 
 
 TrimContent(content)
@@ -153,6 +145,3 @@ TrimContent(content)
 	}
 	return Trim(trimmedContent)
 }
-
-
-return

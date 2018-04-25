@@ -6,15 +6,13 @@ Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 encodeKey = e
 decodeKey = d
 
-clipboard =
-Send, ^c
-ClipWait, 2
+clipVal := CopyAndSaveClip()
 
 Input key, I L1
 if key = %encodeKey%
-	result := Base64Encode(clipboard)
+	result := Base64Encode(clipVal)
 else if key = %decodeKey%
-	result := Base64Decode(clipboard)
+	result := Base64Decode(clipVal)
 else {
 	Notify("Base64: Expected " encodeKey " (to encode) or " decodeKey " (to decode) to be pressed")
 	return
