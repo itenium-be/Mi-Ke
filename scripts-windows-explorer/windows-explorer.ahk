@@ -73,23 +73,19 @@ Return
 ToClipboardAndNotify(toClipboard)
 {
 	clipboard := toClipboard
-	if IsFunc("Notify")
-		Notify("Path Copied", toClipboard)
+	Notify("Path Copied", toClipboard)
 }
 
 
 
 ; Control+Capslock: Open selected text clipboard in Explorer
 OpenExplorerInClipboardPath:
-	oldClip := clipboard
-	clipboard =
-	Send, ^c
-	ClipWait, 3
+	clipVal := CopyAndSaveClip()
 
-	explorerCmd := "explorer /select," clipboard
+	explorerCmd := "explorer /select," clipVal
 	Run, %explorerCmd%
 	Sleep 400
 	Send {Enter}
 
-	clipboard := oldClip
+	RestoreClip()
 Return

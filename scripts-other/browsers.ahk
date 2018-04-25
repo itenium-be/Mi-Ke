@@ -1,21 +1,25 @@
+; Capslock & W: Copy and open Google search
 BrowserOpen:
-oldClip := clipboard
-clipboard :=
-Send, ^c
-ClipWait, 2
-if RegExMatch(clipboard, "^(https?://|www\.)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$") {
+clipVal := CopyAndSaveClip()
+
+; http://www.bing.com
+; www.bing.com
+; TODO: bing.com --> to support this one, the Run needs to be prefixed with http://
+;                    or it doesn't realize it should open browser
+
+if RegExMatch(clipVal, "^(https?://|www\.)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$") {
 	; Goto url
-	Run % clipboard
+	Run % clipVal
 
 } else {
 	; Open new tab
 	Run, http://
 }
-Clipboard := oldClip
+RestoreClip()
 return
 
 
-; Capslock & W: Copy and open Google search
+; Capslock & X: Copy and open Google search
 BrowserSearch:
 Google()
 return
@@ -28,12 +32,9 @@ return
 
 
 Google(prefix := "") {
-	oldClip := clipboard
-	clipboard :=
-	Send, ^c
-	ClipWait, 2
-	Run, http://www.google.com/search?q=%prefix%%clipboard%
-	clipboard := oldClip
+	clipVal := CopyAndSaveClip()
+	Run, http://www.google.com/search?q=%prefix%%clipVal%
+	RestoreClip()
 }
 
 

@@ -37,10 +37,7 @@ If usbDrive
 }
 else
 {
-	if IsFunc("Notify")
-	{
-		Notify("No Usb drive?")
-	}
+	Notify("No Usb drive?")
 }
 
 GetUsbDrive()

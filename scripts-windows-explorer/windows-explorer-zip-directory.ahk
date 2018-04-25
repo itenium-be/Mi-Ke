@@ -92,8 +92,7 @@ ZipDirectory:
 	; RunWait so that we can determine file size
 	; Which works - sometimes :p
 	FileGetSize, zipFileSize, %fullZipName%, M
-	if IsFunc("Notify")
-		Notify(zipFileName ".zip created", "Size: " zipFileSize "MB")
+	Notify(zipFileName ".zip created", "Size: " zipFileSize "MB")
 
 return
 
