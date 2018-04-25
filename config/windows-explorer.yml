@@ -43,5 +43,3 @@ Open Windows Explorer in path on clipboard:
 	label: ExplorerSelectedFilePathToClipboard
 	hotkey: Shift & CapsLock
 	context: explorer
-
-# TODO: Add CopyAndSaveClip() & RestoreClip()

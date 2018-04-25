@@ -10,7 +10,7 @@ PathWinToUnix:
 	; Replace C:/ with c/
 	StringReplace, path, path, :
 
-	path = /%path%/
+	path = /%path%
 
 	; Quote directories with spaces in them
 	path := RegExReplace(path, "(?<=/)(([^\\/:*?""<>|]+) (?2))(?=/)" , """$1""")

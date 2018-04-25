@@ -1,8 +1,20 @@
+; Type 0uid, 1uid or ruid (random guid) to expand
 :*:0uid::00000000-0000-0000-0000-000000000000
 :*:1uid::11111111-1111-1111-1111-111111111111
 :*:ruid::
 Send % GUID()
 return
+
+
+
+; Create a random GUID in
+; Sql Server: NEWID()
+; Oracle: sys_guid()
+; MySql: UUID()
+; Postgres: uuid_generate_v4()
+; MongoDb: UUID()
+
+
 
 ; ijprest/guidgen.ahk
 ; https://gist.github.com/ijprest/3845947

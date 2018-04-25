@@ -1,7 +1,7 @@
 # ATTN: Make changes in _custom.yml (created with init.ps1)
 
-ConvertToTitleCase:
-	label: ConvertToTitleCase
+Change casing of selected text:
+	label: TextTransform
 	hotkey: ^#t
 
 
