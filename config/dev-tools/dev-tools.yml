@@ -1,8 +1,19 @@
 # ATTN: Make changes in _custom.yml (created with init.ps1)
 
 Change casing of selected text:
-	label: TextTransform
 	hotkey: ^#t
+	followedBy:
+		- desc: To Title Case
+		  key: t
+		  fn: ToTitleCase
+
+		- desc: TO UPPER CASE
+		  key: u
+		  fn: ToUpperCase
+
+		- desc: to lower case
+		  key: l
+		  fn: ToLowerCase
 
 
 Translate C\Users\ to /c/Users/:
@@ -19,6 +30,13 @@ New Markdown code block:
 	label: MdCodeBlockNew
 	hotkey: ^#!m
 
-Encode/Decode Base64 (follow hotkey with 'e' or 'd'):
-	label: EncodeDecodeBase64
+Base64 encode/decode selected text:
 	hotkey: ^#b
+	followedBy:
+		- desc: Base64 encode
+		  key: e
+		  fn: Base64Encode
+
+		- desc: Base64 decode
+		  key: d
+		  fn: Base64Decode

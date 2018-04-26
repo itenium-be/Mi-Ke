@@ -22,6 +22,7 @@ SetWorkingDir %A_ScriptDir%
 EDITOR_NAME := ReadMikeIni("core", "editor")
 EDITOR :=
 DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
+global DEBUG := ReadMikeIni("core", "DEBUG")
 
 ; Load configuration & Startup stuff
 #Include %A_Scriptdir%\startup\mike-loader.ahk

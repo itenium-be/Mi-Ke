@@ -22,10 +22,14 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
 		quickStarterInfo.ico := qs.ico
 		quickStarterInfo.context := qs.context
+		if (qs.followedBy) {
+			quickStarterInfo.followedBy := Yaml("", 0)
+			Yaml_Merge(quickStarterInfo.followedBy, qs.followedBy)
 
-		value := qs.passExplorerPathAsArgument
-		if (value <> "" and value <> "dir" and value <> "file") {
-			Notify("Unknown value passExplorerPathAsArgument: " value)
+			Loop % qs.followedBy.() {
+				execInfo := qs.followedBy.(A_INDEX)
+				quickStarterInfo.followedByInfo .= "`n" execInfo.key " => " execInfo.desc
+			}
 		}
 
 		if (qs.path) {
@@ -37,49 +41,46 @@ ConvertYamlToQuickStarters(yaml) {
 					if (FileExist(path))
 						quickStarterInfo.path := path
 				}
+				if (!quickStarterInfo.path) {
+					; Does not exist but validation will pick it up
+					quickStarterInfo.path := qs.path.(1)
+				}
 			} else {
 				; Path string
 				quickStarterInfo.path := PathReplacements(qs.path)
 			}
 		}
 
-		if ((quickStarterInfo.path or quickStarterInfo.label) and quickStarterInfo.active != 0) {
-			if (quickStarterInfo.path <> "" and not FileExist(quickStarterInfo.path)) {
-				Notify("Path does not exist", quickStarterInfo.path)
-			} else if (quickStarterInfo.label <> "" and not IsLabel(quickStarterInfo.label)) {
-				Notify("Label '" quickStarterInfo.label "' does not exist", quickStarterInfo.name)
-			} else {
-				quickStarterz.Push(quickStarterInfo)
 
-				if (quickStarterInfo.doublePressCloseHotkey and quickStarterInfo.titleMatcher) {
-					; Double press close app
-					ahkClass := quickStarterInfo.titleMatcher
+		if (!ValidateQuickStarter(quickStarterInfo, qs)) {
+			continue
+		}
 
-					Hotkey, IfWinActive, %ahkClass%
-					thaHotkey := quickStarterInfo.doublePressCloseHotkey
-					Hotkey, %thaHotkey%, QuickStarterInfoCloserExecutor
-					Hotkey, IfWinActive
-				}
 
-				; Notify(quickStarterInfo.hotkey " => " quickStarterInfo.path)
-				; Notify(quickStarterInfo.doublePressCloseHotkey " => " quickStarterInfo.path)
+		quickStarterz.Push(quickStarterInfo)
 
-				thaHotkey := quickStarterInfo.hotkey
-				if (thaHotkey) {
-					thaLabel := quickStarterInfo.label <> "" ? quickStarterInfo.label : "QuickStarterInfoExecutor"
 
-					if (quickStarterInfo.context) {
-						context := TranslateIfWinActive(quickStarterInfo.context)
-						Hotkey, IfWinActive, %context%
-					}
+		; Double press close app
+		if (quickStarterInfo.doublePressCloseHotkey and quickStarterInfo.titleMatcher) {
+			ahkClass := quickStarterInfo.titleMatcher
+			Hotkey, IfWinActive, %ahkClass%
+			thaHotkey := quickStarterInfo.doublePressCloseHotkey
+			Hotkey, %thaHotkey%, QuickStarterInfoCloserExecutor
+			Hotkey, IfWinActive
+		}
 
-					Hotkey, %thaHotkey%, %thaLabel%
 
-					if (quickStarterInfo.context) {
-						Hotkey, IfWinActive
-					}
-				}
-			}
+		if (quickStarterInfo.path) {
+			BindQuickStarter(quickStarterInfo, "QuickStarterInfoExecutor")
+
+		} else if (quickStarterInfo.label) {
+			BindQuickStarter(quickStarterInfo, quickStarterInfo.label)
+
+		} else if (quickStarterInfo.followedBy) {
+			BindQuickStarter(quickStarterInfo, "", "FollowedByHotkeyExec")
+
+		} else {
+			Notify(quickStarterInfo.name, "Unsupported configuration`n" qs.Dump())
 		}
 	}
 }
@@ -89,6 +90,103 @@ TranslateIfWinActive(context) {
 	if (context = "explorer") {
 		return "ahk_class (CabinetWClass|ExploreWClass)"
 	}
-
 	return context
+}
+
+
+ValidateQuickStarter(qs, qsYaml) {
+	if (qs.active = 0) {
+		return false
+	}
+
+	if (qs.label and not IsLabel(qs.label)) {
+		ValidateNotify(qs, qsYaml, "Label '" qs.label "' does not exist")
+		return false
+	}
+
+	if (qs.path and not FileExist(qs.path)) {
+		ValidateNotify(qs, qsYaml, "Path does not exist:`n" qs.path)
+		return false
+	}
+
+	if (qs.path and qs.label) {
+		ValidateNotify(qs, qsYaml, "Can't have both path && label")
+		return false
+	}
+	; TODO: XOR path, label, followedBy can't be combined
+
+	value := qs.passExplorerPathAsArgument
+	if (value <> "" and value <> "dir" and value <> "file") {
+		ValidateNotify(qs, qsYaml, "Unknown value passExplorerPathAsArgument: " value)
+	}
+
+	return true
+}
+
+
+ValidateNotify(qs, qsYaml, str) {
+	if DEBUG {
+		Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
+	}
+}
+
+
+BindQuickStarter(qs, thaLabel, functionName := "") {
+	; Notify(qs.hotkey " => " qs.path)
+	thaHotkey := qs.hotkey
+	if (thaHotkey) {
+		if (qs.context) {
+			context := TranslateIfWinActive(qs.context)
+			Hotkey, IfWinActive, %context%
+		}
+
+		if thaLabel {
+			; Notify("Binding " qs.name, qs.label "`n" qs.path)
+			Hotkey, %thaHotkey%, %thaLabel%
+		} else {
+			fn := Func(functionName).Bind(qs)
+			Hotkey, %thaHotkey%, % fn
+		}
+
+		if (qs.context) {
+			Hotkey, IfWinActive
+		}
+	}
+}
+
+
+FollowedByHotkeyExec(qs) {
+	if DEBUG {
+		Notify(qs.name, "Press one of:" qs.followedByInfo, 7)
+	}
+
+	Input key, I L1
+
+	clipVal := CopyAndSaveClip()
+
+	Loop % qs.followedBy.() {
+		execInfo := qs.followedBy.(A_INDEX)
+		if (execInfo.key = key) {
+			foundKey := true
+			funcName := qs.fn execInfo.fn
+			if (IsFunc(funcName)) {
+				result := %funcName%(clipVal)
+			} else {
+				Notify(qs.name, funcName " is not a function?")
+			}
+		}
+	}
+
+	if (!foundKey) {
+		errorMsg := "Key '" key "' is not bound to anything."
+		if DEBUG {
+			Notify("", errorMsg)
+
+		} else {
+			Notify(qs.name, errorMsg "`n" qs.followedByInfo, 7)
+		}
+	}
+
+	Send %result%
+	RestoreClip()
 }

@@ -95,6 +95,17 @@ if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
 # 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
 # 	context: explorer | ahk_class ... (only active in this app)
 
+# followedBy:
+# 	- desc: To Title Case
+# 	  key: t
+# 	  fn: ToTitleCase
+#
+# 	- desc: TO UPPER CASE
+# 	  key: u
+# 	  fn: ToUpperCase
+
+# The object keys are a description of the hotkey functionality
+# Characters not allowed : (colon) and ' (single quote)
 
 # Disable an application
 DBeaver:

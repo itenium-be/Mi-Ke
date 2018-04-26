@@ -20,5 +20,6 @@ Yaml_Merge(qsYaml, customConfig)
 ConvertYamlToQuickStarters(qsYaml)
 
 
-; shouldHaveChanged := GetQuickStarterInfoByName("Calculator")
-; Notify("Calculator", shouldHaveChanged.name ": " shouldHaveChanged.hotkey)
+; shouldHaveChanged := GetQuickStarterInfoByName("Change casing of selected text")
+; Notify("qs", shouldHaveChanged.followedBy)
+; Notify("qs", shouldHaveChanged.name ": " shouldHaveChanged.hotkey)
