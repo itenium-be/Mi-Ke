@@ -10,6 +10,7 @@ ConvertYamlToQuickStarters(yaml) {
 
 		qs := yaml[key]
 		quickStarterInfo.hotkey := qs.hotkey
+		quickStarterInfo.desc := qs.desc
 		quickStarterInfo.pathParams := qs.pathParams
 		quickStarterInfo.doublePressCloseHotkey := qs.doublePressCloseHotkey
 		quickStarterInfo.titleMatcher := qs.titleMatcher
@@ -22,6 +23,8 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
 		quickStarterInfo.ico := qs.ico
 		quickStarterInfo.context := qs.context
+		quickStarterInfo.readFrom := qs.readFrom
+		quickStarterInfo.writeTo := qs.writeTo
 		if (qs.followedBy) {
 			quickStarterInfo.followedBy := Yaml("", 0)
 			Yaml_Merge(quickStarterInfo.followedBy, qs.followedBy)
@@ -115,6 +118,16 @@ ValidateQuickStarter(qs, qsYaml) {
 	}
 	; TODO: XOR path, label, followedBy can't be combined
 
+	if (qs.followedBy) {
+		Loop % qs.followedBy.() {
+			execInfo := qs.followedBy.(A_INDEX)
+			if (!IsFunc(execInfo.fn)) {
+				ValidateNotify(qs, qsYaml, execInfo.fn " is not a function?")
+				break
+			}
+		}
+	}
+
 	value := qs.passExplorerPathAsArgument
 	if (value <> "" and value <> "dir" and value <> "file") {
 		ValidateNotify(qs, qsYaml, "Unknown value passExplorerPathAsArgument: " value)
@@ -160,33 +173,77 @@ FollowedByHotkeyExec(qs) {
 		Notify(qs.name, "Press one of:" qs.followedByInfo, 7)
 	}
 
+	; Read a key and find the function to execute
 	Input key, I L1
-
-	clipVal := CopyAndSaveClip()
-
 	Loop % qs.followedBy.() {
 		execInfo := qs.followedBy.(A_INDEX)
 		if (execInfo.key = key) {
-			foundKey := true
-			funcName := qs.fn execInfo.fn
-			if (IsFunc(funcName)) {
-				result := %funcName%(clipVal)
-			} else {
-				Notify(qs.name, funcName " is not a function?")
-			}
+			funcName := execInfo.fn
 		}
 	}
-
-	if (!foundKey) {
+	if (!funcName) {
 		errorMsg := "Key '" key "' is not bound to anything."
 		if DEBUG {
 			Notify("", errorMsg)
-
 		} else {
 			Notify(qs.name, errorMsg "`n" qs.followedByInfo, 7)
 		}
 	}
 
-	Send %result%
-	RestoreClip()
+
+	; Flow: qs.readFrom, call funcName, qs.writeTo
+	inputArray := GetHotkeyInputDataArray(qs)
+	for index, inputValue in inputArray
+	{
+		if (qs.readFrom = "explorer-file") {
+			FileRead, fileContent, %inputValue%
+			result := %funcName%(fileContent)
+
+		} else {
+			result := %funcName%(inputValue)
+		}
+		if result {
+			WriteHotkeyOutputData(qs, inputValue, result)
+		}
+	}
+}
+
+
+GetHotkeyInputDataArray(qs) {
+	Array := []
+	if (qs.readFrom = "selectedText") {
+		Array.Push(CopyAndSaveClip())
+	}
+
+	if (qs.readFrom = "explorer-file") {
+		fileNames := Explorer_GetSelectedArray()
+		return %fileNames%
+	}
+
+	return Array
+}
+
+
+WriteHotkeyOutputData(qs, inputValue, result) {
+	writeTo := qs.writeTo ? qs.writeTo : qs.readFrom
+
+	if (writeTo = "clipboard") {
+		Notify("To clipboard:", result)
+		clipboard := result
+	}
+	else if (writeTo = "selectedText") {
+		Send % result
+	}
+	else if (writeTo = "explorer-file") {
+		; Notify(inputValue, result)
+		FileDelete % inputValue
+		FileAppend, %result%, % inputValue
+	}
+	else {
+		Notify(qs.name, "Unknown writeTo: " writeTo)
+	}
+
+	if (qs.readFrom = "selectedText" and writeTo <> "clipboard") {
+		RestoreClip()
+	}
 }
