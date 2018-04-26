@@ -15,6 +15,10 @@ Change casing of selected text:
 		  key: l
 		  fn: ToLowerCase
 
+		- desc: Slugify
+		  key: s
+		  fn: Slugify
+
 
 Translate C\Users\ to /c/Users/:
 	label: PathWinToUnix
