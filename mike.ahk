@@ -52,6 +52,7 @@ return
 #Include md-tools.ahk
 #Include path-win-to-unix.ahk
 #Include text-transform.ahk
+#Include uri-encode.ahk
 #Include windows-cmd.ahk
 
 #Include %A_Scriptdir%\scripts-other\

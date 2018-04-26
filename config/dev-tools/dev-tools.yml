@@ -44,3 +44,17 @@ Base64 encode/decode selected text:
 		- desc: Base64 decode
 		  key: d
 		  fn: Base64Decode
+
+# TODO: make all these hotkeys start with AltGr?
+
+# There is also LC_UrlEncode & LC_UrlDecode
+Uri encode/decode selected text:
+	hotkey: ^#u
+	followedBy:
+		- desc: Uri encode
+		  key: e
+		  fn: LC_UriEncode
+
+		- desc: Uri decode
+		  key: d
+		  fn: LC_UriDecode
