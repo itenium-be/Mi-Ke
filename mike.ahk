@@ -23,12 +23,18 @@ EDITOR_NAME := ReadMikeIni("core", "editor")
 EDITOR :=
 DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
 global DEBUG := ReadMikeIni("core", "DEBUG")
+Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 
 ; Load configuration & Startup stuff
 #Include %A_Scriptdir%\startup\mike-loader.ahk
 
 ; All code that needs to be executed
 ; automatically should be above this
+
+; https://github.com/cocobelgica/AutoHotkey-Util/blob/master/Include.ahk
+; TODO: load everything below here dynamically... ?
+
+
 
 ; ------------------------------------------------------ USER SPACE
 ; A place to put your very own scripts!
@@ -48,6 +54,7 @@ return
 #Include %A_Scriptdir%\scripts-dev-tools\
 #Include ahk-tools.ahk
 #Include base64.ahk
+#Include eol-convert.ahk
 #Include guids.ahk
 #Include md-tools.ahk
 #Include path-win-to-unix.ahk

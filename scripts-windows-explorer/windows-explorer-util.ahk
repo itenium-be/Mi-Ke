@@ -63,14 +63,26 @@ Explorer_GetPath(hwnd="")
 	return path
 }
 
-Explorer_GetAll(hwnd="")
+; Gets all files in selected folder?
+; Explorer_GetAll(hwnd="") ; not in use atm
+; {
+; 	return Explorer_Get(hwnd)
+; }
+
+Explorer_GetSelectedArray(hwnd="")
 {
-	return Explorer_Get(hwnd)
+	return Explorer_Get(hwnd,true)
 }
 
+; Gets selected file
 Explorer_GetSelected(hwnd="",separator="`n")
 {
-	return Explorer_Get(hwnd,true,separator)
+	Array := Explorer_Get(hwnd,true)
+	for index, element in Array
+	{
+		result .= element separator
+	}
+	return Trim(result, separator)
 }
 
 Explorer_GetWindow(hwnd="")
@@ -91,10 +103,14 @@ Explorer_GetWindow(hwnd="")
 		return "desktop" ; desktop found
 }
 
-Explorer_Get(hwnd="",selection=false,separator="`n")
+Explorer_Get(hwnd="",selection=false)
 {
+	Array := []
+
 	if !(window := Explorer_GetWindow(hwnd))
-		return ErrorLevel := "ERROR"
+		; return ErrorLevel := "ERROR"
+		return %Array%
+
 	if (window="desktop")
 	{
 		ControlGet, hwWindow, HWND,, SysListView321, ahk_class Progman
@@ -106,7 +122,7 @@ Explorer_Get(hwnd="",selection=false,separator="`n")
 		{
 			path := base "\" A_LoopField
 			IfExist %path% ; ignore special icons like Computer (at least for now)
-				ret .= path separator
+				Array.Push(path)
 		}
 	}
 	else
@@ -115,11 +131,11 @@ Explorer_Get(hwnd="",selection=false,separator="`n")
 			collection := window.document.SelectedItems
 		else
 			collection := window.document.Folder.Items
-		for item in collection
-			ret .= item.path separator
+		for item in collection {
+			Array.Push(item.path)
+		}
 	}
-	;Notify(ret)
-	return Trim(ret,separator)
+	return %Array%
 }
 
 

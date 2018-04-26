@@ -1,4 +1,8 @@
+; We're past the auto execute section, Base64Chars is defined before calling the functions
+; (it is copied here for snippet copy paste completeness)
+; StringCaseSense On
 Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+
 
 Base64Encode(string) {
    Loop Parse, string

@@ -1,4 +1,21 @@
-; Not included, not bound to a hotkey
+; https://github.com/cocobelgica/AutoHotkey-Util/blob/master/eol.ahk
+
+; DOS:=CRLF, Unix:=LF, Mac:=CR
+
+; TODO: Should also work with file selected in Explorer...
+
+EolToDos(str) {
+	return eol(str, "DOS")
+}
+
+EolToUnix(str) {
+	return eol(str, "LF")
+}
+
+EolToMac(str) {
+	return eol(str, "Mac")
+}
+
 
 /* Function: eol
  *     Convert newline in strings to/from "`r`n", "`n", "`r"
@@ -16,6 +33,9 @@
  */
 eol(str, eol:="`n")
 {
+	; return RegexReplace(str, "\r\n", "`n")
+
+
 	if (str == "") ; do nothing if empty OR return eol??
 		return
 

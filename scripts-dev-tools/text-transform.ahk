@@ -1,4 +1,4 @@
-; Control+Win+T: Change casing of selected text
+; AltGr + C: Change casing of selected text
 ; Follow with t (Title Case), u (UPPER CASE), l (lower case)
 
 ToTitleCase(clipVal) {

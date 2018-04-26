@@ -1,4 +1,4 @@
-; Alt+Win+m: Surround selected text with Markdown code block
+; AltGr + Win + M: Surround selected text with Markdown code block
 MdCodeBlockSurround:
 	clipVal := CopyAndSaveClip()
 	highlighted := clipVal
@@ -18,7 +18,7 @@ MdCodeBlockSurround:
 return
 
 
-; Ctrl+Win+Alt+m: New Markdown code block
+; AltGr + M: New Markdown code block
 MdCodeBlockNew:
 	Send, {enter}
 	Send, ``````{space}
