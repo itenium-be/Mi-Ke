@@ -1,8 +1,6 @@
 ConvertYamlToQuickStarters(yaml) {
 	global quickStarterz
 
-	; TODO: check for double entries
-
 	for key in yaml
 	{
 		quickStarterInfo := {}
@@ -86,6 +84,8 @@ ConvertYamlToQuickStarters(yaml) {
 			Notify(quickStarterInfo.name, "Unsupported configuration`n" qs.Dump())
 		}
 	}
+
+	ValidateQuickStartCollection(quickStarterz)
 }
 
 
@@ -134,6 +134,27 @@ ValidateQuickStarter(qs, qsYaml) {
 	}
 
 	return true
+}
+
+
+ValidateQuickStartCollection(quickStarters) {
+	checkArr := []
+	For index, qs in quickStarters {
+		hotkey := qs.hotkey
+		if (hotkey and IsInArray(checkArr, hotkey)) {
+			Notify("Double hotkey mapping", qs.name "`nHotkey: " hotkey)
+		}
+		checkArr.Push(hotkey)
+	}
+}
+
+IsInArray(arr, needle) {
+	For key, value in arr {
+		if (value = needle) {
+			return true
+		}
+	}
+	return false
 }
 
 

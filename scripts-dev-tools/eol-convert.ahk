@@ -2,8 +2,6 @@
 
 ; DOS:=CRLF, Unix:=LF, Mac:=CR
 
-; TODO: Should also work with file selected in Explorer...
-
 EolToDos(str) {
 	return eol(str, "DOS")
 }
