@@ -69,6 +69,8 @@ DiffMerge:
 
 IrfanView:
 	path:
+		- C:\Program Files (x86)\IrfanView\i_view64.exe
+		- C:\Program Files\IrfanView\i_view64.exe
 		- C:\Program Files (x86)\IrfanView\i_view32.exe
 		- C:\Program Files\IrfanView\i_view32.exe
 	menu: Applications

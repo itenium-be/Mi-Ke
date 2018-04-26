@@ -1,36 +1,3 @@
-; Encode/Decode selected text and put on clipboard
-EncodeDecodeBase64:
-; Control + Win + B ; followed by 'e' or 'd'
-Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
-
-encodeKey = e
-decodeKey = d
-
-clipVal := CopyAndSaveClip()
-
-Input key, I L1
-if key = %encodeKey%
-	result := Base64Encode(clipVal)
-else if key = %decodeKey%
-	result := Base64Decode(clipVal)
-else {
-	Notify("Base64: Expected " encodeKey " (to encode) or " decodeKey " (to decode) to be pressed")
-	return
-}
-
-clipboard := result
-Notify(result)
-return
-
-
-
-
-
-; Base64Encode / Base64Decode
-
-; We're past the auto execute section, Base64Chars is defined before calling the functions
-; (it is copied here for snippet copy paste completeness)
-; StringCaseSense On
 Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 
 Base64Encode(string) {
