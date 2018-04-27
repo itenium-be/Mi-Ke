@@ -1,3 +1,10 @@
+isExplorerLike() {
+	; Windows Explorer or Desktop
+	return Explorer_GetWindow()
+}
+
+; OpenSaveFileDialogActive()
+
 ; -------------------------------------------------------------------- GETTING SELECTED FILE(S)/PATH IN WINDOWS EXPLORER
 
 
@@ -48,8 +55,10 @@ Explorer_GetPath(hwnd="")
 {
 	if !(window := Explorer_GetWindow(hwnd))
 		return ErrorLevel := "ERROR"
+
 	if (window="desktop")
 		return A_Desktop
+
 	path := window.LocationURL
 	path := RegExReplace(path, "ftp://.*@","ftp://")
 	StringReplace, path, path, file:///
@@ -93,6 +102,7 @@ Explorer_GetWindow(hwnd="")
 
 	if (process!="explorer.exe")
 		return
+
 	if (class ~= "(Cabinet|Explore)WClass")
 	{
 		for window in ComObjCreate("Shell.Application").Windows
@@ -144,7 +154,7 @@ Explorer_Get(hwnd="",selection=false)
 ; https://autohotkey.com/board/topic/9362-detect-opensave-dialog/
 ; Doesn't seem to working in all (or many?) programs (unfortunately)
 
-DialogWindowActive()
+OpenSaveFileDialogActive()
 {
 	WinGet, active_hwnd, ID, A
 	{

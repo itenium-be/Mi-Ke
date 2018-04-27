@@ -1,5 +1,3 @@
-; Dependencies: vendor/windows-explorer-util.ahk, utilities/ini-reader.ahk, notify.ahk
-
 ; Control + Shift + N: New directory (builtin)
 ; Control + Shift + F: New file
 ExplorerNewFile:
@@ -47,7 +45,7 @@ ExplorerLastDownloadedFile:
 Return
 
 
-
+; TODO: implement A_PriorHotKey handling
 ; 2x Capslock: put path of selected file to clipboard
 ExplorerSelectedFileDirToClipboard:
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
