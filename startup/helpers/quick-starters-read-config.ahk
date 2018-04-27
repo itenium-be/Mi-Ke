@@ -225,6 +225,7 @@ FollowedByHotkeyExec(qs) {
 	Input key, I L1
 	Loop % qs.followedBy.() {
 		execInfo := qs.followedBy.(A_INDEX)
+		; Notify(qs.name, execInfo.key ": " execInfo.fn)
 		if (IsInArray(execInfo.key, key)) {
 			funcName := execInfo.fn
 			break
@@ -264,7 +265,7 @@ FollowedByHotkeyExec(qs) {
 			result := %funcName%(inputValue)
 		}
 		if result {
-			WriteHotkeyOutputData(qs, inputValue, result)
+			WriteHotkeyOutputData(qs, inputValue, result, readFrom)
 		}
 	}
 }
@@ -284,8 +285,8 @@ GetHotkeyInputDataArray(readFrom) {
 }
 
 
-WriteHotkeyOutputData(qs, inputValue, result) {
-	writeTo := qs.writeTo ? qs.writeTo : qs.readFrom
+WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
+	writeTo := qs.writeTo ? qs.writeTo : readFrom
 
 	if (writeTo = "clipboard") {
 		Notify("To clipboard:", result)
@@ -303,7 +304,7 @@ WriteHotkeyOutputData(qs, inputValue, result) {
 		Notify(qs.name, "Unknown writeTo: " writeTo)
 	}
 
-	if (qs.readFrom = "selectedText" and writeTo <> "clipboard") {
+	if (readFrom = "selectedText" and writeTo <> "clipboard") {
 		RestoreClip()
 	}
 }

@@ -21,7 +21,7 @@ Change casing of selected text:
 	readFrom: selectedText
 	followedBy:
 		- desc: To Title Case
-		  key: t
+		  key: t|p
 		  fn: ToTitleCase
 
 		- desc: TO UPPER CASE
@@ -32,10 +32,13 @@ Change casing of selected text:
 		  key: l
 		  fn: ToLowerCase
 
-		- desc: Slugify
+		- desc: To sentence case
 		  key: s
-		  fn: Slugify
+		  fn: ToSentenceCaseBlend
 
+		- desc: Invert case
+		  key: i
+		  fn: InvertCase
 
 
 Change end of line sequence of selected file in Windows Explorer:
@@ -82,7 +85,7 @@ Translate C\Users\ to /c/Users/:
 
 
 # There is also LC_UrlEncode & LC_UrlDecode
-Uri encode/decode selected text:
+Uri encode/decode or slugify selected text:
 	hotkey: <^>!u
 	readFrom: selectedText
 	writeTo: clipboard
