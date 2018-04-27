@@ -36,16 +36,15 @@ Change casing of selected text:
 		  key: s
 		  fn: Slugify
 
-# TODO: followedBy.hotkey ...
-# TODO: implement "machine" array where is allowed
-# TODO: implement alias for key [d, w]
+
+
 Change end of line sequence of selected file in Windows Explorer:
 	hotkey: <^>!e
 	context: explorer
 	readFrom: explorer-file
 	followedBy:
 		- desc: To DOS (\r\n)
-		  key: d
+		  key: d|w
 		  fn: EolToDos
 
 		- desc: To Unix (\n)
@@ -55,6 +54,12 @@ Change end of line sequence of selected file in Windows Explorer:
 		- desc: To Mac (\r)
 		  key: m
 		  fn: EolToMac
+
+
+
+Paste lorem ipsum:
+	label: LoremIpsum
+	hotkey: <^>!l
 
 
 

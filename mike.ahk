@@ -33,7 +33,6 @@ Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 
 ; https://github.com/cocobelgica/AutoHotkey-Util/blob/master/Include.ahk
 ; TODO: load everything below here dynamically... ?
-; lorem ipsum
 
 
 ; ------------------------------------------------------ USER SPACE
@@ -66,6 +65,7 @@ return
 #Include browsers.ahk
 #Include change-sound-volume.ahk
 #Include clipboard.ahk
+#Include lorem-ipsum.ahk
 #Include memory-diff.ahk
 #Include windows-min-max.ahk
 

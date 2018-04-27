@@ -13,4 +13,3 @@ Minimize all/restore minimized windows on active monitor:
 Append selected text to clipboard:
 	label: AppendToClipboard
 	hotkey: ^+#c
-
