@@ -1,6 +1,3 @@
-; Config: mike.ini [copy-download-to-usb] (download folder defaults to %USERPROFILE%\Downloads)
-; Dependencies: vendor/WindowPad
-
 ; Opens 2 Explorers
 ; Newly downloaded files directory on the left
 ; USB drive on the right

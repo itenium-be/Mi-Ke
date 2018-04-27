@@ -70,6 +70,8 @@ editor=Sublime Text
 "@
 }
 
+# TODO: Put these info files in separate files.
+
 $qsPath = "$($path)\config\_custom.yml"
 if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
 	echo "Creating config\_custom.yml"
@@ -84,6 +86,7 @@ if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
 # A textual description:
 # 	menu: Contextmenu name
 # 	hotkey:
+# 	desc: More info string
 # 	path: path to the exe to start (string | array)
 # 	pathParams: params passed to the exe
 # 	label: either specify a path or this, an existing Autohotkey label
@@ -95,6 +98,8 @@ if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
 # 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
 # 	context: explorer | ahk_class ... (only active in this app)
 
+# readFrom: explorer-file | selectedText (string or array). When array writeTo is mandatory.
+# writeTo: explorer-file | selectedText | clipboard (defaults to readFrom)
 # followedBy:
 # 	- desc: To Title Case
 # 	  key: t
@@ -195,6 +200,7 @@ Return
 
 ; To find out your ahk_class, startup "Window Spy" which came with your Autohotkey installation
 ; Perhaps at: c:\Program Files\AutoHotkey\AU3_Spy.exe
+; Default shortcut: Alt + F12
 "@
 
 

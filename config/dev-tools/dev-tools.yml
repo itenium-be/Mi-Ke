@@ -1,10 +1,9 @@
 # ATTN: Make changes in _custom.yml (created with init.ps1)
 
-# TODO: Base64 should also work for files?
 # TODO: What about binary files?
 Base64 encode/decode selected text:
 	hotkey: <^>!b
-	readFrom: explorer-file
+	readFrom: [explorer-file, selectedText]
 	writeTo: clipboard
 	followedBy:
 		- desc: Base64 encode
@@ -37,8 +36,9 @@ Change casing of selected text:
 		  key: s
 		  fn: Slugify
 
-
-
+# TODO: followedBy.hotkey ...
+# TODO: implement "machine" array where is allowed
+# TODO: implement alias for key [d, w]
 Change end of line sequence of selected file in Windows Explorer:
 	hotkey: <^>!e
 	context: explorer

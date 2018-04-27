@@ -1,6 +1,3 @@
-; Config: mike.ini [core] (Path to 7zip.exe)
-; Dependencies: vendor/windows-explorer-util.ahk, utilities/ini-reader.ahk, notify.ahk
-
 ; Put all files in Windows Explorer path to new zip file
 ; Named as parent directory name.zip
 ; Select just a few files to put those only to the zip archive

@@ -33,7 +33,7 @@ Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 
 ; https://github.com/cocobelgica/AutoHotkey-Util/blob/master/Include.ahk
 ; TODO: load everything below here dynamically... ?
-
+; lorem ipsum
 
 
 ; ------------------------------------------------------ USER SPACE
@@ -75,6 +75,7 @@ return
 #Include windows-explorer-copy-download-to-usb.ahk
 #Include windows-explorer-zip-directory.ahk
 #Include windows-explorer.ahk
+#Include image-dimensions.ahk
 
 
 ; Utilities

@@ -21,7 +21,7 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
 		quickStarterInfo.ico := qs.ico
 		quickStarterInfo.context := qs.context
-		quickStarterInfo.readFrom := qs.readFrom
+		quickStarterInfo.readFrom := Yaml_ToArray(qs.readFrom)
 		quickStarterInfo.writeTo := qs.writeTo
 		if (qs.followedBy) {
 			quickStarterInfo.followedBy := Yaml("", 0)
@@ -80,7 +80,7 @@ ConvertYamlToQuickStarters(yaml) {
 		} else if (quickStarterInfo.followedBy) {
 			BindQuickStarter(quickStarterInfo, "", "FollowedByHotkeyExec")
 
-		} else {
+		} else if (!quickStarterInfo.doublePressCloseHotkey) {
 			Notify(quickStarterInfo.name, "Unsupported configuration`n" qs.Dump())
 		}
 	}
@@ -88,13 +88,24 @@ ConvertYamlToQuickStarters(yaml) {
 	ValidateQuickStartCollection(quickStarterz)
 }
 
-
-TranslateIfWinActive(context) {
-	if (context = "explorer") {
-		return "ahk_class (CabinetWClass|ExploreWClass)"
+Yaml_ToArray(yaml) {
+	if (!yaml) {
+		return
 	}
-	return context
+
+	arr := []
+	if (yaml is string) {
+		arr.Push(yaml)
+		return arr
+	}
+
+	Loop % yaml.() {
+		value := yaml.(A_INDEX)
+		arr.Push(value)
+	}
+	return arr
 }
+
 
 
 ValidateQuickStarter(qs, qsYaml) {
@@ -164,14 +175,30 @@ ValidateNotify(qs, qsYaml, str) {
 	}
 }
 
+CheckHotkeyContext(context) {
+	if (context) {
+		WinGetClass, window, A
+
+		if (context = "explorer") {
+			if (window ~= "CabinetWClass|ExploreWClass|Progman|WorkerW")
+				return 1
+
+			return OpenSaveFileDialogActive()
+		}
+
+		return window ~= context
+	}
+	return 1
+}
+
 
 BindQuickStarter(qs, thaLabel, functionName := "") {
 	; Notify(qs.hotkey " => " qs.path)
 	thaHotkey := qs.hotkey
 	if (thaHotkey) {
 		if (qs.context) {
-			context := TranslateIfWinActive(qs.context)
-			Hotkey, IfWinActive, %context%
+			fn := Func("CheckHotkeyContext").Bind(qs.context)
+			Hotkey, If, % fn
 		}
 
 		if thaLabel {
@@ -183,7 +210,7 @@ BindQuickStarter(qs, thaLabel, functionName := "") {
 		}
 
 		if (qs.context) {
-			Hotkey, IfWinActive
+			HotKey, If
 		}
 	}
 }
@@ -212,11 +239,23 @@ FollowedByHotkeyExec(qs) {
 	}
 
 
-	; Flow: qs.readFrom, call funcName, qs.writeTo
-	inputArray := GetHotkeyInputDataArray(qs)
+	for index, value in qs.readFrom {
+		if (value = "explorer-file" and isExplorerLike()) {
+			readFrom := value
+			break
+		}
+		if (value = "selectedText") {
+			readFrom := value
+			break
+		}
+	}
+
+
+	; Flow: readFrom, call funcName, qs.writeTo
+	inputArray := GetHotkeyInputDataArray(readFrom)
 	for index, inputValue in inputArray
 	{
-		if (qs.readFrom = "explorer-file") {
+		if (readFrom = "explorer-file") {
 			FileRead, fileContent, %inputValue%
 			result := %funcName%(fileContent)
 
@@ -230,17 +269,16 @@ FollowedByHotkeyExec(qs) {
 }
 
 
-GetHotkeyInputDataArray(qs) {
-	Array := []
-	if (qs.readFrom = "selectedText") {
-		Array.Push(CopyAndSaveClip())
-	}
-
-	if (qs.readFrom = "explorer-file") {
+GetHotkeyInputDataArray(readFrom) {
+	if (readFrom = "explorer-file") {
 		fileNames := Explorer_GetSelectedArray()
 		return %fileNames%
 	}
 
+	Array := []
+	if (readFrom = "selectedText") {
+		Array.Push(CopyAndSaveClip())
+	}
 	return Array
 }
 

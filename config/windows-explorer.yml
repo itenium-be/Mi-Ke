@@ -43,3 +43,24 @@ Open Windows Explorer in path on clipboard:
 	label: ExplorerSelectedFilePathToClipboard
 	hotkey: Shift & CapsLock
 	context: explorer
+
+
+See image dimensions and file size:
+	desc: Press again to copy dimensions to clipboard
+	hotkey: "#Enter"
+	label: SeeImageDimensions
+	context: explorer
+
+
+
+Switch to Details View (builtin):
+	desc: Resize first column so that filenames are completely visible
+	hotkey: ~^+6 # This hotkey should probably not be changed (it matches the builtin hotkey)
+	label: SwitchToDetailsView
+	context: explorer
+
+
+
+2x Esc closes Windows Explorer:
+	titleMatcher: ahk_class CabinetWClass|ExploreWClass
+	doublePressCloseHotkey: ESC
