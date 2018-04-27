@@ -27,9 +27,10 @@ ConvertYamlToQuickStarters(yaml) {
 			quickStarterInfo.followedBy := Yaml("", 0)
 			Yaml_Merge(quickStarterInfo.followedBy, qs.followedBy)
 
-			Loop % qs.followedBy.() {
-				execInfo := qs.followedBy.(A_INDEX)
+			Loop % quickStarterInfo.followedBy.() {
+				execInfo := quickStarterInfo.followedBy.(A_INDEX)
 				quickStarterInfo.followedByInfo .= "`n" execInfo.key " => " execInfo.desc
+				execInfo.key := StrSplit(execInfo.key, "|")
 			}
 		}
 
@@ -127,7 +128,6 @@ ValidateQuickStarter(qs, qsYaml) {
 		ValidateNotify(qs, qsYaml, "Can't have both path && label")
 		return false
 	}
-	; TODO: XOR path, label, followedBy can't be combined
 
 	if (qs.followedBy) {
 		Loop % qs.followedBy.() {
@@ -225,8 +225,9 @@ FollowedByHotkeyExec(qs) {
 	Input key, I L1
 	Loop % qs.followedBy.() {
 		execInfo := qs.followedBy.(A_INDEX)
-		if (execInfo.key = key) {
+		if (IsInArray(execInfo.key, key)) {
 			funcName := execInfo.fn
+			break
 		}
 	}
 	if (!funcName) {

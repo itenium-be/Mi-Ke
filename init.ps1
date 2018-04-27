@@ -106,7 +106,7 @@ if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
 # 	  fn: ToTitleCase
 #
 # 	- desc: TO UPPER CASE
-# 	  key: u
+# 	  key: u|l  # u or l
 # 	  fn: ToUpperCase
 
 # The object keys are a description of the hotkey functionality

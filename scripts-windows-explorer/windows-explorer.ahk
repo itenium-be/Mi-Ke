@@ -45,7 +45,7 @@ ExplorerLastDownloadedFile:
 Return
 
 
-; TODO: implement A_PriorHotKey handling
+
 ; 2x Capslock: put path of selected file to clipboard
 ExplorerSelectedFileDirToClipboard:
 	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
