@@ -38,6 +38,17 @@ GetQuickStarterInfoByName(name) {
 }
 
 
+GetQuickStarterInfoByLabel(lbl) {
+	global quickStarterz
+	For index, quickStarter in quickStarterz
+	{
+		if (quickStarter.label = lbl) {
+			return quickStarter
+		}
+	}
+}
+
+
 GetQuickStarterInfoByHotkey() {
 	global quickStarterz
 	For index, quickStarter in quickStarterz

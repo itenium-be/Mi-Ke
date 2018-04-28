@@ -24,7 +24,17 @@ Suspend script:
 	menu: top
 
 
+Emergency exit:
+	hotkey: +^#!r
+	label: DevEmergencyExit
+
 # --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY
+
+
+List lines:
+	hotkey: !F8
+	label: DevListLines
+	menu: Autohotkey
 
 
 List hotkeys:
