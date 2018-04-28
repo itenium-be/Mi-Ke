@@ -15,7 +15,7 @@
 	{% endfor %}
 	: {{include.l}}
 	{% if include.github %}
-		<a href="{{site.github.repository_url}}/blob/master/scripts/{{include.github}}.ahk">
+		<a href="{{site.github.repository_url}}/blob/master/{{include.github}}.ahk">
 			<span style="font-size: 10px">({{include.github}})</span>
 		</a>
 	{% endif %}

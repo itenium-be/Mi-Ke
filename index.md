@@ -1,6 +1,6 @@
 ---
 layout: home
-title: test
+title: Mi-Ke
 ---
 
 # What
