@@ -58,12 +58,6 @@ More step by step instructions can be found
 in the [official docs FAQ](https://www.autohotkey.com/docs/FAQ.htm#Startup)
 
 
-## Troubleshooting
-
-If you get this when starting `mike.ahk`, then run `init.ps1`.
-
-![](init-not-run.png)
-
 ### Mi-Ke doesn't work in Visual Studio
 
 The scripts aren't working only when Visual Studio (or any other app) is running as administrator.  

@@ -1,20 +1,14 @@
-; Global entry point
+; Global Entry Point
 ; Mi-Ke: Be nice to me or I will throw rocks at you
 
-; TODO: update docs...
-; A few #Include files are not in the git repository
-; Create them by running .\init.ps1
-; (mike.ahk will not run as long as these files do not exist!)
+; You own scripts: .\userland\
+; The folders .\userland\hotkeys and .\userland\hotstrings are two entry points you can use to start experimenting.
+; All code that needs to be executed automatically can be placed in .\userland\auto-execute.ahk
 
-; .\hotkeys\_includes.ahk and .\hotstrings\_includes.ahk
-; are two entry points you can use to start experimenting.
-; Activate/deactivate and configure the scripts in config\mike.ini and _custom.yml files
+; Configure existing scripts: config\mike.ini and _custom.yml
 
-; Reload this script with Control+Win+R for ahk and config changes to have effect
-; (might happen automatically on Control+S in IDE - see config\dev-tools\dev-tools.yml)
+; If you have no idea, how to get started then run .\init.ps1 to create some example files
 
-; All code that needs to be executed
-; automatically should be above this
 
 #Persistent
 #SingleInstance force
@@ -23,7 +17,7 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 
 ; Dynamic #Includes:
-#Include %A_ScriptDir%\Include.ahk
+#Include %A_ScriptDir%\startup\Include.ahk
 if (A_AhkVersion < "2") {
 	A_Args := []
 	Loop %0%
