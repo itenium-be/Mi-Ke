@@ -39,7 +39,6 @@ cd Mi-Ke
 .\init.ps1
 
 # If you do not want examples run the following instead
-# It will create the file(s) required to start only
 .\init.ps1 -bare
 
 # Start
