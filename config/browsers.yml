@@ -2,46 +2,46 @@
 # (System default)
 
 Open a new browser tab:
-	label: BrowserOpen
-	hotkey: Capslock & W
+  label: BrowserOpen
+  hotkey: Capslock & W
 
 
 Google the currently selected text:
-	label: BrowserSearch
-	hotkey: Capslock & X
+  label: BrowserSearch
+  hotkey: Capslock & X
 
 
 Google the currently selected text + Autohotkey:
-	label: BrowserSearchAutohotkey
-	hotkey: Capslock & A
+  label: BrowserSearchAutohotkey
+  hotkey: Capslock & A
 
 
 # --------------------------------------- BROWSER CONFIG
 
 
 Chrome:
-	path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-	# titleMatcher: ahk_class Chrome_WidgetWin_1
-	# newWindowFlag: -new
-	menu: Browsers
+  path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+  # titleMatcher: ahk_class Chrome_WidgetWin_1
+  # newWindowFlag: -new
+  menu: Browsers
 
 
 Firefox:
-	path: C:\Program Files\Mozilla Firefox\firefox.exe
-	menu: Browsers
+  path: C:\Program Files\Mozilla Firefox\firefox.exe
+  menu: Browsers
 
 
 Opera:
-	path: C:\Program Files\Opera\launcher.exe
-	menu: Browsers
+  path: C:\Program Files\Opera\launcher.exe
+  menu: Browsers
 
 
 Edge:
-	label: BrowserOpenEdge
-	menu: Browsers
-	ico: C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe
+  label: BrowserOpenEdge
+  menu: Browsers
+  ico: C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe
 
 
 Explorer:
-	path: C:\Program Files (x86)\Internet Explorer\iexplore.exe
-	menu: Browsers
+  path: C:\Program Files (x86)\Internet Explorer\iexplore.exe
+  menu: Browsers

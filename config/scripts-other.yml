@@ -1,39 +1,39 @@
 # --------------------------------------- WINDOW MANAGEMENT
 
 Minimize all/restore minimized windows on active monitor:
-	label: WindowsMinMax
-	hotkey: ^!#D
+  label: WindowsMinMax
+  hotkey: ^!#D
 
 
 # ----------------------------------------- CLIPBOARD STUFF
 
 
 Append selected text to clipboard:
-	label: AppendToClipboard
-	hotkey: ^+#c
+  label: AppendToClipboard
+  hotkey: ^+#c
 
 
 
 
 Open context menu on mouse cursor:
-	hotkey: AppsKey & m
-	followedBy:
-		- desc: Autohotkey
-		  key: a
-		  fn: ShowMenuAutohotkey
+  hotkey: AppsKey & m
+  followedBy:
+    - desc: Autohotkey
+      key: a
+      fn: ShowMenuAutohotkey
 
-		- desc: Browsers
-		  key: b
-		  fn: ShowMenuBrowsers
+    - desc: Browsers
+      key: b
+      fn: ShowMenuBrowsers
 
-		- desc: Consoles
-		  key: c
-		  fn: ShowMenuConsoles
+    - desc: Consoles
+      key: c
+      fn: ShowMenuConsoles
 
-		- desc: Editors
-		  key: e
-		  fn: ShowMenuEditors
+    - desc: Editors
+      key: e
+      fn: ShowMenuEditors
 
-		- desc: Programs
-		  key: p
-		  fn: ShowMenuPrograms
+    - desc: Programs
+      key: p
+      fn: ShowMenuPrograms

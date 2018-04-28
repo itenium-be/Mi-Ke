@@ -1,85 +1,85 @@
 Autohotkey Documentation:
-	path: <A_AHKEXEPATH>
-	menu: Autohotkey
+  path: <A_AHKEXEPATH>
+  menu: Autohotkey
 
 
 Run the selected Autohotkey code:
-	hotkey: !F6
-	label: DynaRun
+  hotkey: !F6
+  label: DynaRun
 
 # --------------------------------------- SCRIPT CONTROL
 
 
 Reload script and ini:
-	hotkey: ^#r
-	label: DevReloadScript
-	menu: ScriptControl
+  hotkey: ^#r
+  label: DevReloadScript
+  menu: ScriptControl
 
 
 Reload script when saved:
-	hotkey: ~^s
-	label: DevReloadScriptWhenSaved
+  hotkey: ~^s
+  label: DevReloadScriptWhenSaved
 
 
 Suspend script:
-	hotkey: ^#!r
-	label: DevSuspend
-	menu: ScriptControl
+  hotkey: ^#!r
+  label: DevSuspend
+  menu: ScriptControl
 
 
 Open the console log:
-	hotkey: Capslock & C
-	label: OpenConsoleLogWindow
+  hotkey: Capslock & C
+  label: OpenConsoleLogWindow
 
 
 Emergency exit:
-	hotkey: +^#!r
-	label: DevEmergencyExit
-	menu: ScriptControl
+  hotkey: +^#!r
+  label: DevEmergencyExit
+  menu: ScriptControl
 
 
 # --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY
 
 
 List lines:
-	hotkey: !F8
-	label: DevListLines
-	menu: Autohotkey
+  hotkey: !F8
+  label: DevListLines
+  menu: Autohotkey
 
 
 List hotkeys:
-	hotkey: !F9
-	label: DevListHotkeys
-	menu: Autohotkey
+  hotkey: !F9
+  label: DevListHotkeys
+  menu: Autohotkey
 
 
 Key history:
-	hotkey: !F10
-	label: DevKeyHistory
-	menu: Autohotkey
+  hotkey: !F10
+  label: DevKeyHistory
+  menu: Autohotkey
 
 
 List vars:
-	hotkey: !F11
-	label: DevListVars
-	menu: Autohotkey
+  hotkey: !F11
+  label: DevListVars
+  menu: Autohotkey
 
 
 # TODO: get window info directly from active window
 # https://github.com/AfterLemon/TooltipSpy
 Spy window:
-	hotkey: !F12
-	titleMatcher: ahk_exe AU3_Spy.exe
-	path:
-		- <A_AHKPATH>\AU3_Spy.exe
-		- <A_AHKPATH>\WindowSpy.ahk
-	doublePressCloseHotkey: ESC
-	menu: Autohotkey
+  hotkey: !F12
+  titleMatcher: ahk_exe AU3_Spy.exe
+  path:
+    - <A_AHKPATH>\AU3_Spy.exe
+    - <A_AHKPATH>\WindowSpy.ahk
+  doublePressCloseHotkey: ESC
+  menu: Autohotkey
 
 
 Convert selected ahk file to exe:
-	hotkey: !F7
-	titleMatcher: ahk_exe Ahk2Exe.exe
-	path: <A_AHKPATH>\Compiler\Ahk2Exe.exe
-	label: ConvertAhkToExe
-	menu: Autohotkey
+  hotkey: !F7
+  titleMatcher: ahk_exe Ahk2Exe.exe
+  path: <A_AHKPATH>\Compiler\Ahk2Exe.exe
+  label: ConvertAhkToExe
+  menu: Autohotkey
