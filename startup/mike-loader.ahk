@@ -5,10 +5,11 @@
 
 
 ; Configure your env in mike.ini
-EDITOR_NAME := ReadMikeIni("core", "editor")
-EDITOR := GetQuickStarterInfoByName(EDITOR_NAME)
-DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
-global DEBUG := ReadMikeIni("core", "DEBUG")
+global EDITOR_NAME := ReadMikeIni("core", "editor")
+global EDITOR := GetQuickStarterInfoByName(EDITOR_NAME)
+global DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
+DEBUG := ReadMikeIni("core", "DEBUG")
+
 Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 
 

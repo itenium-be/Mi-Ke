@@ -16,6 +16,8 @@ SetTitleMatchMode RegEx
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 
+global DEBUG := 1
+
 ; Dynamic #Includes:
 #Include %A_ScriptDir%\startup\Include.ahk
 if (A_AhkVersion < "2") {

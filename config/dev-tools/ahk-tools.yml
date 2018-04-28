@@ -63,3 +63,11 @@ Spy window:
 		- <A_AHKPATH>\WindowSpy.ahk
 	doublePressCloseHotkey: ESC
 	menu: Autohotkey
+
+
+Convert selected ahk file to exe:
+	hotkey: !F7
+	titleMatcher: ahk_exe Ahk2Exe.exe
+	path: <A_AHKPATH>\Compiler\Ahk2Exe.exe
+	label: ConvertAhkToExe
+	menu: Autohotkey
