@@ -1,9 +1,11 @@
 startup\mike-loader.ahk
-startup\helpers\*.ahk
+userland\auto-execute.ahk
+return
 
 userland\hotkeys\*.ahk
 userland\hotstrings\*.ahk
 
+startup\helpers\*.ahk
 utilities\*.ahk
 vendor\*.ahk
 vendor\WindowPad\source\WindowPad.ahk

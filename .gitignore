@@ -1,5 +1,8 @@
-hotstrings/
-hotkeys/
-/config/mike.ini
-/config/_custom.yml
-/resources/*.ico
+config/mike.ini
+config/_custom.yml
+
+resources/*.ico
+
+userland/auto-execute.ahk
+userland/hotkeys
+userland/hotstrings

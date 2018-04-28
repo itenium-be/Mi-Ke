@@ -126,14 +126,14 @@ RunHotkey(quickStarter) {
 
 RunHotkeyCore(path, quickStarter) {
 	; MsgBox %path%
-	; Notify("Run", path)
+	; Notify("Run", quickStarter.name)
 	if (quickStarter.asAdmin and not A_IsAdmin) {
-			try {
-				; Start as admin with UAC dialog
-				Run *RunAs "%path%"
-			}
-		} else {
-			Run %path%
-			WinActivate
+		try {
+			; Start as admin with UAC dialog
+			Run *RunAs "%path%"
 		}
+	} else {
+		Run %path%
+		WinActivate
+	}
 }
