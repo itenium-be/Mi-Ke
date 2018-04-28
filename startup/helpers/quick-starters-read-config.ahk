@@ -116,64 +116,6 @@ Yaml_ToArray(yaml) {
 }
 
 
-
-ValidateQuickStarter(qs, qsYaml) {
-	if (qs.active = 0) {
-		return false
-	}
-
-	if (qs.machine and not IsInArray(qs.machine, A_ComputerName)) {
-		return false
-	}
-	if (qs.machineExclude and IsInArray(qs.machineExclude, A_ComputerName)) {
-		return false
-	}
-
-	if (qs.label and not IsLabel(qs.label)) {
-		ValidateNotify(qs, qsYaml, "Label '" qs.label "' does not exist")
-		return false
-	}
-
-	if (qs.path and not FileExist(qs.path)) {
-		ValidateNotify(qs, qsYaml, "Path does not exist:`n" qs.path)
-		return false
-	}
-
-	; if (qs.path and qs.label) {
-	; 	ValidateNotify(qs, qsYaml, "Can't have both path && label")
-	; 	return false
-	; }
-
-	if (qs.followedBy) {
-		Loop % qs.followedBy.() {
-			execInfo := qs.followedBy.(A_INDEX)
-			if (!IsFunc(execInfo.fn)) {
-				ValidateNotify(qs, qsYaml, execInfo.fn " is not a function?")
-				break
-			}
-		}
-	}
-
-	value := qs.passExplorerPathAsArgument
-	if (value <> "" and value <> "dir" and value <> "file") {
-		ValidateNotify(qs, qsYaml, "Unknown value passExplorerPathAsArgument: " value)
-	}
-
-	return true
-}
-
-
-ValidateQuickStartCollection(quickStarters) {
-	checkArr := []
-	For index, qs in quickStarters {
-		hotkey := qs.hotkey
-		if (hotkey and IsInArray(checkArr, hotkey)) {
-			Notify("Double hotkey mapping", qs.name "`nHotkey: " hotkey)
-		}
-		checkArr.Push(hotkey)
-	}
-}
-
 IsInArray(arr, needle) {
 	For key, value in arr {
 		if (value = needle) {
@@ -183,15 +125,6 @@ IsInArray(arr, needle) {
 	return false
 }
 
-
-ValidateNotify(qs, qsYaml, str) {
-	if DEBUG {
-		a.log(qs.name "`n" str "`n`n" qsYaml.Dump())
-		; a.show()
-		Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
-	} else {
-	}
-}
 
 CheckHotkeyContext(context) {
 	if (context) {
@@ -208,6 +141,7 @@ CheckHotkeyContext(context) {
 	}
 	return 1
 }
+
 
 
 BindQuickStarter(qs, thaLabel, functionName := "") {
@@ -230,99 +164,5 @@ BindQuickStarter(qs, thaLabel, functionName := "") {
 		if (qs.context) {
 			HotKey, If
 		}
-	}
-}
-
-
-FollowedByHotkeyExec(qs) {
-	if DEBUG {
-		Notify(qs.name, "Press one of:" qs.followedByInfo, 7)
-	}
-
-	; Read a key and find the function to execute
-	Input key, I L1
-	Loop % qs.followedBy.() {
-		execInfo := qs.followedBy.(A_INDEX)
-		; Notify(qs.name, execInfo.key ": " execInfo.fn)
-		if (IsInArray(execInfo.key, key)) {
-			funcName := execInfo.fn
-			break
-		}
-	}
-	if (!funcName) {
-		errorMsg := "Key '" key "' is not bound to anything."
-		if DEBUG {
-			Notify("", errorMsg)
-		} else {
-			Notify(qs.name, errorMsg "`n" qs.followedByInfo, 7)
-		}
-	}
-
-
-	for index, value in qs.readFrom {
-		if (value = "explorer-file" and isExplorerLike()) {
-			readFrom := value
-			break
-		}
-		if (value = "selectedText") {
-			readFrom := value
-			break
-		}
-	}
-
-
-	; Flow: readFrom, call funcName, qs.writeTo
-	inputArray := GetHotkeyInputDataArray(readFrom)
-	for index, inputValue in inputArray
-	{
-		if (readFrom = "explorer-file") {
-			FileRead, fileContent, %inputValue%
-			result := %funcName%(fileContent)
-
-		} else {
-			result := %funcName%(inputValue)
-		}
-		if result {
-			WriteHotkeyOutputData(qs, inputValue, result, readFrom)
-		}
-	}
-}
-
-
-GetHotkeyInputDataArray(readFrom) {
-	if (readFrom = "explorer-file") {
-		fileNames := Explorer_GetSelectedArray()
-		return %fileNames%
-	}
-
-	Array := []
-	if (readFrom = "selectedText") {
-		Array.Push(CopyAndSaveClip())
-	}
-	return Array
-}
-
-
-WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
-	writeTo := qs.writeTo ? qs.writeTo : readFrom
-
-	if (writeTo = "clipboard") {
-		Notify("To clipboard:", result)
-		clipboard := result
-	}
-	else if (writeTo = "selectedText") {
-		Send % result
-	}
-	else if (writeTo = "explorer-file") {
-		; Notify(inputValue, result)
-		FileDelete % inputValue
-		FileAppend, %result%, % inputValue
-	}
-	else {
-		Notify(qs.name, "Unknown writeTo: " writeTo)
-	}
-
-	if (readFrom = "selectedText" and writeTo <> "clipboard") {
-		RestoreClip()
 	}
 }

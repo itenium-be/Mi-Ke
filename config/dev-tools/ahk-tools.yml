@@ -11,7 +11,7 @@ Autohotkey Documentation:
 Reload script and ini:
 	hotkey: ^#r
 	label: DevReloadScript
-	menu: top
+	menu: ScriptControl
 
 
 Reload script when saved:
@@ -22,18 +22,18 @@ Reload script when saved:
 Suspend script:
 	hotkey: ^#!r
 	label: DevSuspend
-	menu: top
+	menu: ScriptControl
 
 
 Open the console log:
 	hotkey: Capslock & C
 	label: OpenConsoleLogWindow
-	menu: top
 
 
 Emergency exit:
 	hotkey: +^#!r
 	label: DevEmergencyExit
+	menu: ScriptControl
 
 
 # --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY

@@ -23,7 +23,7 @@ CreateQuickStartersMenu(menu, addToMenu := "") {
 }
 
 
-CreateQuickStartsMenuItem(labelName, menu := "Tray") {
+CreateQuickStartersMenuItem(labelName, menu := "Tray") {
 	global quickStarterz
 	For index, quickStarter in quickStarterz
 	{

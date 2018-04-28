@@ -5,34 +5,34 @@ Calculator:
 	path: <A_WINDIR>\System32\calc.exe
 	titleMatcher: ahk_class CalcFrame
 	doublePressCloseHotkey: ~ESC # ~ --> First ESC should still clear the calc input
-	menu: Applications
+	menu: Programs
 
 
 Paint.NET:
 	hotkey: ^#d
 	titleMatcher: ahk_exe PaintDotNet.exe
 	path: <A_PROGRAMFILES>\paint.net\PaintDotNet.exe
-	menu: Applications
+	menu: Programs
 
 
 Robo 3T (ex Robomongo):
 	hotkey: CapsLock & Q
 	titleMatcher: ahk_exe robo3t.exe
 	path: <A_PROGRAMFILES>\Robo 3T 1.1.1\robo3t.exe
-	menu: Applications
+	menu: Programs
 
 
 HeidiSql:
 	hotkey: CapsLock & S
 	titleMatcher: ahk_exe heidisql.exe
 	path: <A_PROGRAMFILES>\HeidiSQL\heidisql.exe
-	menu: Applications
+	menu: Programs
 
 
 DBeaver:
 	path: <USERPROFILE>\AppData\Local\DBeaver\dbeaver.exe
 	pathParams: -nl en
-	menu: Applications
+	menu: Programs
 	active: 0
 
 
@@ -42,30 +42,30 @@ FileZilla:
 	path:
 		- C:\Program Files\FileZilla FTP Client\filezilla.exe
 		- C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe
-	menu: Applications
+	menu: Programs
 
 
 7-Zip:
 	titleMatcher: ahk_exe 7zFM.exe
 	path: <A_PROGRAMFILES>\7-zip\7zFM.exe
-	menu: Applications
+	menu: Programs
 
 
 VLC:
 	path: <A_PROGRAMFILES>\VideoLAN\VLC\vlc.exe
-	menu: Applications
+	menu: Programs
 
 
 Beyond Compare:
 	path:
 		- C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
 		- C:\Program Files (x86)\Beyond Compare 4\BCompare.exe
-	menu: Applications
+	menu: Programs
 
 
 DiffMerge:
 	path: C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe
-	menu: Applications
+	menu: Programs
 
 
 IrfanView:
@@ -74,23 +74,23 @@ IrfanView:
 		- C:\Program Files\IrfanView\i_view64.exe
 		- C:\Program Files (x86)\IrfanView\i_view32.exe
 		- C:\Program Files\IrfanView\i_view32.exe
-	menu: Applications
+	menu: Programs
 
 
 TeamViewer:
 	path: C:\Program Files (x86)\TeamViewer\TeamViewer.exe
-	menu: Applications
+	menu: Programs
 
 
 dotPeek:
 	path:
 		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek09\dotPeek64.exe
 		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek11\dotPeek64.exe
-	menu: Applications
+	menu: Programs
 
 
 Ditto:
 	path:
 		- C:\Program Files (x86)\Ditto\Ditto.exe
 		- C:\Program Files\Ditto\Ditto.exe
-	menu: Applications
+	menu: Programs

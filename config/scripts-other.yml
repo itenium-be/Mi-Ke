@@ -13,3 +13,29 @@ Minimize all/restore minimized windows on active monitor:
 Append selected text to clipboard:
 	label: AppendToClipboard
 	hotkey: ^+#c
+
+
+
+
+Open context menu on mouse cursor:
+	hotkey: AppsKey & m
+	followedBy:
+		- desc: Autohotkey
+		  key: a
+		  fn: ShowMenuAutohotkey
+
+		- desc: Browsers
+		  key: b
+		  fn: ShowMenuBrowsers
+
+		- desc: Consoles
+		  key: c
+		  fn: ShowMenuConsoles
+
+		- desc: Editors
+		  key: e
+		  fn: ShowMenuEditors
+
+		- desc: Programs
+		  key: p
+		  fn: ShowMenuPrograms
