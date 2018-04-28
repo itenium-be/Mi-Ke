@@ -65,12 +65,61 @@ Switch views:
 {% include kbd k="Control+Shift+6" l="View => details list" %}
 
 
+## Developer tooling
+
+[Configuration](https://github.com/itenium-be/Mi-Ke/blob/master/config/dev-tools)
+and
+[implementations](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-dev-tools).
+
+
+{% include kbd k="AltGr+L" l="Paste lorem ipsum" %}
+```yml
+Paste lorem ipsum:
+  label: LoremIpsum
+  hotkey: <^>!l
+```
+
+
+### Uri encoding
+
+{% include kbd k="AltGr+U" l="Uri convertion of selected text" %}
+Follow by pressing `e`, `d` or `s` to **e**ncode, **d**ecode or **s**lugify.
+
+```
+Uri encode/decode or slugify selected text:
+  hotkey: <^>!u
+  readFrom: selectedText
+  writeTo: clipboard
+  followedBy:
+     - desc: Uri encode
+       key: e
+       fn: LC_UriEncode
+ 
+     - desc: Uri decode
+       key: d
+       fn: LC_UriDecode
+ 
+     - desc: Slugify
+       key: s
+       fn: Slugify
+```
+
+Aside from uri encoding/decoding, there are also dev tools to, for example:  
+{% include kbd k="AltGr+B" l="Base64 encode/decode selected text or file content" %}
+{% include kbd k="AltGr+C" l="Change case of selected text (lower, UPPER, Title, Sentence, iNVeRT)" %}
+{% include kbd k="AltGr+E" l="Change EOL of selected file(s) in Windows Explorer (DOS, Unix, Mac)" %}
+
+Example: To convert selected text to upper case, use `AltGr+C` followed by `u`.
+After pressing the first hotkey, a menu with the posibilities is shown.
+
+
 ## Start programs with hotkeys
 
 Quick starters are defined in `config\*.yml`  
 Default behavior can be overwritten in `config\_custom.yml` (create it by running `init.ps1`)
 
 ### Some default configurations
+
 
 {% include kbd k="Control+Win+C" l="Start calculator (2x esc to close)" %}
 ```yml
@@ -81,6 +130,7 @@ Calculator:
   doublePressCloseHotkey: ~ESC
   menu: Applications
 ```
+
 
 
 {% include kbd k="Win+C" l="Start Notepad++" %}
@@ -99,7 +149,7 @@ Notepad++:
   menu: Editors
 ```
 
-### Example configuration
+
 
 {% include kbd k="Shift+Win+Alt+P" l="Open PowerShell" %}
 ```yml
@@ -116,6 +166,8 @@ PowerShell (Admin):
   # RunAs Administrator
   asAdmin: 1
 ```
+
+
 
 {% include kbd k="Alt+Win+R" l="Open PowerShell ISE" %}
 
@@ -135,7 +187,7 @@ PowerShell ISE:
 
 ## Browsers
 
-[Browser](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-other/browser.ahk)
+[Browsers](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-other/browsers.ahk)
 
 {% include kbd k="Capslock & W" l="Open browser" %}
 {% include kbd k="Capslock & X" l="Google selected text" %}
@@ -156,7 +208,7 @@ PowerShell ISE:
 
 # Other resources
 
-Looking for even more little productivity boosters?
+Looking for even more productivity boosters?
 
 Look no further!
 
