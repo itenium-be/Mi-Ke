@@ -4,13 +4,12 @@
 ; GetIpConfig() {
 ; 	objShell := ComObjCreate("WScript.Shell")
 ; 	objExec := objShell.Exec("ipconfig.exe")
-
 ; 	While !objExec.Status
 ; 		Sleep 100
-
 ; 	result := objExec.StdOut.ReadAll()
 ; 	return result
 ; }
+
 
 ; Example texts:
 ; www.itenium.be
@@ -23,6 +22,12 @@ GetMyIps() {
 	For AdaptorName, IP in GetLocalIPs() {
 		result .= "`n" AdaptorName ": " IP
 	}
+	for i, v in GetDnsAddress()
+		result .= "`nDNS: " v
+
+	for i, v in GetMacAddress()
+		result .= "`nMAC: " v
+
 	return result
 }
 
@@ -86,3 +91,53 @@ GetLocalIPs() {
 	}
 	Return ips
 }
+
+
+; ===============================================================================================================================
+; Get a list of DNS servers used by the local computer.
+; ===============================================================================================================================
+GetDnsAddress() {
+    if (DllCall("iphlpapi.dll\GetNetworkParams", "ptr", 0, "uint*", size) = 111) && !(VarSetCapacity(buf, size, 0))
+        throw Exception("Memory allocation failed for FIXED_INFO struct", -1)
+    if (DllCall("iphlpapi.dll\GetNetworkParams", "ptr", &buf, "uint*", size) != 0)
+        throw Exception("GetNetworkParams failed with error: " A_LastError, -1)
+    addr := &buf, DNS_SERVERS := []
+    DNS_SERVERS[1] := StrGet(addr + 264 + (A_PtrSize * 2), "cp0")
+    ptr := NumGet(addr+0, 264 + A_PtrSize, "uptr")
+    while (ptr) {
+        DNS_SERVERS[A_Index + 1] := StrGet(ptr+0 + A_PtrSize, "cp0")
+        ptr := NumGet(ptr+0, "uptr")
+    }
+    return DNS_SERVERS
+}
+
+
+; ===============================================================================================================================
+; Get a list of computers MAC address.
+; ===============================================================================================================================
+GetMacAddress(delimiter := ":", case := False) {
+    if (DllCall("iphlpapi.dll\GetAdaptersInfo", "ptr", 0, "uint*", size) = 111) && !(VarSetCapacity(buf, size, 0))
+        throw Exception("Memory allocation failed for IP_ADAPTER_INFO struct", -1)
+    if (DllCall("iphlpapi.dll\GetAdaptersInfo", "ptr", &buf, "uint*", size) != 0)
+        throw Exception("GetAdaptersInfo failed with error: " A_LastError, -1)
+    addr := &buf, MAC_ADDRESS := []
+    while (addr) {
+        loop % NumGet(addr+0, 396 + A_PtrSize, "uint")
+            mac .= Format("{:02" (case ? "X" : "x") "}", NumGet(addr+0, 400 + A_PtrSize + A_Index - 1, "uchar")) "" delimiter ""
+        MAC_ADDRESS[A_Index] := SubStr(mac, 1, -1), mac := ""
+        addr := NumGet(addr+0, "uptr")
+    }
+    return MAC_ADDRESS
+}
+
+
+; ===============================================================================================================================
+; Flush entire DNS cache, same as [ipconfig /flushdns] in cmd console
+; ===============================================================================================================================
+FlushDNS() {
+    if !(DllCall("dnsapi.dll\DnsFlushResolverCache"))
+        throw Exception("DnsFlushResolverCache", -1)
+    return 1
+}
+
+; ===============================================================================================================================

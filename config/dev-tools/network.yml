@@ -1,5 +1,5 @@
 Network actions:
-  hotkey: AppsKey & R
+  hotkey: AppsKey & N
   readFrom: selectedText
   writeTo: console
   followedBy:
@@ -18,3 +18,7 @@ Network actions:
     - desc: Reverse lookup (ip -> url)
       key: r
       fn: ReverseLookup
+
+    - desc: Flush DNS (ipconfig /flushdns)
+      key: f
+      fn: FlushDNS
