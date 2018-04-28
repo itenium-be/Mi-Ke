@@ -35,16 +35,18 @@ PowerShell:
 git clone https://github.com/itenium-be/Mi-Ke
 cd Mi-Ke
 
-# Create an initial setup with some examples
-.\init.ps1
-
-# If you do not want examples run the following instead
-.\init.ps1 -bare
-
 # Start
 .\mike.ahk
 ```
 
+Personal customization (optional):  
+```ps
+# Add some custom config & examples
+.\init.ps1
+
+# If you do not want examples run the following instead
+.\init.ps1 -bare
+```
 
 ## Persist
 
