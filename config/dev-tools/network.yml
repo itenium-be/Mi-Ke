@@ -1,12 +1,20 @@
-Run a program:
+Network actions:
   hotkey: AppsKey & R
   readFrom: selectedText
   writeTo: console
   followedBy:
-    - desc: ipconfig
+    - desc: Get my IP addresses
       key: i
       fn: GetMyIps
 
-    - desc: Ping
+    - desc: Ping a server
       key: p
       fn: Ping
+
+    - desc: Resolve hostname (url -> ip)
+      key: h
+      fn: ResolveHostname
+
+    - desc: Reverse lookup (ip -> url)
+      key: r
+      fn: ReverseLookup

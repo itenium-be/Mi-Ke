@@ -12,6 +12,10 @@
 ; 	return result
 ; }
 
+; Example texts:
+; www.itenium.be
+; 172.217.17.132
+
 
 GetMyIps() {
 	result := "Public IP: " GetPublicIP()
@@ -23,32 +27,18 @@ GetMyIps() {
 }
 
 
-Ping(url) {
-	; a.log("start" url)
-	; objExec := objShell.Exec("cmd /c ping -n 3 -w 1000 www.google.com")
-	; ; strLine := objExec.StdOut.ReadAll()
-	; ; msgbox % strLine
-	; ; return strLine
-
-	; a.log("aarg" url)
-
-	; While !objExec.Status
-	; 	Sleep 100
-
-	; ; While !objExec.StdOut.AtEndOfStream {
-	; ; 	line := "`n" objExec.StdOut.ReadLine()
-	; ; 	if InStr(line, "Reply") {
-	; ; 		result .= "`n" line
-	; ; 	}
-	; ; }
-
-	; result := objExec.StdOut.ReadAll()
-
-	; msgbox % result
-	; return result
+ResolveHostname(ip) {
+	return ip " => " IPHelper.ResolveHostname(ip)
 }
 
-; TODO: tracert
+Ping(url) {
+	result := url "`nPinged in " IPHelper.Ping(url) " ms"
+	return result
+}
+
+ReverseLookup(url) {
+	return url " => " IPHelper.ReverseLookup(url)
+}
 
 
 
@@ -56,7 +46,7 @@ GetPublicIP() {
 	; IP Services:
 	; - https://api.ipify.org
 	; - http://www.netikus.net/show_ip.html
-	; - https://www.google.com/search?q=what+is+my+ip&num=1
+	; - https://www.google.com/search?q=what+is+my+ip&num=1 (=html)
 
 	MyExternalIP = 0.0.0.0
 	TmpFile = %WinDir%\TEMP\IPAddress.TMP
