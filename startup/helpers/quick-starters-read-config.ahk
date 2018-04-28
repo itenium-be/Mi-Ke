@@ -54,7 +54,10 @@ ConvertYamlToQuickStarters(yaml) {
 		}
 
 
-
+		; if (qs.label = "DevListVars") {
+		; ; TODO: find a way to convert any obj to string...
+		; 	a.log(qs)
+		; }
 
 
 		if (!ValidateQuickStarter(quickStarterInfo, qs)) {
