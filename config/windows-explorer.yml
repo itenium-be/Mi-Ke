@@ -1,5 +1,3 @@
-# ATTN: Make changes in _custom.yml (created with init.ps1)
-
 Zip the current directory or selected files in Windows Explorer:
 	label: ZipDirectory
 	hotkey: ^#z
