@@ -1,5 +1,3 @@
-; ATTN: No longer implemented.
-
 ;
 ; Auto-execute section
 ;

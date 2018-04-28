@@ -36,6 +36,10 @@ Include(incl, args*)
 				continue
 			}
 
+			if (A_LoopReadLine = "return") {
+				incl .= "`nreturn"
+			}
+
 			if (!FileExist(A_LoopReadLine)) {
 				continue
 			}

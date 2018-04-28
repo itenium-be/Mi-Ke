@@ -21,9 +21,9 @@ function Copy-File($fileName, $moveTo) {
 
 $path = Split-Path $SCRIPT:MyInvocation.MyCommand.Path -Parent
 
-# Copy-File "auto-execute-example.ahk" "userland"
 Copy-File "_custom-example.yml" "config"
 Copy-File "mike-example.ini" "config"
+Copy-File "auto-execute-example.ahk" "userland"
 
 
 if (!$bare) {
