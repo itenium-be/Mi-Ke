@@ -4,3 +4,9 @@ Open stuff bundled with Windows:
     - desc: Goto Advanced System Properties
       key: p
       fn: GoToEditEnvironmentVariables
+
+
+Remote Desktop Connection:
+  hotkey: +#r
+  path: <A_WINDIR>\system32\mstsc.exe
+  label: OpenRemoteDesktop
