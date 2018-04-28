@@ -7,6 +7,7 @@ Autohotkey Documentation:
 
 # --------------------------------------- SCRIPT CONTROL
 
+
 Reload script and ini:
 	hotkey: ^#r
 	label: DevReloadScript
@@ -24,9 +25,16 @@ Suspend script:
 	menu: top
 
 
+Open the console log:
+	hotkey: Capslock & C
+	label: OpenConsoleLogWindow
+	menu: top
+
+
 Emergency exit:
 	hotkey: +^#!r
 	label: DevEmergencyExit
+
 
 # --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY
 

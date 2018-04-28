@@ -171,7 +171,9 @@ IsInArray(arr, needle) {
 
 ValidateNotify(qs, qsYaml, str) {
 	if DEBUG {
-		Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
+		; Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
+		a.log(qs.name "`n" str "`n`n" qsYaml.Dump())
+		a.show()
 	}
 }
 
