@@ -23,6 +23,8 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.context := qs.context
 		quickStarterInfo.readFrom := Yaml_ToArray(qs.readFrom)
 		quickStarterInfo.writeTo := qs.writeTo
+		quickStarterInfo.machine := Yaml_ToArray(qs.machine)
+		quickStarterInfo.machineExclude := Yaml_ToArray(qs.machineExclude)
 		if (qs.followedBy) {
 			quickStarterInfo.followedBy := Yaml("", 0)
 			Yaml_Merge(quickStarterInfo.followedBy, qs.followedBy)
@@ -120,6 +122,13 @@ ValidateQuickStarter(qs, qsYaml) {
 		return false
 	}
 
+	if (qs.machine and not IsInArray(qs.machine, A_ComputerName)) {
+		return false
+	}
+	if (qs.machineExclude and IsInArray(qs.machineExclude, A_ComputerName)) {
+		return false
+	}
+
 	if (qs.label and not IsLabel(qs.label)) {
 		ValidateNotify(qs, qsYaml, "Label '" qs.label "' does not exist")
 		return false
@@ -177,9 +186,10 @@ IsInArray(arr, needle) {
 
 ValidateNotify(qs, qsYaml, str) {
 	if DEBUG {
-		; Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
 		a.log(qs.name "`n" str "`n`n" qsYaml.Dump())
-		a.show()
+		; a.show()
+		Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
+	} else {
 	}
 }
 

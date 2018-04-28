@@ -33,6 +33,7 @@ DBeaver:
 	path: <USERPROFILE>\AppData\Local\DBeaver\dbeaver.exe
 	pathParams: -nl en
 	menu: Applications
+	active: 0
 
 
 FileZilla:
