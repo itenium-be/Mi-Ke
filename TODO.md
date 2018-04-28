@@ -1,6 +1,9 @@
 TODO
 ====
 
+ESC ESC  in explorer doesn't work anymore
+ESC should not be active while editing a file? Now that no longer works...
+
 Add uri_encode / decode
 https://github.com/ahkscript/libcrypt.ahk/blob/master/src/URI.ahk
 
