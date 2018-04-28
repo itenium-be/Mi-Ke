@@ -53,7 +53,7 @@ Run `.\init.ps1` to create some personal customization example files.
 {% include kbd k="2x Esc" l="Close active Explorer window" %}
 {% include kbd k="2x Capslock" l="Put full directory of selected file/folder to clipboard" %}
 {% include kbd k="2x Shift+Capslock" l="Put full selected filename to clipboard" %}
-{% include kbd k="Control+Capslock" l="Open the path currently on the clipboard in Explorer" %}
+{% include kbd k="Win+E" l="Open the path currently on the clipboard in Explorer (builtin)" %}
 
 {% include kbd k="Control+Shift+N" l="New directory (builtin)" %}
 {% include kbd k="Control+Shift+F" l="New file" %}
