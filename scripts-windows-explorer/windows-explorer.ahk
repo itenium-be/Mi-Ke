@@ -75,15 +75,18 @@ ToClipboardAndNotify(toClipboard)
 }
 
 
-
-; Control+Capslock: Open selected text clipboard in Explorer
+; Open selected text clipboard in Explorer
 OpenExplorerInClipboardPath:
 	clipVal := CopyAndSaveClip()
 
-	explorerCmd := "explorer /select," clipVal
-	Run, %explorerCmd%
-	Sleep 400
-	Send {Enter}
+	if (clipVal) {
+		explorerCmd := "explorer /select," clipVal
+		Run, %explorerCmd%
+		Sleep 400
+		Send {Enter}
+	} else {
+		Send #e
+	}
 
 	RestoreClip()
 Return
