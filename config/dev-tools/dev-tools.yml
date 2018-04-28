@@ -41,6 +41,31 @@ Change casing of selected text:
 		  fn: InvertCase
 
 
+
+# TODO: should also be able to parse the currently
+#       selected text and print that specific date
+Print current date in a specific format:
+	hotkey: <^>!d
+	writeTo: selectedText
+	followedBy:
+		- desc: Sortable date
+		  key: s
+		  fn: ToSortableDate
+
+		- desc: Sortable date (safe for filename)
+		  key: f
+		  fn: ToSortableFileNameDate
+
+		- desc: Human readable
+		  key: h
+		  fn: ToHumanReadableDate
+
+		- desc: ISO8601
+		  key: i
+		  fn: ToIsoDate
+
+
+
 Change end of line sequence of selected file in Windows Explorer:
 	hotkey: <^>!e
 	context: explorer
