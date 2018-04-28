@@ -7,6 +7,13 @@ ExitApp
 return
 
 
+DynaRun:
+clipVal := CopyAndSaveClip()
+DynaRun(clipVal, "Dynarun")
+RestoreClip()
+return
+
+
 DevReloadScript:
 Notify("Script Reloaded")
 Reload
