@@ -1,0 +1,6 @@
+Open stuff bundled with Windows:
+  hotkey: AppsKey & B
+  followedBy:
+    - desc: Goto Advanced System Properties
+      key: p
+      fn: GoToEditEnvironmentVariables
