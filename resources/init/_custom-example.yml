@@ -10,6 +10,7 @@
 # 	hotkey:
 # 	desc: More info string
 # 	path: path to the exe to start (string | array)
+# 		    supports path-replacements.ahk (ex: <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>)
 # 	pathParams: params passed to the exe
 # 	label: either specify a path or this, an existing Autohotkey label
 # 	titleMatcher:  ahk_class, ahk_exe or Regex

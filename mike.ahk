@@ -3,11 +3,10 @@
 
 ; You own scripts: .\userland\
 ; The folders .\userland\hotkeys and .\userland\hotstrings are two entry points you can use to start experimenting.
-; All code that needs to be executed automatically can be placed in .\userland\auto-execute.ahk
 
 ; Configure existing scripts: config\mike.ini and _custom.yml
 
-; If you have no idea, how to get started then run .\init.ps1 to create some example files
+; If you have no idea how to get started with custom scripts, then run .\init.ps1 to create some example files
 
 
 #Persistent
