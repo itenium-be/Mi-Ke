@@ -1,0 +1,13 @@
+startup\mike-loader.ahk
+startup\helpers\*.ahk
+
+userland\hotkeys\*.ahk
+userland\hotstrings\*.ahk
+
+utilities\*.ahk
+vendor\*.ahk
+vendor\WindowPad\source\WindowPad.ahk
+
+scripts-dev-tools\*.ahk
+scripts-other\*.ahk
+scripts-windows-explorer\*.ahk

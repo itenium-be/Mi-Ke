@@ -2,21 +2,23 @@
 ;   http://www.autohotkey.com/forum/topic21703.html
 ;   Requires AutoHotkey v1.0.48 or later.
 
-if 0 > 0
-{
-    ; Command-line mode: interpret each arg as a pseudo-command.
-    ; Suspend all hotkeys which may be created by WindowPadInit.
-    Suspend On
-    ; Load options and Gather exclusions.
-    gosub WindowPadInit
-    ; Execute command line(s).  Each args should be in one of these formats:
-    ;   <command>
-    ;   <command>,<args_no_spaces>
-    ;   "<command>, <args>"    ; In this case the initial comma is optional.
-    Loop %0%
-        wp_ExecLine(%A_Index%)
-    ExitApp
-}
+; Mi-Ke: We already started with commandline param is_included
+; This code would interpret the is_included as a label
+; if 0 > 0
+; {
+;     ; Command-line mode: interpret each arg as a pseudo-command.
+;     ; Suspend all hotkeys which may be created by WindowPadInit.
+;     Suspend On
+;     ; Load options and Gather exclusions.
+;     gosub WindowPadInit
+;     ; Execute command line(s).  Each args should be in one of these formats:
+;     ;   <command>
+;     ;   <command>,<args_no_spaces>
+;     ;   "<command>, <args>"    ; In this case the initial comma is optional.
+;     Loop %0%
+;         wp_ExecLine(%A_Index%)
+;     ExitApp
+; }
 
 WindowPadInit:
     ; If this script is #included in another script, this section may not be
@@ -42,7 +44,7 @@ WindowPad_Init(IniPath="")
         ; so the "disabled" icon can be used.
         OnMessage(0x111, "WM_COMMAND")
     }
-        
+
     Menu, Tray, NoStandard
     Menu, Tray, MainWindow
     Menu, Tray, Add, &Debug, TrayDebug
@@ -59,7 +61,7 @@ WindowPad_Init(IniPath="")
     }
     Menu, Tray, Add, &Suspend, TraySuspend
     Menu, Tray, Add, E&xit, TrayExit
-    Menu, Tray, Default, &Debug    
+    Menu, Tray, Default, &Debug
     ;
     ; Load settings.
     ;
@@ -78,16 +80,16 @@ WindowPad_Init(IniPath="")
 WindowPad_LoadSettings(ininame)
 {
     local v
-    
+
     ; Misc Options
     IniRead, v, %ininame%, Options, TitleMatchMode, %A_TitleMatchMode%
     SetTitleMatchMode, %v%
-    
+
     ; Hotkeys: Exclude Windows
     v := wp_INI_GetList(ininame, "Exclude Windows", "Window")
     Loop, Parse, v, `n
         GroupAdd, HotkeyExclude, %A_LoopField%
-    
+
     ; Read the Hotkeys section in.
     v := wp_INI_ReadSection(ininame, "Hotkeys")
     ; Replace the first = with ::.
@@ -95,7 +97,7 @@ WindowPad_LoadSettings(ininame)
     v := RegExReplace(v, "m`a)^(.*?)=", "$1::")
     Hotkey, IfWinNotActive, ahk_group HotkeyExclude
     Hotkey_Params(v)
-    
+
     ; Gather: Exclude Windows
     v := wp_INI_GetList(ininame, "Gather: Exclude Windows", "Window")
     Loop, Parse, v, `n
@@ -122,25 +124,25 @@ wp_INI_ReadSection(Filename, Section)
 {
     char_type := A_IsUnicode ? "UShort" : "UChar"
     char_size := A_IsUnicode ? 2 : 1
-    
+
     ; Expand relative paths, since GetPrivateProfileSection only searches %A_WinDir%.
     Loop, %Filename%, 0
         Filename := A_LoopFileLongPath
-    
+
     VarSetCapacity(buf, 0x7FFF*char_size, 0)
 
     len := DllCall("GetPrivateProfileSection"
         , "uint", &Section, "uint", &buf, "uint", 0x7FFF, "uint", &Filename)
-    
+
     VarSetCapacity(text, len*char_size), p := &buf
     ; For each null-terminated substring,
     while (s := DllCall("MulDiv", "int", p, "int", 1, "int", 1, "str"))
         ; append it to the output and advance to the next substring.
         text .= s "`n",  p += (StrLen(s)+1)*char_size
-    
+
     ; Strip the trailing newline
     text := SubStr(text, 1, -1)
-    
+
     ; Windows Me/98/95:
     ;   The returned string includes comments.
     ;
@@ -148,7 +150,7 @@ wp_INI_ReadSection(Filename, Section)
     ; automatically removed on Win9x, so the regex removes that too.
     if A_OSVersion in WIN_ME,WIN_98,WIN_95
         text := RegExReplace(text, "m`n)^[ `t]*(?:;.*`n?|`n)|^[ `t]+|[ `t]+$")
-    
+
     return text
 }
 
@@ -194,9 +196,9 @@ WindowPadMove(sideX, sideY, widthFactor, heightFactor, winTitle)
         widthFactor := sideX ? 0.5 : 1.0
     if heightFactor is not number
         heightFactor := sideY ? 0.5 : 1.0
-    
+
     WinGetPos, x, y, w, h
-    
+
     if wp_IsWhereWePutIt(hwnd, x, y, w, h)
     {   ; Check if user wants to restore.
         if SubStr(sideX,1,1) = "R"
@@ -231,16 +233,16 @@ WindowPadMove(sideX, sideY, widthFactor, heightFactor, winTitle)
         if SubStr(sideY,1,1) = "R"
             StringTrimLeft, sideY, sideY, 1
     }
-    
+
     ; If no direction specified, restore or only switch monitors.
     if (sideX+0 = "" && restore_x = "")
         restore_x := x, restore_w := w
     if (sideY+0 = "" && restore_y = "")
         restore_y := y, restore_h := h
-    
+
     ; Determine which monitor contains the center of the window.
     m := wp_GetMonitorAt(x+w/2, y+h/2)
-    
+
     ; Get work area of active monitor.
     gosub wp_CalcMonitorStats
     ; Calculate possible new position for window.
@@ -249,7 +251,7 @@ WindowPadMove(sideX, sideY, widthFactor, heightFactor, winTitle)
     ; If the window is already there,
     if (newx "," newy "," neww "," newh) = (x "," y "," w "," h)
     {   ; ..move to the next monitor along instead.
-    
+
         if (sideX or sideY)
         {   ; Move in the direction of sideX or sideY.
             SysGet, monB, Monitor, %m% ; get bounds of entire monitor (vs. work area)
@@ -264,7 +266,7 @@ WindowPadMove(sideX, sideY, widthFactor, heightFactor, winTitle)
             if (newm > mon)
                 newm := 1
         }
-    
+
         if (newm != m)
         {   m := newm
             ; Move to opposite side of monitor (left of a monitor is another monitor's right edge)
@@ -282,7 +284,7 @@ WindowPadMove(sideX, sideY, widthFactor, heightFactor, winTitle)
             else
                 widthFactor *= 1.5
         }
-        
+
         ; Calculate new position for window.
         gosub wp_CalcNewSizeAndPosition
     }
@@ -294,12 +296,12 @@ WindowPadMove(sideX, sideY, widthFactor, heightFactor, winTitle)
 
     WinDelay := A_WinDelay
     SetWinDelay, 0
-    
+
     if (is_resizable := wp_IsResizable())
     {
         ; Move and resize.
         WinMove,,, newx, newy, neww, newh
-        
+
         ; Since some windows might be resizable but have restrictions,
         ; check that the window has sized correctly.  If not, adjust.
         WinGetPos, newx, newy, w, h
@@ -313,13 +315,13 @@ WindowPadMove(sideX, sideY, widthFactor, heightFactor, winTitle)
         ; Move but (usually) don't resize.
         WinMove,,, newx, newy, w, h
     }
-    
+
     ; Explorer uses WM_EXITSIZEMOVE to detect when a user finishes moving a window
     ; in order to save the position for next time. May also be used by other apps.
     PostMessage, 0x232
-    
+
     SetWinDelay, WinDelay
-    
+
     wp_RememberPos(hwnd)
     return
 
@@ -330,7 +332,7 @@ wp_CalcNewSizeAndPosition:
     ; Fall through to below:
 wp_CalcNewPosition:
     ; Calculate desired position.
-    newx := restore_x != "" ? restore_x : Round(monLeft + (sideX+1) * (monWidth  - neww)/2) 
+    newx := restore_x != "" ? restore_x : Round(monLeft + (sideX+1) * (monWidth  - neww)/2)
     newy := restore_y != "" ? restore_y : Round(monTop  + (sideY+1) * (monHeight - newh)/2)
     return
 
@@ -350,7 +352,7 @@ WindowScreenMove(md, winTitle)
 {
     if !wp_WinExist(winTitle)
         return
-    
+
     SetWinDelay, 0
 
     WinGet, state, MinMax
@@ -358,10 +360,10 @@ WindowScreenMove(md, winTitle)
         WinRestore
 
     WinGetPos, x, y, w, h
-    
+
     ; Determine which monitor contains the center of the window.
     ms := wp_GetMonitorAt(x+w/2, y+h/2)
-    
+
     SysGet, mc, MonitorCount
 
     ; Determine which monitor to move to.
@@ -377,22 +379,22 @@ WindowScreenMove(md, winTitle)
         if (md < 1)
             md := mc
     }
-    
+
     if (md=ms or (md+0)="" or md<1 or md>mc)
         return
-    
+
     ; Get source and destination work areas (excludes taskbar-reserved space.)
     SysGet, ms, MonitorWorkArea, %ms%
     SysGet, md, MonitorWorkArea, %md%
     msw := msRight - msLeft, msh := msBottom - msTop
     mdw := mdRight - mdLeft, mdh := mdBottom - mdTop
-    
+
     ; Calculate new size.
     if (wp_IsResizable()) {
         w := Round(w*(mdw/msw))
         h := Round(h*(mdh/msh))
     }
-    
+
     ; Move window, using resolution difference to scale co-ordinates.
     WinMove,,, mdLeft + (x-msLeft)*(mdw/msw), mdTop + (y-msTop)*(mdh/msh), w, h
 
@@ -423,17 +425,17 @@ MaximizeToggle(winTitle)
 GatherWindows(md)
 {
     global ProcessGatherExcludeList
-    
+
     SetWinDelay, 0
-    
+
     ; List all visible windows.
     WinGet, win, List
-    
+
     ; Copy bounds of all monitors to an array.
     SysGet, mc, MonitorCount
     Loop, %mc%
         SysGet, mon%A_Index%, MonitorWorkArea, %A_Index%
-    
+
     if md = M
     {   ; Special exception for 'M', since the desktop window
         ; spreads across all screens.
@@ -450,19 +452,19 @@ GatherWindows(md)
     }
     if (md<1 or md>mc)
         return
-    
+
     ; Destination monitor
     mdx := mon%md%Left
     mdy := mon%md%Top
     mdw := mon%md%Right - mdx
     mdh := mon%md%Bottom - mdy
-    
+
     Loop, %win%
     {
         ; If this window matches the GatherExclude group, don't touch it.
         if (WinExist("ahk_group GatherExclude ahk_id " . win%A_Index%))
             continue
-        
+
         ; Set Last Found Window.
         if (!WinExist("ahk_id " . win%A_Index%))
             continue
@@ -471,9 +473,9 @@ GatherWindows(md)
         ; Check process (program) exclusion list.
         if procname in %ProcessGatherExcludeList%
             continue
-        
+
         WinGetPos, x, y, w, h
-        
+
         ; Determine which monitor this window is on.
         xc := x+w/2, yc := y+h/2
         ms := 0
@@ -487,13 +489,13 @@ GatherWindows(md)
         ; If already on destination monitor, skip this window.
         if (ms = md)
             continue
-        
+
         WinGet, state, MinMax
         if (state = 1) {
             WinRestore
             WinGetPos, x, y, w, h
         }
-    
+
         if ms
         {
             ; Source monitor
@@ -501,13 +503,13 @@ GatherWindows(md)
             msy := mon%ms%Top
             msw := mon%ms%Right - msx
             msh := mon%ms%Bottom - msy
-            
+
             ; If the window is resizable, scale it by the monitors' resolution difference.
             if (wp_IsResizable()) {
                 w *= (mdw/msw)
                 h *= (mdh/msh)
             }
-        
+
             ; Move window, using resolution difference to scale co-ordinates.
             WinMove,,, mdx + (x-msx)*(mdw/msw), mdy + (y-msy)*(mdh/msh), w, h
         }
@@ -551,12 +553,12 @@ Hotkeys(section, options)
 {
     local this_hotkey, section_var, hotkeys, wait_for_keyup, m, m1, pos, k
     static key_regex = "^(?:.* & )?[#!^+&<>*~$]*(.+)"
-    
+
     this_hotkey := A_ThisHotkey
-    
+
     if !section
         goto HC_SendThisHotkeyAndReturn
-    
+
     pos := RegExMatch(options, "i)(?<=\bD)\d*\.?\d*", m)
     if pos
     {
@@ -571,10 +573,10 @@ Hotkeys(section, options)
             return
         }
     }
-    
+
     section_var := RegExReplace(section, "[^\w#@$]", "_")
     hotkeys := Hotkeys_%section_var%
-    
+
     if hotkeys =
     {
         ; Load each hotkeys section on first use. Since the ini file may be
@@ -583,21 +585,21 @@ Hotkeys(section, options)
         hotkeys := wp_INI_ReadSection(WINDOWPAD_INI_PATH, "Hotkeys: " section)
         if hotkeys =
             goto HC_SendThisHotkeyAndReturn
-        
+
         ; key=command  ->  key::command
         hotkeys := RegExReplace(hotkeys, "m`a)^(.*?)=", "$1::")
-        
+
         Hotkeys_%section_var% := hotkeys
     }
-        
+
     ; If Options were omitted and this is a key-down hotkey,
     ; automatically disable the hotkeys when the key is released.
     if (wait_for_keyup := (options="" && SubStr(this_hotkey,-2) != " up"))
         options = On ; Explicit "on" in case hotkey exists but is disabled.
-    
+
     Hotkey, IfWinNotActive, ahk_group HotkeyExclude
     Hotkey_Params(hotkeys, options)
-    
+
     if (wait_for_keyup)
     {
         if (!RegExMatch(this_hotkey, key_regex, m) || GetKeyState(m1)="") {
@@ -607,9 +609,9 @@ Hotkeys(section, options)
                     . "`nPlease inform Lexikos. Tip: Press Ctrl+C to copy this message."
             return
         }
-        
+
         KeyWait, %m1%
-        
+
         Hotkey_Params(hotkeys, "Off")
 
         ; A_ThisHotkey: "The key name of the *most recently executed* hotkey"
@@ -778,11 +780,11 @@ wp_WinPreviouslyActive()
         {
             if (A_Index < win)
                 N := A_Index+1
-            
+
             ; hack for PSPad: +1 seems to get the document (child!) window, so do +2
             ifWinActive, ahk_class TfPSPad
                 N += 1
-            
+
             break
         }
 
@@ -831,12 +833,12 @@ Hotkey_Params(line, Options="")
 {
     static List ; List of hotkeys and associated labels + parameters.
         , sCmdLine ; temp var used by hotkey subroutine.
-    
+
     count = 0
-    
+
     ; Note: The parsing loop operates on a temporary copy of 'line',
     ;       so 'line' can be (and is) reused within the loop.
-    
+
     Loop, Parse, line, `n, %A_Space%%A_Tab%
     {
         ; Clear ErrorLevel in case UseErrorLevel is (not) specified.
@@ -844,10 +846,10 @@ Hotkey_Params(line, Options="")
 
         if ! RegExMatch(A_LoopField, "^\s*(?<Hotkey>.+?)::\s*(?<Name>.+?)(?:[, `t]\s*(?<Params>.*?))?\s*$", line)
             continue
-        
+
         if !(IsLabel(lineName) || IsFunc(lineName))
             continue
-        
+
         if Options = Toggle ; Not supported as an option (must be Label.)
         {
             ; Toggle hotkey.  If it doesn't exist, the next line will enable it.
@@ -856,14 +858,14 @@ Hotkey_Params(line, Options="")
             Hotkey, %lineHotkey%, hp_ExecuteHotkeyWithParams, UseErrorLevel
         } else
             Hotkey, %lineHotkey%, hp_ExecuteHotkeyWithParams, %Options%
-        
+
         ; Check ErrorLevel in case UseErrorLevel was specified.
         if ErrorLevel
             continue
-        
+
         ; Rebuild line to remove whitespace.
         line := lineHotkey "::" lineName "," lineParams
-        
+
         ; Update an existing hotkey's label + params,
         temp := RegExReplace(List, "m`n)^\Q" lineHotkey "\E::.*$", line, repl, 1)
         if (repl > 0)

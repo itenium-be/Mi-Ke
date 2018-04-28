@@ -4,8 +4,12 @@
 #Include quick-starters-loader.ahk
 
 
-; Default editor/IDE
+; Configure your env in mike.ini
+EDITOR_NAME := ReadMikeIni("core", "editor")
 EDITOR := GetQuickStarterInfoByName(EDITOR_NAME)
+DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
+global DEBUG := ReadMikeIni("core", "DEBUG")
+Base64Chars = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 
 
 #Include hotkeys-loader.ahk

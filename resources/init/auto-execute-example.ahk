@@ -1,4 +1,6 @@
-﻿;
+; ATTN: No longer implemented.
+
+;
 ; Auto-execute section
 ;
 ; More info in the docs about "the auto-execute section"
@@ -7,6 +9,6 @@
 ; Everything before the first return will be executed
 ; at script startup
 
-; Notify("Starting Mi-Ke...")
+Notify("Starting Mi-Ke...")
 
 return
