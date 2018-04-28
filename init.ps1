@@ -9,119 +9,52 @@ function Create-File($file, $initial = "") {
 	}
 }
 
-$path = Split-Path $SCRIPT:MyInvocation.MyCommand.Path -Parent
-
-Create-File "$($path)\hotkeys\_auto-execute.ahk" @"
-;
-; Auto-execute section
-;
-; More info in the docs about "the auto-execute section"
-; https://autohotkey.com/docs/Scripts.htm#auto
-;
-; Everything before the first return will be executed
-; at script startup
-
-; Notify("Starting Mi-Ke...")
-
-return
-"@
-
-
-Create-File "$($path)\hotkeys\_includes.ahk" @"
-;
-; Your scripts here
-;
-
-; !F5::Msgbox Pressed %A_ThisHotkey%
-"@
-
-if ($bare) {
-	Create-File "$($path)\hotstrings\_includes.ahk" ""
-	return
+function Copy-File($fileName, $moveTo) {
+	if (-not (Test-Path $file)) {
+		echo $file
+		$realFileName = $fileName.Replace("-example.", ".")
+		Copy-Item "$($path)\resources\init\$fileName" -Destination "$($path)\$moveTo\$realFileName"
+	}
 }
 
+$path = Split-Path $SCRIPT:MyInvocation.MyCommand.Path -Parent
+
+Copy-File("auto-execute-example.ahk", "userland")
+
+exit
+
+# Copy-Item "$($path)\resources\init\auto-execute-example.ahk" -Destination "$($path)\userland\auto-execute.ahk"
+
+# Create-File "$($path)\hotkeys\_includes.ahk" @"
+# ;
+# ; Your scripts here
+# ;
+
+# ; !F5::Msgbox Pressed %A_ThisHotkey%
+# "@
 
 # Create config files
 $iniPath = "$($path)\config\mike.ini"
 if (-not (Test-Path -Path $iniPath -PathType Leaf)) {
 	echo "Creating config\mike.ini"
-	Create-File "$($path)\config\mike.ini" @"
-; Use Control+Win+R to reload the script
-; Configure your editor to reload the script on save (expects A_SCRIPTDIR in the window title)
-
-; Paths supports some substitutions
-; Defined in path-replacements.ahk
-; <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>
-
-; Hotkey syntax:
-; ^ = Control
-; # = Win
-; + = Shift
-; ! = Alt
-; <# = Left Win
-; #> = Right Win
-; <^>! = AltGr
-
-; Prefix a hotkey with ~ to not block the native function
-; Numpad0 & Numpad2 = When pressed together
-
-[core]
-editor=Sublime Text
-"@
+	Copy-Item "$($path)\resources\init\mike-example.ini" -Destination "$($path)\config\mike.ini"
 }
 
-# TODO: Put these info files in separate files.
+
+
+if ($bare) {
+	# Create-File "$($path)\hotstrings\_includes.ahk" ""
+	return
+}
+
+
+
+
 
 $qsPath = "$($path)\config\_custom.yml"
 if (-not (Test-Path -Path $qsPath -PathType Leaf)) {
 	echo "Creating config\_custom.yml"
-	Create-File $qsPath @"
-#
-# Quick start applications
-# Overwrite the other yml files here
-# (apps.yml, editors.yml, ...)
-#
-
-# Template for a new quick starter:
-# A textual description:
-# 	menu: Contextmenu name
-# 	hotkey:
-# 	desc: More info string
-# 	path: path to the exe to start (string | array)
-# 	pathParams: params passed to the exe
-# 	label: either specify a path or this, an existing Autohotkey label
-# 	titleMatcher:  ahk_class, ahk_exe or Regex
-# 	doublePressCloseHotkey: ESC ; requires titleMatcher
-# 	passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
-# 	active: 0 ; To disable it
-# 	asAdmin: 1
-# 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
-# 	context: explorer | ahk_class ... (only active in this app)
-
-# readFrom: explorer-file | selectedText (string or array). When array writeTo is mandatory.
-# writeTo: explorer-file | selectedText | clipboard (defaults to readFrom)
-# followedBy:
-# 	- desc: To Title Case
-# 	  key: t
-# 	  fn: ToTitleCase
-#
-# 	- desc: TO UPPER CASE
-# 	  key: u|l  # u or l
-# 	  fn: ToUpperCase
-
-# The object keys are a description of the hotkey functionality
-# Characters not allowed : (colon) and ' (single quote)
-
-# Disable an application
-DBeaver:
-	active: 0
-
-
-# Change the hotkey
-Calculator:
-	hotkey: ^#c
-
-"@
+	Create-File $qsPath @""@
 }
 
 

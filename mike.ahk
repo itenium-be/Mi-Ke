@@ -24,5 +24,5 @@ if (A_AhkVersion < "2") {
 		A_Args[A_Index] := %A_Index%
 }
 if (A_Args[1] != "is_included") {
-	Include("config\includes", "is_included")
+	Include("startup\includes.txt", "is_included")
 }

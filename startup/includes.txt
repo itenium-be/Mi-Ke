@@ -1,8 +1,8 @@
 startup\mike-loader.ahk
 startup\helpers\*.ahk
 
-hotkeys\*.ahk
-hotstrings\*.ahk
+userland\hotkeys\*.ahk
+userland\hotstrings\*.ahk
 
 utilities\*.ahk
 vendor\*.ahk
