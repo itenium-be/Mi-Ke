@@ -89,6 +89,10 @@ WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
 		FileDelete % inputValue
 		FileAppend, %result%, % inputValue
 	}
+	else if (writeTo = "console") {
+		a.log(result)
+		a.show()
+	}
 	else {
 		Notify(qs.name, "Unknown writeTo: " writeTo)
 	}

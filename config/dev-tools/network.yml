@@ -1,0 +1,12 @@
+Run a program:
+	hotkey: AppsKey & R
+	readFrom: selectedText
+	writeTo: console
+	followedBy:
+		- desc: ipconfig
+		  key: i
+		  fn: GetMyIps
+
+		- desc: Ping
+		  key: p
+		  fn: Ping
