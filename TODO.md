@@ -1,13 +1,6 @@
 TODO
 ====
 
-TODO: ESC ESC  in explorer doesn't work anymore
-TODO: ESC should not be active while renaming a file? Now that no longer works...
-TODO: Starting cmder from tray prints error msg in console (path not found)
-
-Add uri_encode / decode
-https://github.com/ahkscript/libcrypt.ahk/blob/master/src/URI.ahk
-
 **Usually this stuff should be posted here:**  
 https://github.com/itenium-be/Mi-Ke/issues
 

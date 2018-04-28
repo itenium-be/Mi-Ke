@@ -63,4 +63,4 @@ Switch to Details View (builtin):
 
 2x Esc closes Windows Explorer:
 	titleMatcher: ahk_class CabinetWClass|ExploreWClass
-	doublePressCloseHotkey: ESC
+	doublePressCloseHotkey: ~ESC
