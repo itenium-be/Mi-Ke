@@ -13,6 +13,8 @@ global EDITOR := GetQuickStarterInfoByName(EDITOR_NAME)
 global DOWNLOAD_FOLDER := ReadMikeIni("core", "download-folder", true)
 DEBUG := ReadMikeIni("core", "DEBUG")
 
+
+a.log(GetSystemInformation())
 a.log("DEBUG: " DEBUG "`nEDITOR_NAME: " EDITOR_NAME "`nDOWNLOAD_FOLDER: " DOWNLOAD_FOLDER)
 ; a.show()
 

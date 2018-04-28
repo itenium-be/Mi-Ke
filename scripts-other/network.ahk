@@ -15,9 +15,8 @@
 ; www.itenium.be
 ; 172.217.17.132
 
-
 GetMyIps() {
-	result := "Public IP: " GetPublicIP()
+	result .= "Public IP: " GetPublicIP()
 	result .= "`nPrivate IP: " GetLocalIPByAdaptor("Ethernet")
 	For AdaptorName, IP in GetLocalIPs() {
 		result .= "`n" AdaptorName ": " IP
