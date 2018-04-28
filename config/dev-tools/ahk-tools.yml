@@ -63,6 +63,8 @@ List vars:
 	menu: Autohotkey
 
 
+# TODO: get window info directly from active window
+# https://github.com/AfterLemon/TooltipSpy
 Spy window:
 	hotkey: !F12
 	titleMatcher: ahk_exe AU3_Spy.exe

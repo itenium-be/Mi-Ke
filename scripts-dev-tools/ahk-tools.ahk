@@ -33,6 +33,11 @@ ListHotkeys
 return
 
 
+OpenConsoleLogWindow:
+a.show()
+return
+
+
 DevSuspend:
 Suspend
 Notify("Script is now " (A_IsSuspended ? "suspended" : "running"))
