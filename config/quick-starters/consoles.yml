@@ -8,9 +8,9 @@ Cmder:
 	path:
 		- C:\bin\cmder\Cmder.exe
 		- C:\tools\cmder\Cmder.exe
+	menu: Consoles
 	openWithPathArgs: <exe> /start <path>
 	passExplorerPathAsArgument: dir
-	menu: Consoles
 
 
 # https://stackoverflow.com/questions/60904/how-can-i-open-a-cmd-window-in-a-specific-location
@@ -18,38 +18,38 @@ Command Prompt:
 	hotkey: !#c
 	titleMatcher: ahk_class ConsoleWindowClass
 	path: C:\Windows\System32\cmd.exe
+	menu: Consoles
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> /K "cd /d <path>"
-	menu: Consoles
 
 
 Command Prompt (Admin):
 	hotkey: +!#c
 	titleMatcher: ahk_class ConsoleWindowClass
 	path: C:\Windows\System32\cmd.exe
+	menu: Consoles
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> /K "cd /d <path>"
 	asAdmin: 1
-	menu: Consoles
 
 
 PowerShell:
 	hotkey: !#p
 	titleMatcher: ahk_exe powershell.exe
 	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+	menu: Consoles
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
-	menu: Consoles
 
 
 PowerShell (Admin):
-	hotkey: ^!#p
+	hotkey: +!#p
 	titleMatcher: ahk_exe powershell.exe
 	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+	menu: Consoles
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
 	asAdmin: 1
-	menu: Consoles
 
 
 Git Bash:
