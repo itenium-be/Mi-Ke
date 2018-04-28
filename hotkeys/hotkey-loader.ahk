@@ -2,10 +2,10 @@
 
 ; Auto-execute section:
 ; (Code you want executed at script startup)
-#Include %A_Scriptdir%\hotkeys\_auto-execute.ahk
+; #Include %A_Scriptdir%\hotkeys\_auto-execute.ahk
 
-; A place to put your custom scripts:
-#Include %A_Scriptdir%\hotkeys\_includes.ahk
+; ; A place to put your custom scripts:
+; #Include %A_Scriptdir%\hotkeys\_includes.ahk
 
 
 ; Create _auto-execute.ahk, _includes.ahk and other files required for Mi-Ke to start by running init.ps1
