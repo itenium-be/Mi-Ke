@@ -30,7 +30,7 @@ Create new .txt file in Windows Explorer:
 
 Open Windows Explorer in path on clipboard:
 	label: OpenExplorerInClipboardPath
-	hotkey: Control & CapsLock
+	hotkey: $#E
 
 
 2x Capslock - Put directory of selected file on clipboard:

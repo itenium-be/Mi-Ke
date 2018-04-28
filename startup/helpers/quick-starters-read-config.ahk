@@ -54,6 +54,12 @@ ConvertYamlToQuickStarters(yaml) {
 		}
 
 
+		; if (qs.label = "DevListVars") {
+		; ; TODO: find a way to convert any obj to string...
+		; 	a.log(qs)
+		; }
+
+
 		if (!ValidateQuickStarter(quickStarterInfo, qs)) {
 			continue
 		}
@@ -72,11 +78,11 @@ ConvertYamlToQuickStarters(yaml) {
 		}
 
 
-		if (quickStarterInfo.path) {
-			BindQuickStarter(quickStarterInfo, "QuickStarterInfoExecutor")
-
-		} else if (quickStarterInfo.label) {
+		if (quickStarterInfo.label) {
 			BindQuickStarter(quickStarterInfo, quickStarterInfo.label)
+
+		} else if (quickStarterInfo.path) {
+			BindQuickStarter(quickStarterInfo, "QuickStarterInfoExecutor")
 
 		} else if (quickStarterInfo.followedBy) {
 			BindQuickStarter(quickStarterInfo, "", "FollowedByHotkeyExec")
@@ -124,10 +130,10 @@ ValidateQuickStarter(qs, qsYaml) {
 		return false
 	}
 
-	if (qs.path and qs.label) {
-		ValidateNotify(qs, qsYaml, "Can't have both path && label")
-		return false
-	}
+	; if (qs.path and qs.label) {
+	; 	ValidateNotify(qs, qsYaml, "Can't have both path && label")
+	; 	return false
+	; }
 
 	if (qs.followedBy) {
 		Loop % qs.followedBy.() {
@@ -171,7 +177,9 @@ IsInArray(arr, needle) {
 
 ValidateNotify(qs, qsYaml, str) {
 	if DEBUG {
-		Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
+		; Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
+		a.log(qs.name "`n" str "`n`n" qsYaml.Dump())
+		a.show()
 	}
 }
 

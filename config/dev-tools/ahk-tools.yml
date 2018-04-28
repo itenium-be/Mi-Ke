@@ -7,6 +7,7 @@ Autohotkey Documentation:
 
 # --------------------------------------- SCRIPT CONTROL
 
+
 Reload script and ini:
 	hotkey: ^#r
 	label: DevReloadScript
@@ -24,7 +25,24 @@ Suspend script:
 	menu: top
 
 
+Open the console log:
+	hotkey: Capslock & C
+	label: OpenConsoleLogWindow
+	menu: top
+
+
+Emergency exit:
+	hotkey: +^#!r
+	label: DevEmergencyExit
+
+
 # --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY
+
+
+List lines:
+	hotkey: !F8
+	label: DevListLines
+	menu: Autohotkey
 
 
 List hotkeys:
@@ -45,6 +63,8 @@ List vars:
 	menu: Autohotkey
 
 
+# TODO: get window info directly from active window
+# https://github.com/AfterLemon/TooltipSpy
 Spy window:
 	hotkey: !F12
 	titleMatcher: ahk_exe AU3_Spy.exe
@@ -52,4 +72,12 @@ Spy window:
 		- <A_AHKPATH>\AU3_Spy.exe
 		- <A_AHKPATH>\WindowSpy.ahk
 	doublePressCloseHotkey: ESC
+	menu: Autohotkey
+
+
+Convert selected ahk file to exe:
+	hotkey: !F7
+	titleMatcher: ahk_exe Ahk2Exe.exe
+	path: <A_AHKPATH>\Compiler\Ahk2Exe.exe
+	label: ConvertAhkToExe
 	menu: Autohotkey

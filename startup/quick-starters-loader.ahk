@@ -20,6 +20,6 @@ Yaml_Merge(qsYaml, customConfig)
 ConvertYamlToQuickStarters(qsYaml)
 
 
-; shouldHaveChanged := GetQuickStarterInfoByName("Change casing of selected text")
-; Notify("qs", shouldHaveChanged.followedBy)
-; Notify("qs", shouldHaveChanged.name ": " shouldHaveChanged.hotkey)
+; someQs := GetQuickStarterInfoByName("ConvertAhk2Exe")
+; ; someQs := GetQuickStarterInfoByLabel("DevReloadScript")
+; Notify("qs", someQs.name ": " someQs.hotkey)

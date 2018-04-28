@@ -1,12 +1,13 @@
 ; Global Entry Point
 ; Mi-Ke: Be nice to me or I will throw rocks at you
 
-; You own scripts: .\userland\
+; Put your own scripts in .\userland\
 ; The folders .\userland\hotkeys and .\userland\hotstrings are two entry points you can use to start experimenting.
 
-; Configure existing scripts: config\mike.ini and _custom.yml
+; Configure existing scripts in config\mike.ini and config\_custom.yml
 
-; If you have no idea how to get started with custom scripts, then run .\init.ps1 to create some example files
+; No idea how to get started with custom scripts
+; Run `.\init.ps1` to create some example files!
 
 
 #Persistent
@@ -14,6 +15,8 @@
 SetTitleMatchMode RegEx
 SendMode Input
 SetWorkingDir %A_ScriptDir%
+
+global DEBUG := 1
 
 ; Dynamic #Includes:
 #Include %A_ScriptDir%\startup\Include.ahk

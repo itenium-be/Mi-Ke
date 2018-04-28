@@ -38,6 +38,17 @@ GetQuickStarterInfoByName(name) {
 }
 
 
+GetQuickStarterInfoByLabel(lbl) {
+	global quickStarterz
+	For index, quickStarter in quickStarterz
+	{
+		if (quickStarter.label = lbl) {
+			return quickStarter
+		}
+	}
+}
+
+
 GetQuickStarterInfoByHotkey() {
 	global quickStarterz
 	For index, quickStarter in quickStarterz
@@ -126,11 +137,11 @@ RunHotkey(quickStarter) {
 
 RunHotkeyCore(path, quickStarter) {
 	; MsgBox %path%
-	; Notify("Run", quickStarter.name)
+	; Notify("Run", quickStarter.name "`n" quickStarter.path)
 	if (quickStarter.asAdmin and not A_IsAdmin) {
 		try {
 			; Start as admin with UAC dialog
-			Run *RunAs "%path%"
+			Run *RunAs %path%
 		}
 	} else {
 		Run %path%
