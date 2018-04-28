@@ -68,16 +68,18 @@ Switch views:
 ## Start programs with hotkeys
 
 Quick starters are defined in `config\*.yml`  
-`init.ps1` creates `config\_custom.yml` where behavior can be overwritten.
+Default behavior can be overwritten in `config\_custom.yml` (create it by running `init.ps1`)
 
 ### Some default configurations
 
 {% include kbd k="Control+Win+C" l="Start calculator (2x esc to close)" %}
 ```yml
 Calculator:
-	hotkey: ^#c
-	path: <A_WINDIR>\System32\calc.exe
-	doublePressCloseHotkey: ~ESC
+  hotkey: ^#c
+  path: <A_WINDIR>\System32\calc.exe
+  titleMatcher: ahk_class CalcFrame
+  doublePressCloseHotkey: ~ESC
+  menu: Applications
 ```
 
 
@@ -85,44 +87,49 @@ Calculator:
 
 ```yml
 Notepad++:
-	hotkey: #c
-	path: C:\Program Files (x86)\Notepad++\Notepad++.exe
+  hotkey: "#c"
+  path:
+    - C:\Program Files (x86)\Notepad++\Notepad++.exe
+    - C:\Program Files\Notepad++\Notepad++.exe
 
-	# Open file(s) selected in Windows Explorer.
-	passExplorerPathAsArgument: file
-	explorerFilesSeparator: \"
-	# Need to escape the quote there
+  # Open file(s) selected in Windows Explorer.
+  passExplorerPathAsArgument: file
+  explorerFilesSeparator: \"
+  # Need to escape the quote there
+  menu: Editors
 ```
 
 ### Example configuration
 
-{% include kbd k="Alt+Win+R" l="Open PowerShell" %}
+{% include kbd k="Shift+Win+Alt+P" l="Open PowerShell" %}
 ```yml
-PowerShell:
-	hotkey: !#r
-	titleMatcher: ahk_exe powershell.exe
-	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+PowerShell (Admin):
+  hotkey: +!#p
+  titleMatcher: ahk_exe powershell.exe
+  path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+  menu: Consoles
 
-	# When inside Windows Explorer, open in the current path
-	passExplorerPathAsArgument: dir
-	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
+  # When inside Windows Explorer, open in the current path
+  passExplorerPathAsArgument: dir
+  openWithPathArgs: <exe> -noexit -command "cd '<path>'"
 
-	# RunAs Administrator
-	asAdmin: 1
+  # RunAs Administrator
+  asAdmin: 1
 ```
 
-{% include kbd k="Control+Shift+R" l="Open PowerShell ISE" %}
+{% include kbd k="Alt+Win+R" l="Open PowerShell ISE" %}
 
-```ini
+```yml
 PowerShell ISE:
-	hotkey: ^+R
-	titleMatcher: ahk_exe powershell_ise.exe
-	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+  hotkey: !#r
+  titleMatcher: ahk_exe powershell_ise.exe
+  path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+  menu: Editors
 
-	# When inside Windows Explorer, open the selected files
-	passExplorerPathAsArgument: file
-	openWithPathArgs: <exe> -file "<path>"
-	explorerFilesSeparator: ,
+  # When inside Windows Explorer, open the selected files
+  passExplorerPathAsArgument: file
+  openWithPathArgs: <exe> -file "<path>"
+  explorerFilesSeparator: ,
 ```
 
 
