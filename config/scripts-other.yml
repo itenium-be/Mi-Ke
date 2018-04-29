@@ -37,3 +37,7 @@ Open context menu on mouse cursor:
     - desc: Programs
       key: p
       fn: ShowMenuPrograms
+
+    - desc: Windows
+      key: w
+      fn: ShowMenuWindows

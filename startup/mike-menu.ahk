@@ -71,6 +71,7 @@ CreateQuickStartersMenu("Browsers")
 CreateQuickStartersMenu("Consoles")
 CreateQuickStartersMenu("Editors")
 CreateQuickStartersMenu("Programs")
+CreateQuickStartersMenu("Windows")
 
 Menu, Tray, Add
 

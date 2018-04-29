@@ -5,8 +5,153 @@ Open stuff bundled with Windows:
       key: p
       fn: GoToEditEnvironmentVariables
 
+    - desc: Goto services.msc
+      key: s
+      fn: GoToServicesMsc
+
+
 
 Remote Desktop Connection:
   hotkey: +#r
+  menu: Windows
   path: <A_WINDIR>\system32\mstsc.exe
   label: OpenRemoteDesktop
+
+
+Event Viewer:
+  menu: Windows
+  path: <A_WINDIR>\system32\EVENTVWR.EXE
+
+
+MS Management Console:
+  menu: Windows
+  path: <A_WINDIR>\system32\MMC.EXE
+
+# Other in <A_WINDIR>\system32\
+# msconfig.exe (System Configuration Utility). Designed to help you troubleshoot problems with your computer.
+# SNDVOL32.EXE (Volume Control) - A GUI (Graphical User Interface) volume application.
+# TASKMGR.EXE (Task Manager) - The Task Manager application.
+
+
+# <A_WINDIR>\regedit.exe
+# <A_WINDIR>\write.exe
+
+
+# MSC in <A_WINDIR>\system32\
+# sc File	Console	Description
+# azman.msc	Authorization Manager	Manage Authorization Stores
+# certlm.msc	Certificates Local Computer	Loads the list of certificates of the local computer.
+# certmgr.msc	Certificates	Loads the list of certificates of the user
+# comexp.msc	Component Services	Loads Component Services, Event Viewer, and Services.
+# compmgmt.msc	Computer Management	Includes System Tools (Task Scheduler, Event Viewer, Shared Folders, Local Users and Groups, Performance and Device Manager), Storage (Disk Management), and Services and Applications (Services and WMI Control)
+# devmgmt.msc	Device Manager	Opens the Device Manager to manage hardware and devices.
+# devmoderunasuserconfig.msc
+# diskmgmt.msc	Disk Management	Opens Disk Management to administrate connected storage devices.
+# eventvwr.msc	Event Viewer	Opens the Event Viewer which displays operating system, software, and hardware events.
+# fsmgmt.msc	Shared Folders	Loads the list of shared folders, sessions, and open files
+# gpedit.msc	Group Policy Editor	Loads the Group Policy Editor to manage system policies
+# lusrmgr.msc	Local Users and Groups	Interface to manage local users and user groups.
+# perfmon.msc	Performance Monitor	Loads the Windows Performance Monitor
+# printmanagement.msc	Print Management	Manage printers.
+# rsop.msc	Resultant Set of Policies	List policies, full results only available through command line tool gpresult
+# secpol.msc	Local Security Policy	Loads policies such as account policies, public key policies, or advanced audit policy configuration
+# services.msc	Services Manager	Loads the list of installed services to manage them.
+# taskschd.msc	Task Scheduler	Loads the Task Scheduler to manage tasks
+# tpm.msc	Trusted Platform Module Management	Manage the TPM on the local device.
+# wf.msc	Windows Firewall	Starts Windows Firewall with Advanced Security.
+# wmimgmt.msc	WMI Management	Configure and Control the Windows Management Instrumentation Service
+
+
+
+# cpl files:
+# Control Panel applet	File Name	What it does
+# Add or Remove Programs	appwiz.cpl	This opens the Uninstall a Program applet. May be used to uninstall installed programs, or add or remove features from Windows
+# Date and Time	timedate.cpl	Opens the Date and Time applet. Allows you to set date and time, change time zone, add additional clocks, and sync Internet time.
+# Device Manager	hdwwiz.cpl	The Device Manager lists all installed hardware. May be used to install and remove devices, install drivers, and more
+# Display	desk.cpl	Display provides you with options to set display related settings such as the color profile or scaling. Loads the Settings app on Windows 10.
+# Firewall	firewall.cpl	Opens the Windows Firewall. Turn it on or off, and open the advanced settings to block or allow connections.
+# Infrared	irprops.cpl	Lets you manage infrared devices.
+# Internet Options	inetcpl.cpl	Opens the classic Internet Options window. Manage Internet settings that Internet Explorer and other browsers may use.
+# Controllers	joy.cpl	Manage game controllers connnected to the operating system
+# Keyboard	main.cpl keyboard	Change keyboard repeat delay and rate, cursor blink rate, and check installed keyboard hardware.
+# Language	control input.dll	Opens the Language control panel applet. Add, remove or change the priority of languages.
+# Mouse	main.cpl	The mouse controls enable you to change mouse icons, button behavior, wheel scrolling, and more.
+# Network	netcpl.cpl	Opens the Network and Sharing Center. May use it to add a new network, set up connections, and manage existing networks
+# Network Connections	ncpa.cpl	Lists all known network connections and their status.
+# Power	powercfg.cpl	Opens the Power Options. Set a power plan, and customize it.
+# Region	intl.cpl	The Region control panel applets lets you change date and time formats, and your location
+# Screensaver	control desk.cpl,screensaver,@screensaver	Opens the Screensaver dialog to enable, disable and configure screensavers.
+# Sound	mmsys.cpl	The Sound properties lists all playback and recording devices, options to configure those, and manage sounds and communications.
+# System Properties	sysdm.cpl	System properties lists information about the device and Windows, and links to other control panel areas.
+# Tablet PC	tabletpc.cpl	Only available if you run in tablet PC mode.
+# Location Information	telephon.cpl	Set your country, area code, carrier code and dial number for telephony and modem services.
+# Security and Maintenance	wscui.cpl	Manage Security and Maintenance related features
+# User Accounts	control userpasswords	Opens the list of user accounts on the system.
+
+
+
+# Canonical Names
+# The command control /name Canonical Name enables you to run additional Control Panel applets for which no .cpl file are available.
+# Note that some are limited to certain editions or versions of Windows.
+# ActionCenter: control /name Microsoft.ActionCenter
+# Administrative Tools: control /name Microsoft.AdministrativeTools
+# AutoPlay: control /name Microsoft.AutoPlay
+# Biometric Devices: control /name Microsoft.BiometricDevices
+# Bitlocker Drive Encryption: control /name Microsoft.BitLockerDriveEncryption
+# Color Management: control /name Microsoft.ColorManagement
+# Credential Manager: control /name Microsoft.CredentialManager
+# Date and Time: control /name Microsoft.DateAndTime
+# Default Programs: control /name Microsoft.DefaultPrograms
+# Device Manager: control /name Microsoft.DeviceManager
+# Devices and Printers: control /name Microsoft.DevicesAndPrinters
+# Display: control /name Microsoft.Display
+# Ease of Access Center: control /name Microsoft.EaseOfAccessCenter
+# Family Safety: control /name Microsoft.ParentalControls
+# File History: control /name Microsoft.FileHistory
+# Folder Options: control /name Microsoft.FolderOptions
+# Fonts: control /name Microsoft.Fonts
+# HomeGroup: control /name Microsoft.HomeGroup
+# Indexing Options: control /name Microsoft.IndexingOptions
+# Infrared: control /name Microsoft.Infrared
+# Internet Options: control /name Microsoft.InternetOptions
+# iSCSI Initiator: control /name Microsoft.iSCSIInitiator
+# iSNS Server: control /name Microsoft.iSNSServer
+# Keyboard: control /name Microsoft.Keyboard
+# Language: control /name Microsoft.Language
+# Location Settings: control /name Microsoft.LocationSettings
+# Mouse: control /name Microsoft.Mouse
+# MPIOConfiguration: control /name Microsoft.MPIOConfiguration
+# Network and Sharing Center: control /name Microsoft.NetworkAndSharingCenter
+# Notification Area Icons: control /name Microsoft.NotificationAreaIcons
+# Pen and Touch: control /name Microsoft.PenAndTouch
+# Personalization: control /name Microsoft.Personalization
+# Phone and Modem: control /name Microsoft.PhoneAndModem
+# Power Options: control /name Microsoft.PowerOptions
+# Programs and Features: control /name Microsoft.ProgramsAndFeatures
+# Recovery: control /name Microsoft.Recovery
+# Region: control /name  Microsoft.RegionAndLanguage
+# RemoteApp and Desktop Connections: control /name Microsoft.RemoteAppAndDesktopConnections
+# Sound: control /name Microsoft.Sound
+# Speech Recognition: control /name Microsoft.SpeechRecognition
+# Storage Spaces: control /name Microsoft.StorageSpaces
+# Sync Center: control /name Microsoft.SyncCenter
+# System: control /name Microsoft.System
+# Tablet PC Settings: control /name Microsoft.TabletPCSettings
+# Taskbar and Navigation: control /name Microsoft.Taskbar
+# Troubleshooting: control /name Microsoft.Troubleshooting
+# TSAppInstall: control /name Microsoft.TSAppInstall
+# User Accounts: control /name Microsoft.UserAccounts
+# Windows Anytime Upgrade: control /name Microsoft.WindowsAnytimeUpgrade
+# Windows Defender: control /name Microsoft.WindowsDefender
+# Windows Firewall: control /name  Microsoft.WindowsFirewall
+# Windows Mobility Center: control /name Microsoft.MobilityCenter
+# Windows To Go: control /name Microsoft.PortableWorkspaceCreator
+# Windows Update: control /name Microsoft.WindowsUpdate
+# Work Folders: control /name Microsoft.WorkFolders
+
+
+# TIPS:
+# You can find out which Control Panel files (.cpl) are available on your version of Windows by going to c:\Windows\System32. There you find all that are available.
+# You may open different tabs directly by adding ,x to the command, e.g. sysdm.cpl,4 to open the System Protection tab of the System Properties control panel applet. This works on the command prompt, but does not on Start or the Run Box.
+# You can run applets with elevated privileges by starting them from an elevated command prompt. Hold down Ctrl and Shift on the keyboard when you launch the Command Prompt to do so.
+# The canonical names used above may be used to reference these items in the Group Policy.

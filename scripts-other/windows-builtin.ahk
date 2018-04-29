@@ -6,6 +6,10 @@ GoToEditEnvironmentVariables() {
 	; Send !n!sp
 }
 
+GoToServicesMsc() {
+	Run services.msc
+}
+
 
 
 OpenRemoteDesktop:

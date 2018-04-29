@@ -17,3 +17,7 @@ ShowMenuEditors() {
 ShowMenuPrograms() {
 	Menu, Programs, Show
 }
+
+ShowMenuWindows() {
+	Menu, Windows, Show
+}
