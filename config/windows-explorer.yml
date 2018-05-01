@@ -26,6 +26,7 @@ Create new .txt file in Windows Explorer:
   context: explorer
 
 
+# TODO: To check: Does this make opening explorer significantly slower?
 Open Windows Explorer in path on clipboard:
   label: OpenExplorerInClipboardPath
   hotkey: $#E
