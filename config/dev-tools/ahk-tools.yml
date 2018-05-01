@@ -9,6 +9,8 @@ Run the selected Autohotkey code:
 
 # --------------------------------------- SCRIPT CONTROL
 
+# TODO: Add a Pause script (pauses running hotkeys) ?
+# https://autohotkey.com/docs/commands/Pause.htm
 
 Reload script and ini:
   hotkey: ^#r

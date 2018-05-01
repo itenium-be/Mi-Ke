@@ -2,6 +2,7 @@
 
 
 DevEmergencyExit:
+Suspend, Permit
 Notify("Emergency exit!")
 ExitApp
 return
@@ -15,32 +16,38 @@ return
 
 
 DevReloadScript:
+Suspend, Permit
 Notify("Script Reloaded")
 Reload
 return
 
 
 DevListVars:
+Suspend, Permit
 ListVars
 return
 
 
 DevListLines:
+Suspend, Permit
 ListLines
 return
 
 
 DevKeyHistory:
+Suspend, Permit
 KeyHistory
 return
 
 
 DevListHotkeys:
+Suspend, Permit
 ListHotkeys
 return
 
 
 OpenConsoleLogWindow:
+Suspend, Permit
 a.show()
 return
 
@@ -57,6 +64,7 @@ return
 ; Control + S: Auto-reload script when it's saved.
 ; (we assume the file path is in the Window title)
 DevReloadScriptWhenSaved:
+Suspend, Permit
 global EDITOR
 if (!EDITOR or !WinActive(EDITOR.titleMatcher))
 	return
