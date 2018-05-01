@@ -14,6 +14,11 @@ Open 2 Windows Explorers - On Downloads folder and on USB drive:
   hotkey: <^>!#d
 
 
+Rename subtitle to match selected media file in explorer:
+	label: ExplorerRenameSubtitle
+	hotkey: ^+s
+
+
 Create new file in Windows Explorer:
   label: ExplorerNewFile
   hotkey: ^+f
