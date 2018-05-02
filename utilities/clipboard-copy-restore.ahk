@@ -4,13 +4,13 @@
 
 oldClipboard :=
 
-CopyAndSaveClip() {
+CopyAndSaveClip(clipWaitTime := 3) {
 	global oldClipboard
 	oldClipboard := clipboard
 
 	clipboard =
 	Send, ^c
-	ClipWait, 3
+	ClipWait, %clipWaitTime%
 	return clipboard
 }
 

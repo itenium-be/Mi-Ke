@@ -5,9 +5,9 @@ This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey sc
 Two fancy ones:
 
 **Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer.
-([apps/windows-explorer-zip-directory](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/apps/windows-explorer-zip-directory.ahk))  
+([apps/windows-explorer-zip-directory](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-windows-explorer/windows-explorer-zip-directory.ahk))  
 **Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore.
-([windows-min-max](https://github.com/itenium-be/Mi-Ke/blob/master/scripts/windows-min-max.ahk))  
+([windows-min-max](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-other/windows-min-max.ahk))  
 
 # What
 

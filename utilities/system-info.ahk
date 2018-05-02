@@ -1,3 +1,43 @@
+GetSystemInformation() {
+	result := "Computer: " A_ComputerName
+
+	; TODO: add @domain
+	; EnvGet, Domain, USERDOMAIN
+	; msgbox % Domain
+
+
+	result .= "`nUser: " A_UserName (A_IsAdmin ? " (admin)" : "")
+	result .= "`nOS: " A_OSVersion " (" (A_Is64bitOS ? "64" : "32") "bit)"
+
+	; http://msdn.microsoft.com/en-us/library/aa912040
+	result .= "`nLang: " A_Language
+
+	result .= "`nScreen size: " A_ScreenWidth "x" A_ScreenHeight
+
+	; TODO: Snippet to retrieve screen size of non primary monitors
+	; https://autohotkey.com/docs/commands/SysGet.htm
+	; SysGet, MonitorCount, MonitorCount
+	; SysGet, MonitorPrimary, MonitorPrimary
+	; MsgBox, Monitor Count:`t%MonitorCount%`nPrimary Monitor:`t%MonitorPrimary%
+	; Loop, %MonitorCount%
+	; {
+	;     SysGet, MonitorName, MonitorName, %A_Index%
+	;     SysGet, Monitor, Monitor, %A_Index%
+	;     SysGet, MonitorWorkArea, MonitorWorkArea, %A_Index%
+	;     MsgBox, Monitor:`t#%A_Index%`nName:`t%MonitorName%`nLeft:`t%MonitorLeft% (%MonitorWorkAreaLeft% work)`nTop:`t%MonitorTop% (%MonitorWorkAreaTop% work)`nRight:`t%MonitorRight% (%MonitorWorkAreaRight% work)`nBottom:`t%MonitorBottom% (%MonitorWorkAreaBottom% work)
+	; }
+
+
+	; result .= "`n"
+
+	UpTime := Floor(((A_TickCount / 1000) / 60) / 60)
+	result .= "`nUptime: " UpTime " hours"
+
+	return result
+}
+
+
+
 ; Interesting links
 ; https://github.com/jNizM/AHK_Process_Explorer
 

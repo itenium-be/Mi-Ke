@@ -30,7 +30,7 @@ AHK_NOTIFYICON(wParam, lParam)
 Menu, Tray, MainWindow
 
 
-CreateQuickStartersMenu("top", "Tray")
+CreateQuickStartersMenu("ScriptControl", "Tray")
 Menu, Tray, Add
 
 ; Start Mi-Ke when windows starts
@@ -43,6 +43,12 @@ IfExist %startupLink%
 	Menu, Tray, ToggleCheck, %startupItem%
 }
 Menu, Tray, Add, Choose Tray Icon, MikeChooseTrayIcon
+
+
+
+CreateQuickStartersMenuItem("OpenConsoleLogWindow", "Tray")
+
+
 Menu, Tray, Add
 
 ; More icons?
@@ -62,9 +68,10 @@ Menu, Tray, Add
 
 CreateQuickStartersMenu("Autohotkey")
 CreateQuickStartersMenu("Browsers")
-CreateQuickStartersMenu("Applications")
-CreateQuickStartersMenu("Editors")
 CreateQuickStartersMenu("Consoles")
+CreateQuickStartersMenu("Editors")
+CreateQuickStartersMenu("Programs")
+CreateQuickStartersMenu("Windows")
 
 Menu, Tray, Add
 

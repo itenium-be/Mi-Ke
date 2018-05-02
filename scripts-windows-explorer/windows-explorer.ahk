@@ -77,7 +77,7 @@ ToClipboardAndNotify(toClipboard)
 
 ; Open selected text clipboard in Explorer
 OpenExplorerInClipboardPath:
-	clipVal := CopyAndSaveClip()
+	clipVal := CopyAndSaveClip(1)
 
 	if (clipVal) {
 		explorerCmd := "explorer /select," clipVal
