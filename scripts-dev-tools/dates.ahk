@@ -23,10 +23,12 @@ GetDateInFormat(format) {
 }
 
 
+; Builtin date variables:
+; https://autohotkey.com/docs/Variables.htm#date
 
-
-
-
+; Manipulation of dates with:
+; https://autohotkey.com/docs/commands/EnvAdd.htm
+; https://autohotkey.com/docs/commands/FormatTime.htm
 
 
 /*

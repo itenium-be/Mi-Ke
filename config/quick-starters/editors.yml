@@ -8,6 +8,9 @@ Sublime Text:
   menu: Editors
 
 
+# TODO: Add Webstorm
+
+
 # Win+C: Notepad++. C=Code? :) (N is already mapped to OneNote)
 Notepad++:
   hotkey: "#c"
