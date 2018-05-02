@@ -13,7 +13,11 @@ CreateQuickStartersMenu(menu, addToMenu := "") {
 			Menu, %addTo%, add, %name%, %thaLabel%
 			icon := GetMenuIcon(quickStarter)
 			if (icon) {
-				Menu, %addTo%, Icon, %name%, %icon%, 1
+				try {
+					Menu, %addTo%, Icon, %name%, %icon%, 1
+				} catch {
+					a.log("Couldn't load icon for " quickStarter.name, quickStarter.path)
+				}
 			}
 		}
 	}
@@ -23,7 +27,7 @@ CreateQuickStartersMenu(menu, addToMenu := "") {
 }
 
 
-CreateQuickStartsMenuItem(labelName, menu := "Tray") {
+CreateQuickStartersMenuItem(labelName, menu := "Tray") {
 	global quickStarterz
 	For index, quickStarter in quickStarterz
 	{

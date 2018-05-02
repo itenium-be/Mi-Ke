@@ -1,103 +1,126 @@
-# ATTN: Make changes in _custom.yml (created with init.ps1)
-
 # TODO: What about binary files?
 Base64 encode/decode selected text:
-	hotkey: <^>!b
-	readFrom: [explorer-file, selectedText]
-	writeTo: clipboard
-	followedBy:
-		- desc: Base64 encode
-		  key: e
-		  fn: Base64Encode
+  hotkey: <^>!b
+  readFrom: [explorer-file, selectedText]
+  writeTo: clipboard
+  followedBy:
+    - desc: Base64 encode
+      key: e
+      fn: Base64Encode
 
-		- desc: Base64 decode
-		  key: d
-		  fn: Base64Decode
+    - desc: Base64 decode
+      key: d
+      fn: Base64Decode
 
 
 
 Change casing of selected text:
-	hotkey: <^>!c
-	readFrom: selectedText
-	followedBy:
-		- desc: To Title Case
-		  key: t|p
-		  fn: ToTitleCase
+  hotkey: <^>!c
+  readFrom: selectedText
+  followedBy:
+    - desc: To Title Case
+      key: t|p
+      fn: ToTitleCase
 
-		- desc: TO UPPER CASE
-		  key: u
-		  fn: ToUpperCase
+    - desc: TO UPPER CASE
+      key: u
+      fn: ToUpperCase
 
-		- desc: to lower case
-		  key: l
-		  fn: ToLowerCase
+    - desc: to lower case
+      key: l
+      fn: ToLowerCase
 
-		- desc: To sentence case
-		  key: s
-		  fn: ToSentenceCaseBlend
+    - desc: To sentence case
+      key: s
+      fn: ToSentenceCaseBlend
 
-		- desc: Invert case
-		  key: i
-		  fn: InvertCase
+    - desc: Invert case
+      key: i
+      fn: InvertCase
+
+
+
+# TODO: should also be able to parse the currently
+#       selected text and print that specific date
+Print current date in a specific format:
+  hotkey: <^>!d
+  writeTo: selectedText
+  followedBy:
+    - desc: Sortable date
+      key: s
+      fn: ToSortableDate
+
+    - desc: Sortable date (safe for filename)
+      key: f
+      fn: ToSortableFileNameDate
+
+    - desc: Human readable
+      key: h
+      fn: ToHumanReadableDate
+
+    - desc: ISO8601
+      key: i
+      fn: ToIsoDate
+
 
 
 Change end of line sequence of selected file in Windows Explorer:
-	hotkey: <^>!e
-	context: explorer
-	readFrom: explorer-file
-	followedBy:
-		- desc: To DOS (\r\n)
-		  key: d|w
-		  fn: EolToDos
+  hotkey: <^>!e
+  context: explorer
+  readFrom: explorer-file
+  followedBy:
+    - desc: To DOS (\r\n)
+      key: d|w
+      fn: EolToDos
 
-		- desc: To Unix (\n)
-		  key: u
-		  fn: EolToUnix
+    - desc: To Unix (\n)
+      key: u
+      fn: EolToUnix
 
-		- desc: To Mac (\r)
-		  key: m
-		  fn: EolToMac
+    - desc: To Mac (\r)
+      key: m
+      fn: EolToMac
 
 
 
 Paste lorem ipsum:
-	label: LoremIpsum
-	hotkey: <^>!l
+  label: LoremIpsum
+  hotkey: <^>!l
 
 
 
 Surround selected text with Markdown code block:
-	label: MdCodeBlockSurround
-	hotkey: <^>!#m
+  label: MdCodeBlockSurround
+  hotkey: <^>!#m
 
 New Markdown code block:
-	label: MdCodeBlockNew
-	hotkey: <^>!m
+  label: MdCodeBlockNew
+  hotkey: <^>!m
 
 
 
 # Key is not C:\Users because : is invalid character
 Translate C\Users\ to /c/Users/:
-	desc: Converts the selected text
-	label: PathWinToUnix
-	hotkey: <^>!p
+  desc: Converts the selected text
+  label: PathWinToUnix
+  hotkey: <^>!p
 
 
 
 # There is also LC_UrlEncode & LC_UrlDecode
 Uri encode/decode or slugify selected text:
-	hotkey: <^>!u
-	readFrom: selectedText
-	writeTo: clipboard
-	followedBy:
-		- desc: Uri encode
-		  key: e
-		  fn: LC_UriEncode
+  hotkey: <^>!u
+  readFrom: selectedText
+  writeTo: clipboard
+  followedBy:
+    - desc: Uri encode
+      key: e
+      fn: LC_UriEncode
 
-		- desc: Uri decode
-		  key: d
-		  fn: LC_UriDecode
+    - desc: Uri decode
+      key: d
+      fn: LC_UriDecode
 
-		- desc: Slugify
-		  key: s
-		  fn: Slugify
+    - desc: Slugify
+      key: s
+      fn: Slugify

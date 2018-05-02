@@ -20,6 +20,8 @@
 # 	asAdmin: 1
 # 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
 # 	context: explorer | ahk_class ... (only active in this app)
+# 	machine: string | array on which A_COMPUTERNAME active (do not specify for all machines).
+# 	machineExclude: string | array
 
 # readFrom: explorer-file | selectedText (string or array). When array writeTo is mandatory.
 # writeTo: explorer-file | selectedText | clipboard (defaults to readFrom)
@@ -37,7 +39,8 @@
 
 # Disable an application
 DBeaver:
-	active: 0
+	active: 1
+	machineExclude: THREADRIPPER
 
 
 # Change the hotkey

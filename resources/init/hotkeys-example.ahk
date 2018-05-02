@@ -19,3 +19,6 @@
 
 ; Prefix a hotkey with ~ to not block the native function
 ; Numpad0 & Numpad2 = When pressed together
+
+; More fun combinations possible:
+; https://autohotkey.com/docs/KeyList.htm
