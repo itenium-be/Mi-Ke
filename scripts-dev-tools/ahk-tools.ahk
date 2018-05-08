@@ -8,9 +8,30 @@ ExitApp
 return
 
 
+lastDynaRun :=
+
 DynaRun:
+Suspend, Permit
 clipVal := CopyAndSaveClip()
-DynaRun(clipVal, "Dynarun")
+
+dynaRunName = Dynarun
+if (lastDynaRun) {
+	Process, Exist, %lastDynaRun%
+	if (ErrorLevel > 0) {
+		MsgBox, 4, Existing DynaRun, Replace last DynaRun?`nYes: Replace instance.`nNo: New instance., 1
+		IfMsgBox, No
+		{
+			Random, rnd, 1, 100
+			dynaRunName .= rnd
+		}
+		else
+		{
+			Process, Close, %lastDynaRun%
+		}
+	}
+}
+
+lastDynaRun := DynaRun(clipVal, dynaRunName)
 RestoreClip()
 return
 
