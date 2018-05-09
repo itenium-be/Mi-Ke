@@ -12,6 +12,10 @@ Base64 encode/decode selected text:
       key: d
       fn: Base64Decode
 
+    - desc: JWT decode
+      key: j
+      fn: JwtDecode
+
 
 
 Change casing of selected text:
