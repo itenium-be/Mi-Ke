@@ -27,12 +27,16 @@ Chrome:
 
 
 Firefox:
-  path: C:\Program Files\Mozilla Firefox\firefox.exe
+  path:
+    - C:\Program Files\Mozilla Firefox\firefox.exe
+    - C:\Program Files (x86)\Mozilla Firefox\firefox.exe
   menu: Browsers
 
 
 Opera:
-  path: C:\Program Files\Opera\launcher.exe
+  path:
+    - C:\Program Files\Opera\launcher.exe
+    - C:\Program Files (x86)\Opera\launcher.exe
   menu: Browsers
 
 

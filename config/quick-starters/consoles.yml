@@ -51,7 +51,9 @@ PowerShell (Admin):
 
 
 Git Bash:
-  path: C:\Program Files (x86)\Git\git-bash.exe
+  path:
+    - C:\Program Files\Git\git-bash.exe
+    - C:\Program Files (x86)\Git\git-bash.exe
   menu: Consoles
 
 
