@@ -1,12 +1,7 @@
 GetSystemInformation() {
 	result := "Computer: " A_ComputerName
 
-	; TODO: add @domain
-	; EnvGet, Domain, USERDOMAIN
-	; msgbox % Domain
-
-
-	result .= "`nUser: " A_UserName (A_IsAdmin ? " (admin)" : "")
+	result .= "`nUser: " A_UserName "@" Domain (A_IsAdmin ? " (admin)" : "")
 	result .= "`nOS: " A_OSVersion " (" (A_Is64bitOS ? "64" : "32") "bit)"
 
 	; http://msdn.microsoft.com/en-us/library/aa912040
