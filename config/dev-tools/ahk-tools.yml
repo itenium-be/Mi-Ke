@@ -84,4 +84,5 @@ Convert selected ahk file to exe:
   titleMatcher: ahk_exe Ahk2Exe.exe
   path: <A_AHKPATH>\Compiler\Ahk2Exe.exe
   label: ConvertAhkToExe
+  doublePressCloseHotkey: ESC
   menu: Autohotkey

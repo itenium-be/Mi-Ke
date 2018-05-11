@@ -6,6 +6,11 @@ Calculator:
   menu: Programs
 
 
+Notepad:
+	titleMatcher: ahk_exe notepad.exe
+	doublePressCloseHotkey: ESC
+
+
 Paint.NET:
   hotkey: ^#d
   titleMatcher: ahk_exe PaintDotNet.exe

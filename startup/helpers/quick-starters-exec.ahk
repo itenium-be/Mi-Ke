@@ -20,10 +20,9 @@ return
 
 ; Close app with 2x ESC (or other key)
 QuickStarterInfoCloserExecutor:
-	If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+	If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 500)
 		WinClose
-	Else
-		Send, %A_ThisHotKey%
+
 Return
 
 
