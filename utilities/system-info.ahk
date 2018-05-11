@@ -31,7 +31,10 @@ GetSystemInformation() {
 	; result .= "`n"
 
 	UpTime := Floor(((A_TickCount / 1000) / 60) / 60)
+
 	result .= "`nUptime: " UpTime " hours"
+	inDays := Round(UpTime / 24, 1)
+	result .= " (" inDays " days)"
 
 	return result
 }
