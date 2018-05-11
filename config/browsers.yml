@@ -48,4 +48,6 @@ Edge:
 
 Explorer:
 	path: C:\Program Files (x86)\Internet Explorer\iexplore.exe
+	titleMatcher: ahk_exe iexplore.exe
 	menu: Browsers
+	doublePressCloseHotkey: ESC
