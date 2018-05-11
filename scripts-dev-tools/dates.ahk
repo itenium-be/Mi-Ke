@@ -1,3 +1,30 @@
+HoursMinutesToDecimal:
+	input := CopyAndSaveClip()
+	Loop, Parse, input, `n
+	{
+		someTime := Trim(A_LoopField, "`r`n")
+		if not someTime
+			continue
+
+		times := StrSplit(someTime, ":")
+
+		dec := Round((times[1] + 0) + times[2] / 60, 2)
+		totalDec += dec
+
+		str .= someTime " -> " dec "`n"
+	}
+
+	totalHours := Floor(totalDec)
+	totalMinutes := Floor((totalDec - totalHours) * 60)
+
+	str .= "`nTotal:`n" totalHours ":" totalMinutes " -> " Round(totalDec, 2)
+	SendInput %str%
+
+	Notify("Total: " Round(totalDec, 2))
+return
+
+
+
 ToSortableDate() {
 	return GetDateInFormat("yyyy-MM-dd HH:mm:ss")
 }

@@ -119,6 +119,22 @@ Translate C\Users\ to /c/Users/:
 	hotkey: <^>!p
 
 
+Convert hhmm to decimal:
+	hotkey: <^>!t
+	label: HoursMinutesToDecimal
+
+
+
+# Time convertion:
+# 	hotkey: <^>!t
+# 	readFrom: selectedText
+# 	writeTo: clipboard
+# 	followedBy:
+# 		- desc: "From hh:mm to decimal"
+# 			key: d
+# 			fn: HoursMinutesToDecimal
+
+
 
 # There is also LC_UrlEncode & LC_UrlDecode
 Uri encode/decode or slugify selected text:
