@@ -4,7 +4,12 @@ FollowedByHotkeyExec(qs) {
 	}
 
 	; Read a key and find the function to execute
-	Input key, I L1
+	Input key, I L1 T4, {Enter}{Space}{BS}
+	If (ErrorLevel = "Timeout" or InStr(ErrorLevel, "EndKey:")) {
+		Notify("Cancelled")
+		return
+	}
+
 	Loop % qs.followedBy.() {
 		execInfo := qs.followedBy.(A_INDEX)
 		; Notify(qs.name, execInfo.key ": " execInfo.fn)

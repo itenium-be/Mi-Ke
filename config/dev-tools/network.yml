@@ -1,24 +1,24 @@
 Network actions:
-  hotkey: AppsKey & N
-  readFrom: selectedText
-  writeTo: console
-  followedBy:
-    - desc: Get my IP addresses
-      key: i
-      fn: GetMyIps
+	hotkey: AppsKey & N
+	readFrom: selectedText
+	writeTo: console
+	followedBy:
+		- desc: Get my IP addresses
+			key: i
+			fn: GetMyIps
 
-    - desc: Ping a server
-      key: p
-      fn: Ping
+		- desc: Ping a server
+			key: p
+			fn: Ping
 
-    - desc: Resolve hostname (url -> ip)
-      key: h
-      fn: ResolveHostname
+		- desc: Resolve hostname (url -> ip)
+			key: h
+			fn: ResolveHostname
 
-    - desc: Reverse lookup (ip -> url)
-      key: r
-      fn: ReverseLookup
+		- desc: Reverse lookup (ip -> url)
+			key: r
+			fn: ReverseLookup
 
-    - desc: Flush DNS (ipconfig /flushdns)
-      key: f
-      fn: FlushDNS
+		- desc: Flush DNS (ipconfig /flushdns)
+			key: f
+			fn: FlushDNS

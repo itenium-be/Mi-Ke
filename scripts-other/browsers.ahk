@@ -3,13 +3,14 @@ BrowserOpen:
 clipVal := CopyAndSaveClip()
 
 ; http://www.bing.com
-; www.bing.com
-; TODO: bing.com --> to support this one, the Run needs to be prefixed with http://
-;                    or it doesn't realize it should open browser
-
+; www.google.com
+; github.com/MunGell/awesome-for-beginners
 if RegExMatch(clipVal, "^(https?://|www\.)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$") {
 	; Goto url
 	Run % clipVal
+
+} else if RegExMatch(clipVal, "^[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$") {
+	Run http://%clipVal%
 
 } else {
 	; Open new tab
@@ -27,7 +28,41 @@ return
 
 ; Capslock & A: Copy and google Autohotkey
 BrowserSearchAutohotkey:
-Google("autohotkey+")
+ahkCommands =
+( LTRIM
+	Break,Catch,Click,ClipWait,Continue,Control,ControlClick,ControlFocus,ControlGet,ControlGetFocus,
+	ControlGetPos,ControlGetText,ControlMove,ControlSend,ControlSendRaw,ControlSetText,CoordMode,Critical,
+	DetectHiddenText,Drive,DriveGet,DriveSpaceFree,Edit,Else,EnvAdd,EnvDiv,EnvGet,EnvMult,EnvSet,EnvSub,
+	EnvUpdate,Exit,ExitApp,FileAppend,FileCopy,FileCopyDir,FileCreateDir,FileCreateShortcut,FileDelete,
+	FileInstall,FileGetAttrib,FileGetShortcut,FileGetSize,fileGetVersion,FileMove,FileMoveDir,FileOpen,
+	FileRead,FileReadLine,FileRecycle,FileRecycleEmpty,FileRemoveDir,FileSelectFile,FileSelectFolder,
+	FileSetAttrib,FileSetTime,Finally,For,Format,FormatTime,GetKeyState,Gosub,Goto,GroupActive,GroupAdd,
+	GroupClose,GroupDeactivate,Gui,GuiControl,GuiControlGet,Hotkey,if,IfEqual,IfNotEqual,IfExist,IfNotExist,
+	IfGreater,IfGreaterOrEqual,IfInString,IfNotInString,IfLess,IfLessOrEqual,IfMsgBox,IfWinActive,IfWinNotActive,
+	IfWinExist,IfWinNotExist,ImageSearch,IniDelete,IniRead,IniWrite,Input,InputBox,KeyHistory,KeyWait,ListHotkeys,
+	ListLines,ListVars,Loop,Menu,MenuGetHandle,MenuGetName,MouseClick,MouseClickDrag,MouseGetPos,MouseMove,MsgBox,
+	OnExit,OutputDebug,Pause,PixelGetColor,PixelSearch,PostMessage,Process,Progress,Random,RegDelete,RegRead,RegWrite,
+	Reload,Return,Run,RunAs,RunWait,Send,SendRaw,SendInput,SendPlay,SendEvent,SendLevel,SendMessage,SendMode,
+	SetBatchLines,SetCapsLockState,SetControlDelay,SetDefaultMouseSpeed,SetEnv,SetFormat,SetKeyDelay,SetMouseDelay,
+	SetNumLockState,SetScrollLockState,SetregView,SetStoreCapsLockMode,SetTimer,SetTitleMatchMode,SetWinDelay,
+	SetWorkingDir,Shutdown,Sleep,Sort,SoundBeep,SoundGet,SoundGetWaveVolume,SoundPlay,SoundSet,SoundSetWaveVolume,
+	SplashImage,SplashTextOn,SplashTextOff,SplitPath,StatusBarGetText,StatusBarWait,StringCaseSense,StringLeft,
+	StringRight,StringLower,StringReplace,StringSplit,StringTrimLeft,StringTrimRight,StringUpper,Suspend,SysGet,
+	Thread,Throw,ToolTip,Transform,TrayTip,Until,UrlDownloadToFile,While,WinActivate,WinActivateBottom,WinClose,
+	WinGetActiveStats,WinGetActiveTitle,WinGetClass,WinGet,WinGetPos,WinGetText,WinGetTitle,WinHide,WinKill,WinMaximize,
+	WinMenuSelectItem,WinMinimize,WinMinimizeAll,WinMinimizeAllUndo,WinMove,WinRestore,WinSet,WinSetTitle,WinShow,
+	WinWait,WinWaitActive,WinWaitClose,WinWaitNotActive,ClipboardTimeout,CommentFlag,Delimiter,DerefChar,ErrorStdOut,
+	EscapeChar,HotkeyInterval,HotkeyModifierTimeout,Hotstring,Include,IncludeAgain,InputLevel,InstallKeybdHook,
+	InstallMouseHook,LTrim,MaxHotkeysPerInterval,MaxMem,MaxThreads,MaxThreadsBuffer,MaxThreadsPerHotkey,
+	MenuMaskKey,NoEnv,NoTrayIcon,Persistent,SingleInstance,UseHook,Warn,WinActivateForce
+)
+
+clipVal := Trim(CopyAndSaveClip())
+if (IsFunc(clipVal) or InStr(ahkCommands, clipVal)) {
+	Run https://autohotkey.com/docs/commands/%clipVal%.htm
+} else {
+	Google("autohotkey+")
+}
 return
 
 
