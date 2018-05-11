@@ -1,11 +1,11 @@
 # Ctrl+Win+S: Sublime Text
 Sublime Text:
-  hotkey: ^#s
-  titleMatcher: ahk_class PX_WINDOW_CLASS
-  path: <A_PROGRAMFILES>\Sublime Text 3\sublime_text.exe
-  passExplorerPathAsArgument: dir
-  openWithPathArgs: <exe> --new-window "<path>"
-  menu: Editors
+	hotkey: ^#s
+	titleMatcher: ahk_class PX_WINDOW_CLASS
+	path: <A_PROGRAMFILES>\Sublime Text 3\sublime_text.exe
+	passExplorerPathAsArgument: dir
+	openWithPathArgs: <exe> --new-window "<path>"
+	menu: Editors
 
 
 # TODO: Add Webstorm
@@ -13,58 +13,58 @@ Sublime Text:
 
 # Win+C: Notepad++. C=Code? :) (N is already mapped to OneNote)
 Notepad++:
-  hotkey: "#c"
-  titleMatcher: ahk_class Notepad++
-  path:
-    - C:\Program Files (x86)\Notepad++\Notepad++.exe
-    - C:\Program Files\Notepad++\Notepad++.exe
-  passExplorerPathAsArgument: file
-  explorerFilesSeparator: \"
-  menu: Editors
+	hotkey: "#c"
+	titleMatcher: ahk_class Notepad++
+	path:
+		- C:\Program Files (x86)\Notepad++\Notepad++.exe
+		- C:\Program Files\Notepad++\Notepad++.exe
+	passExplorerPathAsArgument: file
+	explorerFilesSeparator: \"
+	menu: Editors
 
 
 Notepad++ (New Window):
-  hotkey: ^#!c
-  titleMatcher: ahk_class Notepad++
-  path:
-    - C:\Program Files (x86)\Notepad++\Notepad++.exe
-    - C:\Program Files\Notepad++\Notepad++.exe
-  pathParams: -multiInst
-  menu: Editors
+	hotkey: ^#!c
+	titleMatcher: ahk_class Notepad++
+	path:
+		- C:\Program Files (x86)\Notepad++\Notepad++.exe
+		- C:\Program Files\Notepad++\Notepad++.exe
+	pathParams: -multiInst
+	menu: Editors
 
 
 PowerShell ISE:
-  hotkey: !#r
-  titleMatcher: ahk_exe powershell_ise.exe
-  path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell_ise.exe
-  openWithPathArgs: cmd.exe /s /c start /D "<path>" <exe> -file "<selectedFiles>"
-  # Other ISE CLI arg: -NoProfile
-  passExplorerPathAsArgument: file
-  explorerFilesSeparator: ,
-  menu: Editors
+	hotkey: !#r
+	titleMatcher: ahk_exe powershell_ise.exe
+	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+	openWithPathArgs: cmd.exe /s /c start /D "<path>" <exe> -file "<selectedFiles>"
+	# Other ISE CLI arg: -NoProfile
+	passExplorerPathAsArgument: file
+	explorerFilesSeparator: ,
+	menu: Editors
 
 
 Visual Studio Code:
-  titleMatcher: ahk_exe Code.exe
-  path: C:\Program Files\Microsoft VS Code\Code.exe
-  openWithPathArgs: <exe> "<selectedFiles>"
-  passExplorerPathAsArgument: file
-  menu: Editors
+	titleMatcher: ahk_exe Code.exe
+	path: C:\Program Files\Microsoft VS Code\Code.exe
+	openWithPathArgs: <exe> "<selectedFiles>"
+	passExplorerPathAsArgument: file
+	menu: Editors
 
 
 LINQPad:
-  path:
-    - C:\Program Files (x86)\LINQPad4\LINQPad.exe
-    - C:\Program Files (x86)\LINQPad5\LINQPad.exe
-  menu: Editors
+	path:
+		- C:\Program Files (x86)\LINQPad4\LINQPad.exe
+		- C:\Program Files (x86)\LINQPad5\LINQPad.exe
+	menu: Editors
 
 
 MarkdownPad:
-  path: C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe
-  menu: Editors
+	path: C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe
+	menu: Editors
 
 
 Visual Studio 2017:
-  path:
-    - C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
-  menu: Editors
+	path:
+		- C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
+	menu: Editors

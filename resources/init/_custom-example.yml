@@ -10,10 +10,10 @@
 # 	hotkey:
 # 	desc: More info string
 # 	path: path to the exe to start (string | array)
-# 		    supports path-replacements.ahk (ex: <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>)
+# 				supports path-replacements.ahk (ex: <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>)
 # 	pathParams: params passed to the exe
 # 	label: either specify a path or this, an existing Autohotkey label
-# 	titleMatcher:  ahk_class, ahk_exe or Regex
+# 	titleMatcher:	ahk_class, ahk_exe or Regex
 # 	doublePressCloseHotkey: ESC ; requires titleMatcher
 # 	passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
 # 	active: 0 ; To disable it
@@ -27,12 +27,12 @@
 # writeTo: explorer-file | selectedText | clipboard (defaults to readFrom)
 # followedBy:
 # 	- desc: To Title Case
-# 	  key: t
-# 	  fn: ToTitleCase
+# 		key: t
+# 		fn: ToTitleCase
 #
 # 	- desc: TO UPPER CASE
-# 	  key: u|l  # u or l
-# 	  fn: ToUpperCase
+# 		key: u|l	# u or l
+# 		fn: ToUpperCase
 
 # The object keys are a description of the hotkey functionality
 # Characters not allowed : (colon) and ' (single quote)

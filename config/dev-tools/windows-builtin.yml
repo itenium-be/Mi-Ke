@@ -1,31 +1,31 @@
 Open stuff bundled with Windows:
-  hotkey: AppsKey & B
-  followedBy:
-    - desc: Goto Advanced System Properties
-      key: p
-      fn: GoToEditEnvironmentVariables
+	hotkey: AppsKey & B
+	followedBy:
+		- desc: Goto Advanced System Properties
+			key: p
+			fn: GoToEditEnvironmentVariables
 
-    - desc: Goto services.msc
-      key: s
-      fn: GoToServicesMsc
+		- desc: Goto services.msc
+			key: s
+			fn: GoToServicesMsc
 
 
 
 Remote Desktop Connection:
-  hotkey: +#r
-  menu: Windows
-  path: <A_WINDIR>\system32\mstsc.exe
-  label: OpenRemoteDesktop
+	hotkey: +#r
+	menu: Windows
+	path: <A_WINDIR>\system32\mstsc.exe
+	label: OpenRemoteDesktop
 
 
 Event Viewer:
-  menu: Windows
-  path: <A_WINDIR>\system32\EVENTVWR.EXE
+	menu: Windows
+	path: <A_WINDIR>\system32\EVENTVWR.EXE
 
 
 MS Management Console:
-  menu: Windows
-  path: <A_WINDIR>\system32\MMC.EXE
+	menu: Windows
+	path: <A_WINDIR>\system32\MMC.EXE
 
 # Other in <A_WINDIR>\system32\
 # msconfig.exe (System Configuration Utility). Designed to help you troubleshoot problems with your computer.
@@ -129,7 +129,7 @@ MS Management Console:
 # Power Options: control /name Microsoft.PowerOptions
 # Programs and Features: control /name Microsoft.ProgramsAndFeatures
 # Recovery: control /name Microsoft.Recovery
-# Region: control /name  Microsoft.RegionAndLanguage
+# Region: control /name	Microsoft.RegionAndLanguage
 # RemoteApp and Desktop Connections: control /name Microsoft.RemoteAppAndDesktopConnections
 # Sound: control /name Microsoft.Sound
 # Speech Recognition: control /name Microsoft.SpeechRecognition
@@ -143,7 +143,7 @@ MS Management Console:
 # User Accounts: control /name Microsoft.UserAccounts
 # Windows Anytime Upgrade: control /name Microsoft.WindowsAnytimeUpgrade
 # Windows Defender: control /name Microsoft.WindowsDefender
-# Windows Firewall: control /name  Microsoft.WindowsFirewall
+# Windows Firewall: control /name	Microsoft.WindowsFirewall
 # Windows Mobility Center: control /name Microsoft.MobilityCenter
 # Windows To Go: control /name Microsoft.PortableWorkspaceCreator
 # Windows Update: control /name Microsoft.WindowsUpdate
