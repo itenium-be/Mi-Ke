@@ -1,4 +1,18 @@
-; The images are stored in scripts\change-sound-volume\*.jpg
+; The images are stored in .\change-sound-volume\*.jpg
+
+
+; Wheel over taskbar: increase/decrease volume.
+#If MouseIsOver("ahk_class Shell_TrayWnd")
+WheelUp::Send {Volume_Up}
+WheelDown::Send {Volume_Down}
+MButton::ToggleMute(true)
+
+MouseIsOver(WinTitle) {
+	MouseGetPos,,, Win
+	return WinExist(WinTitle . " ahk_id " . Win)
+}
+#If
+
 
 GetBigStep()
 {
