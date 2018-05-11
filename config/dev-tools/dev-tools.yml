@@ -93,9 +93,18 @@ Paste lorem ipsum:
 
 
 
-Surround selected text with Markdown code block:
-	label: MdCodeBlockSurround
-	hotkey: <^>!#m
+Markdown generation:
+	hotkey: "<^>!:"
+	readFrom: selectedText
+	writeTo: selectedText
+	followedBy:
+		- desc: Surround with code block
+			key: c
+			fn: MdCodeBlockSurround
+		- desc: Bold
+			key: b
+			fn: MdBold
+
 
 New Markdown code block:
 	label: MdCodeBlockNew
