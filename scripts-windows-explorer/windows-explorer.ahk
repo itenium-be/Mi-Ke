@@ -79,7 +79,7 @@ ToClipboardAndNotify(toClipboard)
 OpenExplorerInClipboardPath:
 	clipVal := CopyAndSaveClip(1)
 
-	if (clipVal) {
+	if (RegExMatch(clipVal, "^(?:[a-zA-Z]\:|\\\\[\w\.]+\\[\w.$]+)\\(?:[\w]+\\)*\w([\w.])+$")) {
 		explorerCmd := "explorer /select," clipVal
 		Run, %explorerCmd%
 		Sleep 400
