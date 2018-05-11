@@ -98,7 +98,7 @@ Class PleasantNotify
 		Critical
 		lastfound := WinExist()
 
-		imgPath = %A_ScriptDir%\scripts\change-sound-volume\change-sound-volume
+		imgPath = %A_ScriptDir%\scripts-other\change-sound-volume\change-sound-volume
 
 		textX = 20
 		textY = 12
