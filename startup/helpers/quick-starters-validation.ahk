@@ -1,9 +1,10 @@
-ValidateNotify(qs, qsYaml, str) {
-	if DEBUG {
-		a.log(qs.name "`n" str "`n`n" qsYaml.Dump())
-		; a.show()
+ValidateNotify(qs, qsYaml, str, notifyAlso := true) {
+	a.log(qs.name "`n" str "`n`n" qsYaml.Dump())
+	if notifyAlso {
 		Notify(qs.name, str "`n`n" qsYaml.Dump(), 8)
-	} else {
+		; if DEBUG {
+		; 	a.show()
+		; }
 	}
 }
 
@@ -27,7 +28,7 @@ ValidateQuickStarter(qs, qsYaml) {
 	}
 
 	if (qs.path and not FileExist(qs.path)) {
-		ValidateNotify(qs, qsYaml, "Path does not exist:`n" qs.path)
+		ValidateNotify(qs, qsYaml, "Path does not exist:`n" qs.path, false)
 		return false
 	}
 
