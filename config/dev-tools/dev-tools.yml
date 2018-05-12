@@ -93,9 +93,18 @@ Paste lorem ipsum:
 
 
 
-Surround selected text with Markdown code block:
-	label: MdCodeBlockSurround
-	hotkey: <^>!#m
+Markdown generation:
+	hotkey: "<^>!:"
+	readFrom: selectedText
+	writeTo: selectedText
+	followedBy:
+		- desc: Surround with code block
+			key: c
+			fn: MdCodeBlockSurround
+		- desc: Bold
+			key: b
+			fn: MdBold
+
 
 New Markdown code block:
 	label: MdCodeBlockNew
@@ -108,6 +117,22 @@ Translate C\Users\ to /c/Users/:
 	desc: Converts the selected text
 	label: PathWinToUnix
 	hotkey: <^>!p
+
+
+Convert hhmm to decimal:
+	hotkey: <^>!t
+	label: HoursMinutesToDecimal
+
+
+
+# Time convertion:
+# 	hotkey: <^>!t
+# 	readFrom: selectedText
+# 	writeTo: clipboard
+# 	followedBy:
+# 		- desc: "From hh:mm to decimal"
+# 			key: d
+# 			fn: HoursMinutesToDecimal
 
 
 

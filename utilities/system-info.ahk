@@ -1,6 +1,7 @@
 GetSystemInformation() {
 	result := "Computer: " A_ComputerName
 
+	EnvGet, Domain, USERDOMAIN
 	result .= "`nUser: " A_UserName "@" Domain (A_IsAdmin ? " (admin)" : "")
 	result .= "`nOS: " A_OSVersion " (" (A_Is64bitOS ? "64" : "32") "bit)"
 
