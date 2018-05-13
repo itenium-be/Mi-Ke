@@ -1,14 +1,12 @@
 GetSystemInformation() {
-	result := "Computer: " A_ComputerName
+	inputStr := "Computer: <A_ComputerName>`nUser: <A_UserName>@<A_DomainName>"
 
-	EnvGet, Domain, USERDOMAIN
-	result .= "`nUser: " A_UserName "@" Domain (A_IsAdmin ? " (admin)" : "")
-	result .= "`nOS: " A_OSVersion " (" (A_Is64bitOS ? "64" : "32") "bit)"
+	result := ReplaceSystemInfo(inputStr)
+	result .= (A_IsAdmin ? " (admin)" : "")
+	result .= ReplaceSystemInfo("`nOS: <A_OSVersion> (<A_Is64bitOS>bit)")
 
-	; http://msdn.microsoft.com/en-us/library/aa912040
-	result .= "`nLang: " A_Language
-
-	result .= "`nScreen size: " A_ScreenWidth "x" A_ScreenHeight
+	; A_Language: http://msdn.microsoft.com/en-us/library/aa912040
+	result .= ReplaceSystemInfo("`nLang: <A_Language>`nScreen size: <A_ScreenWidth>x<A_ScreenHeight>")
 
 	; TODO: Snippet to retrieve screen size of non primary monitors
 	; https://autohotkey.com/docs/commands/SysGet.htm
@@ -23,21 +21,56 @@ GetSystemInformation() {
 	;     MsgBox, Monitor:`t#%A_Index%`nName:`t%MonitorName%`nLeft:`t%MonitorLeft% (%MonitorWorkAreaLeft% work)`nTop:`t%MonitorTop% (%MonitorWorkAreaTop% work)`nRight:`t%MonitorRight% (%MonitorWorkAreaRight% work)`nBottom:`t%MonitorBottom% (%MonitorWorkAreaBottom% work)
 	; }
 
-
-	; result .= "`n"
-
-	UpTime := Floor(((A_TickCount / 1000) / 60) / 60)
-
-	result .= "`nUptime: " UpTime " hours"
-	inDays := Round(UpTime / 24, 1)
-	result .= " (" inDays " days)"
+	result .= ReplaceSystemInfo("`nUptime: <UpTime> hours (<UpTimeDays> days)")
 
 	return result
 }
 
 
+ReplaceSystemInfo(inputStr) {
+	if (InStr(inputStr, "<CPULoad>")) {
+		inputStr := StrReplace(inputStr, "<CPULoad>", CPULoad())
+	}
+
+	if (InStr(inputStr, "<ramUsed>") or InStr(inputStr, "<ramTotal>") or InStr(inputStr, "<ramUsed%>")) {
+		memory := GetMemoryStatus()
+		inputStr := StrReplace(inputStr, "<ramUsed>", memory.ramPhysicalUsed)
+		inputStr := StrReplace(inputStr, "<ramTotal>", memory.ramPhysicalTotal)
+		inputStr := StrReplace(inputStr, "<ramUsed%>", memory.ramPhysicalPercentage)
+	}
+
+	inputStr := StrReplace(inputStr, "<A_ComputerName>", A_ComputerName)
+	inputStr := StrReplace(inputStr, "<A_UserName>", A_UserName)
+	EnvGet, Domain, USERDOMAIN
+	inputStr := StrReplace(inputStr, "<A_DomainName>", Domain)
+	inputStr := StrReplace(inputStr, "<A_OSVersion>", A_OSVersion)
+	inputStr := StrReplace(inputStr, "<A_IsAdmin>", A_IsAdmin)
+	inputStr := StrReplace(inputStr, "<A_Is64bitOS>", (A_Is64bitOS ? "64" : "32"))
+	inputStr := StrReplace(inputStr, "<A_Language>", A_Language)
+	inputStr := StrReplace(inputStr, "<A_ScreenWidth>", A_ScreenWidth)
+	inputStr := StrReplace(inputStr, "<A_ScreenHeight>", A_ScreenHeight)
+
+	UpTime := Floor(((A_TickCount / 1000) / 60) / 60)
+	UpTimeDays := Round(UpTime / 24, 1)
+	inputStr := StrReplace(inputStr, "<Uptime>", UpTime)
+	inputStr := StrReplace(inputStr, "<UptimeDays>", UpTimeDays)
+
+	if (InStr(inputStr, "<PublicIP>")) {
+		; Takes some time and when used for tray tooltip
+		; It might display 'mike.ahk' on the first hover
+		inputStr := StrReplace(inputStr, "<PublicIP>", GetPublicIP())
+	}
+	if (InStr(inputStr, "<PrivateIP>")) {
+		inputStr := StrReplace(inputStr, "<PrivateIP>", GetLocalIPByAdaptor("Ethernet"))
+	}
+
+	return inputStr
+}
+
+
 
 ; Interesting links
+; https://autohotkey.com/board/topic/60968-wmi-tasks-com-with-ahk-l/
 ; https://github.com/jNizM/AHK_Process_Explorer
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
