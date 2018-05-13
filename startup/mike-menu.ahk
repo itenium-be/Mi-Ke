@@ -102,12 +102,10 @@ Goto, MiKeContinue
 
 
 MikeTrayTooltip:
-	memory := GetMemoryStatus()
-	trayContent := "CPU: " . CPULoad() . "%"
-	trayContent .= " | "
-	trayContent .= "RAM: " memory.ramPhysicalUsed . " of " . memory.ramPhysicalTotal . " (" . memory.ramPhysicalPercentage . "%)"
-	Menu, Tray, Tip, %trayContent%
-	return
+	inputStr := ReadMikeIni("tray-menu", "tooltip")
+	inputStr := ReplaceSystemInfo(inputStr)
+	Menu, Tray, Tip, %inputStr%
+return
 
 
 MikeChooseTrayIcon:
@@ -121,16 +119,16 @@ MikeChooseTrayIcon:
 	return
 
 MiKeTrayExit:
-	ExitApp
+ExitApp
 
 MiKeTraySource:
 	Run, explore %A_ScriptDir%
-	return
+return
 
 MiKeTraySourceEditor:
 	path := EDITOR.path
 	Run, "%path%" %A_ScriptDir%
-	return
+return
 
 MikeToggleStartupShortcut:
 	IfNotExist %startupLink%
@@ -142,6 +140,6 @@ MikeToggleStartupShortcut:
 		FileDelete, %startupLink%
 	}
 	Menu, Tray, ToggleCheck, %startupItem%
-	return
+return
 
 MiKeContinue:
