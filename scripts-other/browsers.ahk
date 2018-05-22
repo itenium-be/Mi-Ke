@@ -1,6 +1,6 @@
 ; Capslock & W: Copy and open Google search
 BrowserOpen:
-clipVal := CopyAndSaveClip()
+clipVal := Trim(CopyAndSaveClip())
 
 ; http://www.bing.com
 ; www.google.com
