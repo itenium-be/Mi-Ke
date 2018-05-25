@@ -13,7 +13,13 @@
 ; ======================================================================================================================
 
 
-; aargh
+; UnPinToTaskbar("C:\Program Files\Internet Explorer\iexplore.exe")
+; PinToTaskbar("C:\Windows\System32\calc.exe")
+
+; UnPinToTaskbar("C:\Program Files (x86)\FolderOfProg\filetounpin.exe")
+; Sleep 1000
+; PinToTaskbar("C:\Program Files (x86)\FolderOfProg\filetopin.exe")
 
 
-return
+
+; return
