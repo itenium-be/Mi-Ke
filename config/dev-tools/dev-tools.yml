@@ -111,12 +111,25 @@ New Markdown code block:
 	hotkey: <^>!m
 
 
+Transform color:
+	hotkey: <^>!p
+	readFrom: selectedText
+	writeTo: clipboard
+	followedBy:
+		- desc: RGB -> Hex
+			key: h
+			fn: RgbToHex
+		- desc: Hex -> RGB
+			key: r
+			fn: HexToRgb
+
+
 
 # Key is not C:\Users because : is invalid character
 Translate C\Users\ to /c/Users/:
 	desc: Converts the selected text
 	label: PathWinToUnix
-	hotkey: <^>!p
+	hotkey: <^>!#p
 
 
 Convert hhmm to decimal:
