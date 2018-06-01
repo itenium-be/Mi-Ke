@@ -3,15 +3,29 @@ HoursMinutesToDecimal:
 	Loop, Parse, input, `n
 	{
 		someTime := Trim(A_LoopField, "`r`n")
-		if not someTime
+		if not someTime {
+			str .= someTime "`n"
 			continue
+		}
 
-		times := StrSplit(someTime, ":")
+		if (InStr(someTime, "->")) {
+			; INPUT: "10:00 -> 11:00" (=Time range, TimeSpent=1h)
+			RegExMatch(someTime, "(\d+:\d+) -> (\d+:\d+)", timeRange)
 
-		dec := Round((times[1] + 0) + times[2] / 60, 2)
-		totalDec += dec
+			startTime := ConvertTimeToDecimal(timeRange1)
+			endTime := ConvertTimeToDecimal(timeRange2)
+			dec := endTime - startTime
 
-		str .= someTime " -> " dec "`n"
+			totalDec += dec
+			str .= someTime " -> " Round(dec, 2) "`n"
+
+		} else {
+			; INPUT: "8:20" (=Time spent)
+			dec := ConvertTimeToDecimal(someTime)
+			totalDec += dec
+
+			str .= someTime " -> " dec "`n"
+		}
 	}
 
 	totalHours := Floor(totalDec)
@@ -23,6 +37,11 @@ HoursMinutesToDecimal:
 	Notify("Total: " Round(totalDec, 2))
 return
 
+
+ConvertTimeToDecimal(someTime) {
+	times := StrSplit(someTime, ":")
+	return Round((times[1] + 0) + times[2] / 60, 2)
+}
 
 
 ToSortableDate() {
