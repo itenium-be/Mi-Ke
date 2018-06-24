@@ -1,0 +1,8 @@
+Business tooling:
+	hotkey: AppsKey & f
+	readFrom: selectedText
+	writeTo: none
+	followedBy:
+		- desc: Validate IBAN nr
+			key: b
+			fn: ValidIBANAndInform
