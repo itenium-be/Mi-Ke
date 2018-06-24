@@ -98,6 +98,9 @@ WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
 		a.log(result)
 		a.show()
 	}
+	else if (writeTo = "none") {
+		; Do nothing
+	}
 	else {
 		Notify(qs.name, "Unknown writeTo: " writeTo)
 	}
