@@ -176,3 +176,14 @@ Uri encode/decode or slugify selected text:
 		- desc: Slugify
 			key: s
 			fn: Slugify
+
+
+
+Xml prettify:
+	hotkey: <^>!x
+	readFrom: selectedText
+	writeTo: clipboard
+	followedBy:
+		- desc: Prettify xml
+			key: p
+			fn: sXML_Pretty
