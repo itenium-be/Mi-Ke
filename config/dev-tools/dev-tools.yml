@@ -94,6 +94,9 @@ JSON tools:
 		- desc: Beautify
 			key: b
 			fn: JsonBeautify
+		- desc: Uglify
+			key: u
+			fn: JsonUglify
 
 
 
