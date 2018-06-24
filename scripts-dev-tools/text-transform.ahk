@@ -19,6 +19,7 @@ ToLowerCase(clipVal) {
 
 ; https://autohotkey.com/board/topic/24431-convert-text-uppercase-lowercase-capitalized-or-inverted
 ToSentenceCaseBlend(str) {
+	str := ToLowerCase(str)
 	return RegExReplace(str, "(((^|([.!?]\s+))[a-z])| i | i')", "$u1")
 }
 
