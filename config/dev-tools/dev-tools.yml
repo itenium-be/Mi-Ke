@@ -86,6 +86,19 @@ Change end of line sequence of selected file in Windows Explorer:
 			fn: EolToMac
 
 
+JSON tools:
+	hotkey: <^>!j
+	readFrom: selectedText
+	writeTo: clipboard
+	followedBy:
+		- desc: Beautify
+			key: b
+			fn: JsonBeautify
+		- desc: Uglify
+			key: u
+			fn: JsonUglify
+
+
 
 Paste lorem ipsum:
 	label: LoremIpsum
