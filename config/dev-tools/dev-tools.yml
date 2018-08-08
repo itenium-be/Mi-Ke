@@ -181,10 +181,9 @@ Uri encode/decode or slugify selected text:
 			fn: Slugify
 
 
-
 Xml prettify:
 	hotkey: <^>!x
-	readFrom: selectedText
+	readFrom: [explorer-file, selectedText]
 	writeTo: clipboard
 	followedBy:
 		- desc: Prettify xml
