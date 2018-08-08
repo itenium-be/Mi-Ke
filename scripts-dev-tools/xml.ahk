@@ -35,5 +35,5 @@ sXML_Pretty( XML, IndentationUnit="`t" ) { ; Adds linefeeds (LF, asc 10) and ind
 				}
 				Else
 					XML .= ">" A_LoopField
-	Return XML
+	Return Trim(XML, " `t`n`r")
 } ; END - sXML_Pretty( XML, IndentationUnit="`t" )

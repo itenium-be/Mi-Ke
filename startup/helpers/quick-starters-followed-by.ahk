@@ -83,7 +83,7 @@ WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
 	writeTo := qs.writeTo ? qs.writeTo : readFrom
 
 	if (writeTo = "clipboard") {
-		Notify("To clipboard:", result)
+		Notify("To clipboard:", TrimContent(result))
 		clipboard := result
 	}
 	else if (writeTo = "selectedText") {
