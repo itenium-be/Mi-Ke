@@ -32,7 +32,7 @@ HoursMinutesToDecimal:
 	totalMinutes := Floor((totalDec - totalHours) * 60)
 
 	str .= "`nTotal:`n" totalHours ":" totalMinutes " -> " Round(totalDec, 2)
-	SendInput %str%
+	SendRaw %str%
 
 	Notify("Total: " Round(totalDec, 2))
 return
