@@ -1,4 +1,4 @@
-; AltGr + P: Translate C:\Users\ to /c/Users/
+; Win + AltGr + P: Translate C:\Users\ to /c/Users/
 PathWinToUnix:
 	clipVal := CopyAndSaveClip()
 
