@@ -16,6 +16,8 @@ Paint.NET:
 	titleMatcher: ahk_exe PaintDotNet.exe
 	path: <A_PROGRAMFILES>\paint.net\PaintDotNet.exe
 	menu: Programs
+	passExplorerPathAsArgument: file
+	openWithPathArgs: <exe> <selectedFiles>
 
 
 Robo 3T (ex Robomongo):
