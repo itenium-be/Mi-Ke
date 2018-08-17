@@ -1,3 +1,13 @@
+; Click the "Are you sure you want to change the extsion" away
+ExplorerNoRenameWarning() {
+	While, 1
+	{
+		WinWaitActive, Rename ahk_class #32770
+		Send y
+	}
+}
+
+
 ; Control + Shift + N: New directory (builtin)
 ; Control + Shift + F: New file
 ExplorerNewFile:

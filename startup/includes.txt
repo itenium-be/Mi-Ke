@@ -1,4 +1,5 @@
 startup\mike-loader.ahk
+startup\auto-execute.ahk
 userland\auto-execute.ahk
 return
 
