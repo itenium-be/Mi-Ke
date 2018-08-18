@@ -100,6 +100,10 @@ RunHotkeyCore(path, quickStarter) {
 		}
 	} else {
 		Run %path%
-		WinActivate
 	}
+
+	if (quickStarter.titleMatcher) {
+		WinWait % quickStarter.titleMatcher
+	}
+	WinActivate
 }
