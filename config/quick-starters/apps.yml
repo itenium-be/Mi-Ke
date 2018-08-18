@@ -66,8 +66,8 @@ Beyond Compare:
 	path:
 		- C:\Program Files (x86)\Beyond Compare 4\BCompare.exe
         - C:\Program Files\Beyond Compare 4\BCompare.exe
-        - C:\Program Files (x86)\Beyond Compare 3\BCompare.exe		        
-        - C:\Program Files\Beyond Compare 3\BCompare.exe		
+        - C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
+        - C:\Program Files\Beyond Compare 3\BCompare.exe
 	menu: Programs
 
 
