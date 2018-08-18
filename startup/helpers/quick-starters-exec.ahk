@@ -30,7 +30,7 @@ Return
 BuildHotkeyArgs(quickStarter, selected := "") {
 	openWithPathArgs := quickStarter.openWithPathArgs
 	if (selected and openWithPathArgs) {
-		; selected: {path, files} = as currently selected in Windows Explorer
+		; selected: {path, files} = as currently selected in Windows Explorer (or in Window Title)
 		; Attempt to pass the path/files as argument to the app to start
 
 		result := openWithPathArgs
@@ -70,7 +70,10 @@ RunHotkey(quickStarter) {
 			FoundPos := InStr(ext, " ")
 			FoundPos := FoundPos = 0 ? 3 : FoundPos
 			StringMid, ext, ext, 1, FoundPos
-			selected.files := name_no_ext "." ext
+
+			if (!quickStarter.openForFiles or Instr(quickStarter.openForFiles, ext)) {
+				selected.files := name_no_ext "." ext
+			}
 		}
 
 		toRun := BuildHotkeyArgs(quickStarter, selected)

@@ -18,6 +18,7 @@ Paint.NET:
 	menu: Programs
 	passExplorerPathAsArgument: file
 	openWithPathArgs: <exe> <selectedFiles>
+	openForFiles: png|jpg|jpeg|gif|bmp|tif|tiff|jif|jfif|exif|svg|pdf
 
 
 Robo 3T (ex Robomongo):
