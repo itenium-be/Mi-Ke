@@ -86,6 +86,20 @@ Run microsoft-edge:
 return
 
 
+BrowserCopyCurrentUrl:
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+{
+	Send ^l
+	Sleep 300
+	Send ^c
+	Sleep 200
+	Send {ESC}{TAB}{TAB}
+	ClipWait
+	Notify("Copied", clipboard)
+}
+return
+
+
 ; -----------------------------------------------------------------------------------------------------------CHROME ONLY
 
 

@@ -61,9 +61,9 @@ ValidateQuickStartCollection(quickStarters) {
 	checkArr := []
 	For index, qs in quickStarters {
 		hotkey := qs.hotkey
-		if (hotkey and IsInArray(checkArr, hotkey)) {
+		if (hotkey and IsInArray(checkArr, hotkey qs.context)) {
 			Notify("Double hotkey mapping", qs.name "`nHotkey: " hotkey)
 		}
-		checkArr.Push(hotkey)
+		checkArr.Push(hotkey qs.context)
 	}
 }
