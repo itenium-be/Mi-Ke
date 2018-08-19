@@ -20,7 +20,7 @@ if RegExMatch(clipVal, "^(https?://|www\.)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?
 
 
 if (openUrl) {
-	if (SubStr(clipVal, 0, 4) != "http") {
+	if (SubStr(clipVal, 1, 4) != "http") {
 		clipVal = http://%clipVal%
 	}
 	Run % clipVal
