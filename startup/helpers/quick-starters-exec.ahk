@@ -69,10 +69,11 @@ RunHotkey(quickStarter) {
 
 			FoundPos := InStr(ext, " ")
 			FoundPos := FoundPos = 0 ? 3 : FoundPos
-			StringMid, ext, ext, 1, FoundPos
+			StringMid, ext, ext, 1, FoundPos - 1
 
-			if (!quickStarter.openForFiles or Instr(quickStarter.openForFiles, ext)) {
-				selected.files := name_no_ext "." ext
+			fullPath := dir "\" name_no_ext "." ext
+			if (FileExist(fullPath) and (!quickStarter.openForFiles or Instr(quickStarter.openForFiles, ext))) {
+				selected.files := fullPath
 			}
 		}
 
