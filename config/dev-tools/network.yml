@@ -1,5 +1,5 @@
 Network actions:
-	hotkey: AppsKey & N
+	hotkey: Capslock & N
 	readFrom: selectedText
 	writeTo: console
 	followedBy:

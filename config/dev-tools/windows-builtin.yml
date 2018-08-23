@@ -1,5 +1,5 @@
 Open stuff bundled with Windows:
-	hotkey: AppsKey & B
+	hotkey: Capslock & T
 	followedBy:
 		- desc: Goto Advanced System Properties
 			key: p

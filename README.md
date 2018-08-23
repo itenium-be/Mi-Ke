@@ -67,3 +67,8 @@ in these applications.
 
 More info:  
 https://stackoverflow.com/questions/1890351/why-is-visual-studio-catching-key-events-before-autohotkey
+
+
+# Known Issues
+
+Binding `AppsKey & X` (with x any character) breaks AppsKey in Cmder.
