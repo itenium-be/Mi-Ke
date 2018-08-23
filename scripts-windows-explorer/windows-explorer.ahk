@@ -1,4 +1,4 @@
-; Click the "Are you sure you want to change the extsion" away
+; Click the "Are you sure you want to change the extension" away
 ExplorerNoRenameWarning() {
 	While, 1
 	{
