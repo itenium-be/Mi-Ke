@@ -31,6 +31,9 @@ Command Prompt (Admin):
 	asAdmin: 1
 
 
+# TODO: New path: C:\Program Files\PowerShell\6.0.4\pwsh.exe
+# -> Must implement C:\Program Files\PowerShell\<VERSION>\pwsh.exe
+
 PowerShell:
 	hotkey: !#p
 	titleMatcher: ahk_exe powershell.exe

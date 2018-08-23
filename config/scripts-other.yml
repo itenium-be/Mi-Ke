@@ -16,7 +16,7 @@ Append selected text to clipboard:
 
 
 Open context menu on mouse cursor:
-	hotkey: AppsKey & m
+	hotkey: Capslock & m
 	followedBy:
 		- desc: Autohotkey
 			key: a
