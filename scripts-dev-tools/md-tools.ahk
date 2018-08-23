@@ -17,7 +17,6 @@ MdCodeBlockSurround(highlighted) {
 
 ; New Markdown code block
 MdCodeBlockNew:
-	Send, {enter}
 	Send, ``````{space}
 	Send, {enter}{enter}
 	Send, ``````{space}
