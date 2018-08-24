@@ -86,14 +86,19 @@ ToClipboardAndNotify(toClipboard)
 
 
 ; Open selected text clipboard in Explorer
+; Infos: https://ss64.com/nt/explorer.html
 OpenExplorerInClipboardPath:
 	clipVal := CopyAndSaveClip(1)
 
-	if (RegExMatch(clipVal, "^(?:[a-zA-Z]\:|\\\\[\w\.]+\\[\w.$]+)\\(?:[\w]+\\)*\w([\w.])+$")) {
-		explorerCmd := "explorer /select," clipVal
-		Run, %explorerCmd%
-		Sleep 400
-		Send {Enter}
+	fileExists := FileExist(clipVal)
+	if (fileExists = "D") {
+		; Enter directory
+		Run % "explorer.exe /root," clipVal
+
+	} else if (fileExists) {
+		; Select file
+		Run % "explorer.exe /select," clipVal
+
 	} else {
 		Send #e
 	}
