@@ -1,14 +1,15 @@
 Open stuff bundled with Windows:
 	hotkey: Capslock & T
 	followedBy:
-		- desc: Goto Advanced System Properties
-			key: p
-			fn: GoToEditEnvironmentVariables
-
 		- desc: Goto services.msc
 			key: s
 			fn: GoToServicesMsc
 
+
+Edit Environment Variables:
+	hotkey: LAlt & PAUSE
+	menu: Windows
+	label: GoToEditEnvironmentVariables
 
 
 Remote Desktop Connection:
