@@ -1,6 +1,7 @@
 ; LAlt & PAUSE
 GoToEditEnvironmentVariables:
 Run % "rundll32 sysdm.cpl,EditEnvironmentVariables"
+WinActivate
 return
 
 
