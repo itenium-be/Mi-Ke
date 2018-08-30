@@ -79,6 +79,7 @@ Notify("Script is now " (A_IsSuspended ? "suspended" : "running"))
 quickStarter := GetQuickStarterInfoByLabel("DevSuspend")
 menuText := GetMenuName(quickStarter)
 Menu, Tray, ToggleCheck, %menuText%
+SetTrayIcon()
 return
 
 

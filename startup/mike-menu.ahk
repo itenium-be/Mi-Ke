@@ -4,12 +4,17 @@
 Menu, Tray, NoStandard
 
 ; ------------------------------------------------------------------------------------------------------------ TRAY ICON
-trayIconPath := ReadMikeIni("tray-menu", "icon", true)
-IfNotExist, %trayIconPath%
-	trayIconPath = <A_ScriptDir>\resources\iseedeadcode.ico
+SetTrayIcon() {
+	iconKey := A_IsSuspended ? "icon-inverted" : "icon"
+	trayIconPath := ReadMikeIni("tray-menu", iconKey, true)
+	IfNotExist, %trayIconPath%
+		trayIconPath := "<A_ScriptDir>\resources\iseedeadcode" (A_IsSuspended ? "-inverted" : "") ".ico"
 
-trayIconPath := PathReplacements(trayIconPath)
-Menu, Tray, Icon, %trayIconPath%,, 1
+	trayIconPath := PathReplacements(trayIconPath)
+	Menu, Tray, Icon, %trayIconPath%,, 1
+}
+
+SetTrayIcon()
 
 ; --------------------------------------------------------------------------------------------------------- TRAY TOOLTIP
 ; https://autohotkey.com/docs/commands/OnMessage.htm
@@ -42,7 +47,7 @@ IfExist %startupLink%
 {
 	Menu, Tray, ToggleCheck, %startupItem%
 }
-Menu, Tray, Add, Choose Tray Icon, MikeChooseTrayIcon
+Menu, Tray, Add, Choose tray icons, MikeChooseTrayIcon
 
 
 
@@ -113,9 +118,17 @@ MikeChooseTrayIcon:
 	if trayIconPath {
 		customTrayIconPath = %A_ScriptDir%\resources\mike.ico
 		FileCopy, %trayIconPath%, %customTrayIconPath%, 1
-		Menu, Tray, Icon, %customTrayIconPath%,, 1
 		WriteMikeIni("<A_ScriptDir>\resources\mike.ico", "tray-menu", "icon")
 	}
+
+	FileSelectFile, trayIconPath, 3, , Pick new tray icon used while Mi-Ke is suspended, Icons (*.ico)
+	if trayIconPath {
+		customTrayIconPath = %A_ScriptDir%\resources\mike-inverted.ico
+		FileCopy, %trayIconPath%, %customTrayIconPath%, 1
+		WriteMikeIni("<A_ScriptDir>\resources\mike-inverted.ico", "tray-menu", "icon-inverted")
+	}
+
+	SetTrayIcon()
 	return
 
 MiKeTrayExit:
