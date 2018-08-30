@@ -33,6 +33,7 @@ MS Management Console:
 # SNDVOL32.EXE (Volume Control) - A GUI (Graphical User Interface) volume application.
 # TASKMGR.EXE (Task Manager) - The Task Manager application.
 
+# https://docs.microsoft.com/en-us/sysinternals/downloads/
 
 # <A_WINDIR>\regedit.exe
 # <A_WINDIR>\write.exe
