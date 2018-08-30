@@ -63,6 +63,14 @@ ToIsoDate() {
 	return GetDateInFormat("yyyyMMddTHHmmssZ")
 }
 
+ToJekyllPostDate() {
+	return GetDateInFormat("yyyy-MM-dd HH:mm:ss '{+}0200'")
+}
+
+ToJekyllFilePrefixDate() {
+	return GetDateInFormat("yyyy-MM-dd-")
+}
+
 GetDateInFormat(format) {
 	FormatTime, CurrentDateTime,, %format%
 	return CurrentDateTime

@@ -66,6 +66,14 @@ Print current date in a specific format:
 			key: i
 			fn: ToIsoDate
 
+		- desc: Jekyll Post
+			key: j
+			fn: ToJekyllPostDate
+
+		- desc: Jekyll post date prefix
+			key: k
+			fn: ToJekyllFilePrefixDate
+
 
 
 Change end of line sequence of selected file in Windows Explorer:
