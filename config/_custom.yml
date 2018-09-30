@@ -46,3 +46,24 @@ DBeaver:
 # Change the hotkey
 Calculator:
 	hotkey: ^#c
+
+    # --------------------------------------- GUI HELPERS BUILT INTO AUTOHOTKEY
+
+
+List lines:
+	hotkey: "#!F8"
+
+List hotkeys:
+	hotkey: "#!F9"
+
+Key history:
+	hotkey: "#!F10"
+
+List vars:
+	hotkey: "#!F11"
+
+Spy window:
+	hotkey: "#!F12"
+
+Convert selected ahk file to exe:
+	hotkey: "#!F7"
