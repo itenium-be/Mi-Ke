@@ -18,7 +18,7 @@ A script running in the background (tray icon) with little productivity boosters
 - Enhancements to programs (cmd, windows explorer, ...)
 - Random scripts to do something I often do (did?) manually
 
-See the [Github Pages](http://itenium.be/Mi-Ke) for a listing of
+See the [Github Pages](https://itenium.be/Mi-Ke) for a listing of
 all shortcuts and their default bindings.
 
 
@@ -67,3 +67,8 @@ in these applications.
 
 More info:  
 https://stackoverflow.com/questions/1890351/why-is-visual-studio-catching-key-events-before-autohotkey
+
+
+# Known Issues
+
+Binding `AppsKey & X` (with x any character) breaks AppsKey in Cmder.

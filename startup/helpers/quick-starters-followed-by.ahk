@@ -83,7 +83,7 @@ WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
 	writeTo := qs.writeTo ? qs.writeTo : readFrom
 
 	if (writeTo = "clipboard") {
-		Notify("To clipboard:", result)
+		Notify("To clipboard:", TrimContent(result))
 		clipboard := result
 	}
 	else if (writeTo = "selectedText") {
@@ -97,6 +97,9 @@ WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
 	else if (writeTo = "console") {
 		a.log(result)
 		a.show()
+	}
+	else if (writeTo = "none") {
+		; Do nothing
 	}
 	else {
 		Notify(qs.name, "Unknown writeTo: " writeTo)

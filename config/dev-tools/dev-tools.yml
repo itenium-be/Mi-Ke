@@ -66,6 +66,14 @@ Print current date in a specific format:
 			key: i
 			fn: ToIsoDate
 
+		- desc: Jekyll Post
+			key: j
+			fn: ToJekyllPostDate
+
+		- desc: Jekyll post date prefix
+			key: k
+			fn: ToJekyllFilePrefixDate
+
 
 
 Change end of line sequence of selected file in Windows Explorer:
@@ -84,6 +92,19 @@ Change end of line sequence of selected file in Windows Explorer:
 		- desc: To Mac (\r)
 			key: m
 			fn: EolToMac
+
+
+JSON tools:
+	hotkey: <^>!j
+	readFrom: selectedText
+	writeTo: clipboard
+	followedBy:
+		- desc: Beautify
+			key: b
+			fn: JsonBeautify
+		- desc: Uglify
+			key: u
+			fn: JsonUglify
 
 
 
@@ -168,10 +189,9 @@ Uri encode/decode or slugify selected text:
 			fn: Slugify
 
 
-
 Xml prettify:
 	hotkey: <^>!x
-	readFrom: selectedText
+	readFrom: [explorer-file, selectedText]
 	writeTo: clipboard
 	followedBy:
 		- desc: Prettify xml

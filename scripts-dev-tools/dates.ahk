@@ -32,7 +32,7 @@ HoursMinutesToDecimal:
 	totalMinutes := Floor((totalDec - totalHours) * 60)
 
 	str .= "`nTotal:`n" totalHours ":" totalMinutes " -> " Round(totalDec, 2)
-	SendInput %str%
+	SendRaw %str%
 
 	Notify("Total: " Round(totalDec, 2))
 return
@@ -61,6 +61,14 @@ ToHumanReadableDate() {
 
 ToIsoDate() {
 	return GetDateInFormat("yyyyMMddTHHmmssZ")
+}
+
+ToJekyllPostDate() {
+	return GetDateInFormat("yyyy-MM-dd HH:mm:ss '{+}0200'")
+}
+
+ToJekyllFilePrefixDate() {
+	return GetDateInFormat("yyyy-MM-dd-")
 }
 
 GetDateInFormat(format) {

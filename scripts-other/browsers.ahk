@@ -2,15 +2,28 @@
 BrowserOpen:
 clipVal := Trim(CopyAndSaveClip())
 
+openUrl = false
+
 ; http://www.bing.com
 ; www.google.com
 ; github.com/MunGell/awesome-for-beginners
 if RegExMatch(clipVal, "^(https?://|www\.)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$") {
-	; Goto url
-	Run % clipVal
+	openUrl = true
 
 } else if RegExMatch(clipVal, "^[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$") {
-	Run http://%clipVal%
+	openUrl = true
+
+; 127.0.0.1:4000
+} else if RegExMatch(clipVal, "^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+$") {
+	openUrl = true
+}
+
+
+if (openUrl) {
+	if (SubStr(clipVal, 1, 4) != "http") {
+		clipVal = http://%clipVal%
+	}
+	Run % clipVal
 
 } else {
 	; Open new tab
@@ -83,6 +96,20 @@ return
 BrowserOpenEdge:
 Run microsoft-edge:
 ; RUN microsoft-edge:http://google.com
+return
+
+
+BrowserCopyCurrentUrl:
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+{
+	Send ^l
+	Sleep 300
+	Send ^c
+	Sleep 200
+	Send {ESC}{TAB}{TAB}
+	ClipWait
+	Notify("Copied", clipboard)
+}
 return
 
 
