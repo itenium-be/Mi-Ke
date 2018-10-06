@@ -126,3 +126,34 @@ return
 ; Van 6 jaar tot minder dan 7 jaar => 10
 ; Van 7 jaar tot minder dan 8 jaar => 12
 ; Vanaf 8 jaar => 13
+
+
+
+CalculatePostcode(city) {
+	FileRead, postcodesFileContent, %A_ScriptDir%\resources\postcodes-belgium.json
+	postcodes := JSON.parse(postcodesFileContent, true)
+
+	; TODO: Fuzzy matching with Levenshtein?
+	; Already included: LDistance() & DLDistance()
+	; Might want to take into account: é/e, dashes, 's, ...
+
+	foundCount := 0
+	results :=
+
+	for index, element in postcodes
+	{
+	 	if (city = element.city) {
+	 		foundCount += 1
+	 		results .= element.city " (" element.province "): " element.postcode "`n"
+			clipboard := element.postcode
+		}
+	}
+
+	if (foundCount = 0) {
+		Notify("Postcode not found", city)
+	} else {
+		StringUpper results, results, T
+		results := Trim(results, "`n")
+		Notify("Postcode(s) " city, results, 5)
+	}
+}
