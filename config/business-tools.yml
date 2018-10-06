@@ -9,3 +9,6 @@ Business tooling:
 		- desc: Notice period
 			key: o
 			fn: CalculateNoticePeriod
+		- desc: Postcode from cityname
+			key: p
+			fn: CalculatePostcode
