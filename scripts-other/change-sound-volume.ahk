@@ -3,8 +3,8 @@
 
 ; Wheel over taskbar: increase/decrease volume.
 #If MouseIsOver("ahk_class Shell_TrayWnd")
-WheelUp::Send {Volume_Up}
-WheelDown::Send {Volume_Down}
+Control & WheelUp::Send {Volume_Up}
+Control & WheelDown::Send {Volume_Down}
 MButton::ToggleMute(true)
 
 MouseIsOver(WinTitle) {

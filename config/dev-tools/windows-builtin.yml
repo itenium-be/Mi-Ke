@@ -1,14 +1,15 @@
 Open stuff bundled with Windows:
-	hotkey: AppsKey & B
+	hotkey: Capslock & T
 	followedBy:
-		- desc: Goto Advanced System Properties
-			key: p
-			fn: GoToEditEnvironmentVariables
-
 		- desc: Goto services.msc
 			key: s
 			fn: GoToServicesMsc
 
+
+Edit Environment Variables:
+	hotkey: LAlt & PAUSE
+	menu: Windows
+	label: GoToEditEnvironmentVariables
 
 
 Remote Desktop Connection:
@@ -32,6 +33,7 @@ MS Management Console:
 # SNDVOL32.EXE (Volume Control) - A GUI (Graphical User Interface) volume application.
 # TASKMGR.EXE (Task Manager) - The Task Manager application.
 
+# https://docs.microsoft.com/en-us/sysinternals/downloads/
 
 # <A_WINDIR>\regedit.exe
 # <A_WINDIR>\write.exe

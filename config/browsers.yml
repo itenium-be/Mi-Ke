@@ -16,6 +16,13 @@ Google the currently selected text + Autohotkey:
 	hotkey: Capslock & A
 
 
+2x Capslock - Copy the active tab url:
+	label: BrowserCopyCurrentUrl
+	hotkey: Capslock
+	context: Chrome_WidgetWin
+
+
+
 # --------------------------------------- BROWSER CONFIG
 
 

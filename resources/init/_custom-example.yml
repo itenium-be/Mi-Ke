@@ -16,6 +16,7 @@
 # 	titleMatcher:	ahk_class, ahk_exe or Regex
 # 	doublePressCloseHotkey: ESC ; requires titleMatcher
 # 	passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
+# 	openForFiles: Only take passExplorerPathAsArgument into account when extension matches (ex: 7z|zip|rar)
 # 	active: 0 ; To disable it
 # 	asAdmin: 1
 # 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
