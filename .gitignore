@@ -6,3 +6,5 @@ resources/*.ico
 userland/auto-execute.ahk
 userland/hotkeys
 userland/hotstrings
+
+.idea
