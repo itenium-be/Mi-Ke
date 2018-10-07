@@ -44,7 +44,7 @@ Emergency exit:
 
 
 List lines:
-	hotkey: !F8
+	hotkey: ^+!F8
 	label: DevListLines
 	menu: Autohotkey
 

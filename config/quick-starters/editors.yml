@@ -8,7 +8,13 @@ Sublime Text:
 	menu: Editors
 
 
-# TODO: Add Webstorm
+WebStorm:
+	hotkey: ^#w
+	titleMatcher: ahk_exe webstorm64.exe
+	path: <A_PROGRAMFILES>\JetBrains\WebStorm 2018.1\bin\webstorm64.exe
+	passExplorerPathAsArgument: dir
+	openWithPathArgs: <exe> "<path>"
+	menu: Editors
 
 
 # Win+C: Notepad++. C=Code? :) (N is already mapped to OneNote)
