@@ -159,3 +159,9 @@ CalculatePostcode(city) {
 		Notify("Postcode(s) " city, results, 5)
 	}
 }
+
+
+
+OpenGoogleMaps(place) {
+	Run, https://maps.google.com/?q=%place%
+}

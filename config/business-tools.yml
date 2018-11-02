@@ -12,3 +12,6 @@ Business tooling:
 		- desc: Postcode from cityname
 			key: p
 			fn: CalculatePostcode
+		- desc: Open in Google Maps
+		  key: m
+		  fn: OpenGoogleMaps
