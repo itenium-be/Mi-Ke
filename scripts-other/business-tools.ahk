@@ -140,9 +140,11 @@ CalculatePostcode(city) {
 	foundCount := 0
 	results :=
 
+	city := Trim(city, " `t`n`r")
+
 	for index, element in postcodes
 	{
-	 	if (city = element.city) {
+	 	if (city = element.city or StrReplace(city, " ", "-") = element.city) {
 	 		foundCount += 1
 	 		results .= element.city " (" element.province "): " element.postcode "`n"
 			clipboard := element.postcode
@@ -156,4 +158,10 @@ CalculatePostcode(city) {
 		results := Trim(results, "`n")
 		Notify("Postcode(s) " city, results, 5)
 	}
+}
+
+
+
+OpenGoogleMaps(place) {
+	Run, https://maps.google.com/?q=%place%
 }
