@@ -7,7 +7,7 @@
 ; #Hotstring EndChars -()[]{}:;'"/\,.?!`n `t
 
 ; Expand imail only after pressing tab
-; :`t:imail:your.name@glogle.com
+; :`t:imail::your.name@glogle.com
 
 ; Some other basic ideas:
 ; :`t:itel::0475009854

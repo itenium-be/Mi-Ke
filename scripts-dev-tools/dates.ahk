@@ -35,6 +35,7 @@ HoursMinutesToDecimal:
 	SendRaw %str%
 
 	Notify("Total: " Round(totalDec, 2))
+	RestoreClip()
 return
 
 
