@@ -125,7 +125,9 @@ Markdown generation:
 		- desc: Bold
 			key: b
 			fn: MdBold
-
+		- desc: Inline code block
+			key: i
+			fn: MdCode
 
 New Markdown code block:
 	label: MdCodeBlockNew

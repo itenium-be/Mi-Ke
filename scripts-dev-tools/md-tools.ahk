@@ -27,3 +27,8 @@ return
 MdBold(string) {
 	Send **%string%**
 }
+
+
+MdCode(string) {
+	Send ``%string%``%A_SPACE%
+}
