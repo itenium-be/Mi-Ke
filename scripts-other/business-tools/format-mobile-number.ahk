@@ -1,11 +1,30 @@
 ; Telephone number - always format as +32 (0)xxx xx xx xx
 FormatMobileNumber(input) {
+	defaultCountryPrefix = 32
+	pattern := "+$1 (0)$2 $3 $4 $5"
+
+	commonPattern := "(\d{3})\D{0,3}?(\d{2})\D?(\d{2})\D?(\d{2})"
+
 	; Input: 0476403542
-	input := RegExReplace(input, "0(\d{3})(\d{2})(\d{2})(\d{2})", "+32 (0)$1 $2 $3 $4")
+	; Input: 0476 40.35 42
+	; Input: 0476 / 40.35.42
+	withoutCountryCodePattern := "^\s*0" commonPattern "\s*$"
+	FoundPos := RegExMatch(input, withoutCountryCodePattern)
+	if FoundPos {
+		input := "+" defaultCountryPrefix " " input
+	}
 
 
+	; Input: 0032 0476 403542
+	; Input: +32 476 403542
+	withCountryCodePattern := "^\s*(?:00|\+)?(\d{1,3})\D?\(?0?\)?" commonPattern "\s*$"
+	FoundPos := RegExMatch(input, withCountryCodePattern)
+	if FoundPos {
+		input := RegExReplace(input, withCountryCodePattern, pattern)
+		return input
+	}
 
 
-	; input := RegExReplace(input, "(\+?32|31)?\D?\(0", "")
+	; Output: +32 (0)476 40 35 42
 	return input
 }
