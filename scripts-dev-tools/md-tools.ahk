@@ -29,6 +29,19 @@ MdBold(string) {
 }
 
 
-MdCode(string) {
+MdCodeSurround(string) {
 	Send ``%string%``%A_SPACE%
+}
+
+
+; ATTN: Don't attempt to do this again. I just doesn't work with
+; Belgian keyboard because it waits for for another keystroke to
+; form something like "à". It does not look like there is a way
+; around this behavior?
+MdCodeEmpty(string) {
+	Send ``
+	; Send ``
+	; Send %A_SPACE%
+		; Sleep 50
+	; SendInput %LEFT%
 }

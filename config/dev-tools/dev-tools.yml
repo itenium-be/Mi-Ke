@@ -124,9 +124,14 @@ Markdown generation:
 		- desc: Bold
 			key: b
 			fn: MdBold
-		- desc: Inline code block
+		- desc: Surround inline code block
 			key: i
-			fn: MdCode
+			fn: MdCodeSurround
+
+# Doesn't work, see comment in MdCodeEmpty
+# - desc: Empty inline code block
+# 	key: j
+# 	fn: MdCodeEmpty
 
 New Markdown code block:
 	label: MdCodeBlockNew
