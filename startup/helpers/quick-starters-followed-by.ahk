@@ -4,7 +4,7 @@ FollowedByHotkeyExec(qs) {
 	}
 
 	; Read a key and find the function to execute
-	Input key, I L1 T4, {Enter}{Space}{BS}
+	Input key, I L1 T4, {Enter}{Space}{BS}{ESC}
 	If (ErrorLevel = "Timeout" or InStr(ErrorLevel, "EndKey:")) {
 		Notify("Cancelled")
 		return
