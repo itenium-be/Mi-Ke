@@ -127,11 +127,9 @@ Markdown generation:
 		- desc: Surround inline code block
 			key: i
 			fn: MdCodeSurround
-
-# Doesn't work, see comment in MdCodeEmpty
-# - desc: Empty inline code block
-# 	key: j
-# 	fn: MdCodeEmpty
+		- desc: Empty inline code block
+			key: j
+			fn: MdCodeEmpty
 
 New Markdown code block:
 	label: MdCodeBlockNew
