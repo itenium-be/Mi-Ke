@@ -1,5 +1,4 @@
-HoursMinutesToDecimal:
-	input := CopyAndSaveClip()
+HoursMinutesToDecimal(input, params) {
 	Loop, Parse, input, `n
 	{
 		someTime := Trim(A_LoopField, "`r`n")
@@ -8,35 +7,48 @@ HoursMinutesToDecimal:
 			continue
 		}
 
-		if (InStr(someTime, "->")) {
+		if (InStr(someTime, params.rangeSeparator)) {
 			; INPUT: "10:00 -> 11:00" (=Time range, TimeSpent=1h)
-			RegExMatch(someTime, "(\d+:\d+) -> (\d+:\d+)", timeRange)
+			RegExMatch(someTime, "(\d+:\d+)" params.rangeSeparator "(\d+:\d+)", timeRange)
 
 			startTime := ConvertTimeToDecimal(timeRange1)
 			endTime := ConvertTimeToDecimal(timeRange2)
 			dec := endTime - startTime
 
 			totalDec += dec
-			str .= someTime " -> " Round(dec, 2) "`n"
+			str .= someTime " = " Round(dec, 2) "`n"
+
+			rangeWasPresent := true
 
 		} else {
 			; INPUT: "8:20" (=Time spent)
 			dec := ConvertTimeToDecimal(someTime)
 			totalDec += dec
 
-			str .= someTime " -> " dec "`n"
+			str .= someTime " = " dec "`n"
 		}
+
+		timeCount += 1
+	}
+
+	if (!totalDec) {
+		Notify("Invalid input", "Expected something like one or more lines of:`n8:20`n8:20 " params.rangeSeparator " 10:40")
+		return
+	}
+
+	roundedTotalDec := Round(totalDec, 2)
+	if (not rangeWasPresent and timeCount = 1) {
+		return roundedTotalDec
 	}
 
 	totalHours := Floor(totalDec)
 	totalMinutes := Floor((totalDec - totalHours) * 60)
 
 	str .= "`nTotal:`n" totalHours ":" totalMinutes " -> " Round(totalDec, 2)
-	SendRaw %str%
 
-	Notify("Total: " Round(totalDec, 2))
-	RestoreClip()
-return
+	Notify("Total: " roundedTotalDec)
+	return str
+}
 
 
 ConvertTimeToDecimal(someTime) {
