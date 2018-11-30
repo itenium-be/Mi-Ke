@@ -24,8 +24,9 @@
 # 	machine: string | array on which A_COMPUTERNAME active (do not specify for all machines).
 # 	machineExclude: string | array
 
-# readFrom: explorer-file | selectedText (string or array). When array writeTo is mandatory.
+# readFrom: explorer-file | selectedText (string or array).
 # writeTo: explorer-file | selectedText | clipboard | none (defaults to readFrom)
+# notify: true
 # followedBy:
 # 	- desc: To Title Case
 # 		key: t

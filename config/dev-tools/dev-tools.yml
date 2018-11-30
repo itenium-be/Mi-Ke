@@ -97,6 +97,7 @@ JSON tools:
 	hotkey: <^>!j
 	readFrom: selectedText
 	writeTo: clipboard
+	notify: true
 	followedBy:
 		- desc: Beautify
 			key: b
@@ -140,6 +141,7 @@ Transform color:
 	hotkey: <^>!p
 	readFrom: selectedText
 	writeTo: clipboard
+	notify: true
 	followedBy:
 		- desc: RGB -> Hex
 			key: h
@@ -166,6 +168,7 @@ Convert hhmm to decimal:
 # Time convertion:
 # 	hotkey: <^>!t
 # 	readFrom: selectedText
+# 	notify: true
 # 	writeTo: clipboard
 # 	followedBy:
 # 		- desc: "From hh:mm to decimal"
@@ -179,6 +182,7 @@ Uri encode/decode or slugify selected text:
 	hotkey: <^>!u
 	readFrom: selectedText
 	writeTo: clipboard
+	notify: true
 	followedBy:
 		- desc: Uri encode
 			key: e

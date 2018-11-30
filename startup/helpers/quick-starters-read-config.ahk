@@ -19,6 +19,8 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.explorerFilesSeparator := qs.explorerFilesSeparator
 		quickStarterInfo.menu := qs.menu
 		quickStarterInfo.label := qs.label
+		quickStarterInfo.fn := qs.fn
+		quickStarterInfo.notify := qs.notify
 		quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
 		quickStarterInfo.ico := qs.ico
 		quickStarterInfo.context := qs.context
@@ -83,6 +85,9 @@ ConvertYamlToQuickStarters(yaml) {
 
 		if (quickStarterInfo.label) {
 			BindQuickStarter(quickStarterInfo, quickStarterInfo.label)
+
+		} else if (quickStarterInfo.fn) {
+			BindQuickStarter(quickStarterInfo, "", "HotkeyExec")
 
 		} else if (quickStarterInfo.path) {
 			BindQuickStarter(quickStarterInfo, "QuickStarterInfoExecutor")

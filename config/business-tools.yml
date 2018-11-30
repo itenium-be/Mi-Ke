@@ -21,4 +21,4 @@ Format mobile number:
 	hotkey: Capslock & F
 	fn: FormatMobileNumber
 	readFrom: selectedText
-	writeTo: selectedText
+	notify: true
