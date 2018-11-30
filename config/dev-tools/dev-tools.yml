@@ -2,7 +2,6 @@
 Base64 encode/decode selected text:
 	hotkey: <^>!b
 	readFrom: [explorer-file, selectedText]
-	writeTo: clipboard
 	followedBy:
 		- desc: Base64 encode
 			key: e
@@ -194,7 +193,6 @@ Uri encode/decode or slugify selected text:
 Xml prettify:
 	hotkey: <^>!x
 	readFrom: [explorer-file, selectedText]
-	writeTo: clipboard
 	followedBy:
 		- desc: Prettify xml
 			key: p
