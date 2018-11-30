@@ -21,4 +21,6 @@ Format mobile number:
 	hotkey: Capslock & F
 	fn: FormatMobileNumber
 	readFrom: selectedText
-	notify: true
+	params:
+		defaultCountryPrefix: 32
+		pattern: +$1 (0)$2 $3 $4 $5

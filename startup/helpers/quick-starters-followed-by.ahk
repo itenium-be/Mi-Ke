@@ -32,10 +32,10 @@ HotkeyExec(qs, funcName = "") {
 	{
 		if (readFrom = "explorer-file") {
 			FileRead, fileContent, %inputValue%
-			result := %funcName%(fileContent)
+			result := %funcName%(fileContent, qs.params)
 
 		} else {
-			result := %funcName%(inputValue)
+			result := %funcName%(inputValue, qs.params)
 		}
 		if result {
 			WriteHotkeyOutputData(qs, inputValue, result, readFrom)

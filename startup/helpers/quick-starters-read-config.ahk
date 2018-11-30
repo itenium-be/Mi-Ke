@@ -28,6 +28,7 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.writeTo := qs.writeTo
 		quickStarterInfo.machine := Yaml_ToArray(qs.machine)
 		quickStarterInfo.machineExclude := Yaml_ToArray(qs.machineExclude)
+		quickStarterInfo.params := qs.params
 		if (qs.followedBy) {
 			quickStarterInfo.followedBy := Yaml("", 0)
 			Yaml_Merge(quickStarterInfo.followedBy, qs.followedBy)

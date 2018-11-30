@@ -1,8 +1,5 @@
 ; Telephone number - always format as +32 (0)xxx xx xx xx
-FormatMobileNumber(input) {
-	defaultCountryPrefix = 32
-	pattern := "+$1 (0)$2 $3 $4 $5"
-
+FormatMobileNumber(input, params) {
 	commonPattern := "(\d{3})\D{0,3}?(\d{2})\D?(\d{2})\D?(\d{2})"
 
 	; Input: 0476403542
@@ -11,7 +8,7 @@ FormatMobileNumber(input) {
 	withoutCountryCodePattern := "^\s*0" commonPattern "\s*$"
 	FoundPos := RegExMatch(input, withoutCountryCodePattern)
 	if FoundPos {
-		input := "+" defaultCountryPrefix " " input
+		input := "+" params.defaultCountryPrefix " " input
 	}
 
 
@@ -20,7 +17,7 @@ FormatMobileNumber(input) {
 	withCountryCodePattern := "^\s*(?:00|\+)?(\d{1,3})\D?\(?0?\)?" commonPattern "\s*$"
 	FoundPos := RegExMatch(input, withCountryCodePattern)
 	if FoundPos {
-		input := RegExReplace(input, withCountryCodePattern, pattern)
+		input := RegExReplace(input, withCountryCodePattern, params.pattern)
 		return input
 	}
 
