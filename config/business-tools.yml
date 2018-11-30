@@ -13,5 +13,12 @@ Business tooling:
 			key: p
 			fn: CalculatePostcode
 		- desc: Open in Google Maps
-		  key: m
-		  fn: OpenGoogleMaps
+			key: m
+			fn: OpenGoogleMaps
+
+
+Format mobile number:
+	hotkey: Capslock & F
+	fn: FormatMobileNumber
+	readFrom: selectedText
+	writeTo: selectedText
