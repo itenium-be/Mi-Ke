@@ -17,7 +17,7 @@ Paint.NET:
 	path: <A_PROGRAMFILES>\paint.net\PaintDotNet.exe
 	menu: Programs
 	passExplorerPathAsArgument: file
-	openWithPathArgs: <exe> <selectedFiles>
+	openWithPathArgs: <exe> "<selectedFiles>"
 	openForFiles: png|jpg|jpeg|gif|bmp|tif|tiff|jif|jfif|exif|svg|pdf
 
 
