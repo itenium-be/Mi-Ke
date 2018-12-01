@@ -196,4 +196,4 @@ Xml prettify:
 	followedBy:
 		- desc: Prettify xml
 			key: p
-			fn: sXML_Pretty
+			fn: XmlPrettify
