@@ -2,7 +2,6 @@
 Base64 encode/decode selected text:
 	hotkey: <^>!b
 	readFrom: [explorer-file, selectedText]
-	writeTo: clipboard
 	followedBy:
 		- desc: Base64 encode
 			key: e
@@ -98,6 +97,7 @@ JSON tools:
 	hotkey: <^>!j
 	readFrom: selectedText
 	writeTo: clipboard
+	notify: true
 	followedBy:
 		- desc: Beautify
 			key: b
@@ -125,9 +125,12 @@ Markdown generation:
 		- desc: Bold
 			key: b
 			fn: MdBold
-		- desc: Inline code block
+		- desc: Surround inline code block
 			key: i
-			fn: MdCode
+			fn: MdCodeSurround
+		- desc: Empty inline code block
+			key: j
+			fn: MdCodeEmpty
 
 New Markdown code block:
 	label: MdCodeBlockNew
@@ -138,6 +141,7 @@ Transform color:
 	hotkey: <^>!p
 	readFrom: selectedText
 	writeTo: clipboard
+	notify: true
 	followedBy:
 		- desc: RGB -> Hex
 			key: h
@@ -155,21 +159,15 @@ Translate C\Users\ to /c/Users/:
 	hotkey: <^>!#p
 
 
-Convert hhmm to decimal:
+# Accepts either one or more lines with
+# 8:20
+# 8:20 -> 10:40
+Convert hours and minutes to decimal:
 	hotkey: <^>!t
-	label: HoursMinutesToDecimal
-
-
-
-# Time convertion:
-# 	hotkey: <^>!t
-# 	readFrom: selectedText
-# 	writeTo: clipboard
-# 	followedBy:
-# 		- desc: "From hh:mm to decimal"
-# 			key: d
-# 			fn: HoursMinutesToDecimal
-
+	fn: HoursMinutesToDecimal
+	readFrom: selectedText
+	params:
+		rangeSeparator: " -> "
 
 
 # There is also LC_UrlEncode & LC_UrlDecode
@@ -177,6 +175,7 @@ Uri encode/decode or slugify selected text:
 	hotkey: <^>!u
 	readFrom: selectedText
 	writeTo: clipboard
+	notify: true
 	followedBy:
 		- desc: Uri encode
 			key: e
@@ -194,8 +193,7 @@ Uri encode/decode or slugify selected text:
 Xml prettify:
 	hotkey: <^>!x
 	readFrom: [explorer-file, selectedText]
-	writeTo: clipboard
 	followedBy:
 		- desc: Prettify xml
 			key: p
-			fn: sXML_Pretty
+			fn: XmlPrettify

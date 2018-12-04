@@ -1,5 +1,7 @@
 
-
+XmlPrettify(input, params) {
+	return sXML_Pretty(input)
+}
 
 sXML_Pretty( XML, IndentationUnit="`t" ) { ; Adds linefeeds (LF, asc 10) and indentation between XML tags.
 ; NOTE: If the XML does not begin with a "<?xml...?>" tag, the output will begin with a newline.

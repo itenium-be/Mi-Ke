@@ -29,6 +29,11 @@ MdBold(string) {
 }
 
 
-MdCode(string) {
+MdCodeSurround(string) {
 	Send ``%string%``%A_SPACE%
+}
+
+
+MdCodeEmpty() {
+	Send, ````{space}{BS}{Left}
 }

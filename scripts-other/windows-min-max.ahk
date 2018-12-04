@@ -4,7 +4,7 @@ minimizedWindows :=
 minimizedWindowCount :=
 windowThatWasActive :=
 
-; Alt+Win+D: minimize all/restore minimized windows on active monitor
+; Control+Alt+Win+D: minimize all/restore minimized windows on active monitor
 WindowsMinMax:
 ; Determine which monitor contains the center of the active window
 WinGetPos, x, y, w, h, A
