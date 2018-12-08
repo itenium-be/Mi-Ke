@@ -10,6 +10,13 @@ If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500) {
 return
 
 
+; Laptop has a problem with switching tab status
+^CAPSLOCK::
+if GetKeyState("CapsLock", "T") = 1
+	SetCapsLockState AlwaysOff
+else
+	SetCapsLockState AlwaysOn
+return
 
 
 
