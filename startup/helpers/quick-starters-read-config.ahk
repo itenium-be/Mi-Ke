@@ -19,6 +19,8 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.explorerFilesSeparator := qs.explorerFilesSeparator
 		quickStarterInfo.menu := qs.menu
 		quickStarterInfo.label := qs.label
+		quickStarterInfo.fn := qs.fn
+		quickStarterInfo.notify := qs.notify
 		quickStarterInfo.passExplorerPathAsArgument := qs.passExplorerPathAsArgument
 		quickStarterInfo.ico := qs.ico
 		quickStarterInfo.context := qs.context
@@ -26,6 +28,7 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.writeTo := qs.writeTo
 		quickStarterInfo.machine := Yaml_ToArray(qs.machine)
 		quickStarterInfo.machineExclude := Yaml_ToArray(qs.machineExclude)
+		quickStarterInfo.params := qs.params
 		if (qs.followedBy) {
 			quickStarterInfo.followedBy := Yaml("", 0)
 			Yaml_Merge(quickStarterInfo.followedBy, qs.followedBy)
@@ -83,6 +86,9 @@ ConvertYamlToQuickStarters(yaml) {
 
 		if (quickStarterInfo.label) {
 			BindQuickStarter(quickStarterInfo, quickStarterInfo.label)
+
+		} else if (quickStarterInfo.fn) {
+			BindQuickStarter(quickStarterInfo, "", "HotkeyExec")
 
 		} else if (quickStarterInfo.path) {
 			BindQuickStarter(quickStarterInfo, "QuickStarterInfoExecutor")

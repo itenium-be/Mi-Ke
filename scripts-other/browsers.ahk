@@ -85,6 +85,10 @@ Google(prefix := "") {
 	RestoreClip()
 }
 
+OpenGoogleMaps(place) {
+	Run, https://maps.google.com/?q=%place%
+}
+
 
 MiKeTraySourceGithub:
 githubUri := ReadMikeIni("tray-menu", "github-url")

@@ -1,6 +1,7 @@
 ; https://github.com/ahkscript/libcrypt.ahk
 ; Modified by GeekDude from http://goo.gl/0a0iJq
-LC_UriEncode(Uri, RE="[0-9A-Za-z]") {
+; parameter 'params' is from the quickStarter call
+LC_UriEncode(Uri, params, RE="[0-9A-Za-z]") {
 	VarSetCapacity(Var, StrPut(Uri, "UTF-8"), 0), StrPut(Uri, &Var, "UTF-8")
 	While Code := NumGet(Var, A_Index - 1, "UChar")
 		Res .= (Chr:=Chr(Code)) ~= RE ? Chr : Format("%{:02X}", Code)

@@ -27,3 +27,13 @@ return
 MdBold(string) {
 	Send **%string%**
 }
+
+
+MdCodeSurround(string) {
+	Send ``%string%``%A_SPACE%
+}
+
+
+MdCodeEmpty() {
+	Send, ````{space}{BS}{Left}
+}

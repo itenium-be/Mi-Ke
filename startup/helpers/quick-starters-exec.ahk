@@ -52,7 +52,7 @@ BuildHotkeyArgs(quickStarter, selected := "") {
 RunHotkey(quickStarter) {
 	if (quickStarter.passExplorerPathAsArgument)
 	{
-		if (WinActive("ahk_class (CabinetWClass|ExploreWClass)")) {
+		if (WinActive("ahk_class (CabinetWClass|ExploreWClass|Progman|WorkerW)")) {
 			; Start with current what is currently selected in Windows Explorer
 			selected := {}
 			selected.path := Explorer_GetPath()
