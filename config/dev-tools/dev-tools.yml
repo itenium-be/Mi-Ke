@@ -100,7 +100,7 @@ JSON tools:
 	notify: true
 	followedBy:
 		- desc: Beautify
-			key: b
+			key: b|p
 			fn: JsonBeautify
 		- desc: Uglify
 			key: u
