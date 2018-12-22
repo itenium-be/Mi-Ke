@@ -1,9 +1,9 @@
 SetWorkingDir, %A_ScriptDir%\..\..\
 #Include ..\lib\Yunit.ahk
-#Include ..\lib\Window.ahk
+; #Include ..\lib\Window.ahk
 #Include ..\lib\StdOut.ahk
-#Include ..\lib\JUnit.ahk
-#Include ..\lib\OutputDebug.ahk
+; #Include ..\lib\JUnit.ahk
+; #Include ..\lib\OutputDebug.ahk
 
 #Include ..\..\vendor\yaml.ahk
 
@@ -12,8 +12,8 @@ Notify(msg, title = "", time = 1) {
 
 #Include ..\..\scripts-other\business-tools\format-mobile-number.ahk
 
-Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(FormatMobileNumberTestSuite)
-; Yunit.Use(YunitStdOut).Test(FormatMobileNumberTestSuite)
+; Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(FormatMobileNumberTestSuite)
+Yunit.Use(YunitStdOut).Test(FormatMobileNumberTestSuite)
 
 class FormatMobileNumberTestSuite
 {

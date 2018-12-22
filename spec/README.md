@@ -7,9 +7,13 @@ https://github.com/Uberi/Yunit
 Docs:  
 https://github.com/Uberi/Yunit/blob/master/doc/Main.md
 
+## Run tests
 
-Double click a test file to run it.  
-(How about automatic rerunning?)
+TODO: Create script to run all tests.  
+TODO: Add watchdog to auto-rerun tests on changes.  
+TODO: Show some tray notification on errors.  
 
-
-"%ProgramFiles%\AutoHotkey\AutoHotkey.exe" "TestsScript.ahk" | more
+```
+cd spec\business-tools\
+AutoHotkey "format-mobile-number-tests.ahk" | more
+```
