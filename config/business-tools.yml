@@ -23,4 +23,4 @@ Format mobile number:
 	readFrom: selectedText
 	params:
 		defaultCountryPrefix: 32
-		pattern: "{+}$1 (0)$2 $3 $4 $5"
+		pattern: "+$1 (0)$2 $3 $4 $5"
