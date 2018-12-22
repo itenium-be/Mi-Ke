@@ -101,7 +101,7 @@ WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
 		clipboard := result
 	}
 	else if (writeTo = "selectedText") {
-		Send % result
+		SendRaw % result
 	}
 	else if (writeTo = "explorer-file") {
 		; Notify(inputValue, result)
