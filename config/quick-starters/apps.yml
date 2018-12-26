@@ -41,13 +41,13 @@ DBeaver:
 	menu: Programs
 	active: 0
 
+# TODO: And this: make <A_PROGRAMFILES> look in both program files dirs
+
 
 FileZilla:
 	hotkey: ^#f
 	titleMatcher: ahk_exe filezilla.exe
-	path:
-		- C:\Program Files\FileZilla FTP Client\filezilla.exe
-		- C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe
+	path: <A_PROGRAMFILES>\FileZilla FTP Client\filezilla.exe
 	menu: Programs
 
 
@@ -64,21 +64,21 @@ VLC:
 
 Beyond Compare:
 	path:
-		- C:\Program Files (x86)\Beyond Compare 4\BCompare.exe
-        - C:\Program Files\Beyond Compare 4\BCompare.exe
-        - C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
-        - C:\Program Files\Beyond Compare 3\BCompare.exe
+		- <A_PROGRAMFILES>\Beyond Compare 4\BCompare.exe
+    - C:\Program Files\Beyond Compare 4\BCompare.exe
+    - C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
+    - C:\Program Files\Beyond Compare 3\BCompare.exe
 	menu: Programs
 
 
 DiffMerge:
-	path: C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe
+	path: <A_PROGRAMFILES>\SourceGear\Common\DiffMerge\sgdm.exe
 	menu: Programs
 
 
 IrfanView:
 	path:
-		- C:\Program Files (x86)\IrfanView\i_view64.exe
+		- <A_PROGRAMFILES>\IrfanView\i_view64.exe
 		- C:\Program Files\IrfanView\i_view64.exe
 		- C:\Program Files (x86)\IrfanView\i_view32.exe
 		- C:\Program Files\IrfanView\i_view32.exe
@@ -86,7 +86,7 @@ IrfanView:
 
 
 TeamViewer:
-	path: C:\Program Files (x86)\TeamViewer\TeamViewer.exe
+	path: <A_PROGRAMFILES>\TeamViewer\TeamViewer.exe
 	menu: Programs
 
 
@@ -98,7 +98,5 @@ dotPeek:
 
 
 Ditto:
-	path:
-		- C:\Program Files (x86)\Ditto\Ditto.exe
-		- C:\Program Files\Ditto\Ditto.exe
+	path: <A_PROGRAMFILES>\Ditto\Ditto.exe
 	menu: Programs

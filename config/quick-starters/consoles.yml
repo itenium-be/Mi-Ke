@@ -54,13 +54,11 @@ PowerShell (Admin):
 
 
 Git Bash:
-	path:
-		- C:\Program Files\Git\git-bash.exe
-		- C:\Program Files (x86)\Git\git-bash.exe
+	path: <A_PROGRAMFILES>\Git\git-bash.exe
 	menu: Consoles
 
 
 VS2017 Command Prompt:
 	path: C:\Windows\System32\cmd.exe
-	pathParams: /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+	pathParams: /k "<A_PROGRAMFILES>\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
 	menu: Consoles

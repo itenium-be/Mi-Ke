@@ -27,23 +27,19 @@ Google the currently selected text + Autohotkey:
 
 
 Chrome:
-	path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+	path: <A_PROGRAMFILES>\Google\Chrome\Application\chrome.exe
 	# titleMatcher: ahk_class Chrome_WidgetWin_1
 	# newWindowFlag: -new
 	menu: Browsers
 
 
 Firefox:
-	path:
-		- C:\Program Files\Mozilla Firefox\firefox.exe
-		- C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+	path: <A_PROGRAMFILES>\Mozilla Firefox\firefox.exe
 	menu: Browsers
 
 
 Opera:
-	path:
-		- C:\Program Files\Opera\launcher.exe
-		- C:\Program Files (x86)\Opera\launcher.exe
+	path: <A_PROGRAMFILES>\Opera\launcher.exe
 	menu: Browsers
 
 
@@ -54,7 +50,7 @@ Edge:
 
 
 Explorer:
-	path: C:\Program Files (x86)\Internet Explorer\iexplore.exe
+	path: <A_PROGRAMFILES>\Internet Explorer\iexplore.exe
 	titleMatcher: ahk_exe iexplore.exe
 	menu: Browsers
 	doublePressCloseHotkey: ESC

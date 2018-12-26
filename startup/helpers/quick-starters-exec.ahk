@@ -42,7 +42,7 @@ BuildHotkeyArgs(quickStarter, selected := "") {
 		return result
 
 	} else if quickStarter.pathParams {
-		return quickStarter.path " " quickStarter.pathParams
+		return quickStarter.path " " PathReplacements(quickStarter.pathParams)
 	}
 
 	return quickStarter.path
