@@ -36,8 +36,10 @@ class PathReplacementsTestSuite
 
 	Test_WithRegexAndProgramFiles()
 	{
-		result := PathReplacements("<A_PROGRAMFILES>\Git\bi/[n]/\git.exe")
+		result := PathReplacements("<A_PROGRAMFILES>\Git\bi/(n|[0-9])/\git.exe")
 		Yunit.assert(result = "c:\program files\Git\bin\git.exe" or result = "c:\program files (x86)\Git\bin\git.exe")
-	}
 
+		result := PathReplacements("<A_PROGRAMFILES>\Git\etc\ss/h/\ssh_config")
+		Yunit.assert(result = "c:\program files\Git\etc\ssh\ssh_config" or result = "c:\program files (x86)\Git\etc\ssh\ssh_config")
+	}
 }

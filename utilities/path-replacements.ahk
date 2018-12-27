@@ -13,32 +13,80 @@ PathReplacements(fileName)
 	StringReplace, fileName, fileName, <A_AHKPATH>, %dir%
 	StringReplace, fileName, fileName, <A_AHKEXEPATH>, %A_AHKPATH%
 
-	; Resolve regex (ex: "/\s\d\.\d/" to match " 4.2")
+	; Resolve regex (ex: "[0-9].[0-9]/" to match "4.2")
+	; ATTN: Don't use "\" in the regex! Will implement if ever needed? :)
 	if (InStr(fileName, "/")) {
-		; The regex cannot contain "/" or this will break horribly
-		; But since a path cannot contain a "/", that's just fine.
-		originalFullPath := DoublePathSeparators(fileName)
+		; Turn the path parts into an array: ['c:', 'temp', 'test.txt']
+		pathParts := []
+		fullPath := fileName
+
+		while (InStr(fullPath, "\")) {
+			; This is actually splitting on each \ in the regex aswell
+			leftPart := SubStr(fullPath, 1, InStr(fullPath, "\") - 1)
+			pathParts.Push(leftPart)
+			fullPath := SubStr(fullPath, InStr(fullPath, "\") + 1)
+		}
+		pathParts.Push(fullPath)
+
+
+		; Calculate the largest path that exists (=without regex)
+		originalFullPath := fileName
 		originalPath := originalFullPath
-		actualPath := originalFullPath
-		while (!FileExist(actualPath) and InStr(actualPath, "\") ) {
+		largestExistingPath := originalFullPath
+		largestExistingPathParts := pathParts.MaxIndex() + 1
+		while (!FileExist(largestExistingPath) and InStr(largestExistingPath, "\")) {
 			; This is actually splitting on each \ in the regex aswell
 			originalPath := GetParentPath(originalPath)
-			actualPath := ResolveProgramFiles(originalPath)
+			largestExistingPath := ResolveProgramFiles(originalPath)
+
+			largestExistingPathParts--
 		}
 
 
-		; msgbox % originalFullPath "`n" originalPath "`n" actualPath
-		Loop Files, %actualPath%\*.*, DF
+		; Find the matching file
+		loopCount := pathParts.MaxIndex() - largestExistingPathParts + 1
+		Loop, %loopCount%
 		{
-			fullPath := A_LoopFileLongPath
-			if (RegExMatch(fullPath, originalFullPath)) {
-				; Don't return: If this is a application
-				; version regex, take the latest version
-				fileName := fullPath
+			partIndex := pathParts.MaxIndex() - (loopCount - A_Index)
+			part := pathParts[partIndex]
+
+			; Regex part, search matches
+			findDirectory := partIndex < pathParts.MaxIndex()
+			if (findDirectory) {
+				Loop Files, %largestExistingPath%\*.*, D
+				{
+					fullPath := A_LoopFileLongPath
+
+					basePath := largestExistingPath "\" part
+					path64 := DoublePathSeparators(ResolveProgramFiles64(basePath))
+					path86 := DoublePathSeparators(ResolveProgramFiles86(basePath))
+
+					if (RegExMatch(fullPath, path64)) {
+						largestExistingPath := fullPath
+						continue
+					} else if (RegExMatch(fullPath, path86)) {
+						largestExistingPath := fullPath
+						continue
+					}
+				}
+
+			} else {
+				Loop Files, %largestExistingPath%\*.*, F
+				{
+					fullPath := A_LoopFileLongPath
+
+					basePath := largestExistingPath "\" part
+					path64 := DoublePathSeparators(ResolveProgramFiles86(basePath))
+					path86 := DoublePathSeparators(ResolveProgramFiles64(basePath))
+
+					if (RegExMatch(fullPath, path64) or RegExMatch(fullPath, path86)) {
+						; Don't return: If this is a application
+						; version regex, take the latest version
+						fileName := fullPath
+					}
+				}
 			}
 		}
-
-		; msgbox % "result: " fileName
 	}
 	else
 	{
@@ -48,19 +96,47 @@ PathReplacements(fileName)
 	return fileName
 }
 
+
 GetParentPath(path) {
 	return SubStr(path, 1, InStr(SubStr(path, 1, -1), "\", 0, 0) - 1)
 }
 
-DoublePathSeparators(path) {
-	; RegEx "O)" --> turns outputVar "match" into an object
-	foundPos := RegExMatch(path, "O)(.*)/(.*)/(.*)", match)
 
-	; Should probably escape other characters aswell? for regex: .+$^()[] and for Autohotkey: `
-	path1 := StrReplace(match.Value(1), "\", "\\")
-	path2 := match.Value(2)
-	path3 := StrReplace(match.Value(3), "\", "\\")
-	return % path1 path2 path3
+; The regex cannot contain "/" or this will break horribly
+; But since a path cannot contain a "/", that's just fine.
+DoublePathSeparators(fileName) {
+	; RegEx "O)" --> turns outputVar "match" into an object
+	foundPos := RegExMatch(fileName, "O)([^/]*)/([^/]*)/([^/]*)", match)
+	if (!foundPos) {
+		return EscapeRegexChars(fileName)
+	}
+
+	part1 := EscapeRegexChars(match.Value(1))
+	if (match.Value(2)) {
+		part2 := match.Value(2)
+	}
+	if (match.Value(3)) {
+		part3 := EscapeRegexChars(match.Value(3))
+	}
+	return % part1 part2 part3
+}
+
+
+EscapeRegexChars(path) {
+	; Regex escapes (valid path chars only)
+	path := StrReplace(path, "\", "\\")
+	path := StrReplace(path, ".", "\.")
+	path := StrReplace(path, "+", "\+")
+	path := StrReplace(path, "^", "\^")
+	path := StrReplace(path, "$", "\$")
+	path := StrReplace(path, "(", "\(")
+	path := StrReplace(path, ")", "\)")
+	path := StrReplace(path, "[", "\[")
+	path := StrReplace(path, "]", "\]")
+
+	; Autohotkey escapes
+	path := StrReplace(path, "`", "``")
+	return path
 }
 
 
@@ -69,13 +145,20 @@ ResolveProgramFiles(fileName) {
 	if (InStr(fileName, "<A_PROGRAMFILES>")) {
 		originalName := fileName
 
-		EnvGet, pf86, ProgramFiles(x86)
-		EnvGet, pf64, ProgramFiles
-
-		StringReplace, fileName, fileName, <A_PROGRAMFILES>, %pf86%
+		fileName := ResolveProgramFiles86(originalName)
 		if (!FileExist(fileName)) {
-			StringReplace, fileName, originalName, <A_PROGRAMFILES>, %pf64%
+			fileName := ResolveProgramFiles64(originalName)
 		}
 	}
 	return fileName
+}
+ResolveProgramFiles86(path) {
+	EnvGet, pf86, ProgramFiles(x86)
+	path := StrReplace(path, "<A_PROGRAMFILES>", pf86)
+	return path
+}
+ResolveProgramFiles64(path) {
+	EnvGet, pf64, ProgramFiles
+	path := StrReplace(path, "<A_PROGRAMFILES>", pf64)
+	return path
 }
