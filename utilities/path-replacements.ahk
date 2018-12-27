@@ -50,43 +50,23 @@ PathReplacements(fileName)
 			partIndex := pathParts.MaxIndex() - (loopCount - A_Index)
 			part := pathParts[partIndex]
 
-			; Regex part, search matches
+			basePath := largestExistingPath "\" part
+			path64 := DoublePathSeparators(ResolveProgramFiles64(basePath))
+			path86 := DoublePathSeparators(ResolveProgramFiles86(basePath))
+
 			findDirectory := partIndex < pathParts.MaxIndex()
-			if (findDirectory) {
-				Loop Files, %largestExistingPath%\*.*, D
-				{
-					fullPath := A_LoopFileLongPath
+			fileMode := findDirectory ? "D" : "F"
 
-					basePath := largestExistingPath "\" part
-					path64 := DoublePathSeparators(ResolveProgramFiles64(basePath))
-					path86 := DoublePathSeparators(ResolveProgramFiles86(basePath))
-
-					if (RegExMatch(fullPath, path64)) {
-						largestExistingPath := fullPath
-						continue
-					} else if (RegExMatch(fullPath, path86)) {
-						largestExistingPath := fullPath
-						continue
-					}
-				}
-
-			} else {
-				Loop Files, %largestExistingPath%\*.*, F
-				{
-					fullPath := A_LoopFileLongPath
-
-					basePath := largestExistingPath "\" part
-					path64 := DoublePathSeparators(ResolveProgramFiles86(basePath))
-					path86 := DoublePathSeparators(ResolveProgramFiles64(basePath))
-
-					if (RegExMatch(fullPath, path64) or RegExMatch(fullPath, path86)) {
-						; Don't return: If this is a application
-						; version regex, take the latest version
-						fileName := fullPath
-					}
+			Loop Files, %largestExistingPath%\*.*, %fileMode%
+			{
+				if (RegExMatch(A_LoopFileLongPath, path64) or RegExMatch(A_LoopFileLongPath, path86)) {
+					; Don't return: If this is a application
+					; version regex, take the latest version
+					largestExistingPath := A_LoopFileLongPath
 				}
 			}
 		}
+		fileName := largestExistingPath
 	}
 	else
 	{
