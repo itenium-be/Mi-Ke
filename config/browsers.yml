@@ -2,24 +2,24 @@
 # (System default)
 
 Open a new browser tab:
-	label: BrowserOpen
-	hotkey: Capslock & W
+  label: BrowserOpen
+  hotkey: Capslock & W
 
 
 Google the currently selected text:
-	label: BrowserSearch
-	hotkey: Capslock & X
+  label: BrowserSearch
+  hotkey: Capslock & X
 
 
 Google the currently selected text + Autohotkey:
-	label: BrowserSearchAutohotkey
-	hotkey: Capslock & A
+  label: BrowserSearchAutohotkey
+  hotkey: Capslock & A
 
 
 2x Capslock - Copy the active tab url:
-	label: BrowserCopyCurrentUrl
-	hotkey: Capslock
-	context: Chrome_WidgetWin
+  label: BrowserCopyCurrentUrl
+  hotkey: Capslock
+  context: Chrome_WidgetWin
 
 
 
@@ -27,30 +27,30 @@ Google the currently selected text + Autohotkey:
 
 
 Chrome:
-	path: <A_PROGRAMFILES>\Google\Chrome\Application\chrome.exe
-	# titleMatcher: ahk_class Chrome_WidgetWin_1
-	# newWindowFlag: -new
-	menu: Browsers
+  path: <A_PROGRAMFILES>\Google\Chrome\Application\chrome.exe
+  # titleMatcher: ahk_class Chrome_WidgetWin_1
+  # newWindowFlag: -new
+  menu: Browsers
 
 
 Firefox:
-	path: <A_PROGRAMFILES>\Mozilla Firefox\firefox.exe
-	menu: Browsers
+  path: <A_PROGRAMFILES>\Mozilla Firefox\firefox.exe
+  menu: Browsers
 
 
 Opera:
-	path: <A_PROGRAMFILES>\Opera\launcher.exe
-	menu: Browsers
+  path: <A_PROGRAMFILES>\Opera\launcher.exe
+  menu: Browsers
 
 
 Edge:
-	label: BrowserOpenEdge
-	menu: Browsers
-	ico: C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe
+  label: BrowserOpenEdge
+  menu: Browsers
+  ico: C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdge.exe
 
 
 Explorer:
-	path: <A_PROGRAMFILES>\Internet Explorer\iexplore.exe
-	titleMatcher: ahk_exe iexplore.exe
-	menu: Browsers
-	doublePressCloseHotkey: ESC
+  path: <A_PROGRAMFILES>\Internet Explorer\iexplore.exe
+  titleMatcher: ahk_exe iexplore.exe
+  menu: Browsers
+  doublePressCloseHotkey: ESC

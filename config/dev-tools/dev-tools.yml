@@ -1,199 +1,199 @@
 # TODO: What about binary files?
 Base64 encode/decode selected text:
-	hotkey: <^>!b
-	readFrom: [explorer-file, selectedText]
-	followedBy:
-		- desc: Base64 encode
-			key: e
-			fn: Base64Encode
+  hotkey: <^>!b
+  readFrom: [explorer-file, selectedText]
+  followedBy:
+    - desc: Base64 encode
+      key: e
+      fn: Base64Encode
 
-		- desc: Base64 decode
-			key: d
-			fn: Base64Decode
+    - desc: Base64 decode
+      key: d
+      fn: Base64Decode
 
-		- desc: JWT decode
-			key: j
-			fn: JwtDecode
+    - desc: JWT decode
+      key: j
+      fn: JwtDecode
 
 
 
 Change casing of selected text:
-	hotkey: <^>!c
-	readFrom: selectedText
-	followedBy:
-		- desc: To Title Case
-			key: t|p
-			fn: ToTitleCase
+  hotkey: <^>!c
+  readFrom: selectedText
+  followedBy:
+    - desc: To Title Case
+      key: t|p
+      fn: ToTitleCase
 
-		- desc: TO UPPER CASE
-			key: u
-			fn: ToUpperCase
+    - desc: TO UPPER CASE
+      key: u
+      fn: ToUpperCase
 
-		- desc: to lower case
-			key: l
-			fn: ToLowerCase
+    - desc: to lower case
+      key: l
+      fn: ToLowerCase
 
-		- desc: To sentence case
-			key: s
-			fn: ToSentenceCaseBlend
+    - desc: To sentence case
+      key: s
+      fn: ToSentenceCaseBlend
 
-		- desc: Invert case
-			key: i
-			fn: InvertCase
+    - desc: Invert case
+      key: i
+      fn: InvertCase
 
 
 
 # TODO: should also be able to parse the currently
-#			 selected text and print that specific date
+#       selected text and print that specific date
 Print current date in a specific format:
-	hotkey: <^>!d
-	writeTo: selectedText
-	followedBy:
-		- desc: Sortable date
-			key: s
-			fn: ToSortableDate
+  hotkey: <^>!d
+  writeTo: selectedText
+  followedBy:
+    - desc: Sortable date
+      key: s
+      fn: ToSortableDate
 
-		- desc: Sortable date (safe for filename)
-			key: f
-			fn: ToSortableFileNameDate
+    - desc: Sortable date (safe for filename)
+      key: f
+      fn: ToSortableFileNameDate
 
-		- desc: Human readable
-			key: h
-			fn: ToHumanReadableDate
+    - desc: Human readable
+      key: h
+      fn: ToHumanReadableDate
 
-		- desc: ISO8601
-			key: i
-			fn: ToIsoDate
+    - desc: ISO8601
+      key: i
+      fn: ToIsoDate
 
-		- desc: Jekyll Post
-			key: j
-			fn: ToJekyllPostDate
+    - desc: Jekyll Post
+      key: j
+      fn: ToJekyllPostDate
 
-		- desc: Jekyll post date prefix
-			key: k
-			fn: ToJekyllFilePrefixDate
+    - desc: Jekyll post date prefix
+      key: k
+      fn: ToJekyllFilePrefixDate
 
 
 
 Change end of line sequence of selected file in Windows Explorer:
-	hotkey: <^>!e
-	context: explorer
-	readFrom: explorer-file
-	followedBy:
-		- desc: To DOS (\r\n)
-			key: d|w
-			fn: EolToDos
+  hotkey: <^>!e
+  context: explorer
+  readFrom: explorer-file
+  followedBy:
+    - desc: To DOS (\r\n)
+      key: d|w
+      fn: EolToDos
 
-		- desc: To Unix (\n)
-			key: u
-			fn: EolToUnix
+    - desc: To Unix (\n)
+      key: u
+      fn: EolToUnix
 
-		- desc: To Mac (\r)
-			key: m
-			fn: EolToMac
+    - desc: To Mac (\r)
+      key: m
+      fn: EolToMac
 
 
 JSON tools:
-	hotkey: <^>!j
-	readFrom: selectedText
-	writeTo: clipboard
-	notify: true
-	followedBy:
-		- desc: Beautify
-			key: b|p
-			fn: JsonBeautify
-		- desc: Uglify
-			key: u
-			fn: JsonUglify
+  hotkey: <^>!j
+  readFrom: selectedText
+  writeTo: clipboard
+  notify: true
+  followedBy:
+    - desc: Beautify
+      key: b|p
+      fn: JsonBeautify
+    - desc: Uglify
+      key: u
+      fn: JsonUglify
 
 
 
 Paste lorem ipsum:
-	label: LoremIpsum
-	hotkey: <^>!l
+  label: LoremIpsum
+  hotkey: <^>!l
 
 
 
 Markdown generation:
-	hotkey: "<^>!:"
-	readFrom: selectedText
-	writeTo: selectedText
-	followedBy:
-		- desc: Surround with code block
-			key: c
-			fn: MdCodeBlockSurround
-		- desc: Bold
-			key: b
-			fn: MdBold
-		- desc: Surround inline code block
-			key: i
-			fn: MdCodeSurround
-		- desc: Empty inline code block
-			key: j
-			fn: MdCodeEmpty
+  hotkey: "<^>!:"
+  readFrom: selectedText
+  writeTo: selectedText
+  followedBy:
+    - desc: Surround with code block
+      key: c
+      fn: MdCodeBlockSurround
+    - desc: Bold
+      key: b
+      fn: MdBold
+    - desc: Surround inline code block
+      key: i
+      fn: MdCodeSurround
+    - desc: Empty inline code block
+      key: j
+      fn: MdCodeEmpty
 
 New Markdown code block:
-	label: MdCodeBlockNew
-	hotkey: <^>!m
+  label: MdCodeBlockNew
+  hotkey: <^>!m
 
 
 Transform color:
-	hotkey: <^>!p
-	readFrom: selectedText
-	writeTo: clipboard
-	notify: true
-	followedBy:
-		- desc: RGB -> Hex
-			key: h
-			fn: RgbToHex
-		- desc: Hex -> RGB
-			key: r
-			fn: HexToRgb
+  hotkey: <^>!p
+  readFrom: selectedText
+  writeTo: clipboard
+  notify: true
+  followedBy:
+    - desc: RGB -> Hex
+      key: h
+      fn: RgbToHex
+    - desc: Hex -> RGB
+      key: r
+      fn: HexToRgb
 
 
 
 # Key is not C:\Users because : is invalid character
 Translate C\Users\ to /c/Users/:
-	desc: Converts the selected text
-	label: PathWinToUnix
-	hotkey: <^>!#p
+  desc: Converts the selected text
+  label: PathWinToUnix
+  hotkey: <^>!#p
 
 
 # Accepts either one or more lines with
 # 8:20
 # 8:20 -> 10:40
 Convert hours and minutes to decimal:
-	hotkey: <^>!t
-	fn: HoursMinutesToDecimal
-	readFrom: selectedText
-	params:
-		rangeSeparator: " -> "
+  hotkey: <^>!t
+  fn: HoursMinutesToDecimal
+  readFrom: selectedText
+  params:
+    rangeSeparator: " -> "
 
 
 # There is also LC_UrlEncode & LC_UrlDecode
 Uri encode/decode or slugify selected text:
-	hotkey: <^>!u
-	readFrom: selectedText
-	writeTo: clipboard
-	notify: true
-	followedBy:
-		- desc: Uri encode
-			key: e
-			fn: LC_UriEncode
+  hotkey: <^>!u
+  readFrom: selectedText
+  writeTo: clipboard
+  notify: true
+  followedBy:
+    - desc: Uri encode
+      key: e
+      fn: LC_UriEncode
 
-		- desc: Uri decode
-			key: d
-			fn: LC_UriDecode
+    - desc: Uri decode
+      key: d
+      fn: LC_UriDecode
 
-		- desc: Slugify
-			key: s
-			fn: Slugify
+    - desc: Slugify
+      key: s
+      fn: Slugify
 
 
 Xml prettify:
-	hotkey: <^>!x
-	readFrom: [explorer-file, selectedText]
-	followedBy:
-		- desc: Prettify xml
-			key: p
-			fn: XmlPrettify
+  hotkey: <^>!x
+  readFrom: [explorer-file, selectedText]
+  followedBy:
+    - desc: Prettify xml
+      key: p
+      fn: XmlPrettify

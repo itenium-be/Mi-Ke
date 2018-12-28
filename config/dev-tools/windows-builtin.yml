@@ -1,32 +1,32 @@
 Open stuff bundled with Windows:
-	hotkey: Capslock & T
-	followedBy:
-		- desc: Goto services.msc
-			key: s
-			fn: GoToServicesMsc
+  hotkey: Capslock & T
+  followedBy:
+    - desc: Goto services.msc
+      key: s
+      fn: GoToServicesMsc
 
 
 Edit Environment Variables:
-	hotkey: LAlt & PAUSE
-	menu: Windows
-	label: GoToEditEnvironmentVariables
+  hotkey: LAlt & PAUSE
+  menu: Windows
+  label: GoToEditEnvironmentVariables
 
 
 Remote Desktop Connection:
-	hotkey: +#r
-	menu: Windows
-	path: <A_WINDIR>\system32\mstsc.exe
-	label: OpenRemoteDesktop
+  hotkey: +#r
+  menu: Windows
+  path: <A_WINDIR>\system32\mstsc.exe
+  label: OpenRemoteDesktop
 
 
 Event Viewer:
-	menu: Windows
-	path: <A_WINDIR>\system32\EVENTVWR.EXE
+  menu: Windows
+  path: <A_WINDIR>\system32\EVENTVWR.EXE
 
 
 MS Management Console:
-	menu: Windows
-	path: <A_WINDIR>\system32\MMC.EXE
+  menu: Windows
+  path: <A_WINDIR>\system32\MMC.EXE
 
 # Other in <A_WINDIR>\system32\
 # msconfig.exe (System Configuration Utility). Designed to help you troubleshoot problems with your computer.
