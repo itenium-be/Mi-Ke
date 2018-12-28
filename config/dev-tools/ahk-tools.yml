@@ -9,9 +9,6 @@ Run the selected Autohotkey code:
 
 # --------------------------------------- SCRIPT CONTROL
 
-# TODO: Add a Pause script (pauses running hotkeys) ?
-# https://autohotkey.com/docs/commands/Pause.htm
-
 Reload script and ini:
   hotkey: ^#r
   label: DevReloadScript
@@ -23,6 +20,8 @@ Reload script when saved:
   label: DevReloadScriptWhenSaved
 
 
+# Could also add a Pause script (pauses running hotkeys)
+# https://autohotkey.com/docs/commands/Pause.htm
 Suspend script:
   hotkey: ^#!r
   label: DevSuspend

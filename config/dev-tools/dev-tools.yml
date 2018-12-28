@@ -82,7 +82,7 @@ Change end of line sequence of selected file in Windows Explorer:
   followedBy:
     - desc: To DOS (\r\n)
       key: d|w
-      fn: EolToDos
+      fn: EolTo_Dos
 
     - desc: To Unix (\n)
       key: u

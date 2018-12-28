@@ -2,7 +2,7 @@ CalculatePostcode(city) {
 	FileRead, postcodesFileContent, %A_ScriptDir%\resources\postcodes-belgium.json
 	postcodes := JSON.parse(postcodesFileContent, true)
 
-	; TODO: Fuzzy matching with Levenshtein?
+	; Could add fuzzy matching with Levenshtein
 	; Already included: LDistance() & DLDistance()
 	; Might want to take into account: é/e, dashes, 's, ...
 

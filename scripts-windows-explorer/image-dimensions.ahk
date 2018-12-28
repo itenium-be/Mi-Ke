@@ -4,7 +4,7 @@
 lastImagePath :=
 lastImageSize :=
 
-; TODO: SeeImageDimensions: An icon might have multiple dimsions inside?
+; NotImplemented: An icon can have multiple dimensions inside
 SeeImageDimensions:
 selectedFiles := Explorer_GetSelectedArray()
 selectedFile := selectedFiles[1]
