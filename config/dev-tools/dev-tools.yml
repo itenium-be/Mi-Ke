@@ -197,3 +197,7 @@ Xml prettify:
     - desc: Prettify xml
       key: p
       fn: XmlPrettify
+
+    - desc: Uglify xml
+      key: u
+      fn: XmlUglify
