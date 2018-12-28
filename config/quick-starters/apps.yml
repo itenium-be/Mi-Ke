@@ -24,7 +24,7 @@ Paint.NET:
 Robo 3T (ex Robomongo):
 	hotkey: CapsLock & Q
 	titleMatcher: ahk_exe robo3t.exe
-	path: <A_PROGRAMFILES>\Robo 3T 1.1.1\robo3t.exe
+	path: <A_PROGRAMFILES>\Robo 3T /[0-9]+(.[0-9]+)*/\robo3t.exe
 	menu: Programs
 
 
@@ -40,8 +40,6 @@ DBeaver:
 	pathParams: -nl en
 	menu: Programs
 	active: 0
-
-# TODO: And this: make <A_PROGRAMFILES> look in both program files dirs
 
 
 FileZilla:
@@ -63,11 +61,7 @@ VLC:
 
 
 Beyond Compare:
-	path:
-		- <A_PROGRAMFILES>\Beyond Compare 4\BCompare.exe
-    - C:\Program Files\Beyond Compare 4\BCompare.exe
-    - C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
-    - C:\Program Files\Beyond Compare 3\BCompare.exe
+	path: <A_PROGRAMFILES>\Beyond Compare /[0-9]+/\BCompare.exe
 	menu: Programs
 
 
@@ -77,11 +71,7 @@ DiffMerge:
 
 
 IrfanView:
-	path:
-		- <A_PROGRAMFILES>\IrfanView\i_view64.exe
-		- C:\Program Files\IrfanView\i_view64.exe
-		- C:\Program Files (x86)\IrfanView\i_view32.exe
-		- C:\Program Files\IrfanView\i_view32.exe
+	path: <A_PROGRAMFILES>\IrfanView\i_view/(32|64)/.exe
 	menu: Programs
 
 
@@ -91,9 +81,7 @@ TeamViewer:
 
 
 dotPeek:
-	path:
-		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek09\dotPeek64.exe
-		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek11\dotPeek64.exe
+	path: <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek/[0-9]+/\dotPeek64.exe
 	menu: Programs
 
 
