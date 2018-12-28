@@ -15,8 +15,9 @@ Edit Environment Variables:
 Remote Desktop Connection:
   hotkey: +#r
   menu: Windows
-  path: <A_WINDIR>\system32\mstsc.exe
-  label: OpenRemoteDesktop
+  fn: OpenRemoteDesktop
+  params:
+    path: <A_WINDIR>\system32\mstsc.exe
 
 
 Event Viewer:
