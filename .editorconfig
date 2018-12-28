@@ -12,3 +12,7 @@ trim_trailing_whitespace = false
 
 [*.ini]
 trim_trailing_whitespace = false
+
+[*.yml]
+indent_style = spaces
+indent_size = 2
