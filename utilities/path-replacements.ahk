@@ -34,10 +34,10 @@ PathReplacements(fileName)
 		originalPath := originalFullPath
 		largestExistingPath := originalFullPath
 		largestExistingPathParts := pathParts.MaxIndex() + 1
-		while (!FileExist(largestExistingPath) and InStr(largestExistingPath, "\")) {
+		while (!FileExist(ResolveProgramFiles(largestExistingPath)) and InStr(largestExistingPath, "\")) {
 			; This is actually splitting on each \ in the regex aswell
 			originalPath := GetParentPath(originalPath)
-			largestExistingPath := ResolveProgramFiles(originalPath)
+			largestExistingPath := originalPath
 
 			largestExistingPathParts--
 		}
@@ -51,18 +51,31 @@ PathReplacements(fileName)
 			part := pathParts[partIndex]
 
 			basePath := largestExistingPath "\" part
-			path64 := DoublePathSeparators(ResolveProgramFiles64(basePath))
-			path86 := DoublePathSeparators(ResolveProgramFiles86(basePath))
 
 			findDirectory := partIndex < pathParts.MaxIndex()
 			fileMode := findDirectory ? "D" : "F"
 
-			Loop Files, %largestExistingPath%\*.*, %fileMode%
-			{
-				if (RegExMatch(A_LoopFileLongPath, path64) or RegExMatch(A_LoopFileLongPath, path86)) {
-					; Don't return: If this is a application
-					; version regex, take the latest version
-					largestExistingPath := A_LoopFileLongPath
+			if (findDirectory) {
+				pathFound := FindInFiles(ResolveProgramFiles64(largestExistingPath), "D", ResolveProgramFiles64(basePath))
+				if (!pathFound) {
+					pathFound := FindInFiles(ResolveProgramFiles86(largestExistingPath), "D", ResolveProgramFiles86(basePath))
+				}
+				if (pathFound) {
+					largestExistingPath := pathFound
+				}
+
+			} else {
+				basePath := largestExistingPath "\" part
+				path64 := DoublePathSeparators(ResolveProgramFiles64(basePath))
+				path86 := DoublePathSeparators(ResolveProgramFiles86(basePath))
+
+				Loop Files, %largestExistingPath%\*.*, %fileMode%
+				{
+					if (RegExMatch(A_LoopFileLongPath, path64) or RegExMatch(A_LoopFileLongPath, path86)) {
+						; Don't return: If this is a application
+						; version regex, take the latest version
+						largestExistingPath := A_LoopFileLongPath
+					}
 				}
 			}
 		}
@@ -74,6 +87,17 @@ PathReplacements(fileName)
 	}
 
 	return fileName
+}
+
+FindInFiles(findInPath, fileMode, pathSoFar) {
+	pathSoFar := DoublePathSeparators(pathSoFar)
+	Loop Files, %findInPath%\*.*, %fileMode%
+	{
+		if (RegExMatch(A_LoopFileLongPath, pathSoFar)) {
+			pathFound := A_LoopFileLongPath
+			return pathFound
+		}
+	}
 }
 
 

@@ -42,4 +42,11 @@ class PathReplacementsTestSuite
 		result := PathReplacements("<A_PROGRAMFILES>\Git\etc\ss/h/\ssh_config")
 		Yunit.assert(result = "c:\program files\Git\etc\ssh\ssh_config" or result = "c:\program files (x86)\Git\etc\ssh\ssh_config")
 	}
+
+
+	Test_WithRobo3T()
+	{
+		result := PathReplacements("<A_PROGRAMFILES>\Robo 3T 1.1./[0-9]/\robo3t.exe")
+		Yunit.assert(result = "c:\Program Files\Robo 3T 1.1.1\robo3t.exe")
+	}
 }
