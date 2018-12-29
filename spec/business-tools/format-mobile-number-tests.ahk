@@ -12,10 +12,10 @@ Notify(msg, title = "", time = 1) {
 
 #Include ..\..\scripts-other\business-tools\format-mobile-number.ahk
 
-; Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(FormatMobileNumberTestSuite)
-Yunit.Use(YunitPorcelainStdOut).Test(FormatMobileNumberTestSuite)
+; Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(FormatMobileNumberTests)
+Yunit.Use(YunitPorcelainStdOut).Test(FormatMobileNumberTests)
 
-class FormatMobileNumberTestSuite
+class FormatMobileNumberTests
 {
 	class WithoutCountryPrefix
 	{
@@ -28,22 +28,22 @@ class FormatMobileNumberTestSuite
 			this.result := "+32 (0)476 40 35 42"
 		}
 
-		Test_NumbersOnly()
+		NumbersOnly()
 		{
 			formatted := FormatMobileNumber("0476403542", this.params)
-			Yunit.that(formatted, this.result)
+			Yunit.that(this.result, formatted)
 		}
 
-		Test_WithSeparators()
+		WithSeparators()
 		{
 			formatted := FormatMobileNumber("0476 40.35 42", this.params)
-			Yunit.assert(formatted = this.result)
+			Yunit.that(this.result, formatted)
 		}
 
-		Test_WithPrefixSeparator()
+		WithPrefixSeparator()
 		{
 			formatted := FormatMobileNumber("0476 / 40.35.42", this.params)
-			Yunit.assert(formatted = this.result)
+			Yunit.that(this.result, formatted)
 		}
 	}
 
@@ -53,35 +53,32 @@ class FormatMobileNumberTestSuite
 		{
 			config := Yaml(A_Workingdir "\config\business-tools.yml")
 			mobileConfig := config["Format mobile number"]
-			; msgbox % mobileConfig.params.Dump()
 			this.params := mobileConfig.params
 			this.result := "+32 (0)476 40 35 42"
 		}
 
-		Test_WithPlus()
+		WithPlus()
 		{
 			formatted := FormatMobileNumber("+32 476 403542", this.params)
-			Yunit.assert(formatted = this.result)
+			Yunit.that(this.result, formatted)
 		}
 
-		Test_WithZeroZero()
+		WithZeroZero()
 		{
 			formatted := FormatMobileNumber("0032 4 76 403 542", this.params)
-			Yunit.assert(formatted = this.result)
+			Yunit.that(this.result, formatted)
 		}
 
-		Test_WithZeroZeroAndExtraZoneZero()
+		WithZeroZeroAndExtraZoneZero()
 		{
 			formatted := FormatMobileNumber("0032 0476 403 542", this.params)
-			Yunit.assert(formatted = this.result)
+			Yunit.that(this.result, formatted)
 		}
 
-		Test_WithZeroZeroAndCountrySeparator()
+		WithZeroZeroAndCountrySeparator()
 		{
 			formatted := FormatMobileNumber("0032/ 4 76.403.542", this.params)
-			Yunit.assert(formatted = this.result)
+			Yunit.that(this.result, formatted)
 		}
 	}
-
-	; End() {}
 }
