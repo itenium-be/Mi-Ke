@@ -65,7 +65,7 @@ ZipDirectory:
 
 
 		; If the target zip already exists?
-		; Simply continuating would overwrite the existing zip with the original zip inside it (ie doubling size because 7zip doesn't see what happened)
+		; Simply continuing would overwrite the existing zip with the original zip inside it (ie doubling size because 7zip doesn't see what happened)
 		fullZipName = %currentPath%\%topDirName%.zip
 		if FileExist(fullZipName)
 		{
