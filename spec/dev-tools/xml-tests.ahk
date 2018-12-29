@@ -10,10 +10,10 @@ Notify(msg, title = "", time = 1) {
 
 #Include ..\..\scripts-dev-tools\xml.ahk
 
-; Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(FormatMobileNumberTestSuite)
-Yunit.Use(YunitPorcelainStdOut).Test(XmlSuite)
+; Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(FormatMobileNumberTests)
+Yunit.Use(YunitPorcelainStdOut).Test(XmlTests)
 
-class XmlSuite
+class XmlTests
 {
 	Begin()
 	{
@@ -21,16 +21,16 @@ class XmlSuite
 		this.pretty := "<xml>`n`t<yaye>test</yaye>`n</xml>"
 	}
 
-	Test_Prettify()
+	Prettify()
 	{
 		; last argument "" is params (not used)
 		result := XmlPrettify(this.ugly, "")
-		Yunit.assert(result = this.pretty)
+		Yunit.that(result, this.pretty)
 	}
 
-	Test_Uglify()
+	Uglify()
 	{
 		result := XmlUglify(this.pretty, "")
-		Yunit.assert(result = this.ugly)
+		Yunit.that(result, this.ugly)
 	}
 }
