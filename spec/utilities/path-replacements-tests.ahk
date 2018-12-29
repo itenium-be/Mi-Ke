@@ -1,9 +1,9 @@
 SetWorkingDir, %A_ScriptDir%\..\..\
-#Include ..\lib\Yunit.ahk
-; #Include ..\lib\Window.ahk
-#Include ..\lib\StdOut.ahk
-; #Include ..\lib\JUnit.ahk
-; #Include ..\lib\OutputDebug.ahk
+#Include ..\Yunit\Yunit.ahk
+; #Include ..\Yunit\Window.ahk
+#Include ..\Yunit\StdOut.ahk
+; #Include ..\Yunit\JUnit.ahk
+; #Include ..\Yunit\OutputDebug.ahk
 
 Notify(msg, title = "", time = 1) {
 }
@@ -11,7 +11,7 @@ Notify(msg, title = "", time = 1) {
 #Include ..\..\utilities\path-replacements.ahk
 
 ; Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(PathReplacementsTestSuite)
-Yunit.Use(YunitStdOut).Test(PathReplacementsTestSuite)
+Yunit.Use(YunitPorcelainStdOut).Test(PathReplacementsTestSuite)
 
 class PathReplacementsTestSuite
 {

@@ -1,9 +1,9 @@
 SetWorkingDir, %A_ScriptDir%\..\..\
-#Include ..\lib\Yunit.ahk
-; #Include ..\lib\Window.ahk
-#Include ..\lib\StdOut.ahk
-; #Include ..\lib\JUnit.ahk
-; #Include ..\lib\OutputDebug.ahk
+#Include ..\Yunit\Yunit.ahk
+; #Include ..\Yunit\Window.ahk
+#Include ..\Yunit\StdOut.ahk
+; #Include ..\Yunit\JUnit.ahk
+; #Include ..\Yunit\OutputDebug.ahk
 
 #Include ..\..\vendor\yaml.ahk
 
@@ -13,7 +13,7 @@ Notify(msg, title = "", time = 1) {
 #Include ..\..\scripts-other\business-tools\format-mobile-number.ahk
 
 ; Yunit.Use(YunitStdOut, YunitWindow, YunitJUnit, YunitOutputDebug).Test(FormatMobileNumberTestSuite)
-Yunit.Use(YunitStdOut).Test(FormatMobileNumberTestSuite)
+Yunit.Use(YunitPorcelainStdOut).Test(FormatMobileNumberTestSuite)
 
 class FormatMobileNumberTestSuite
 {
@@ -31,7 +31,7 @@ class FormatMobileNumberTestSuite
 		Test_NumbersOnly()
 		{
 			formatted := FormatMobileNumber("0476403542", this.params)
-			Yunit.assert(formatted = this.result)
+			Yunit.that(formatted, this.result)
 		}
 
 		Test_WithSeparators()
