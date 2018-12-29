@@ -100,7 +100,12 @@ OpenExplorerInClipboardPath:
 		Run % "explorer.exe /select," clipVal
 
 	} else {
-		Send #e
+		startupPath := ReadMikeIni("windows-explorer", "StartupPath")
+		if (startupPath) {
+			Run % "explorer.exe /root," startupPath
+		} else {
+			Send #e
+		}
 	}
 
 	RestoreClip()

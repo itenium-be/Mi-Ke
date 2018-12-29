@@ -74,3 +74,20 @@ https://stackoverflow.com/questions/1890351/why-is-visual-studio-catching-key-ev
 # Known Issues
 
 Binding `AppsKey & X` (with x any character) breaks AppsKey in Cmder.
+
+
+# Tests
+
+- Are in `spec`
+- Need to end in `-tests.ahk`
+
+Run tests:  
+```ps1
+.\tests.ps1
+```
+
+Framework:  
+https://github.com/itenium-be/Yunit
+
+Docs:  
+https://github.com/Uberi/Yunit/blob/master/doc/Main.md

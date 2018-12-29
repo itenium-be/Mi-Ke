@@ -1,104 +1,90 @@
 Calculator:
-	hotkey: ^#c
-	path: <A_WINDIR>\System32\calc.exe
-	titleMatcher: ahk_class CalcFrame
-	doublePressCloseHotkey: ~ESC # ~ --> First ESC should still clear the calc input
-	menu: Programs
+  hotkey: ^#c
+  path: <A_WINDIR>\System32\calc.exe
+  titleMatcher: ahk_class CalcFrame
+  doublePressCloseHotkey: ~ESC # ~ --> First ESC should still clear the calc input
+  menu: Programs
 
 
 Notepad:
-	titleMatcher: ahk_exe notepad.exe
-	doublePressCloseHotkey: ESC
+  titleMatcher: ahk_exe notepad.exe
+  doublePressCloseHotkey: ESC
 
 
 Paint.NET:
-	hotkey: ^#d
-	titleMatcher: ahk_exe PaintDotNet.exe
-	path: <A_PROGRAMFILES>\paint.net\PaintDotNet.exe
-	menu: Programs
-	passExplorerPathAsArgument: file
-	openWithPathArgs: <exe> "<selectedFiles>"
-	openForFiles: png|jpg|jpeg|gif|bmp|tif|tiff|jif|jfif|exif|svg|pdf
+  hotkey: ^#d
+  titleMatcher: ahk_exe PaintDotNet.exe
+  path: <A_PROGRAMFILES>\paint.net\PaintDotNet.exe
+  menu: Programs
+  passExplorerPathAsArgument: file
+  openWithPathArgs: <exe> "<selectedFiles>"
+  openForFiles: png|jpg|jpeg|gif|bmp|tif|tiff|jif|jfif|exif|svg|pdf
 
 
 Robo 3T (ex Robomongo):
-	hotkey: CapsLock & Q
-	titleMatcher: ahk_exe robo3t.exe
-	path: <A_PROGRAMFILES>\Robo 3T 1.1.1\robo3t.exe
-	menu: Programs
+  hotkey: CapsLock & Q
+  titleMatcher: ahk_exe robo3t.exe
+  path: <A_PROGRAMFILES>\Robo 3T /[0-9]+(.[0-9]+)*/\robo3t.exe
+  menu: Programs
 
 
 HeidiSql:
-	hotkey: CapsLock & S
-	titleMatcher: ahk_exe heidisql.exe
-	path: <A_PROGRAMFILES>\HeidiSQL\heidisql.exe
-	menu: Programs
+  hotkey: CapsLock & S
+  titleMatcher: ahk_exe heidisql.exe
+  path: <A_PROGRAMFILES>\HeidiSQL\heidisql.exe
+  menu: Programs
 
 
 DBeaver:
-	path: <USERPROFILE>\AppData\Local\DBeaver\dbeaver.exe
-	pathParams: -nl en
-	menu: Programs
-	active: 0
+  path: <USERPROFILE>\AppData\Local\DBeaver\dbeaver.exe
+  pathParams: -nl en
+  menu: Programs
+  active: 0
 
 
 FileZilla:
-	hotkey: ^#f
-	titleMatcher: ahk_exe filezilla.exe
-	path:
-		- C:\Program Files\FileZilla FTP Client\filezilla.exe
-		- C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe
-	menu: Programs
+  hotkey: ^#f
+  titleMatcher: ahk_exe filezilla.exe
+  path: <A_PROGRAMFILES>\FileZilla FTP Client\filezilla.exe
+  menu: Programs
 
 
 7-Zip:
-	titleMatcher: ahk_exe 7zFM.exe
-	path: <A_PROGRAMFILES>\7-zip\7zFM.exe
-	menu: Programs
+  titleMatcher: ahk_exe 7zFM.exe
+  path: <A_PROGRAMFILES>\7-zip\7zFM.exe
+  menu: Programs
 
 
 VLC:
-	path: <A_PROGRAMFILES>\VideoLAN\VLC\vlc.exe
-	menu: Programs
+  path: <A_PROGRAMFILES>\VideoLAN\VLC\vlc.exe
+  menu: Programs
 
 
 Beyond Compare:
-	path:
-		- C:\Program Files (x86)\Beyond Compare 4\BCompare.exe
-        - C:\Program Files\Beyond Compare 4\BCompare.exe
-        - C:\Program Files (x86)\Beyond Compare 3\BCompare.exe
-        - C:\Program Files\Beyond Compare 3\BCompare.exe
-	menu: Programs
+  path: <A_PROGRAMFILES>\Beyond Compare /[0-9]+/\BCompare.exe
+  menu: Programs
 
 
 DiffMerge:
-	path: C:\Program Files\SourceGear\Common\DiffMerge\sgdm.exe
-	menu: Programs
+  path: <A_PROGRAMFILES>\SourceGear\Common\DiffMerge\sgdm.exe
+  menu: Programs
 
 
 IrfanView:
-	path:
-		- C:\Program Files (x86)\IrfanView\i_view64.exe
-		- C:\Program Files\IrfanView\i_view64.exe
-		- C:\Program Files (x86)\IrfanView\i_view32.exe
-		- C:\Program Files\IrfanView\i_view32.exe
-	menu: Programs
+  path: <A_PROGRAMFILES>\IrfanView\i_view/(32|64)/.exe
+  menu: Programs
 
 
 TeamViewer:
-	path: C:\Program Files (x86)\TeamViewer\TeamViewer.exe
-	menu: Programs
+  path: <A_PROGRAMFILES>\TeamViewer\TeamViewer.exe
+  menu: Programs
 
 
 dotPeek:
-	path:
-		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek09\dotPeek64.exe
-		- <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek11\dotPeek64.exe
-	menu: Programs
+  path: <USERPROFILE>\AppData\Local\JetBrains\Installations\dotPeek/[0-9]+/\dotPeek64.exe
+  menu: Programs
 
 
 Ditto:
-	path:
-		- C:\Program Files (x86)\Ditto\Ditto.exe
-		- C:\Program Files\Ditto\Ditto.exe
-	menu: Programs
+  path: <A_PROGRAMFILES>\Ditto\Ditto.exe
+  menu: Programs

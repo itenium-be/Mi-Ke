@@ -97,7 +97,7 @@ if (InStr(winTitle, A_Scriptdir))
 return
 
 
-; TODO: If ahk AND ico files are selected, pass like:
+; NotImplemented: If ahk AND ico files are selected, pass like:
 ; Ahk2Exe.exe /in "MyScript.ahk" /icon "MyIcon.ico"
 ConvertAhkToExe:
 qs := GetQuickStarterInfoByLabel("ConvertAhkToExe")

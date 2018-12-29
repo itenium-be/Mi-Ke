@@ -1,66 +1,68 @@
 # TODO: cant open cmder with specific path:
 # https://github.com/cmderdev/cmder/issues/91
 Cmder:
-	hotkey: +#c
-	titleMatcher: ahk_exe ConEmu64.exe
-	path:
-		- C:\bin\cmder\Cmder.exe
-		- C:\tools\cmder\Cmder.exe
-	menu: Consoles
-	openWithPathArgs: <exe> /start <path>
-	passExplorerPathAsArgument: dir
+  hotkey: +#c
+  titleMatcher: ahk_exe ConEmu64.exe
+  path:
+    - C:\bin\cmder\Cmder.exe
+    - C:\tools\cmder\Cmder.exe
+  menu: Consoles
+  openWithPathArgs: <exe> /start <path>
+  passExplorerPathAsArgument: dir
 
 
 # https://stackoverflow.com/questions/60904/how-can-i-open-a-cmd-window-in-a-specific-location
 Command Prompt:
-	hotkey: !#c
-	titleMatcher: ahk_class ConsoleWindowClass
-	path: C:\Windows\System32\cmd.exe
-	menu: Consoles
-	passExplorerPathAsArgument: dir
-	openWithPathArgs: <exe> /K "cd /d <path>"
+  hotkey: !#c
+  titleMatcher: ahk_class ConsoleWindowClass
+  path: C:\Windows\System32\cmd.exe
+  menu: Consoles
+  passExplorerPathAsArgument: dir
+  openWithPathArgs: <exe> /K "cd /d <path>"
 
 
 Command Prompt (Admin):
-	hotkey: +!#c
-	titleMatcher: ahk_class ConsoleWindowClass
-	path: C:\Windows\System32\cmd.exe
-	menu: Consoles
-	passExplorerPathAsArgument: dir
-	openWithPathArgs: <exe> /K "cd /d <path>"
-	asAdmin: 1
+  hotkey: +!#c
+  titleMatcher: ahk_class ConsoleWindowClass
+  path: C:\Windows\System32\cmd.exe
+  menu: Consoles
+  passExplorerPathAsArgument: dir
+  openWithPathArgs: <exe> /K "cd /d <path>"
+  asAdmin: 1
 
 
-# TODO: New path: C:\Program Files\PowerShell\6.0.4\pwsh.exe
-# -> Must implement C:\Program Files\PowerShell\<VERSION>\pwsh.exe
+PowerShell Core:
+  hotkey: !#p
+  titleMatcher: ahk_exe pwsh.exe
+  path: <A_PROGRAMFILES>\PowerShell\/[0-9](.[0-9])*/\pwsh.exe
+  menu: Consoles
+  passExplorerPathAsArgument: dir
+  openWithPathArgs: <exe> -noexit -command "cd '<path>'"
 
 PowerShell:
-	hotkey: !#p
-	titleMatcher: ahk_exe powershell.exe
-	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
-	menu: Consoles
-	passExplorerPathAsArgument: dir
-	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
+  titleMatcher: ahk_exe powershell.exe
+  path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+  menu: Consoles
+  passExplorerPathAsArgument: dir
+  openWithPathArgs: <exe> -noexit -command "cd '<path>'"
 
 
 PowerShell (Admin):
-	hotkey: +!#p
-	titleMatcher: ahk_exe powershell.exe
-	path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
-	menu: Consoles
-	passExplorerPathAsArgument: dir
-	openWithPathArgs: <exe> -noexit -command "cd '<path>'"
-	asAdmin: 1
+  hotkey: +!#p
+  titleMatcher: ahk_exe powershell.exe
+  path: <A_WINDIR>\System32\WindowsPowerShell\v1.0\powershell.exe
+  menu: Consoles
+  passExplorerPathAsArgument: dir
+  openWithPathArgs: <exe> -noexit -command "cd '<path>'"
+  asAdmin: 1
 
 
 Git Bash:
-	path:
-		- C:\Program Files\Git\git-bash.exe
-		- C:\Program Files (x86)\Git\git-bash.exe
-	menu: Consoles
+  path: <A_PROGRAMFILES>\Git\git-bash.exe
+  menu: Consoles
 
 
 VS2017 Command Prompt:
-	path: C:\Windows\System32\cmd.exe
-	pathParams: /k "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
-	menu: Consoles
+  path: C:\Windows\System32\cmd.exe
+  pathParams: /k "<A_PROGRAMFILES>\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+  menu: Consoles

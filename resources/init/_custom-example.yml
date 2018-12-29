@@ -6,46 +6,48 @@
 
 # Template for a new quick starter:
 # A textual description:
-# 	menu: Contextmenu name
-# 	hotkey:
-# 	desc: More info string
-# 	path: path to the exe to start (string | array)
-# 				supports path-replacements.ahk (ex: <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>)
-# 	pathParams: params passed to the exe
-# 	label: either specify a path or this, an existing Autohotkey label
-# 	titleMatcher:	ahk_class, ahk_exe or Regex
-# 	doublePressCloseHotkey: ESC ; requires titleMatcher
-# 	passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
-# 	openForFiles: Only take passExplorerPathAsArgument into account when extension matches (ex: 7z|zip|rar)
-# 	active: 0 ; To disable it
-# 	asAdmin: 1
-# 	explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
-# 	context: explorer | ahk_class ... (only active in this app)
-# 	machine: string | array on which A_COMPUTERNAME active (do not specify for all machines).
-# 	machineExclude: string | array
+#   menu: Contextmenu name
+#   hotkey:
+#   desc: More info string
+#   path: path to the exe to start (string | array)
+#         supports path-replacements.ahk (ex: <A_DESKTOP>, <A_TEMP>, <A_SCRIPTDIR>, <USERPROFILE>, <A_APPDATA>, <A_PROGRAMFILES>)
+#         and also regex (Limitation: do not use a \ in the regex!) (ex: <A_PROGRAMFILES>\Office /[0-9]+/\office.exe)
+#   pathParams: params passed to the exe
+#   label: either specify a path, a fn or this, an existing Autohotkey label
+#   fn: calls this function which accepts (input, params) where input=readFrom
+#   titleMatcher:  ahk_class, ahk_exe or Regex
+#   doublePressCloseHotkey: ESC ; requires titleMatcher
+#   passExplorerPathAsArgument: dir OR file; When in Windows Explorer, pass path/selected files as parameter
+#   openForFiles: Only take passExplorerPathAsArgument into account when extension matches (ex: 7z|zip|rar)
+#   active: 0 ; To disable it
+#   asAdmin: 1
+#   explorerFilesSeparator: A_SPACE ; c:\file1 c:\file2 (a space by default)
+#   context: explorer | ahk_class ... (only active in this app)
+#   machine: string | array on which A_COMPUTERNAME active (do not specify for all machines).
+#   machineExclude: string | array
 
 # readFrom: explorer-file | selectedText (string or array).
 # writeTo: explorer-file | selectedText | clipboard | none (defaults to readFrom)
 # notify: true (display a toastr with the result)
 # params: *any* (configuration for the function, passed as second parameter)
 # followedBy:
-# 	- desc: To Title Case
-# 		key: t
-# 		fn: ToTitleCase
+#   - desc: To Title Case
+#     key: t
+#     fn: ToTitleCase
 #
-# 	- desc: TO UPPER CASE
-# 		key: u|l	# u or l
-# 		fn: ToUpperCase
+#   - desc: TO UPPER CASE
+#     key: u|l  # u or l
+#     fn: ToUpperCase
 
 # The object keys are a description of the hotkey functionality
 # Characters not allowed : (colon) and ' (single quote)
 
 # Disable an application
 DBeaver:
-	active: 1
-	machineExclude: THREADRIPPER
+  active: 1
+  machineExclude: THREADRIPPER
 
 
 # Change the hotkey
 Calculator:
-	hotkey: ^#c
+  hotkey: ^#c
