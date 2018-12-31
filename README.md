@@ -2,12 +2,13 @@ Mi-Ke
 =====
 This Mike is not exactly Mycroft Holmes but rather a collection of Autohotkey scripts.
 
-Two fancy ones:
+A few fancy ones:
 
 **Control+Win+Z**: Zips the entire folder, or just the selected files, in Windows Explorer.
 ([windows-explorer-zip-directory](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-windows-explorer/windows-explorer-zip-directory.ahk))  
 **Control+Win+Alt+D**: Minimize all windows on monitor of active Window. Press again to restore.
 ([windows-min-max](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-other/windows-min-max.ahk))  
+**Control+Alt+D**: Open Windows Explorer and select last downloaded file ([windows-explorer](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-windows-explorer/windows-explorer.ahk))  
 
 # What
 
@@ -17,7 +18,7 @@ A script running in the background (tray icon) with little productivity boosters
 - Shortcuts to start programs (win+o -> open solitaire.exe)
 - Enhancements to programs (cmd, windows explorer, ...)
 - Random scripts to do something I often do (did?) manually
-- Dev tooling (encode/decode, prettify, convert, ...)
+- Dev tooling (encode/decode, prettify/uglify, convert, ...)
 
 See the [Github Pages](https://itenium.be/Mi-Ke) for a listing of
 all shortcuts and their default bindings.  

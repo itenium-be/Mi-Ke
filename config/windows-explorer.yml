@@ -9,6 +9,12 @@ Select the last downloaded file in Windows Explorer:
   hotkey: ^!d
 
 
+Copy the last downloaded file to the active Windows Explorer:
+  label: CopyLastDownloadedFileToExplorerPath
+  hotkey: ^!c
+  context: explorer
+
+
 Open 2 Windows Explorers - On Downloads folder and on USB drive:
   label: CopyDownloadToUsb
   hotkey: <^>!#d
