@@ -3,7 +3,14 @@
 ; Username:
 :*:iptn::c21913
 :*:iptf::DA_Famil\c21913
+
+; Some easy to remember NISS
 :*:issn::12121212178
+
+; CreateWorkerWizard
+:*:cww::{tab}Lastname{tab}Firstname{tab}12121212178
+
+
 
 ; ------------------------------------------------------------------------ BASF
 
