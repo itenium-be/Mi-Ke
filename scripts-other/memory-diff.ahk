@@ -43,7 +43,7 @@ DiffMergeOpenAppl(left := "", right := "")
 		right := GetRight()
 	}
 
-	mergeTool := ReadMikeIni("memory-diff", "merge-tool", true)
+	mergeTool := PathReplacements(ReadMikeIni("memory-diff", "merge-tool", true))
 	StringReplace, mergeTool, mergeTool, <left>, %left%
 	StringReplace, mergeTool, mergeTool, <right>, %right%
 	Run %mergeTool%
