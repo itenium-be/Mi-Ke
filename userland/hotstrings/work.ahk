@@ -8,8 +8,15 @@
 :*:issn::12121212178
 
 ; CreateWorkerWizard
-:*:cww::{tab}Lastname{tab}Firstname{tab}12121212178
+:*:cww::{tab}Lastname{tab}Firstname{tab}12121212178{tab}{tab}{tab}15/01/2019
+:*:cwe::{tab}Demunyck{tab}Nathalie{tab}12121212178{tab}{tab}{tab}15/01/2019
 
+:*:piban::BE68539007547034
+
+
+; --------------------------------------------------------------------- ITENIUM
+
+:*:iim::Dear,`n`nUnfortunately we are looking for a native Dutch speaking candidates only.
 
 
 ; ------------------------------------------------------------------------ BASF
