@@ -3,7 +3,7 @@
 
 ; TODO: This should only be active in Windows 8
 ~LWin Up::
-If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500) {
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 800) {
 	; Press again to still go into metro mode
 	Send {RWIN}
 }
