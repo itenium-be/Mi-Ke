@@ -149,4 +149,11 @@ Return
 ;Backspace::Send !{Left} ; Haha, also blocks backspace in the address bar :)
 
 
+~Esc::
+; Esc twice to open/close DevTools
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+    Send {F12}
+Return
+
+
 #IfWinActive
