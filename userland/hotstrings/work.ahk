@@ -8,8 +8,8 @@
 :*:issn::12121212178
 
 ; CreateWorkerWizard
-:*:cww::{tab}Lastname{tab}Firstname{tab}12121212178{tab}{tab}{tab}15/01/2019
-:*:cwe::{tab}Demunyck{tab}Nathalie{tab}12121212178{tab}{tab}{tab}15/01/2019
+:*:cww::{tab}Lastname{tab}Firstname{tab}12121212178{tab}{space}{down}{enter}{tab}{tab}{tab}15/01/2019{tab}{space}{down}{enter}{tab}{tab}
+:*:cwe::{tab}Demunyck{tab}Nathalie{tab}12121212178{tab}{space}{down}{enter}{tab}{tab}15/01/2019{tab}{space}{down}{enter}{tab}{tab}
 
 :*:piban::BE68539007547034
 
