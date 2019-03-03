@@ -19,6 +19,10 @@ else
 return
 
 
+CapsLock & E::
+SendInput {U+20AC}
+return
+
 
 PinToTaskbar(FilePath)
 {
