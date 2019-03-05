@@ -52,6 +52,11 @@ BuildHotkeyArgs(quickStarter, selected := "") {
 RunHotkey(quickStarter) {
 	if (quickStarter.passExplorerPathAsArgument)
 	{
+		; ATTN: New vs Old I haven't really confirmed!
+		; CabinetWClass = New Explorer
+		; ExploreWClass = Old Explorer
+		; Progman = New Desktop
+		; WorkerW = Old Desktop
 		if (WinActive("ahk_class (CabinetWClass|ExploreWClass|Progman|WorkerW)")) {
 			; Start with current what is currently selected in Windows Explorer
 			selected := {}
