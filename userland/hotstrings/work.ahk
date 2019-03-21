@@ -8,15 +8,49 @@
 :*:issn::12121212178
 
 ; CreateWorkerWizard
-:*:cww::{tab}Lastname{tab}Firstname{tab}12121212178{tab}{space}{down}{enter}{tab}{tab}{tab}15/01/2019{tab}{space}{down}{enter}{tab}{tab}
-:*:cwe::{tab}Demunyck{tab}Nathalie{tab}12121212178{tab}{space}{down}{enter}{tab}{tab}15/01/2019{tab}{space}{down}{enter}{tab}{tab}
+
+; cww == Create Worker Wizard
+:*:cww::
+; Name, FirstName, NationalNumber, Nationality:
+Send, {tab}Lastname{tab}Firstname{tab}12121212178{tab}{space}{down}{enter}
+
+; PayrollGroup, StartDate
+FormatTime, StartDate,, dd/MM/yyyy
+Send, {tab}{tab}{space}{down}{enter}{tab}%StartDate%
+
+; Worker Type, Specific Statute
+Send, {tab}{space}{down}{enter}{tab}{space}{down}{enter}
+
+Send {tab}
+return
+
+
+
+; cw2 == Create Worker Wizard (page 2)
+:*:cw2::
+; Language, Education Level
+Send, {tab}{space}{down}{enter}{tab}{space}{down}{enter}
+
+; Birth country (Germany), PostalCode, BirthCity
+; ATTN: does not always work. Bug logged: TFS ID 61208
+Send, {tab}{space}{down}{down}{enter}{tab}{tab}1000{tab}Berlin
+
+
+; Contact (street, number, box, country, postalcode, city)
+Send, {tab}Street{tab}42{tab}a{tab}{space}{down}{down}{enter}{tab}{tab}1000{tab}City
+return
+
+
+
+
+
 
 :*:piban::BE68539007547034
 
 
 ; --------------------------------------------------------------------- ITENIUM
 
-:*:iim::Dear,`n`nUnfortunately we are looking for a native Dutch speaking candidates only.
+:*:iim::Dear,`n`nUnfortunately we are looking for native Dutch speaking candidates only.
 
 
 ; ------------------------------------------------------------------------ BASF
