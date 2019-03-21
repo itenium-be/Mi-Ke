@@ -6,6 +6,7 @@ Autohotkey Documentation:
 Run the selected Autohotkey code:
   hotkey: !F6
   label: DynaRun
+  menu: Autohotkey
 
 # --------------------------------------- SCRIPT CONTROL
 
