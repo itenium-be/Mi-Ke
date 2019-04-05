@@ -14,12 +14,21 @@
 ; Name, FirstName, NationalNumber, Nationality:
 Send, {tab}Lastname{tab}Firstname{tab}12121212178{tab}{space}{down}{enter}
 
-; PayrollGroup, StartDate
+; Dossier, PayrollGroup, StartDate
 FormatTime, StartDate,, dd/MM/yyyy
-Send, {tab}{tab}{space}{down}{enter}{tab}%StartDate%
+Send, {tab}{tab}{space}{down}{enter}{tab}{space}{down}{enter}{tab}%StartDate%
 
-; Worker Type, Specific Statute
-Send, {tab}{space}{down}{enter}{tab}{space}{down}{enter}
+; Wait a bit for WorkerType to become enabled
+Send, {shift down}{tab}{shift up}
+sleep, 1000
+Send, {tab}
+
+; Worker Type
+Send, {tab}{space}{down}{enter}
+
+; Specific Statute
+sleep, 1000
+Send, {tab}{space}{down}{enter}
 
 Send {tab}
 return
