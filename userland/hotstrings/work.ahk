@@ -18,17 +18,20 @@ Send, {tab}Lastname{tab}Firstname{tab}12121212178{tab}{space}{down}{enter}
 FormatTime, StartDate,, dd/MM/yyyy
 Send, {tab}{tab}{space}{down}{enter}{tab}{space}{down}{enter}{tab}%StartDate%
 
-; Wait a bit for WorkerType to become enabled
+; Exit field so that WorkerTypes are fetched
 Send, {shift down}{tab}{shift up}
+; Wait a bit for WorkerType to become enabled
 sleep, 1000
-Send, {tab}
+Send, {tab}{tab}
 
 ; Worker Type
-Send, {tab}{space}{down}{enter}
+sleep, 800
+Send, {space}{down}{enter}
 
 ; Specific Statute
-sleep, 1000
-Send, {tab}{space}{down}{enter}
+Send, {tab}
+sleep, 800
+Send, {space}{down}{enter}
 
 Send {tab}
 return
