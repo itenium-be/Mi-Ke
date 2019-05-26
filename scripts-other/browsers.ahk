@@ -81,7 +81,7 @@ return
 
 Google(prefix := "") {
 	clipVal := CopyAndSaveClip()
-	Run, http://www.google.com/search?q=%prefix%%clipVal%
+	Run, https://www.google.com/search?q=%prefix%%clipVal%
 	RestoreClip()
 }
 
@@ -151,9 +151,19 @@ Return
 
 ~Esc::
 ; Esc twice to open/close DevTools
+; Default shortcut: Control + Shift + J
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
     Send {F12}
 Return
+
+
+
+~^!J::
+; Control + Alt + J: Close the bottom Download Bar
+Send ^j
+WinWait, Downloads
+Send ^w
+return
 
 
 #IfWinActive
