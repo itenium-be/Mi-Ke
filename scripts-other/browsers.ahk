@@ -81,7 +81,7 @@ return
 
 Google(prefix := "") {
 	clipVal := CopyAndSaveClip()
-	Run, http://www.google.com/search?q=%prefix%%clipVal%
+	Run, https://www.google.com/search?q=%prefix%%clipVal%
 	RestoreClip()
 }
 
