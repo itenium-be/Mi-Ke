@@ -151,9 +151,19 @@ Return
 
 ~Esc::
 ; Esc twice to open/close DevTools
+; Default shortcut: Control + Shift + J
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
     Send {F12}
 Return
+
+
+
+~^!J::
+; Control + Alt + J: Close the bottom Download Bar
+Send ^j
+WinWait, Downloads
+Send ^w
+return
 
 
 #IfWinActive
