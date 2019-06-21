@@ -1,4 +1,4 @@
-; Global Entry Point
+﻿; Global Entry Point
 ; Mi-Ke: Be nice to me or I will throw rocks at you
 
 ; Put your own scripts in .\userland\
@@ -9,6 +9,7 @@
 ; No idea how to get started with custom scripts
 ; Run `.\init.ps1` to create some example files!
 
+; Encoded in UTF8 with BOM for Unicode support
 
 #Persistent
 #SingleInstance force
