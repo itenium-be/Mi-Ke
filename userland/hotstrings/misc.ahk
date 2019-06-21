@@ -1,4 +1,4 @@
-:*:wzh::// TODO: we zaten hier:{space}
+﻿:*:wzh::// TODO: we zaten hier:{space}
 
 :*:mss::misschien
 :*:wnn::wanneer
@@ -14,4 +14,35 @@
 
 :*:atm::at the moment
 
-; :`t:btw::by the way ; BTW is a word... only expand on tab or something?
+; :`t:btw::by the way ; BTW is a word... only expand on tab or something?; 
+
+
+; $e::
+; KeyWait, e, T0.2
+; If ErrorLevel {
+; 	; Timeout = longpress
+; 	SendInput {U+20AC}
+; 	KeyWait, e
+; } Else
+; 	Send e
+; Return
+
+
+; a#::
+; DoubleClickTime := DllCall("GetDoubleClickTime") ; in milliseconds
+
+; ; Wait for 'c' to be released
+; KeyWait, a
+; if (A_TimeSinceThisHotkey > DoubleClickTime) {
+;     Msgbox Longpress
+;     return
+; }
+
+; ; Wait for 'c' to be pressed down again (option "d")
+; ; But timeout after T0.5 seconds (If DoubleClickTime is 500)
+; KeyWait, a, % "d T"DoubleClickTime/1000
+; If ! Errorlevel
+;     Msgbox Doublepress
+; else
+;     Msgbox Singlepress
+; Return
