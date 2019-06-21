@@ -88,12 +88,19 @@ return
 DevReloadScriptWhenSaved:
 Suspend, Permit
 global EDITOR
+
 if (!EDITOR or !WinActive(EDITOR.titleMatcher))
 	return
 
+; When the full path is in the title bar (ex: Sublime Text)
 WinGetActiveTitle, winTitle
 if (InStr(winTitle, A_Scriptdir))
 	Goto DevReloadScript
+
+; When the script dir/name is in the titlebar (ex: Visual Studio Code)
+SplitPath, A_ScriptDir, scriptDirName
+if (InStr(winTitle, scriptDirName) or InStr(winTitle, A_ScriptName))
+    Reload
 return
 
 
