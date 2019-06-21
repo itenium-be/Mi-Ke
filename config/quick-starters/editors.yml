@@ -11,9 +11,7 @@ Sublime Text:
 WebStorm:
 	hotkey: ^#w
 	titleMatcher: ahk_exe webstorm64.exe
-	path: 
-		- <A_PROGRAMFILES>\JetBrains\WebStorm 2018.1\bin\webstorm64.exe
-		- C:\Program Files\JetBrains\WebStorm 2018.2.1\bin\webstorm64.exe
+	path: <A_PROGRAMFILES>\JetBrains\WebStorm /[0-9]+(.[0-9]+)*/\bin\webstorm64.exe/$/
 	passExplorerPathAsArgument: dir
 	openWithPathArgs: <exe> "<path>"
 	menu: Editors
@@ -23,9 +21,7 @@ WebStorm:
 Notepad++:
 	hotkey: "#c"
 	titleMatcher: ahk_class Notepad++
-	path:
-		- C:\Program Files (x86)\Notepad++\Notepad++.exe
-		- C:\Program Files\Notepad++\Notepad++.exe
+	path: <A_PROGRAMFILES>\Notepad++\Notepad++.exe
 	passExplorerPathAsArgument: file
 	explorerFilesSeparator: \"
 	menu: Editors
@@ -34,9 +30,7 @@ Notepad++:
 Notepad++ (New Window):
 	hotkey: ^#!c
 	titleMatcher: ahk_class Notepad++
-	path:
-		- C:\Program Files (x86)\Notepad++\Notepad++.exe
-		- C:\Program Files\Notepad++\Notepad++.exe
+	path: <A_PROGRAMFILES>\Notepad++\Notepad++.exe
 	pathParams: -multiInst
 	menu: Editors
 
@@ -54,25 +48,24 @@ PowerShell ISE:
 
 Visual Studio Code:
 	titleMatcher: ahk_exe Code.exe
-	path: C:\Program Files\Microsoft VS Code\Code.exe
+	path:
+		- <A_PROGRAMFILES>\Microsoft VS Code\Code.exe
+		- <A_LOCALAPPDATA>\Programs\Microsoft VS Code\Code.exe
 	openWithPathArgs: <exe> "<selectedFiles>"
 	passExplorerPathAsArgument: file
 	menu: Editors
 
 
 LINQPad:
-	path:
-		- C:\Program Files (x86)\LINQPad4\LINQPad.exe
-		- C:\Program Files (x86)\LINQPad5\LINQPad.exe
+	path: <A_PROGRAMFILES>\LINQPad/[0-9]/\LINQPad.exe
 	menu: Editors
 
 
 MarkdownPad:
-	path: C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe
+	path: <A_PROGRAMFILES>\MarkdownPad 2\MarkdownPad2.exe
 	menu: Editors
 
 
 Visual Studio 2017:
-	path:
-		- C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
+	path: <A_PROGRAMFILES>\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
 	menu: Editors

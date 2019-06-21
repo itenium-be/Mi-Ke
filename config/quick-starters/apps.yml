@@ -71,7 +71,7 @@ DiffMerge:
 
 
 IrfanView:
-  path: <A_PROGRAMFILES>\IrfanView\i_view/(32|64)/.exe
+  path: <A_PROGRAMFILES>\IrfanView\i_view64.exe
   menu: Programs
 
 
