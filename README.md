@@ -24,6 +24,9 @@ See the [Github Pages](https://itenium.be/Mi-Ke) for a listing of
 all shortcuts and their default bindings.  
 Or don't: the information on the site is pretty outdated.
 
+# Configuration
+
+See [resources\init\_custom-example.yml](resources/init/_custom-example.yml) for how to configure a custom hotkey.
 
 
 # Install

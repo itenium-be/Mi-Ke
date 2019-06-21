@@ -131,6 +131,37 @@ Markdown generation:
     - desc: Empty inline code block
       key: j
       fn: MdCodeEmpty
+    - desc: Picture
+      key: p
+      fn: MdPicture
+
+Bliki post creation:
+  hotkey: "<^>!="
+  readFrom: selectedText
+  writeTo: none
+  followedBy:
+    - desc: Open browser tabs
+      key: b
+      fn: BlogOpenBrowserWindows
+    - desc: Github include
+      key: g
+      fn: BlogIncludeGithub
+    - desc: Hide from excerpt
+      key: h
+      fn: BlogIncludeHideFromExcerpt
+    - desc: Shortcut
+      key: s
+      fn: BlogIncludeShortcut
+    - desc: Inline picture
+      key: p
+      fn: BlogIncludeImageInline
+    - desc: Image with caption etc
+      key: i
+      fn: BlogIncludeImage
+    - desc: Youtube
+      key: y
+      fn: BlogIncludeYoutube
+
 
 New Markdown code block:
   label: MdCodeBlockNew

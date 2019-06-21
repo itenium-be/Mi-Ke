@@ -8,6 +8,14 @@ PathReplacements(fileName)
 	StringReplace, fileName, fileName, <A_WINDIR>, %A_WINDIR%
 	StringReplace, fileName, fileName, <A_APPDATA>, %A_APPDATA%
 	StringReplace, fileName, fileName, <A_MYDOCUMENTS>, %A_MYDOCUMENTS%
+	
+	IfInString, fileName, LOCALAPP
+	{
+		EnvGet, LOCALAPPDATA, LOCALAPPDATA
+		StringReplace, fileName, fileName, <A_LOCALAPPDATA>, %LOCALAPPDATA%
+	}
+
+	
 
 	SplitPath, A_AHKPATH, name, dir, ext, name_no_ext, drive
 	StringReplace, fileName, fileName, <A_AHKPATH>, %dir%

@@ -3,9 +3,14 @@ ExplorerNoRenameWarning() {
 	While, 1
 	{
 		WinWaitActive, Rename ahk_class #32770
-		Send y
+		; BUG: Keeps sending "y" if a window satisfies the
+		; condition but y doesn't actually close the window
+		if not WinActive("ahk_exe eclipse.exe")
+			Send y
 	}
 }
+
+
 
 
 ; Control + Shift + N: New directory (builtin)
