@@ -1,24 +1,42 @@
-; LAlt & PAUSE
+; LALT & PAUSE
 GoToEditEnvironmentVariables:
-Run % "rundll32 sysdm.cpl,EditEnvironmentVariables"
-WinActivate
+	Run % "rundll32 sysdm.cpl,EditEnvironmentVariables"
+	WinWait Environment Variables
+	WinActivate Environment Variables
+	Send, P
 return
 
 
 
-GoToServicesMsc() {
+WindowsServices:
 	Run services.msc
-}
+return
+
+
+WindowsLocalCertificates:
+	Run certlm.msc
+return
+
+
+WindowsInstallPrograms:
+	Run % "rundll32.exe shell32.dll,Control_RunDLL appwiz.cpl"
+	Sleep 500
+	Send {TAB 3}
+return									
 
 
 
+OpenEventViewerInApplicationLogs:
+	Run %A_WinDir%\system32\eventvwr.msc /c:Application
+return
 
-OpenRemoteDesktop(input, params) {
-	path := PathReplacements(params.path)
+
+
+OpenRemoteDesktop:
+	path := PathReplacements("<A_WINDIR>\system32\mstsc.exe")
 	Run % path
 
-	; Checking clipboard might copy unwanted stuff
-	; And we get crashes on IP resolve etc.
+	; TODO: RemoteDesktop: Could check if selected text is an IP:Port or an url:port
 	; clipVal := CopyAndSaveClip()
 	; if (clipVal) {
 	; 	Run % path " /v:" clipVal
@@ -33,4 +51,4 @@ OpenRemoteDesktop(input, params) {
 	; /console – connects to the console of a Windows Server 2003 based system
 	; /f – starts the remote desktop connection in full screen mode
 	; /w & /h – specifies the width and height of the remote desktop connection
-}
+return
