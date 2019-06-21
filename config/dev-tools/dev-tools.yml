@@ -136,7 +136,7 @@ Markdown generation:
       fn: MdPicture
 
 Bliki post creation:
-  hotkey: "<^>!="
+  hotkey: "<^>!;"
   readFrom: selectedText
   writeTo: none
   followedBy:
