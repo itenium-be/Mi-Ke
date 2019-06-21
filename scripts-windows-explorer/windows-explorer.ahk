@@ -3,9 +3,12 @@ ExplorerNoRenameWarning() {
 	While, 1
 	{
 		WinWaitActive, Rename ahk_class #32770
-		Send y
+		if not WinActive("ahk_exe eclipse.exe")
+			Send y
 	}
 }
+
+
 
 
 ; Control + Shift + N: New directory (builtin)
