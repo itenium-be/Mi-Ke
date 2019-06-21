@@ -15,7 +15,7 @@ Cmder:
 Command Prompt:
   hotkey: !#c
   titleMatcher: ahk_class ConsoleWindowClass
-  path: C:\Windows\System32\cmd.exe
+  path: <A_WINDIR>\System32\cmd.exe
   menu: Consoles
   passExplorerPathAsArgument: dir
   openWithPathArgs: <exe> /K "cd /d <path>"
@@ -24,7 +24,7 @@ Command Prompt:
 Command Prompt (Admin):
   hotkey: +!#c
   titleMatcher: ahk_class ConsoleWindowClass
-  path: C:\Windows\System32\cmd.exe
+  path: <A_WINDIR>\System32\cmd.exe
   menu: Consoles
   passExplorerPathAsArgument: dir
   openWithPathArgs: <exe> /K "cd /d <path>"
@@ -63,6 +63,6 @@ Git Bash:
 
 
 VS2017 Command Prompt:
-  path: C:\Windows\System32\cmd.exe
+  path: <A_WINDIR>\System32\cmd.exe
   pathParams: /k "<A_PROGRAMFILES>\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
   menu: Consoles
