@@ -1,0 +1,7 @@
+Utilities
+=========
+
+```autohotkey
+parent := GetParentDirectoryName()
+```
+
