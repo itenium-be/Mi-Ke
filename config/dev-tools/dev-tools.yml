@@ -131,6 +131,10 @@ Markdown generation:
     - desc: Empty inline code block
       key: j
       fn: MdCodeEmpty
+    - desc: Picture
+      key: p
+      fn: MdPicture
+
 
 New Markdown code block:
   label: MdCodeBlockNew

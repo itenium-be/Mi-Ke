@@ -37,3 +37,8 @@ MdCodeSurround(string) {
 MdCodeEmpty() {
 	Send, ````{space}{BS}{Left}
 }
+
+MdPicture() {
+	SendInput, {!}[](/assets/blog-images/)
+	Send {LEFt}
+}
