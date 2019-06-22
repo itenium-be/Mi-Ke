@@ -1,4 +1,4 @@
-; Surround selected text with Markdown code block
+﻿; Surround selected text with Markdown code block
 MdCodeBlockSurround(highlighted) {
 	highlighted := RegExReplace(highlighted, "\r\n?|\n\r?", "`n")
 
@@ -18,7 +18,7 @@ MdCodeBlockSurround(highlighted) {
 ; New Markdown code block
 MdCodeBlockNew:
 	Send, ``````{space}
-	Send, {enter}{enter}
+	Send, {shift down}{enter}{enter}{shift up}
 	Send, ``````{space}
 	Send, {up}{up}{end}
 return
@@ -44,6 +44,16 @@ MdPicture() {
 }
 
 
+
+; Double µ for a ``
+$µ::
+    KeyWait, µ
+    KeyWait, µ, D T0.2
+    if ErrorLevel
+        Send µ
+    Else
+        SendInput ````{LEFT}
+Return
 
 
 

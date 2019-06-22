@@ -62,6 +62,14 @@ Windows Local Certificates:
 # <A_WINDIR>\regedit.exe
 # <A_WINDIR>\write.exe
 
+# a_classes
+# Progman ;desktop
+# WorkerW ;desktop
+# CabinetWClass ;folder windows
+# ExploreWClass ;folder windows
+# DV2ControlHost ;start menu
+# Shell_TrayWnd ;taskbar
+
 
 # MSC in <A_WINDIR>\system32\
 # sc File	Console	Description
