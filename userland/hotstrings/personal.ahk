@@ -1,4 +1,4 @@
-; Hotstrings: imail+TAB
+﻿; Hotstrings: imail+TAB
 :`t:imail::wouter.van.schandevijl@itenium.be
 :`t:pimail::wouter@pongit.be
 :`t:nimail::woutervs@hotmail.com
