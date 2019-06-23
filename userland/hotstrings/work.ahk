@@ -62,7 +62,7 @@ return
 
 ; --------------------------------------------------------------------- ITENIUM
 
-:*:iim::Dear,`n`nUnfortunately we are looking for native Dutch speaking candidates only.
+:*:iim::Dear,`n`nFor our internal positions, we are, unfortunately, looking for native Dutch speaking candidates only.
 
 
 ; ------------------------------------------------------------------------ BASF
