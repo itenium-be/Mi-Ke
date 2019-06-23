@@ -29,7 +29,6 @@ Notepad++:
 
 Notepad++ (New Window):
 	hotkey: ^#!c
-	titleMatcher: ahk_class Notepad++
 	path: <A_PROGRAMFILES>\Notepad++\Notepad++.exe
 	pathParams: -multiInst
 	menu: Editors
@@ -46,18 +45,30 @@ PowerShell ISE:
 	menu: Editors
 
 
+# https://code.visualstudio.com/docs/editor/command-line
 Visual Studio Code:
+	hotkey: ^#x
 	titleMatcher: ahk_exe Code.exe
 	path:
 		- <A_PROGRAMFILES>\Microsoft VS Code\Code.exe
 		- <A_LOCALAPPDATA>\Programs\Microsoft VS Code\Code.exe
+	mergePathArgs: " --diff \"<left>" "<right>\""
+	menu: Editors
 	openWithPathArgs: <exe> "<selectedFiles>"
 	passExplorerPathAsArgument: file
+
+
+Visual Studio Code (New Window):
+	hotkey: ^#!x
+	path:
+		- <A_PROGRAMFILES>\Microsoft VS Code\Code.exe
+		- <A_LOCALAPPDATA>\Programs\Microsoft VS Code\Code.exe
+	pathParams: "--new-window"
 	menu: Editors
 
 
 LINQPad:
-	path: <A_PROGRAMFILES>\LINQPad/[0-9]/\LINQPad.exe
+	path: <A_PROGRAMFILES>\LINQPad/[0-9]/\LINQPad.exe/$/
 	menu: Editors
 
 
@@ -68,4 +79,11 @@ MarkdownPad:
 
 Visual Studio 2017:
 	path: <A_PROGRAMFILES>\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe
+	mergePathArgs: " /diff \"<left>" "<right>\""
+	menu: Editors
+
+
+Visual Studio 2019:
+	path: <A_PROGRAMFILES>\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe
+	mergePathArgs: " /diff \"<left>" "<right>\""
 	menu: Editors

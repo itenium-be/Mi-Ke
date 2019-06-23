@@ -14,6 +14,7 @@ ConvertYamlToQuickStarters(yaml) {
 		quickStarterInfo.titleMatcher := qs.titleMatcher
 		quickStarterInfo.active := qs.active
 		quickStarterInfo.openWithPathArgs := qs.openWithPathArgs
+		quickStarterInfo.mergePathArgs := qs.mergePathArgs
 		quickStarterInfo.openForFiles := qs.openForFiles
 		quickStarterInfo.asAdmin := qs.asAdmin
 		quickStarterInfo.explorerFilesSeparator := qs.explorerFilesSeparator
