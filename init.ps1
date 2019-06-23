@@ -14,7 +14,7 @@ function Copy-File($fileName, $moveTo) {
 	$destination = "$($path)\$moveTo\$destination"
 
 	if (-not (Test-Path $destination)) {
-		echo "Creating $destination"
+					echo "Creating $destination"
 		Copy-Item "$($path)\resources\init\$fileName" -Destination $destination
 	}
 }

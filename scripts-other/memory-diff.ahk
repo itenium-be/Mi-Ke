@@ -43,10 +43,14 @@ DiffMergeOpenAppl(left := "", right := "")
 		right := GetRight()
 	}
 
-	mergeTool := PathReplacements(ReadMikeIni("memory-diff", "merge-tool", true))
-	StringReplace, mergeTool, mergeTool, <left>, %left%
-	StringReplace, mergeTool, mergeTool, <right>, %right%
-	Run %mergeTool%
+	mergeTool := ReadMikeIni("memory-diff", "merge-tool", true)
+	mergeTool := GetQuickStarterInfoByName(mergeTool)
+	exePath := PathReplacements(mergeTool.path)
+	exePath .= mergeTool.mergePathArgs
+
+	StringReplace, exePath, exePath, <left>, %left%
+	StringReplace, exePath, exePath, <right>, %right%
+	Run %exePath%
 }
 
 ; Control + Win + Left: Clipboard to left.txt

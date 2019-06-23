@@ -62,11 +62,13 @@ VLC:
 
 Beyond Compare:
   path: <A_PROGRAMFILES>\Beyond Compare /[0-9]+/\BCompare.exe
+  mergePathArgs: " \"<left>" "<right>\""
   menu: Programs
 
 
 DiffMerge:
   path: <A_PROGRAMFILES>\SourceGear\Common\DiffMerge\sgdm.exe
+  mergePathArgs: "-nosplash \"<left>" "<right>\""
   menu: Programs
 
 
