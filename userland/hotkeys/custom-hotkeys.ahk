@@ -24,6 +24,17 @@ SendInput {U+20AC}
 return
 
 
+CAPSLOCK & A::
+	Run, https://www.wunderlist.com/webapp
+	Run, https://trello.com/b/Y6Oe6aoI/kandidaten
+	Run, https://www.bullhorn.com/client-login/
+	Run, https://linkedin.com/
+    Run, https://gmail.com
+return
+
+
+
+
 PinToTaskbar(FilePath)
 {
     SplitPath,FilePath,File,Dir
