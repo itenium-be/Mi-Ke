@@ -24,7 +24,7 @@ SendInput {U+20AC}
 return
 
 
-CAPSLOCK & A::
+CAPSLOCK & Z::
 	Run, https://www.wunderlist.com/webapp
 	Run, https://trello.com/b/Y6Oe6aoI/kandidaten
 	Run, https://www.bullhorn.com/client-login/
@@ -32,7 +32,9 @@ CAPSLOCK & A::
     Run, https://gmail.com
 return
 
-
+CAPSLOCK & D::
+	Google("visual+studio+code+")
+return
 
 
 PinToTaskbar(FilePath)
