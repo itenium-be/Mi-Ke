@@ -17,8 +17,10 @@
 :*:imld::Beste ,{enter}{enter}{enter}{enter}Mvg,{enter}Wouter{up}{up}{up}{up}{up}{end}{left}
 :*:imle::Dear ,{enter}{enter}{enter}{enter}Cheers,{enter}Wouter{up}{up}{up}{up}{up}{end}{left}
 
+:`t:vsc::Visual Studio Code
 
-; Shift + Alt + E
+
+; Shift + Alt + E (I also got Capslock & E for this:)
 !+e::
     SendInput €
 Return
