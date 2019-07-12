@@ -19,6 +19,8 @@ MdCodeBlockSurround(highlighted) {
 MdCodeBlockNew:
 	Send, ``````{space}
 	Send, {shift down}{enter}{enter}{shift up}
+	; Without the sleep in VSCode: 6 backticks on one line...
+	Sleep, 50
 	Send, ``````{space}
 	Send, {up}{up}{end}
 return
