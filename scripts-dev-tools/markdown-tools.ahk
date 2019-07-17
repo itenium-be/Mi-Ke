@@ -20,7 +20,7 @@ MdCodeBlockNew:
 	Send, ``````{space}
 	Send, {shift down}{enter}{enter}{shift up}
 	; Without the sleep in VSCode: 6 backticks on one line...
-	Sleep, 50
+	Sleep, 80
 	Send, ``````{space}
 	Send, {up}{up}{end}
 return
