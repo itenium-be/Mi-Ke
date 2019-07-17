@@ -89,6 +89,14 @@ OpenGoogleMaps(place) {
 	Run, https://maps.google.com/?q=%place%
 }
 
+OpenGoogleTranslate:
+	sentence := Trim(CopyAndSaveClip())
+	; sl = start language
+	; tl = to language
+	Run https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=%sentence%
+	RestoreClip()
+return
+
 
 MiKeTraySourceGithub:
 githubUri := ReadMikeIni("tray-menu", "github-url")
