@@ -16,6 +16,11 @@ Google the currently selected text + Autohotkey:
   hotkey: Capslock & A
 
 
+Google translate the currently selected text:
+  label: OpenGoogleTranslate
+  hotkey: Capslock & T
+
+
 2x Capslock - Copy the active tab url:
   label: BrowserCopyCurrentUrl
   hotkey: Capslock
