@@ -1,371 +1,371 @@
 ﻿; Hand Gestures
-:::fist::✊
-:::hand::✋
-:::v::✌
-:::writing_hand::✍
-:::raised_hand::✋
-:::point_up::☝
-:::point_up_2::👆
-:::point_down::👇
-:::point_left::👈
-:::point_right::👉
-:::facepunch::👊
-:::wave::👋
-:::ok_hand::👌
+:::fist::{Sleep 250}✊
+:::hand::{Sleep 250}✋
+:::v::{Sleep 250}✌
+:::writing_hand::{Sleep 250}✍
+:::raised_hand::{Sleep 250}✋
+:::point_up::{Sleep 250}☝
+:::point_up_2::{Sleep 250}👆
+:::point_down::{Sleep 250}👇
+:::point_left::{Sleep 250}👈
+:::point_right::{Sleep 250}👉
+:::facepunch::{Sleep 250}👊
+:::wave::{Sleep 250}👋
+:::ok_hand::{Sleep 250}👌
 :::+1::👍
-:::_1::👎
-:::clap::👏
-:::open_hands::👐
-:::punch::👊
-:::thumbsup::👍
-:::-1::👎
-:::thumbsdown::👎
+:::_1::{Sleep 250}👎
+:::clap::{Sleep 250}👏
+:::open_hands::{Sleep 250}👐
+:::punch::{Sleep 250}👊
+:::thumbsup::{Sleep 250}👍
+:::-1::{Sleep 250}👎
+:::thumbsdown::{Sleep 250}👎
 
 
-:::tongue_face::😛
-:::white_frowning_face::☹
-:::relaxed::☺
+:::tongue_face::{Sleep 250}😛
+:::white_frowning_face::{Sleep 250}☹
+:::relaxed::{Sleep 250}☺
 
-:::satisfied::😆
-:::grinning::😀
-:::grin::😁
-:::joy::😂
-:::smiley::😃
-:::smile::😄
-:::sweat_smile::😅
-:::laughing::😆
-:::innocent::😇
-:::smiling_imp::😈
-:::wink::😉
-:::blush::😊
-:::yum::😋
-:::relieved::😌
-:::heart_eyes::😍
-:::sunglasses::😎
-:::smirk::😏
-:::neutral_face::😐
-:::expressionless::😑
-:::unamused::😒
-:::sweat::😓
-:::pensive::😔
-:::confused::😕
-:::confounded::😖
-:::kissing::😗
-:::kissing_heart::😘
-:::kissing_smiling_eyes::😙
-:::kissing_closed_eyes::😚
-:::stuck_out_tongue::😛
-:::stuck_out_tongue_winking_eye::😜
-:::stuck_out_tongue_closed_eyes::😝
-:::disappointed::😞
-:::worried::😟
-:::angry::😠
-:::rage::😡
-:::cry::😢
-:::persevere::😣
-:::triumph::😤
-:::disappointed_relieved::😥
-:::frowning::😦
-:::anguished::😧
-:::fearful::😨
-:::weary::😩
-:::sleepy::😪
-:::tired_face::😫
-:::grimacing::😬
-:::sob::😭
-:::open_mouth::😮
-:::hushed::😯
-:::cold_sweat::😰
-:::scream::😱
-:::astonished::😲
-:::flushed::😳
-:::sleeping::😴
-:::dizzy_face::😵
-:::no_mouth::😶
-:::mask::😷
-:::smile_cat::😸
-:::joy_cat::😹
-:::smiley_cat::😺
-:::heart_eyes_cat::😻
-:::smirk_cat::😼
-:::kissing_cat::😽
-:::pouting_cat::😾
-:::crying_cat_face::😿
-:::scream_cat::🙀
-:::slightly_frowning_face::🙁
-:::slightly_smiling_face::🙂
-:::upside_down_face::🙃
-:::face_with_rolling_eyes::🙄
-:::no_good::🙅
-:::ok_woman::🙆
-:::bow::🙇
+:::satisfied::{Sleep 250}😆
+:::grinning::{Sleep 250}😀
+:::grin::{Sleep 250}😁
+:::joy::{Sleep 250}😂
+:::smiley::{Sleep 250}😃
+:::smile::{Sleep 250}😄
+:::sweat_smile::{Sleep 250}😅
+:::laughing::{Sleep 250}😆
+:::innocent::{Sleep 250}😇
+:::smiling_imp::{Sleep 250}😈
+:::wink::{Sleep 250}😉
+:::blush::{Sleep 250}😊
+:::yum::{Sleep 250}😋
+:::relieved::{Sleep 250}😌
+:::heart_eyes::{Sleep 250}😍
+:::sunglasses::{Sleep 250}😎
+:::smirk::{Sleep 250}😏
+:::neutral_face::{Sleep 250}😐
+:::expressionless::{Sleep 250}😑
+:::unamused::{Sleep 250}😒
+:::sweat::{Sleep 250}😓
+:::pensive::{Sleep 250}😔
+:::confused::{Sleep 250}😕
+:::confounded::{Sleep 250}😖
+:::kissing::{Sleep 250}😗
+:::kissing_heart::{Sleep 250}😘
+:::kissing_smiling_eyes::{Sleep 250}😙
+:::kissing_closed_eyes::{Sleep 250}😚
+:::stuck_out_tongue::{Sleep 250}😛
+:::stuck_out_tongue_winking_eye::{Sleep 250}😜
+:::stuck_out_tongue_closed_eyes::{Sleep 250}😝
+:::disappointed::{Sleep 250}😞
+:::worried::{Sleep 250}😟
+:::angry::{Sleep 250}😠
+:::rage::{Sleep 250}😡
+:::cry::{Sleep 250}😢
+:::persevere::{Sleep 250}😣
+:::triumph::{Sleep 250}😤
+:::disappointed_relieved::{Sleep 250}😥
+:::frowning::{Sleep 250}😦
+:::anguished::{Sleep 250}😧
+:::fearful::{Sleep 250}😨
+:::weary::{Sleep 250}😩
+:::sleepy::{Sleep 250}😪
+:::tired_face::{Sleep 250}😫
+:::grimacing::{Sleep 250}😬
+:::sob::{Sleep 250}😭
+:::open_mouth::{Sleep 250}😮
+:::hushed::{Sleep 250}😯
+:::cold_sweat::{Sleep 250}😰
+:::scream::{Sleep 250}😱
+:::astonished::{Sleep 250}😲
+:::flushed::{Sleep 250}😳
+:::sleeping::{Sleep 250}😴
+:::dizzy_face::{Sleep 250}😵
+:::no_mouth::{Sleep 250}😶
+:::mask::{Sleep 250}😷
+:::smile_cat::{Sleep 250}😸
+:::joy_cat::{Sleep 250}😹
+:::smiley_cat::{Sleep 250}😺
+:::heart_eyes_cat::{Sleep 250}😻
+:::smirk_cat::{Sleep 250}😼
+:::kissing_cat::{Sleep 250}😽
+:::pouting_cat::{Sleep 250}😾
+:::crying_cat_face::{Sleep 250}😿
+:::scream_cat::{Sleep 250}🙀
+:::slightly_frowning_face::{Sleep 250}🙁
+:::slightly_smiling_face::{Sleep 250}🙂
+:::upside_down_face::{Sleep 250}🙃
+:::face_with_rolling_eyes::{Sleep 250}🙄
+:::no_good::{Sleep 250}🙅
+:::ok_woman::{Sleep 250}🙆
+:::bow::{Sleep 250}🙇
 
-:::raising_hand::🙋
-:::raised_hands::🙌
-:::person_frowning::🙍
-:::person_with_pouting_face::🙎
-:::pray::🙏
+:::raising_hand::{Sleep 250}🙋
+:::raised_hands::{Sleep 250}🙌
+:::person_frowning::{Sleep 250}🙍
+:::person_with_pouting_face::{Sleep 250}🙎
+:::pray::{Sleep 250}🙏
 
 
-:::male-farmer::👨‍🌾
-:::male-cook::👨‍🍳
-:::male-student::👨‍🎓
-:::male-singer::👨‍🎤
-:::male-artist::👨‍🎨
-:::male-teacher::👨‍🏫
-:::male-factory-worker::👨‍🏭
-:::man-boy::👨‍👦
-:::man-girl::👨‍👧
-:::male-technologist::👨‍💻
-:::male-office-worker::👨‍💼
-:::male-mechanic::👨‍🔧
-:::male-scientist::👨‍🔬
-:::male-astronaut::👨‍🚀
-:::male-firefighter::👨‍🚒
-:::female-farmer::👩‍🌾
-:::female-cook::👩‍🍳
-:::female-student::👩‍🎓
-:::female-singer::👩‍🎤
-:::female-artist::👩‍🎨
-:::female-teacher::👩‍🏫
-:::female-factory-worker::👩‍🏭
-:::woman-boy::👩‍👦
-:::woman-girl::👩‍👧
-:::female-technologist::👩‍💻
-:::female-office-worker::👩‍💼
-:::female-mechanic::👩‍🔧
-:::female-scientist::👩‍🔬
-:::female-astronaut::👩‍🚀
-:::female-firefighter::👩‍🚒
-:::woman-running::🏃‍♀️
-:::man-running::🏃‍♂️
-:::woman-surfing::🏄‍♀️
-:::man-surfing::🏄‍♂️
-:::woman-swimming::🏊‍♀️
-:::man-swimming::🏊‍♂️
-:::woman-lifting-weights::🏋️‍♀️
-:::man-lifting-weights::🏋️‍♂️
-:::woman-golfing::🏌️‍♀️
-:::man-golfing::🏌️‍♂️
-:::rainbow-flag::🏳️‍🌈
-:::eye-in-speech-bubble::👁️‍🗨️
-:::man-boy-boy::👨‍👦‍👦
-:::man-girl-boy::👨‍👧‍👦
-:::man-girl-girl::👨‍👧‍👧
-:::man-man-boy::👨‍👨‍👦
-:::man-man-boy-boy::👨‍👨‍👦‍👦
-:::man-man-girl::👨‍👨‍👧
-:::man-man-girl-boy::👨‍👨‍👧‍👦
-:::man-man-girl-girl::👨‍👨‍👧‍👧
-:::man-woman-boy-boy::👨‍👩‍👦‍👦
-:::man-woman-girl::👨‍👩‍👧
-:::man-woman-girl-boy::👨‍👩‍👧‍👦
-:::man-woman-girl-girl::👨‍👩‍👧‍👧
-:::male-doctor::👨‍⚕️
-:::male-judge::👨‍⚖️
-:::male-pilot::👨‍✈️
-:::man-heart-man::👨‍❤️‍👨
-:::man-kiss-man::👨‍❤️‍💋‍👨
-:::woman-boy-boy::👩‍👦‍👦
-:::woman-girl-boy::👩‍👧‍👦
-:::woman-girl-girl::👩‍👧‍👧
-:::woman-woman-boy::👩‍👩‍👦
-:::woman-woman-boy-boy::👩‍👩‍👦‍👦
-:::woman-woman-girl::👩‍👩‍👧
-:::woman-woman-girl-boy::👩‍👩‍👧‍👦
-:::woman-woman-girl-girl::👩‍👩‍👧‍👧
-:::female-doctor::👩‍⚕️
-:::female-judge::👩‍⚖️
-:::female-pilot::👩‍✈️
-:::woman-heart-man::👩‍❤️‍👨
-:::woman-heart-woman::👩‍❤️‍👩
-:::woman-kiss-man::👩‍❤️‍💋‍👨
-:::woman-kiss-woman::👩‍❤️‍💋‍👩
-:::female-police-officer::👮‍♀️
-:::male-police-officer::👮‍♂️
-:::woman-with-bunny-ears-partying::👯‍♀️
-:::man-with-bunny-ears-partying::👯‍♂️
-:::blond-haired-woman::👱‍♀️
-:::blond-haired-man::👱‍♂️
-:::woman-wearing-turban::👳‍♀️
-:::man-wearing-turban::👳‍♂️
-:::female-construction-worker::👷‍♀️
-:::male-construction-worker::👷‍♂️
-:::woman-tipping-hand::💁‍♀️
-:::man-tipping-hand::💁‍♂️
-:::female-guard::💂‍♀️
-:::male-guard::💂‍♂️
-:::woman-getting-massage::💆‍♀️
-:::man-getting-massage::💆‍♂️
-:::woman-getting-haircut::💇‍♀️
-:::man-getting-haircut::💇‍♂️
-:::female-detective::🕵️‍♀️
-:::male-detective::🕵️‍♂️
-:::woman-gesturing-no::🙅‍♀️
-:::man-gesturing-no::🙅‍♂️
-:::woman-gesturing-ok::🙆‍♀️
-:::man-gesturing-ok::🙆‍♂️
-:::woman-bowing::🙇‍♀️
-:::man-bowing::🙇‍♂️
-:::woman-raising-hand::🙋‍♀️
-:::man-raising-hand::🙋‍♂️
-:::woman-frowning::🙍‍♀️
-:::man-frowning::🙍‍♂️
-:::woman-pouting::🙎‍♀️
-:::man-pouting::🙎‍♂️
-:::woman-rowing-boat::🚣‍♀️
-:::man-rowing-boat::🚣‍♂️
-:::woman-biking::🚴‍♀️
-:::man-biking::🚴‍♂️
-:::woman-mountain-biking::🚵‍♀️
-:::man-mountain-biking::🚵‍♂️
-:::woman-walking::🚶‍♀️
-:::man-walking::🚶‍♂️
-:::woman-facepalming::🤦‍♀️
-:::man-facepalming::🤦‍♂️
-:::woman-shrugging::🤷‍♀️
-:::man-shrugging::🤷‍♂️
-:::woman-cartwheeling::🤸‍♀️
-:::man-cartwheeling::🤸‍♂️
-:::woman-juggling::🤹‍♀️
-:::man-juggling::🤹‍♂️
-:::woman-wrestling::🤼‍♀️
-:::man-wrestling::🤼‍♂️
-:::woman-playing-water-polo::🤽‍♀️
-:::man-playing-water-polo::🤽‍♂️
-:::woman-playing-handball::🤾‍♀️
-:::man-playing-handball::🤾‍♂️
-:::woman-bouncing-ball::⛹️‍♀️
-:::man-bouncing-ball::⛹️‍♂️
-:::fingers_crossed::🤞
+:::male-farmer::{Sleep 250}👨‍🌾
+:::male-cook::{Sleep 250}👨‍🍳
+:::male-student::{Sleep 250}👨‍🎓
+:::male-singer::{Sleep 250}👨‍🎤
+:::male-artist::{Sleep 250}👨‍🎨
+:::male-teacher::{Sleep 250}👨‍🏫
+:::male-factory-worker::{Sleep 250}👨‍🏭
+:::man-boy::{Sleep 250}👨‍👦
+:::man-girl::{Sleep 250}👨‍👧
+:::male-technologist::{Sleep 250}👨‍💻
+:::male-office-worker::{Sleep 250}👨‍💼
+:::male-mechanic::{Sleep 250}👨‍🔧
+:::male-scientist::{Sleep 250}👨‍🔬
+:::male-astronaut::{Sleep 250}👨‍🚀
+:::male-firefighter::{Sleep 250}👨‍🚒
+:::female-farmer::{Sleep 250}👩‍🌾
+:::female-cook::{Sleep 250}👩‍🍳
+:::female-student::{Sleep 250}👩‍🎓
+:::female-singer::{Sleep 250}👩‍🎤
+:::female-artist::{Sleep 250}👩‍🎨
+:::female-teacher::{Sleep 250}👩‍🏫
+:::female-factory-worker::{Sleep 250}👩‍🏭
+:::woman-boy::{Sleep 250}👩‍👦
+:::woman-girl::{Sleep 250}👩‍👧
+:::female-technologist::{Sleep 250}👩‍💻
+:::female-office-worker::{Sleep 250}👩‍💼
+:::female-mechanic::{Sleep 250}👩‍🔧
+:::female-scientist::{Sleep 250}👩‍🔬
+:::female-astronaut::{Sleep 250}👩‍🚀
+:::female-firefighter::{Sleep 250}👩‍🚒
+:::woman-running::{Sleep 250}🏃‍♀️
+:::man-running::{Sleep 250}🏃‍♂️
+:::woman-surfing::{Sleep 250}🏄‍♀️
+:::man-surfing::{Sleep 250}🏄‍♂️
+:::woman-swimming::{Sleep 250}🏊‍♀️
+:::man-swimming::{Sleep 250}🏊‍♂️
+:::woman-lifting-weights::{Sleep 250}🏋️‍♀️
+:::man-lifting-weights::{Sleep 250}🏋️‍♂️
+:::woman-golfing::{Sleep 250}🏌️‍♀️
+:::man-golfing::{Sleep 250}🏌️‍♂️
+:::rainbow-flag::{Sleep 250}🏳️‍🌈
+:::eye-in-speech-bubble::{Sleep 250}👁️‍🗨️
+:::man-boy-boy::{Sleep 250}👨‍👦‍👦
+:::man-girl-boy::{Sleep 250}👨‍👧‍👦
+:::man-girl-girl::{Sleep 250}👨‍👧‍👧
+:::man-man-boy::{Sleep 250}👨‍👨‍👦
+:::man-man-boy-boy::{Sleep 250}👨‍👨‍👦‍👦
+:::man-man-girl::{Sleep 250}👨‍👨‍👧
+:::man-man-girl-boy::{Sleep 250}👨‍👨‍👧‍👦
+:::man-man-girl-girl::{Sleep 250}👨‍👨‍👧‍👧
+:::man-woman-boy-boy::{Sleep 250}👨‍👩‍👦‍👦
+:::man-woman-girl::{Sleep 250}👨‍👩‍👧
+:::man-woman-girl-boy::{Sleep 250}👨‍👩‍👧‍👦
+:::man-woman-girl-girl::{Sleep 250}👨‍👩‍👧‍👧
+:::male-doctor::{Sleep 250}👨‍⚕️
+:::male-judge::{Sleep 250}👨‍⚖️
+:::male-pilot::{Sleep 250}👨‍✈️
+:::man-heart-man::{Sleep 250}👨‍❤️‍👨
+:::man-kiss-man::{Sleep 250}👨‍❤️‍💋‍👨
+:::woman-boy-boy::{Sleep 250}👩‍👦‍👦
+:::woman-girl-boy::{Sleep 250}👩‍👧‍👦
+:::woman-girl-girl::{Sleep 250}👩‍👧‍👧
+:::woman-woman-boy::{Sleep 250}👩‍👩‍👦
+:::woman-woman-boy-boy::{Sleep 250}👩‍👩‍👦‍👦
+:::woman-woman-girl::{Sleep 250}👩‍👩‍👧
+:::woman-woman-girl-boy::{Sleep 250}👩‍👩‍👧‍👦
+:::woman-woman-girl-girl::{Sleep 250}👩‍👩‍👧‍👧
+:::female-doctor::{Sleep 250}👩‍⚕️
+:::female-judge::{Sleep 250}👩‍⚖️
+:::female-pilot::{Sleep 250}👩‍✈️
+:::woman-heart-man::{Sleep 250}👩‍❤️‍👨
+:::woman-heart-woman::{Sleep 250}👩‍❤️‍👩
+:::woman-kiss-man::{Sleep 250}👩‍❤️‍💋‍👨
+:::woman-kiss-woman::{Sleep 250}👩‍❤️‍💋‍👩
+:::female-police-officer::{Sleep 250}👮‍♀️
+:::male-police-officer::{Sleep 250}👮‍♂️
+:::woman-with-bunny-ears-partying::{Sleep 250}👯‍♀️
+:::man-with-bunny-ears-partying::{Sleep 250}👯‍♂️
+:::blond-haired-woman::{Sleep 250}👱‍♀️
+:::blond-haired-man::{Sleep 250}👱‍♂️
+:::woman-wearing-turban::{Sleep 250}👳‍♀️
+:::man-wearing-turban::{Sleep 250}👳‍♂️
+:::female-construction-worker::{Sleep 250}👷‍♀️
+:::male-construction-worker::{Sleep 250}👷‍♂️
+:::woman-tipping-hand::{Sleep 250}💁‍♀️
+:::man-tipping-hand::{Sleep 250}💁‍♂️
+:::female-guard::{Sleep 250}💂‍♀️
+:::male-guard::{Sleep 250}💂‍♂️
+:::woman-getting-massage::{Sleep 250}💆‍♀️
+:::man-getting-massage::{Sleep 250}💆‍♂️
+:::woman-getting-haircut::{Sleep 250}💇‍♀️
+:::man-getting-haircut::{Sleep 250}💇‍♂️
+:::female-detective::{Sleep 250}🕵️‍♀️
+:::male-detective::{Sleep 250}🕵️‍♂️
+:::woman-gesturing-no::{Sleep 250}🙅‍♀️
+:::man-gesturing-no::{Sleep 250}🙅‍♂️
+:::woman-gesturing-ok::{Sleep 250}🙆‍♀️
+:::man-gesturing-ok::{Sleep 250}🙆‍♂️
+:::woman-bowing::{Sleep 250}🙇‍♀️
+:::man-bowing::{Sleep 250}🙇‍♂️
+:::woman-raising-hand::{Sleep 250}🙋‍♀️
+:::man-raising-hand::{Sleep 250}🙋‍♂️
+:::woman-frowning::{Sleep 250}🙍‍♀️
+:::man-frowning::{Sleep 250}🙍‍♂️
+:::woman-pouting::{Sleep 250}🙎‍♀️
+:::man-pouting::{Sleep 250}🙎‍♂️
+:::woman-rowing-boat::{Sleep 250}🚣‍♀️
+:::man-rowing-boat::{Sleep 250}🚣‍♂️
+:::woman-biking::{Sleep 250}🚴‍♀️
+:::man-biking::{Sleep 250}🚴‍♂️
+:::woman-mountain-biking::{Sleep 250}🚵‍♀️
+:::man-mountain-biking::{Sleep 250}🚵‍♂️
+:::woman-walking::{Sleep 250}🚶‍♀️
+:::man-walking::{Sleep 250}🚶‍♂️
+:::woman-facepalming::{Sleep 250}🤦‍♀️
+:::man-facepalming::{Sleep 250}🤦‍♂️
+:::woman-shrugging::{Sleep 250}🤷‍♀️
+:::man-shrugging::{Sleep 250}🤷‍♂️
+:::woman-cartwheeling::{Sleep 250}🤸‍♀️
+:::man-cartwheeling::{Sleep 250}🤸‍♂️
+:::woman-juggling::{Sleep 250}🤹‍♀️
+:::man-juggling::{Sleep 250}🤹‍♂️
+:::woman-wrestling::{Sleep 250}🤼‍♀️
+:::man-wrestling::{Sleep 250}🤼‍♂️
+:::woman-playing-water-polo::{Sleep 250}🤽‍♀️
+:::man-playing-water-polo::{Sleep 250}🤽‍♂️
+:::woman-playing-handball::{Sleep 250}🤾‍♀️
+:::man-playing-handball::{Sleep 250}🤾‍♂️
+:::woman-bouncing-ball::{Sleep 250}⛹️‍♀️
+:::man-bouncing-ball::{Sleep 250}⛹️‍♂️
+:::fingers_crossed::{Sleep 250}🤞
 
-:::woman_lifting_weights::🏋️‍♀️
-:::man_lifting_weights::🏋️‍♂️
+:::woman_lifting_weights::{Sleep 250}🏋️‍♀️
+:::man_lifting_weights::{Sleep 250}🏋️‍♂️
 
-:::male_farmer::👨‍🌾
-:::male_cook::👨‍🍳
-:::male_student::👨‍🎓
-:::male_singer::👨‍🎤
-:::male_artist::👨‍🎨
-:::male_teacher::👨‍🏫
-:::male_factory_worker::👨‍🏭
-:::man_boy::👨‍👦
-:::man_girl::👨‍👧
-:::male_technologist::👨‍💻
-:::male_office_worker::👨‍💼
-:::male_mechanic::👨‍🔧
-:::male_scientist::👨‍🔬
-:::male_astronaut::👨‍🚀
-:::male_firefighter::👨‍🚒
-:::female_farmer::👩‍🌾
-:::female_cook::👩‍🍳
-:::female_student::👩‍🎓
-:::female_singer::👩‍🎤
-:::female_artist::👩‍🎨
-:::female_teacher::👩‍🏫
-:::female_factory_worker::👩‍🏭
-:::woman_boy::👩‍👦
-:::woman_girl::👩‍👧
-:::female_technologist::👩‍💻
-:::female_office_worker::👩‍💼
-:::female_mechanic::👩‍🔧
-:::female_scientist::👩‍🔬
-:::female_astronaut::👩‍🚀
-:::female_firefighter::👩‍🚒
-:::woman_surfing::🏄‍♀️
-:::man_surfing::🏄‍♂️
-:::woman_swimming::🏊‍♀️
+:::male_farmer::{Sleep 250}👨‍🌾
+:::male_cook::{Sleep 250}👨‍🍳
+:::male_student::{Sleep 250}👨‍🎓
+:::male_singer::{Sleep 250}👨‍🎤
+:::male_artist::{Sleep 250}👨‍🎨
+:::male_teacher::{Sleep 250}👨‍🏫
+:::male_factory_worker::{Sleep 250}👨‍🏭
+:::man_boy::{Sleep 250}👨‍👦
+:::man_girl::{Sleep 250}👨‍👧
+:::male_technologist::{Sleep 250}👨‍💻
+:::male_office_worker::{Sleep 250}👨‍💼
+:::male_mechanic::{Sleep 250}👨‍🔧
+:::male_scientist::{Sleep 250}👨‍🔬
+:::male_astronaut::{Sleep 250}👨‍🚀
+:::male_firefighter::{Sleep 250}👨‍🚒
+:::female_farmer::{Sleep 250}👩‍🌾
+:::female_cook::{Sleep 250}👩‍🍳
+:::female_student::{Sleep 250}👩‍🎓
+:::female_singer::{Sleep 250}👩‍🎤
+:::female_artist::{Sleep 250}👩‍🎨
+:::female_teacher::{Sleep 250}👩‍🏫
+:::female_factory_worker::{Sleep 250}👩‍🏭
+:::woman_boy::{Sleep 250}👩‍👦
+:::woman_girl::{Sleep 250}👩‍👧
+:::female_technologist::{Sleep 250}👩‍💻
+:::female_office_worker::{Sleep 250}👩‍💼
+:::female_mechanic::{Sleep 250}👩‍🔧
+:::female_scientist::{Sleep 250}👩‍🔬
+:::female_astronaut::{Sleep 250}👩‍🚀
+:::female_firefighter::{Sleep 250}👩‍🚒
+:::woman_surfing::{Sleep 250}🏄‍♀️
+:::man_surfing::{Sleep 250}🏄‍♂️
+:::woman_swimming::{Sleep 250}🏊‍♀️
 
-:::woman_golfing::🏌️‍♀️
-:::man_golfing::🏌️‍♂️
-:::rainbow_flag::🏳️‍🌈
-:::eye_in_speech_bubble::👁️‍🗨️
-:::man_boy_boy::👨‍👦‍👦
-:::man_girl_boy::👨‍👧‍👦
-:::man_girl_girl::👨‍👧‍👧
-:::man_man_boy::👨‍👨‍👦
-:::man_man_boy_boy::👨‍👨‍👦‍👦
-:::man_man_girl::👨‍👨‍👧
-:::man_man_girl_boy::👨‍👨‍👧‍👦
-:::man_man_girl_girl::👨‍👨‍👧‍👧
-:::man_woman_boy::👨‍👩‍👦
-:::man_woman_boy_boy::👨‍👩‍👦‍👦
-:::man_woman_girl::👨‍👩‍👧
-:::man_woman_girl_boy::👨‍👩‍👧‍👦
-:::man_woman_girl_girl::👨‍👩‍👧‍👧
-:::male_doctor::👨‍⚕️
-:::male_judge::👨‍⚖️
-:::male_pilot::👨‍✈️
-:::man_heart_man::👨‍❤️‍👨
-:::man_kiss_man::👨‍❤️‍💋‍👨
-:::woman_boy_boy::👩‍👦‍👦
-:::woman_girl_boy::👩‍👧‍👦
-:::woman_girl_girl::👩‍👧‍👧
-:::woman_woman_boy::👩‍👩‍👦
-:::woman_woman_boy_boy::👩‍👩‍👦‍👦
-:::woman_woman_girl::👩‍👩‍👧
-:::woman_woman_girl_boy::👩‍👩‍👧‍👦
-:::woman_woman_girl_girl::👩‍👩‍👧‍👧
-:::female_doctor::👩‍⚕️
-:::female_judge::👩‍⚖️
-:::female_pilot::👩‍✈️
-:::woman_heart_man::👩‍❤️‍👨
-:::woman_heart_woman::👩‍❤️‍👩
-:::woman_kiss_man::👩‍❤️‍💋‍👨
-:::woman_kiss_woman::👩‍❤️‍💋‍👩
-:::female_police_officer::👮‍♀️
-:::male_police_officer::👮‍♂️
-:::woman_with_bunny_ears_partying::👯‍♀️
-:::man_with_bunny_ears_partying::👯‍♂️
-:::blond_haired_woman::👱‍♀️
-:::blond_haired_man::👱‍♂️
-:::woman_wearing_turban::👳‍♀️
-:::man_wearing_turban::👳‍♂️
-:::female_construction_worker::👷‍♀️
-:::male_construction_worker::👷‍♂️
-:::woman_tipping_hand::💁‍♀️
-:::man_tipping_hand::💁‍♂️
-:::female_guard::💂‍♀️
-:::male_guard::💂‍♂️
-:::woman_getting_massage::💆‍♀️
-:::man_getting_massage::💆‍♂️
-:::woman_getting_haircut::💇‍♀️
-:::man_getting_haircut::💇‍♂️
-:::female_detective::🕵️‍♀️
-:::male_detective::🕵️‍♂️
-:::woman_gesturing_no::🙅‍♀️
-:::man_gesturing_no::🙅‍♂️
-:::woman_gesturing_ok::🙆‍♀️
-:::man_gesturing_ok::🙆‍♂️
-:::woman_bowing::🙇‍♀️
-:::man_bowing::🙇‍♂️
-:::woman_raising_hand::🙋‍♀️
-:::man_raising_hand::🙋‍♂️
-:::woman_frowning::🙍‍♀️
-:::man_frowning::🙍‍♂️
-:::woman_pouting::🙎‍♀️
-:::man_pouting::🙎‍♂️
-:::woman_rowing_boat::🚣‍♀️
-:::man_rowing_boat::🚣‍♂️
-:::woman_biking::🚴‍♀️
-:::man_biking::🚴‍♂️
-:::woman_mountain_biking::🚵‍♀️
-:::man_mountain_biking::🚵‍♂️
-:::woman_walking::🚶‍♀️
-:::man_walking::🚶‍♂️
-:::woman_facepalming::🤦‍♀️
-:::man_facepalming::🤦‍♂️
-:::woman_shrugging::🤷‍♀️
-:::man_shrugging::🤷‍♂️
-:::woman_cartwheeling::🤸‍♀️
-:::man_cartwheeling::🤸‍♂️
-:::woman_juggling::🤹‍♀️
-:::man_juggling::🤹‍♂️
-:::woman_wrestling::🤼‍♀️
-:::man_wrestling::🤼‍♂️
-:::woman_playing_water_polo::🤽‍♀️
-:::man_playing_water_polo::🤽‍♂️
-:::woman_playing_handball::🤾‍♀️
-:::man_playing_handball::🤾‍♂️
-:::woman_bouncing_ball::⛹️‍♀️
-:::man_bouncing_ball::⛹️‍♂️
+:::woman_golfing::{Sleep 250}🏌️‍♀️
+:::man_golfing::{Sleep 250}🏌️‍♂️
+:::rainbow_flag::{Sleep 250}🏳️‍🌈
+:::eye_in_speech_bubble::{Sleep 250}👁️‍🗨️
+:::man_boy_boy::{Sleep 250}👨‍👦‍👦
+:::man_girl_boy::{Sleep 250}👨‍👧‍👦
+:::man_girl_girl::{Sleep 250}👨‍👧‍👧
+:::man_man_boy::{Sleep 250}👨‍👨‍👦
+:::man_man_boy_boy::{Sleep 250}👨‍👨‍👦‍👦
+:::man_man_girl::{Sleep 250}👨‍👨‍👧
+:::man_man_girl_boy::{Sleep 250}👨‍👨‍👧‍👦
+:::man_man_girl_girl::{Sleep 250}👨‍👨‍👧‍👧
+:::man_woman_boy::{Sleep 250}👨‍👩‍👦
+:::man_woman_boy_boy::{Sleep 250}👨‍👩‍👦‍👦
+:::man_woman_girl::{Sleep 250}👨‍👩‍👧
+:::man_woman_girl_boy::{Sleep 250}👨‍👩‍👧‍👦
+:::man_woman_girl_girl::{Sleep 250}👨‍👩‍👧‍👧
+:::male_doctor::{Sleep 250}👨‍⚕️
+:::male_judge::{Sleep 250}👨‍⚖️
+:::male_pilot::{Sleep 250}👨‍✈️
+:::man_heart_man::{Sleep 250}👨‍❤️‍👨
+:::man_kiss_man::{Sleep 250}👨‍❤️‍💋‍👨
+:::woman_boy_boy::{Sleep 250}👩‍👦‍👦
+:::woman_girl_boy::{Sleep 250}👩‍👧‍👦
+:::woman_girl_girl::{Sleep 250}👩‍👧‍👧
+:::woman_woman_boy::{Sleep 250}👩‍👩‍👦
+:::woman_woman_boy_boy::{Sleep 250}👩‍👩‍👦‍👦
+:::woman_woman_girl::{Sleep 250}👩‍👩‍👧
+:::woman_woman_girl_boy::{Sleep 250}👩‍👩‍👧‍👦
+:::woman_woman_girl_girl::{Sleep 250}👩‍👩‍👧‍👧
+:::female_doctor::{Sleep 250}👩‍⚕️
+:::female_judge::{Sleep 250}👩‍⚖️
+:::female_pilot::{Sleep 250}👩‍✈️
+:::woman_heart_man::{Sleep 250}👩‍❤️‍👨
+:::woman_heart_woman::{Sleep 250}👩‍❤️‍👩
+:::woman_kiss_man::{Sleep 250}👩‍❤️‍💋‍👨
+:::woman_kiss_woman::{Sleep 250}👩‍❤️‍💋‍👩
+:::female_police_officer::{Sleep 250}👮‍♀️
+:::male_police_officer::{Sleep 250}👮‍♂️
+:::woman_with_bunny_ears_partying::{Sleep 250}👯‍♀️
+:::man_with_bunny_ears_partying::{Sleep 250}👯‍♂️
+:::blond_haired_woman::{Sleep 250}👱‍♀️
+:::blond_haired_man::{Sleep 250}👱‍♂️
+:::woman_wearing_turban::{Sleep 250}👳‍♀️
+:::man_wearing_turban::{Sleep 250}👳‍♂️
+:::female_construction_worker::{Sleep 250}👷‍♀️
+:::male_construction_worker::{Sleep 250}👷‍♂️
+:::woman_tipping_hand::{Sleep 250}💁‍♀️
+:::man_tipping_hand::{Sleep 250}💁‍♂️
+:::female_guard::{Sleep 250}💂‍♀️
+:::male_guard::{Sleep 250}💂‍♂️
+:::woman_getting_massage::{Sleep 250}💆‍♀️
+:::man_getting_massage::{Sleep 250}💆‍♂️
+:::woman_getting_haircut::{Sleep 250}💇‍♀️
+:::man_getting_haircut::{Sleep 250}💇‍♂️
+:::female_detective::{Sleep 250}🕵️‍♀️
+:::male_detective::{Sleep 250}🕵️‍♂️
+:::woman_gesturing_no::{Sleep 250}🙅‍♀️
+:::man_gesturing_no::{Sleep 250}🙅‍♂️
+:::woman_gesturing_ok::{Sleep 250}🙆‍♀️
+:::man_gesturing_ok::{Sleep 250}🙆‍♂️
+:::woman_bowing::{Sleep 250}🙇‍♀️
+:::man_bowing::{Sleep 250}🙇‍♂️
+:::woman_raising_hand::{Sleep 250}🙋‍♀️
+:::man_raising_hand::{Sleep 250}🙋‍♂️
+:::woman_frowning::{Sleep 250}🙍‍♀️
+:::man_frowning::{Sleep 250}🙍‍♂️
+:::woman_pouting::{Sleep 250}🙎‍♀️
+:::man_pouting::{Sleep 250}🙎‍♂️
+:::woman_rowing_boat::{Sleep 250}🚣‍♀️
+:::man_rowing_boat::{Sleep 250}🚣‍♂️
+:::woman_biking::{Sleep 250}🚴‍♀️
+:::man_biking::{Sleep 250}🚴‍♂️
+:::woman_mountain_biking::{Sleep 250}🚵‍♀️
+:::man_mountain_biking::{Sleep 250}🚵‍♂️
+:::woman_walking::{Sleep 250}🚶‍♀️
+:::man_walking::{Sleep 250}🚶‍♂️
+:::woman_facepalming::{Sleep 250}🤦‍♀️
+:::man_facepalming::{Sleep 250}🤦‍♂️
+:::woman_shrugging::{Sleep 250}🤷‍♀️
+:::man_shrugging::{Sleep 250}🤷‍♂️
+:::woman_cartwheeling::{Sleep 250}🤸‍♀️
+:::man_cartwheeling::{Sleep 250}🤸‍♂️
+:::woman_juggling::{Sleep 250}🤹‍♀️
+:::man_juggling::{Sleep 250}🤹‍♂️
+:::woman_wrestling::{Sleep 250}🤼‍♀️
+:::man_wrestling::{Sleep 250}🤼‍♂️
+:::woman_playing_water_polo::{Sleep 250}🤽‍♀️
+:::man_playing_water_polo::{Sleep 250}🤽‍♂️
+:::woman_playing_handball::{Sleep 250}🤾‍♀️
+:::man_playing_handball::{Sleep 250}🤾‍♂️
+:::woman_bouncing_ball::{Sleep 250}⛹️‍♀️
+:::man_bouncing_ball::{Sleep 250}⛹️‍♂️

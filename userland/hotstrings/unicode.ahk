@@ -1,494 +1,499 @@
-﻿:::emdash::—
-:::copyright::©
-:::registered::®
-:::!!::‼
-:::!?::⁉
-:::tm::™
-:::m::Ⓜ
+﻿; The sleeps added because of VSCode bug in the "Markdown All in one" extension:
+; https://github.com/yzhang-gh/vscode-markdown/issues/200
+
+
+:::emdash::{Sleep 50}—
+:::copyright::{Sleep 50}©
+:::registered::{Sleep 50}®
+:::!!::{Sleep 50}‼
+:::!?::{Sleep 50}⁉
+:::tm::{Sleep 50}™
+:::m::{Sleep 50}Ⓜ
 
 ; Smileys
-:::D::😀
-:::)::😃
-:::devil::😈
+:::D::{Sleep 50}😀
+:::)::{Sleep 50}😃
+:::devil::{Sleep 250}😈
+
 
 
 ; Random
-:::tada::🎉
-:::alien::👽
-:::collision::💥
-:::poop::💩
-:::shit::💩
-:::dash::💨
-:::hankey::💩
-:::muscle::💪
-:::dizzy::💫
-:::skull::💀
-:::bulb::💡
-:::anger::💢
-:::bomb::💣
-:::zzz::💤
-:::boom::💥
-:::fire::🔥
-:::flashlight::🔦
-:::crystal_ball::🔮
-:::japanese_ogre::👹
-:::japanese_goblin::👺
-:::ghost::👻
-:::angel::👼
-:::alien::👽
-:::space_invader::👾
-:::imp::👿
-:::see_no_evil::🙈
-:::hear_no_evil::🙉
-:::speak_no_evil::🙊
+:::tada::{Sleep 250}🎉
+:::alien::{Sleep 250}👽
+:::collision::{Sleep 250}💥
+:::poop::{Sleep 250}💩
+:::shit::{Sleep 250}💩
+:::dash::{Sleep 250}💨
+:::hankey::{Sleep 250}💩
+:::muscle::{Sleep 250}💪
+:::dizzy::{Sleep 250}💫
+:::skull::{Sleep 250}💀
+:::bulb::{Sleep 250}💡
+:::anger::{Sleep 250}💢
+:::bomb::{Sleep 250}💣
+:::zzz::{Sleep 250}💤
+:::boom::{Sleep 250}💥
+:::fire::{Sleep 250}🔥
+:::flashlight::{Sleep 250}🔦
+:::crystal_ball::{Sleep 250}🔮
+:::japanese_ogre::{Sleep 250}👹
+:::japanese_goblin::{Sleep 250}👺
+:::ghost::{Sleep 250}👻
+:::angel::{Sleep 250}👼
+:::alien::{Sleep 250}👽
+:::space_invader::{Sleep 250}👾
+:::imp::{Sleep 250}👿
+:::see_no_evil::{Sleep 250}🙈
+:::hear_no_evil::{Sleep 250}🙉
+:::speak_no_evil::{Sleep 250}🙊
 
 
 ; Tools
-:::gear::⚙
-:::hammer_and_pick::⚒
-:::pick::⛏
-:::wrench::🔧
-:::hammer::🔨
-:::nut_and_bolt::🔩
-:::chains::⛓
+:::gear::{Sleep 250}⚙
+:::hammer_and_pick::{Sleep 250}⚒
+:::pick::{Sleep 250}⛏
+:::wrench::{Sleep 250}🔧
+:::hammer::{Sleep 250}🔨
+:::nut_and_bolt::{Sleep 250}🔩
+:::chains::{Sleep 250}⛓
 
 
 
 ; Signs
-:::skull_and_crossbones::☠
-:::radioactive_sign::☢
-:::biohazard_sign::☣
-:::recycle::♻
-:::parking::🅿
-:::walking::🚶
-:::children_crossing::🚸
-:::man-woman-boy::👪
-:::man_and_woman_holding_hands::👫
-:::family::👪
-:::couple::👫
-:::two_men_holding_hands::👬
-:::two_women_holding_hands::👭
-:::underage::🔞
-:::smoking::🚬
-:::no_smoking::🚭
-:::put_litter_in_its_place::🚮
-:::do_not_litter::🚯
-:::potable_water::🚰
-:::non_potable_water::🚱
-:::no_bicycles::🚳
-:::no_pedestrians::🚷
-:::non-potable_water::🚱
+:::skull_and_crossbones::{Sleep 250}☠
+:::radioactive_sign::{Sleep 250}☢
+:::biohazard_sign::{Sleep 250}☣
+:::recycle::{Sleep 250}♻
+:::parking::{Sleep 250}🅿
+:::walking::{Sleep 250}🚶
+:::children_crossing::{Sleep 250}🚸
+:::man-woman-boy::{Sleep 250}👪
+:::man_and_woman_holding_hands::{Sleep 250}👫
+:::family::{Sleep 250}👪
+:::couple::{Sleep 250}👫
+:::two_men_holding_hands::{Sleep 250}👬
+:::two_women_holding_hands::{Sleep 250}👭
+:::underage::{Sleep 250}🔞
+:::smoking::{Sleep 250}🚬
+:::no_smoking::{Sleep 250}🚭
+:::put_litter_in_its_place::{Sleep 250}🚮
+:::do_not_litter::{Sleep 250}🚯
+:::potable_water::{Sleep 250}🚰
+:::non_potable_water::{Sleep 250}🚱
+:::no_bicycles::{Sleep 250}🚳
+:::no_pedestrians::{Sleep 250}🚷
+:::non-potable_water::{Sleep 250}🚱
 
 
-:::yin_yang::☯
-:::peace_symbol::☮
-:::scales::⚖
-:::crossed_swords::⚔
-:::six_pointed_star::🔯
-:::trident::🔱
-:::anchor::⚓
-:::atom_symbol::⚛
-:::wheel_of_dharma::☸
-:::orthodox_cross::☦
-:::staff_of_aesculapius::⚕
-:::fleur_de_lis::⚜
-:::latin_cross::✝
-:::star_of_david::✡
-:::shamrock::☘
-:::congratulations::㊗
-:::secret::㊙
-:::mahjong::🀄
+:::yin_yang::{Sleep 250}☯
+:::peace_symbol::{Sleep 250}☮
+:::scales::{Sleep 250}⚖
+:::crossed_swords::{Sleep 250}⚔
+:::six_pointed_star::{Sleep 250}🔯
+:::trident::{Sleep 250}🔱
+:::anchor::{Sleep 250}⚓
+:::atom_symbol::{Sleep 250}⚛
+:::wheel_of_dharma::{Sleep 250}☸
+:::orthodox_cross::{Sleep 250}☦
+:::staff_of_aesculapius::{Sleep 250}⚕
+:::fleur_de_lis::{Sleep 250}⚜
+:::latin_cross::{Sleep 250}✝
+:::star_of_david::{Sleep 250}✡
+:::shamrock::{Sleep 250}☘
+:::congratulations::{Sleep 250}㊗
+:::secret::{Sleep 250}㊙
+:::mahjong::{Sleep 250}🀄
 
 
 
 ; Humans
-:::sweat_drops::💦
-:::female_sign::♀
-:::male_sign::♂
-:::wheelchair::♿
-:::alembic::⚗
-:::coffin::⚰
-:::funeral_urn::⚱
-:::mens::🚹
-:::womens::🚺
-:::restroom::🚻
-:::baby_symbol::🚼
-:::feet::🐾
-:::eyes::👀
-:::eye::👁
-:::ear::👂
-:::nose::👃
-:::lips::👄
-:::tongue::👅
-:::boy::👦
-:::girl::👧
-:::man::👨
-:::woman::👩
-:::cop::👮
-:::dancers::👯
-:::bride_with_veil::👰
-:::person_with_blond_hair::👱
-:::man_with_gua_pi_mao::👲
-:::man_with_turban::👳
-:::older_man::👴
-:::older_woman::👵
-:::baby::👶
-:::construction_worker::👷
-:::princess::👸
-:::information_desk_person::💁
-:::guardsman::💂
-:::dancer::💃
+:::sweat_drops::{Sleep 250}💦
+:::female_sign::{Sleep 250}♀
+:::male_sign::{Sleep 250}♂
+:::wheelchair::{Sleep 250}♿
+:::alembic::{Sleep 250}⚗
+:::coffin::{Sleep 250}⚰
+:::funeral_urn::{Sleep 250}⚱
+:::mens::{Sleep 250}🚹
+:::womens::{Sleep 250}🚺
+:::restroom::{Sleep 250}🚻
+:::baby_symbol::{Sleep 250}🚼
+:::feet::{Sleep 250}🐾
+:::eyes::{Sleep 250}👀
+:::eye::{Sleep 250}👁
+:::ear::{Sleep 250}👂
+:::nose::{Sleep 250}👃
+:::lips::{Sleep 250}👄
+:::tongue::{Sleep 250}👅
+:::boy::{Sleep 250}👦
+:::girl::{Sleep 250}👧
+:::man::{Sleep 250}👨
+:::woman::{Sleep 250}👩
+:::cop::{Sleep 250}👮
+:::dancers::{Sleep 250}👯
+:::bride_with_veil::{Sleep 250}👰
+:::person_with_blond_hair::{Sleep 250}👱
+:::man_with_gua_pi_mao::{Sleep 250}👲
+:::man_with_turban::{Sleep 250}👳
+:::older_man::{Sleep 250}👴
+:::older_woman::{Sleep 250}👵
+:::baby::{Sleep 250}👶
+:::construction_worker::{Sleep 250}👷
+:::princess::{Sleep 250}👸
+:::information_desk_person::{Sleep 250}💁
+:::guardsman::{Sleep 250}💂
+:::dancer::{Sleep 250}💃
 
 
 ; Health
-:::helmet_with_white_cross::⛑
-:::lipstick::💄
-:::nail_care::💅
-:::massage::💆
-:::haircut::💇
-:::barber::💈
-:::syringe::💉
-:::pill::💊
+:::helmet_with_white_cross::{Sleep 250}⛑
+:::lipstick::{Sleep 250}💄
+:::nail_care::{Sleep 250}💅
+:::massage::{Sleep 250}💆
+:::haircut::{Sleep 250}💇
+:::barber::{Sleep 250}💈
+:::syringe::{Sleep 250}💉
+:::pill::{Sleep 250}💊
 
 
 ; Hearts
-:::heart::❤
-:::heart_decoration::💟
-:::kiss::💋
-:::love_letter::💌
-:::ring::💍
-:::gem::💎
-:::couplekiss::💏
-:::bouquet::💐
-:::couple_with_heart::💑
-:::wedding::💒
-:::heartbeat::💓
-:::broken_heart::💔
-:::two_hearts::💕
-:::sparkling_heart::💖
-:::heartpulse::💗
-:::cupid::💘
-:::blue_heart::💙
-:::green_heart::💚
-:::yellow_heart::💛
-:::purple_heart::💜
-:::gift_heart::💝
-:::revolving_hearts::💞
-:::diamond_shape_with_a_dot_inside::💠
+:::heart::{Sleep 250}❤
+:::heart_decoration::{Sleep 250}💟
+:::kiss::{Sleep 250}💋
+:::love_letter::{Sleep 250}💌
+:::ring::{Sleep 250}💍
+:::gem::{Sleep 250}💎
+:::couplekiss::{Sleep 250}💏
+:::bouquet::{Sleep 250}💐
+:::couple_with_heart::{Sleep 250}💑
+:::wedding::{Sleep 250}💒
+:::heartbeat::{Sleep 250}💓
+:::broken_heart::{Sleep 250}💔
+:::two_hearts::{Sleep 250}💕
+:::sparkling_heart::{Sleep 250}💖
+:::heartpulse::{Sleep 250}💗
+:::cupid::{Sleep 250}💘
+:::blue_heart::{Sleep 250}💙
+:::green_heart::{Sleep 250}💚
+:::yellow_heart::{Sleep 250}💛
+:::purple_heart::{Sleep 250}💜
+:::gift_heart::{Sleep 250}💝
+:::revolving_hearts::{Sleep 250}💞
+:::diamond_shape_with_a_dot_inside::{Sleep 250}💠
 
 ; Sports
-:::gun::🔫
-:::beginner::🔰
-:::soccer::⚽
-:::baseball::⚾
-:::golf::⛳
-:::skier::⛷
-:::ice_skate::⛸
-:::person_with_ball::⛹
-:::tent::⛺
-:::curly_loop::➰
-:::loop::➿
-:::fuelpump::⛽
-:::ferry::⛴
-:::boat::⛵
-:::sailboat::⛵
-:::airplane::✈
-:::bike::🚲
-:::bicyclist::🚴
-:::mountain_bicyclist::🚵
-:::tennis::🎾
-:::ski::🎿
-:::basketball::🏀
-:::checkered_flag::🏁
-:::snowboarder::🏂
-:::runner::🏃
-:::man_swimming::🏊‍♂️
-:::surfer::🏄
-:::sports_medal::🏅
-:::trophy::🏆
-:::horse_racing::🏇
-:::football::🏈
-:::rugby_football::🏉
-:::swimmer::🏊
-:::art::🎨
-:::tophat::🎩
-:::circus_tent::🎪
-:::ticket::🎫
-:::clapper::🎬
-:::performing_arts::🎭
-:::video_game::🎮
-:::dart::🎯
-:::slot_machine::🎰
-:::8ball::🎱
-:::game_die::🎲
-:::bowling::🎳
-:::flower_playing_cards::🎴
+:::gun::{Sleep 250}🔫
+:::beginner::{Sleep 250}🔰
+:::soccer::{Sleep 250}⚽
+:::baseball::{Sleep 250}⚾
+:::golf::{Sleep 250}⛳
+:::skier::{Sleep 250}⛷
+:::ice_skate::{Sleep 250}⛸
+:::person_with_ball::{Sleep 250}⛹
+:::tent::{Sleep 250}⛺
+:::curly_loop::{Sleep 250}➰
+:::loop::{Sleep 250}➿
+:::fuelpump::{Sleep 250}⛽
+:::ferry::{Sleep 250}⛴
+:::boat::{Sleep 250}⛵
+:::sailboat::{Sleep 250}⛵
+:::airplane::{Sleep 250}✈
+:::bike::{Sleep 250}🚲
+:::bicyclist::{Sleep 250}🚴
+:::mountain_bicyclist::{Sleep 250}🚵
+:::tennis::{Sleep 250}🎾
+:::ski::{Sleep 250}🎿
+:::basketball::{Sleep 250}🏀
+:::checkered_flag::{Sleep 250}🏁
+:::snowboarder::{Sleep 250}🏂
+:::runner::{Sleep 250}🏃
+:::man_swimming::{Sleep 250}🏊‍♂️
+:::surfer::{Sleep 250}🏄
+:::sports_medal::{Sleep 250}🏅
+:::trophy::{Sleep 250}🏆
+:::horse_racing::{Sleep 250}🏇
+:::football::{Sleep 250}🏈
+:::rugby_football::{Sleep 250}🏉
+:::swimmer::{Sleep 250}🏊
+:::art::{Sleep 250}🎨
+:::tophat::{Sleep 250}🎩
+:::circus_tent::{Sleep 250}🎪
+:::ticket::{Sleep 250}🎫
+:::clapper::{Sleep 250}🎬
+:::performing_arts::{Sleep 250}🎭
+:::video_game::{Sleep 250}🎮
+:::dart::{Sleep 250}🎯
+:::slot_machine::{Sleep 250}🎰
+:::8ball::{Sleep 250}🎱
+:::game_die::{Sleep 250}🎲
+:::bowling::{Sleep 250}🎳
+:::flower_playing_cards::{Sleep 250}🎴
 
 ; Cards
-:::spades::♠
-:::clubs::♣
-:::hearts::♥
-:::diamonds::♦
-:::black_joker::🃏
+:::spades::{Sleep 250}♠
+:::clubs::{Sleep 250}♣
+:::hearts::{Sleep 250}♥
+:::diamonds::{Sleep 250}♦
+:::black_joker::{Sleep 250}🃏
 
 ; Music
-:::part_alternation_mark::〽
-:::musical_note::🎵
-:::notes::🎶
-:::saxophone::🎷
-:::guitar::🎸
-:::musical_keyboard::🎹
-:::trumpet::🎺
-:::violin::🎻
-:::musical_score::🎼
+:::part_alternation_mark::{Sleep 250}〽
+:::musical_note::{Sleep 250}🎵
+:::notes::{Sleep 250}🎶
+:::saxophone::{Sleep 250}🎷
+:::guitar::{Sleep 250}🎸
+:::musical_keyboard::{Sleep 250}🎹
+:::trumpet::{Sleep 250}🎺
+:::violin::{Sleep 250}🎻
+:::musical_score::{Sleep 250}🎼
 
 
 
 
 ; Culture
-:::hotsprings::♨
-:::shinto_shrine::⛩
-:::church::⛪
-:::mountain::⛰
-:::fountain::⛲
-:::world_map::🗺
-:::mount_fuji::🗻
-:::tokyo_tower::🗼
-:::statue_of_liberty::🗽
-:::japan::🗾
-:::moyai::🗿
+:::hotsprings::{Sleep 250}♨
+:::shinto_shrine::{Sleep 250}⛩
+:::church::{Sleep 250}⛪
+:::mountain::{Sleep 250}⛰
+:::fountain::{Sleep 250}⛲
+:::world_map::{Sleep 250}🗺
+:::mount_fuji::{Sleep 250}🗻
+:::tokyo_tower::{Sleep 250}🗼
+:::statue_of_liberty::{Sleep 250}🗽
+:::japan::{Sleep 250}🗾
+:::moyai::{Sleep 250}🗿
 
 
 
 ; Vehicles
-:::red_car::🚗
-:::rocket::🚀
-:::helicopter::🚁
-:::steam_locomotive::🚂
-:::railway_car::🚃
-:::bullettrain_side::🚄
-:::bullettrain_front::🚅
-:::train2::🚆
-:::metro::🚇
-:::light_rail::🚈
-:::station::🚉
-:::tram::🚊
-:::train::🚋
-:::bus::🚌
-:::oncoming_bus::🚍
-:::trolleybus::🚎
-:::busstop::🚏
-:::minibus::🚐
-:::ambulance::🚑
-:::fire_engine::🚒
-:::police_car::🚓
-:::oncoming_police_car::🚔
-:::taxi::🚕
-:::oncoming_taxi::🚖
-:::car::🚗
-:::oncoming_automobile::🚘
-:::blue_car::🚙
-:::truck::🚚
-:::articulated_lorry::🚛
-:::tractor::🚜
-:::monorail::🚝
-:::mountain_railway::🚞
-:::suspension_railway::🚟
-:::mountain_cableway::🚠
-:::aerial_tramway::🚡
-:::ship::🚢
-:::rowboat::🚣
-:::speedboat::🚤
-:::traffic_light::🚥
-:::vertical_traffic_light::🚦
-:::construction::🚧
-:::rotating_light::🚨
+:::red_car::{Sleep 250}🚗
+:::rocket::{Sleep 250}🚀
+:::helicopter::{Sleep 250}🚁
+:::steam_locomotive::{Sleep 250}🚂
+:::railway_car::{Sleep 250}🚃
+:::bullettrain_side::{Sleep 250}🚄
+:::bullettrain_front::{Sleep 250}🚅
+:::train2::{Sleep 250}🚆
+:::metro::{Sleep 250}🚇
+:::light_rail::{Sleep 250}🚈
+:::station::{Sleep 250}🚉
+:::tram::{Sleep 250}🚊
+:::train::{Sleep 250}🚋
+:::bus::{Sleep 250}🚌
+:::oncoming_bus::{Sleep 250}🚍
+:::trolleybus::{Sleep 250}🚎
+:::busstop::{Sleep 250}🚏
+:::minibus::{Sleep 250}🚐
+:::ambulance::{Sleep 250}🚑
+:::fire_engine::{Sleep 250}🚒
+:::police_car::{Sleep 250}🚓
+:::oncoming_police_car::{Sleep 250}🚔
+:::taxi::{Sleep 250}🚕
+:::oncoming_taxi::{Sleep 250}🚖
+:::car::{Sleep 250}🚗
+:::oncoming_automobile::{Sleep 250}🚘
+:::blue_car::{Sleep 250}🚙
+:::truck::{Sleep 250}🚚
+:::articulated_lorry::{Sleep 250}🚛
+:::tractor::{Sleep 250}🚜
+:::monorail::{Sleep 250}🚝
+:::mountain_railway::{Sleep 250}🚞
+:::suspension_railway::{Sleep 250}🚟
+:::mountain_cableway::{Sleep 250}🚠
+:::aerial_tramway::{Sleep 250}🚡
+:::ship::{Sleep 250}🚢
+:::rowboat::{Sleep 250}🚣
+:::speedboat::{Sleep 250}🚤
+:::traffic_light::{Sleep 250}🚥
+:::vertical_traffic_light::{Sleep 250}🚦
+:::construction::{Sleep 250}🚧
+:::rotating_light::{Sleep 250}🚨
 
 
 
 ; Travel
-:::passport_control::🛂
-:::customs::🛃
-:::baggage_claim::🛄
-:::left_luggage::🛅
+:::passport_control::{Sleep 250}🛂
+:::customs::{Sleep 250}🛃
+:::baggage_claim::{Sleep 250}🛄
+:::left_luggage::{Sleep 250}🛅
 
 
 ; Foods
-:::cooking::🍳
-:::fork_and_knife::🍴
-:::knife::🔪
-:::hocho::🔪
-:::knife_fork_plate::🍽
-:::four_leaf_clover::🍀
-:::chestnut::🌰
-:::hot_pepper::🌶
-:::tulip::🌷
-:::cherry_blossom::🌸
-:::rose::🌹
-:::hibiscus::🌺
-:::sunflower::🌻
-:::blossom::🌼
-:::corn::🌽
-:::ear_of_rice::🌾
-:::herb::🌿
-:::maple_leaf::🍁
-:::fallen_leaf::🍂
-:::leaves::🍃
-:::mushroom::🍄
-:::tomato::🍅
-:::eggplant::🍆
-:::grapes::🍇
-:::melon::🍈
-:::watermelon::🍉
-:::tangerine::🍊
-:::lemon::🍋
-:::banana::🍌
-:::pineapple::🍍
-:::apple::🍎
-:::green_apple::🍏
-:::pear::🍐
-:::peach::🍑
-:::cherries::🍒
-:::strawberry::🍓
-:::hamburger::🍔
-:::pizza::🍕
-:::meat_on_bone::🍖
-:::poultry_leg::🍗
-:::rice_cracker::🍘
-:::rice_ball::🍙
-:::rice::🍚
-:::curry::🍛
-:::ramen::🍜
-:::spaghetti::🍝
-:::bread::🍞
-:::fries::🍟
-:::sweet_potato::🍠
-:::dango::🍡
-:::oden::🍢
-:::sushi::🍣
-:::fried_shrimp::🍤
-:::fish_cake::🍥
-:::icecream::🍦
-:::shaved_ice::🍧
-:::ice_cream::🍨
-:::doughnut::🍩
-:::cookie::🍪
-:::chocolate_bar::🍫
-:::candy::🍬
-:::lollipop::🍭
-:::custard::🍮
-:::honey_pot::🍯
-:::cake::🍰
-:::bento::🍱
-:::stew::🍲
-:::fried_egg::🍳
-:::popcorn::🍿
+:::cooking::{Sleep 250}🍳
+:::fork_and_knife::{Sleep 250}🍴
+:::knife::{Sleep 250}🔪
+:::hocho::{Sleep 250}🔪
+:::knife_fork_plate::{Sleep 250}🍽
+:::four_leaf_clover::{Sleep 250}🍀
+:::chestnut::{Sleep 250}🌰
+:::hot_pepper::{Sleep 250}🌶
+:::tulip::{Sleep 250}🌷
+:::cherry_blossom::{Sleep 250}🌸
+:::rose::{Sleep 250}🌹
+:::hibiscus::{Sleep 250}🌺
+:::sunflower::{Sleep 250}🌻
+:::blossom::{Sleep 250}🌼
+:::corn::{Sleep 250}🌽
+:::ear_of_rice::{Sleep 250}🌾
+:::herb::{Sleep 250}🌿
+:::maple_leaf::{Sleep 250}🍁
+:::fallen_leaf::{Sleep 250}🍂
+:::leaves::{Sleep 250}🍃
+:::mushroom::{Sleep 250}🍄
+:::tomato::{Sleep 250}🍅
+:::eggplant::{Sleep 250}🍆
+:::grapes::{Sleep 250}🍇
+:::melon::{Sleep 250}🍈
+:::watermelon::{Sleep 250}🍉
+:::tangerine::{Sleep 250}🍊
+:::lemon::{Sleep 250}🍋
+:::banana::{Sleep 250}🍌
+:::pineapple::{Sleep 250}🍍
+:::apple::{Sleep 250}🍎
+:::green_apple::{Sleep 250}🍏
+:::pear::{Sleep 250}🍐
+:::peach::{Sleep 250}🍑
+:::cherries::{Sleep 250}🍒
+:::strawberry::{Sleep 250}🍓
+:::hamburger::{Sleep 250}🍔
+:::pizza::{Sleep 250}🍕
+:::meat_on_bone::{Sleep 250}🍖
+:::poultry_leg::{Sleep 250}🍗
+:::rice_cracker::{Sleep 250}🍘
+:::rice_ball::{Sleep 250}🍙
+:::rice::{Sleep 250}🍚
+:::curry::{Sleep 250}🍛
+:::ramen::{Sleep 250}🍜
+:::spaghetti::{Sleep 250}🍝
+:::bread::{Sleep 250}🍞
+:::fries::{Sleep 250}🍟
+:::sweet_potato::{Sleep 250}🍠
+:::dango::{Sleep 250}🍡
+:::oden::{Sleep 250}🍢
+:::sushi::{Sleep 250}🍣
+:::fried_shrimp::{Sleep 250}🍤
+:::fish_cake::{Sleep 250}🍥
+:::icecream::{Sleep 250}🍦
+:::shaved_ice::{Sleep 250}🍧
+:::ice_cream::{Sleep 250}🍨
+:::doughnut::{Sleep 250}🍩
+:::cookie::{Sleep 250}🍪
+:::chocolate_bar::{Sleep 250}🍫
+:::candy::{Sleep 250}🍬
+:::lollipop::{Sleep 250}🍭
+:::custard::{Sleep 250}🍮
+:::honey_pot::{Sleep 250}🍯
+:::cake::{Sleep 250}🍰
+:::bento::{Sleep 250}🍱
+:::stew::{Sleep 250}🍲
+:::fried_egg::{Sleep 250}🍳
+:::popcorn::{Sleep 250}🍿
 
 ; Drinks
-:::coffee::☕
-:::tea::🍵
-:::sake::🍶
-:::wine_glass::🍷
-:::cocktail::🍸
-:::tropical_drink::🍹
-:::beer::🍺
-:::beers::🍻
-:::baby_bottle::🍼
-:::champagne::🍾
+:::coffee::{Sleep 250}☕
+:::tea::{Sleep 250}🍵
+:::sake::{Sleep 250}🍶
+:::wine_glass::{Sleep 250}🍷
+:::cocktail::{Sleep 250}🍸
+:::tropical_drink::{Sleep 250}🍹
+:::beer::{Sleep 250}🍺
+:::beers::{Sleep 250}🍻
+:::baby_bottle::{Sleep 250}🍼
+:::champagne::{Sleep 250}🍾
 
 
 
 ; Fun
-:::ribbon::🎀
-:::gift::🎁
-:::birthday::🎂
-:::jack_o_lantern::🎃
-:::lantern::🏮
-:::christmas_tree::🎄
-:::santa::🎅
-:::fireworks::🎆
-:::sparkler::🎇
-:::sparkles::✨
-:::sparkle::❇
-:::balloon::🎈
-:::confetti_ball::🎊
-:::tanabata_tree::🎋
-:::crossed_flags::🎌
-:::bamboo::🎍
-:::dolls::🎎
-:::flags::🎏
-:::wind_chime::🎐
-:::rice_scene::🎑
-:::school_satchel::🎒
-:::mortar_board::🎓
-:::medal::🎖
-:::reminder_ribbon::🎗
-:::studio_microphone::🎙
-:::level_slider::🎚
-:::control_knobs::🎛
-:::film_frames::🎞
-:::admission_tickets::🎟
-:::carousel_horse::🎠
-:::ferris_wheel::🎡
-:::roller_coaster::🎢
-:::fishing_pole_and_fish::🎣
-:::microphone::🎤
-:::movie_camera::🎥
-:::cinema::🎦
+:::ribbon::{Sleep 250}🎀
+:::gift::{Sleep 250}🎁
+:::birthday::{Sleep 250}🎂
+:::jack_o_lantern::{Sleep 250}🎃
+:::lantern::{Sleep 250}🏮
+:::christmas_tree::{Sleep 250}🎄
+:::santa::{Sleep 250}🎅
+:::fireworks::{Sleep 250}🎆
+:::sparkler::{Sleep 250}🎇
+:::sparkles::{Sleep 250}✨
+:::sparkle::{Sleep 250}❇
+:::balloon::{Sleep 250}🎈
+:::confetti_ball::{Sleep 250}🎊
+:::tanabata_tree::{Sleep 250}🎋
+:::crossed_flags::{Sleep 250}🎌
+:::bamboo::{Sleep 250}🎍
+:::dolls::{Sleep 250}🎎
+:::flags::{Sleep 250}🎏
+:::wind_chime::{Sleep 250}🎐
+:::rice_scene::{Sleep 250}🎑
+:::school_satchel::{Sleep 250}🎒
+:::mortar_board::{Sleep 250}🎓
+:::medal::{Sleep 250}🎖
+:::reminder_ribbon::{Sleep 250}🎗
+:::studio_microphone::{Sleep 250}🎙
+:::level_slider::{Sleep 250}🎚
+:::control_knobs::{Sleep 250}🎛
+:::film_frames::{Sleep 250}🎞
+:::admission_tickets::{Sleep 250}🎟
+:::carousel_horse::{Sleep 250}🎠
+:::ferris_wheel::{Sleep 250}🎡
+:::roller_coaster::{Sleep 250}🎢
+:::fishing_pole_and_fish::{Sleep 250}🎣
+:::microphone::{Sleep 250}🎤
+:::movie_camera::{Sleep 250}🎥
+:::cinema::{Sleep 250}🎦
 
 
 
 ; Buildings
-:::lantern::🏮
-:::door::🚪
-:::toilet::🚽
-:::wc::🚾
-:::shower::🚿
-:::bath::🛀
-:::bathtub::🛁
+:::lantern::{Sleep 250}🏮
+:::door::{Sleep 250}🚪
+:::toilet::{Sleep 250}🚽
+:::wc::{Sleep 250}🚾
+:::shower::{Sleep 250}🚿
+:::bath::{Sleep 250}🛀
+:::bathtub::{Sleep 250}🛁
 
-:::house::🏠
-:::house_with_garden::🏡
-:::office::🏢
-:::post_office::🏣
-:::european_post_office::🏤
-:::hospital::🏥
-:::bank::🏦
-:::atm::🏧
-:::hotel::🏨
-:::love_hotel::🏩
-:::convenience_store::🏪
-:::bridge_at_night::🌉
-:::school::🏫
-:::department_store::🏬
-:::factory::🏭
-:::izakaya_lantern::🏮
-:::japanese_castle::🏯
-:::european_castle::🏰
+:::house::{Sleep 250}🏠
+:::house_with_garden::{Sleep 250}🏡
+:::office::{Sleep 250}🏢
+:::post_office::{Sleep 250}🏣
+:::european_post_office::{Sleep 250}🏤
+:::hospital::{Sleep 250}🏥
+:::bank::{Sleep 250}🏦
+:::atm::{Sleep 250}🏧
+:::hotel::{Sleep 250}🏨
+:::love_hotel::{Sleep 250}🏩
+:::convenience_store::{Sleep 250}🏪
+:::bridge_at_night::{Sleep 250}🌉
+:::school::{Sleep 250}🏫
+:::department_store::{Sleep 250}🏬
+:::factory::{Sleep 250}🏭
+:::izakaya_lantern::{Sleep 250}🏮
+:::japanese_castle::{Sleep 250}🏯
+:::european_castle::{Sleep 250}🏰
 
 
 
 ; Clothing
-:::crown::👑
-:::womans_hat::👒
-:::eyeglasses::👓
-:::necktie::👔
-:::shirt::👕
-:::jeans::👖
-:::dress::👗
-:::kimono::👘
-:::bikini::👙
-:::womans_clothes::👚
-:::purse::👛
-:::handbag::👜
-:::pouch::👝
-:::mans_shoe::👞
-:::athletic_shoe::👟
-:::high_heel::👠
-:::sandal::👡
-:::boot::👢
-:::footprints::👣
-:::bust_in_silhouette::👤
-:::busts_in_silhouette::👥
-:::tshirt::👕
-:::shoe::👞
+:::crown::{Sleep 250}👑
+:::womans_hat::{Sleep 250}👒
+:::eyeglasses::{Sleep 250}👓
+:::necktie::{Sleep 250}👔
+:::shirt::{Sleep 250}👕
+:::jeans::{Sleep 250}👖
+:::dress::{Sleep 250}👗
+:::kimono::{Sleep 250}👘
+:::bikini::{Sleep 250}👙
+:::womans_clothes::{Sleep 250}👚
+:::purse::{Sleep 250}👛
+:::handbag::{Sleep 250}👜
+:::pouch::{Sleep 250}👝
+:::mans_shoe::{Sleep 250}👞
+:::athletic_shoe::{Sleep 250}👟
+:::high_heel::{Sleep 250}👠
+:::sandal::{Sleep 250}👡
+:::boot::{Sleep 250}👢
+:::footprints::{Sleep 250}👣
+:::bust_in_silhouette::{Sleep 250}👤
+:::busts_in_silhouette::{Sleep 250}👥
+:::tshirt::{Sleep 250}👕
+:::shoe::{Sleep 250}👞
