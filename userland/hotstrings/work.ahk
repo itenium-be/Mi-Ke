@@ -1,5 +1,14 @@
 ﻿; --------------------------------------------------------------------- PARTENA
 
+::pemail::
+SendInput, bart.moonen@partena.be{TAB} Bader.Bouich@partena.be{TAB} Florentina.Saceanu@partena.be{TAB} Sam.VanCutsem@partena.be{TAB}
+SendInput, maarten.debal@partena.be{TAB} Filip.Vanhoorelbeke@partena.be{TAB} pierre.leroy@partena.be{TAB}
+SendInput, mahmoud.karoui@partena.be{TAB} philippe.lichtert@partena.be{TAB}
+Sleep, 500
+SendInput, {TAB}
+SendInput, christophe.carmeliet@partena.be{TAB}
+return
+
 ; Username:
 :*:iptn::c21913
 :*:iptf::DA_Famil\c21913
