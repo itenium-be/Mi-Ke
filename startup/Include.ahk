@@ -44,7 +44,7 @@ Include(incl, args*)
 				continue
 			}
 
-			Loop, %A_LoopReadLine%
+			Loop, Files, %A_LoopReadLine%, FR
 			{
 				incl .= "`n#Include " . A_LoopFileLongPath
 			}
