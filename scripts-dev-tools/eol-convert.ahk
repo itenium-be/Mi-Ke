@@ -2,7 +2,8 @@
 
 ; DOS:=CRLF, Unix:=LF, Mac:=CR
 
-EolToDos(str) {
+; Underscore in name as to not match "TO_DO"
+EolTo_Dos(str) {
 	return eol(str, "DOS")
 }
 

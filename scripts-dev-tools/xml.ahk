@@ -1,7 +1,12 @@
-
 XmlPrettify(input, params) {
 	return sXML_Pretty(input)
 }
+
+
+XmlUglify(input, params) {
+	return sXML_Pretty(input, "")
+}
+
 
 sXML_Pretty( XML, IndentationUnit="`t" ) { ; Adds linefeeds (LF, asc 10) and indentation between XML tags.
 ; NOTE: If the XML does not begin with a "<?xml...?>" tag, the output will begin with a newline.
@@ -22,12 +27,17 @@ sXML_Pretty( XML, IndentationUnit="`t" ) { ; Adds linefeeds (LF, asc 10) and ind
 						If ( closetag = "/" )
 						{
 							StringTrimRight, indent, indent, il
-							If ( priortag )
-								XML .= "`n" indent
+							If ( priortag ) {
+								If ( il )
+									XML .= "`n"
+								XML .= indent
+							}
 						}
 						Else
 						{
-							XML .= "`n" indent
+							If ( il )
+									XML .= "`n"
+							XML .= indent
 							If ( emptytag != "/" ) && ( closetag != "!" )
 								indent .= IndentationUnit
 						}

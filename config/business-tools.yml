@@ -1,26 +1,26 @@
 Business tooling:
-	hotkey: Capslock & b
-	readFrom: selectedText
-	writeTo: none
-	followedBy:
-		- desc: Validate IBAN nr
-			key: b
-			fn: ValidIBANAndInform
-		- desc: Notice period
-			key: o
-			fn: CalculateNoticePeriod
-		- desc: Postcode from cityname
-			key: p
-			fn: CalculatePostcode
-		- desc: Open in Google Maps
-			key: m
-			fn: OpenGoogleMaps
+  hotkey: Capslock & b
+  readFrom: selectedText
+  writeTo: none
+  followedBy:
+    - desc: Validate IBAN nr
+      key: b
+      fn: ValidIBANAndInform
+    - desc: Notice period
+      key: o
+      fn: CalculateNoticePeriod
+    - desc: Postcode from cityname
+      key: p
+      fn: CalculatePostcode
+    - desc: Open in Google Maps
+      key: m
+      fn: OpenGoogleMaps
 
 
 Format mobile number:
-	hotkey: Capslock & F
-	fn: FormatMobileNumber
-	readFrom: selectedText
-	params:
-		defaultCountryPrefix: 32
-		pattern: "{+}$1 (0)$2 $3 $4 $5"
+  hotkey: Capslock & F
+  fn: FormatMobileNumber
+  readFrom: selectedText
+  params:
+    defaultCountryPrefix: 32
+    pattern: "+$1 (0)$2 $3 $4 $5"

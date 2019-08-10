@@ -81,13 +81,21 @@ return
 
 Google(prefix := "") {
 	clipVal := CopyAndSaveClip()
-	Run, http://www.google.com/search?q=%prefix%%clipVal%
+	Run, https://www.google.com/search?q=%prefix%%clipVal%
 	RestoreClip()
 }
 
 OpenGoogleMaps(place) {
 	Run, https://maps.google.com/?q=%place%
 }
+
+OpenGoogleTranslate:
+	sentence := Trim(CopyAndSaveClip())
+	; sl = start language
+	; tl = to language
+	Run https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=%sentence%
+	RestoreClip()
+return
 
 
 MiKeTraySourceGithub:
@@ -147,6 +155,23 @@ Return
 ; Alt + Left/Right: history.back() / forward()
 ; Backspace for history.back() was removed from Chrome
 ;Backspace::Send !{Left} ; Haha, also blocks backspace in the address bar :)
+
+
+~Esc::
+; Esc twice to open/close DevTools
+; Default shortcut: Control + Shift + J
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
+    Send {F12}
+Return
+
+
+
+~^!J::
+; Control + Alt + J: Close the bottom Download Bar
+Send ^j
+WinWait, Downloads
+Send ^w
+return
 
 
 #IfWinActive

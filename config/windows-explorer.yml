@@ -1,70 +1,75 @@
 Zip the current directory or selected files in Windows Explorer:
-	label: ZipDirectory
-	hotkey: ^#z
-	context: explorer
+  label: ZipDirectory
+  hotkey: ^#z
+  context: explorer
 
 
 Select the last downloaded file in Windows Explorer:
-	label: ExplorerLastDownloadedFile
-	hotkey: ^!d
+  label: ExplorerLastDownloadedFile
+  hotkey: ^!d
+
+
+Copy the last downloaded file to the active Windows Explorer:
+  label: CopyLastDownloadedFileToExplorerPath
+  hotkey: ^!c
+  context: explorer
 
 
 Open 2 Windows Explorers - On Downloads folder and on USB drive:
-	label: CopyDownloadToUsb
-	hotkey: <^>!#d
+  label: CopyDownloadToUsb
+  hotkey: <^>!#d
 
 
 Rename subtitle to match selected media file in explorer:
-	label: ExplorerRenameSubtitle
-	hotkey: ^+s
+  label: ExplorerRenameSubtitle
+  hotkey: ^+s
 
 
 Create new file in Windows Explorer:
-	label: ExplorerNewFile
-	hotkey: ^+f
-	context: explorer
+  label: ExplorerNewFile
+  hotkey: ^+f
+  context: explorer
 
 
 Create new .txt file in Windows Explorer:
-	label: ExplorerNewTextFile
-	hotkey: ^+t
-	context: explorer
+  label: ExplorerNewTextFile
+  hotkey: ^+t
+  context: explorer
 
 
-# TODO: To check: Does this make opening explorer significantly slower?
 Open Windows Explorer in path on clipboard:
-	label: OpenExplorerInClipboardPath
-	hotkey: $#E
+  label: OpenExplorerInClipboardPath
+  hotkey: $#E
 
 
 2x Capslock - Put directory of selected file on clipboard:
-	label: ExplorerSelectedFileDirToClipboard
-	hotkey: CapsLock
-	context: explorer
+  label: ExplorerSelectedFileDirToClipboard
+  hotkey: CapsLock
+  context: explorer
 
 
 2x Shift + Capslock - Put full path of selected file on clipboard:
-	label: ExplorerSelectedFilePathToClipboard
-	hotkey: Shift & CapsLock
-	context: explorer
+  label: ExplorerSelectedFilePathToClipboard
+  hotkey: Shift & CapsLock
+  context: explorer
 
 
 See image dimensions and file size:
-	desc: Press again to copy dimensions to clipboard
-	hotkey: "#Enter"
-	label: SeeImageDimensions
-	context: explorer
+  desc: Press again to copy dimensions to clipboard
+  hotkey: "#Enter"
+  label: SeeImageDimensions
+  context: explorer
 
 
 
 Switch to Details View (builtin):
-	desc: Resize first column so that filenames are completely visible
-	hotkey: ~^+6 # This hotkey should probably not be changed (it matches the builtin hotkey)
-	label: SwitchToDetailsView
-	context: explorer
+  desc: Resize first column so that filenames are completely visible
+  hotkey: ~^+6 # This hotkey should probably not be changed (it matches the builtin hotkey)
+  label: SwitchToDetailsView
+  context: explorer
 
 
 
 2x Esc closes Windows Explorer:
-	titleMatcher: ahk_class CabinetWClass|ExploreWClass
-	doublePressCloseHotkey: ~ESC
+  titleMatcher: ahk_class CabinetWClass|ExploreWClass
+  doublePressCloseHotkey: ~ESC

@@ -8,7 +8,7 @@ GetSystemInformation() {
 	; A_Language: http://msdn.microsoft.com/en-us/library/aa912040
 	result .= ReplaceSystemInfo("`nLang: <A_Language>`nScreen size: <A_ScreenWidth>x<A_ScreenHeight>")
 
-	; TODO: Snippet to retrieve screen size of non primary monitors
+	; Snippet to retrieve screen size of non primary monitors:
 	; https://autohotkey.com/docs/commands/SysGet.htm
 	; SysGet, MonitorCount, MonitorCount
 	; SysGet, MonitorPrimary, MonitorPrimary

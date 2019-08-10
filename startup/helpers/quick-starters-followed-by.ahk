@@ -101,7 +101,17 @@ WriteHotkeyOutputData(qs, inputValue, result, readFrom) {
 		clipboard := result
 	}
 	else if (writeTo = "selectedText") {
-		Send % result
+		; SendRaw % result
+		; -> Does weird indenting when result is a multiline string
+
+		; Control+V works best in IDEs etc
+		Clipboard =
+		Clipboard := result
+		ClipWait, 2
+		SendInput, ^v
+
+		; Without Sleep, RestoreClip() messes things up
+		Sleep, 500
 	}
 	else if (writeTo = "explorer-file") {
 		; Notify(inputValue, result)

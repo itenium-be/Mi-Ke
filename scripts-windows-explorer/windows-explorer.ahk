@@ -3,9 +3,14 @@ ExplorerNoRenameWarning() {
 	While, 1
 	{
 		WinWaitActive, Rename ahk_class #32770
-		Send y
+		; BUG: Keeps sending "y" if a window satisfies the
+		; condition but y doesn't actually close the window
+		if not WinActive("ahk_exe eclipse.exe")
+			Send y
 	}
 }
+
+
 
 
 ; Control + Shift + N: New directory (builtin)
@@ -42,6 +47,20 @@ DeselectSelectedFiles()
 
 ; Control + Alt + D: Open last downloaded file
 ExplorerLastDownloadedFile:
+	File := GetLastDownloadedFile()
+	Run, explorer.exe /select`,"%File%"
+Return
+
+
+CopyLastDownloadedFileToExplorerPath:
+	File := GetLastDownloadedFile()
+	Dest := Explorer_GetPath()
+	FileCopy, %File%, %Dest%
+	If ErrorLevel
+		Notify("Destination already existed", "Source=" File "`nDestination=" Dest)
+Return
+
+GetLastDownloadedFile() {
 	Loop, Files, %DOWNLOAD_FOLDER%\*, DF
 	{
 		FileGetTime, Time, %A_LoopFileFullPath%, C
@@ -51,9 +70,8 @@ ExplorerLastDownloadedFile:
 			File := A_LoopFileFullPath
 		}
 	}
-	Run, explorer.exe /select`,"%File%"
-Return
-
+	return File
+}
 
 
 ; 2x Capslock: put path of selected file to clipboard
@@ -100,7 +118,12 @@ OpenExplorerInClipboardPath:
 		Run % "explorer.exe /select," clipVal
 
 	} else {
-		Send #e
+		startupPath := ReadMikeIni("windows-explorer", "StartupPath")
+		if (startupPath) {
+			Run % "explorer.exe /root," startupPath
+		} else {
+			Send #e
+		}
 	}
 
 	RestoreClip()
