@@ -12,6 +12,9 @@
 
 ; ======================================================================================================================
 
+; Check if running every 60 minutes
+SetTimer, KeepForeverRunning, 3600000
+
 
 ; UnPinToTaskbar("C:\Program Files\Internet Explorer\iexplore.exe")
 ; PinToTaskbar("C:\Windows\System32\calc.exe")

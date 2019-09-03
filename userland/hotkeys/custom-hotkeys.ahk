@@ -19,6 +19,8 @@ else
 return
 
 
+; Laptop has problem with a locked AltGr or something?
+; AltGr + E results in trying to translate Chrome tab.
 CapsLock & E::
 SendInput {U+20AC}
 return
@@ -33,5 +35,5 @@ CAPSLOCK & Z::
 return
 
 CAPSLOCK & D::
-	Google("visual+studio+code+")
+	Google("vscode+")
 return
