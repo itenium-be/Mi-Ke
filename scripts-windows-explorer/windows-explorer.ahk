@@ -1,5 +1,5 @@
 ; Click the "Are you sure you want to change the extension" away
-ExplorerNoRenameWarning() {
+ExplorerNoRenameWarning:
 	While, 1
 	{
 		WinWaitActive, Rename ahk_class #32770
@@ -8,7 +8,7 @@ ExplorerNoRenameWarning() {
 		if not WinActive("ahk_exe eclipse.exe")
 			Send y
 	}
-}
+return
 
 
 
