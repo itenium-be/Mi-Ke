@@ -130,25 +130,29 @@ return
 
 #IfWinActive, ahk_class Chrome_WidgetWin
 
-; F1: Open chrome://extensions
-F1::
-IfWinActive, New Tab
-	; Focus address bar
-	Send ^l
-else
-	; Open new tab
-	Send ^t
-
-SendInput chrome`:`/`/extensions`/{Enter}
-
 ; Other chrome:// uris
 ; chrome://settings
-; chrome://history
-; chrome://downloads
+; chrome://history == Control + H
+; chrome://downloads == Control + J
 ; chrome://bookmarks
 ; chrome://flags --> Enable experimental features
 ; Complete list: chrome://chrome-urls
 ; Blog post: https://fossbytes.com/complete-list-of-secret-chrome-urls-uses
+openChromePageInNewTab(chromePage) {
+	IfWinActive, New Tab
+		; Focus address bar
+		Send ^l
+	else
+		; Open new tab
+		Send ^t
+
+	SendInput chrome`:`/`/%chromePage%`/{Enter}
+}
+
+
+; F1: Open chrome://extensions
+F1::
+openChromePageInNewTab("extensions")
 Return
 
 
