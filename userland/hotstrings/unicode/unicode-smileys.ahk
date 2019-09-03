@@ -13,7 +13,7 @@
 :::wave::{Sleep 250}👋
 :::ok_hand::{Sleep 250}👌
 :::+1::👍
-:::_1::{Sleep 250}👎
+:::-1::{Sleep 250}👎
 :::clap::{Sleep 250}👏
 :::open_hands::{Sleep 250}👐
 :::punch::{Sleep 250}👊
