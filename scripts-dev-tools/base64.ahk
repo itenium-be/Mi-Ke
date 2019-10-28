@@ -8,8 +8,11 @@ JwtDecode(string) {
 	jwtParts := StrSplit(string, ".")
 
 	result := "Header: " Base64Decode(jwtParts[1])
-	result .= "`n`nPayload: " Base64Decode(jwtParts[2])
-	;result .= "`n`nSignature: " Base64Decode(jwtParts[3])
+
+	payload := Base64Decode(jwtParts[2])
+	payload := JsonBeautify(payload)
+	result .= "`n`nPayload: " payload
+	; result .= "`n`nSignature: " Base64Decode(jwtParts[3])
 
 	return result
 }
