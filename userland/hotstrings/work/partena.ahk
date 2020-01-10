@@ -30,6 +30,31 @@ return
 :*:pteam::van havermaet, ruben;vansteenkiste, tim;ribbens,joris; Ozdemir Gurbuz;ver eecke, truus; loockx helga; van der hoeven, Domien;robijns, steven
 
 
+CAPSLOCK & R::
+	; Open the PR page for all our projects to see if you have any open PRs
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_backlogs/backlog/Feature-Team-2/Stories
+
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BA-BankPayments/pullrequests?_a=mine
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-BankPayments/pullrequests?_a=mine
+
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BA-VoucherOrdering/pullrequests?_a=mine
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-VoucherOrdering/pullrequests?_a=mine
+
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BA-WageDetermination/pullrequests?_a=mine
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-WageDetermination/pullrequests?_a=mine
+
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-ThirdPartySettlement/pullrequests?_a=mine
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-EmployerAndWorkerSettlement/pullrequests?_a=mine
+
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-EmployerManagement/pullrequests?_a=mine
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-PayrollManagement/pullrequests?_a=mine
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-PersonData/pullrequests?_a=mine
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/BF-WorkerContractManagement/pullrequests?_a=mine
+
+	Run, https://dev.azure.com/Partena-Horizon/Horizon/_git/UX-Library/pullrequests?_a=mine
+return
+
+
 ; ----------------------------------------------------------- CreateWorkerWizard
 
 ; cww == Create Worker Wizard
