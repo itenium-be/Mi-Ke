@@ -1,12 +1,15 @@
 ﻿; --------------------------------------------------------------------- PARTENA
 
 ::pemail::
-SendInput, bart.moonen@partena.be{TAB} Bader.Bouich@partena.be{TAB} Florentina.Saceanu@partena.be{TAB} Sam.VanCutsem@partena.be{TAB}
-SendInput, maarten.debal@partena.be{TAB} Filip.Vanhoorelbeke@partena.be{TAB} pierre.leroy@partena.be{TAB}
-SendInput, mahmoud.karoui@partena.be{TAB} philippe.lichtert@partena.be{TAB} Raul.Martinez@partena.be{TAB}
-Sleep, 500
-SendInput, {TAB}
-SendInput, christophe.carmeliet@partena.be{TAB}{TAB}
+SendInput, bart.moonen@partena.be
+Sleep 100
+SendInput {TAB}
+; Bader.Bouich@partena.be{TAB} Florentina.Saceanu@partena.be{TAB} Sam.VanCutsem@partena.be{TAB}
+; SendInput, maarten.debal@partena.be{TAB} Filip.Vanhoorelbeke@partena.be{TAB} pierre.leroy@partena.be{TAB}
+; SendInput, mahmoud.karoui@partena.be{TAB} philippe.lichtert@partena.be{TAB} Raul.Martinez@partena.be{TAB}
+; Sleep, 500
+; SendInput, {TAB}
+; SendInput, christophe.carmeliet@partena.be{TAB}{TAB}
 return
 
 ; Username:
@@ -19,7 +22,12 @@ return
 ; Some IBAN
 :*:piban::BE68539007547034
 
+:*:plogin::c21913{tab}
 
+
+; ----------------------------------------------------------- FeatureTeam 2
+
+:*:pteam::van havermaet, ruben;vansteenkiste, tim;ribbens,joris; Ozdemir Gurbuz;ver eecke, truus; loockx helga; van der hoeven, Domien;robijns, steven
 
 
 ; ----------------------------------------------------------- CreateWorkerWizard
@@ -81,44 +89,55 @@ Send {tab}                ; go to inss
 Sleep %Wait%
 Send %Inss%                ; send inss
 Send {tab}                ; go to country
-Send {down}                ; chose first country
+Send {down}                ; first country
 Send {tab}                ; go to payroll group
 Sleep %Wait%
-Send {down}                ; chose first payroll group
+Send {down}{down}                ; payroll group BESTUURDERS
 Send {tab}                        ; go to startdate
 SendInput %CurrentDateTime%        ; send start contract date
-Send {tab}                ; go to category
+Send {Shift Down}{tab}{Shift Up}                ; go to category
 Sleep %Wait%
-Sleep %Wait%
-Send {down}                ; chose first category
+Send {tab}{tab}
+Send {down}{enter}                ; first category
 Send {tab}                ; go to subcategory
 Sleep %Wait%
-Sleep %Wait%
-Send {down}                ; chose first sub-category
+Send {down}                ; first sub-category
+send {enter}
+
+; Submit form
+; send {tab}
+; send {enter}
 return
 
 
 :*:cw2::
-Wait = 1000
+Wait = 500
 Street = MyStreet
 Number = 12
 Box = box
 Send {tab}                ; go to language
 Sleep %Wait%
-Send {down}                ; chose first labguage
-Send {tab}                ; go to eduction level
-Sleep %Wait%
-Send {down}
-Send {down}                ; chose first eduction level
+Send {down}                ; first language
+
+; ATTN: Currently selecting BESTUURDERS - for which the education level is not visible
+; Send {tab}                ; go to eduction level
+; Sleep %Wait%
+; Send {down}
+; Send {down}                ; first eduction level
+
 Send {tab}                ; go to birthcountry
-Sleep %Wait%
-Send {down}
-Send {down}                ; chose first birthcountry
+
+; ATTN: Belgium is already selected as birthcountry
+; Sleep %Wait%
+; Send {down}                ; first birthcountry
+
 Send {tab}                ; go to birthcity
 Send Brus
 Sleep %Wait%
 Send {down}
-Send {down}                ; chose first birthcity
+Send {down}                ; first birthcity
+send {enter}
+Sleep %Wait%
 Send {tab}
 Send {tab}                ; go to street
 Send %Street%            ; send street
@@ -131,7 +150,10 @@ Send {tab}                ; go to city
 Send Bru
 Sleep %Wait%
 Send {down}
-Send {down}                ; chose first city
+Send {down}                ; first city
+send {enter}
+
+Send {tab}
 Send {tab}
 Send {tab}
 Send {tab}
@@ -147,7 +169,7 @@ return
 
 
 :*:cw3::
-Wait = 1000
+Wait = 500
 Send {tab}
 Sleep %Wait%
 Send {down}
@@ -157,4 +179,28 @@ Send Chief Energy Officer
 Send {tab}
 Send {tab}
 Send {down}
+return
+
+
+
+:*:cwv::
+Wait = 500
+Send {tab}{tab}{tab}{tab}
+Send AAA123
+Send {tab}{tab}
+Send 01/05/2019
+Send {tab}
+Send 15000
+Send {tab}{tab}
+Send 110
+return
+
+
+:*:cw4::
+Send {tab}
+Send {space}{down}{down}{enter}
+send {tab}2800
+send {tab}{space}{down}{enter}
+send {tab}01012020
+send {tab}
 return
