@@ -4,7 +4,7 @@ config/_custom.yml
 resources/*.ico
 
 userland/auto-execute.ahk
-userland/hotkeys
-userland/hotstrings
+#userland/hotkeys
+#userland/hotstrings
 
 .idea
