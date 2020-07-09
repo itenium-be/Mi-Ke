@@ -1,6 +1,5 @@
 ; Don't go into metro mode when I accidently
 ; press the left Windows button
-
 ; TODO: This should only be active in Windows 8
 ~LWin Up::
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 800) {
@@ -8,6 +7,22 @@ If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 800) {
 	Send {RWIN}
 }
 return
+
+
+
+XButton1::
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500) {
+	Send #e
+}
+return
+
+
+XButton2::
+If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500) {
+	Run, http://192.168.1.27:8009/
+}
+return
+
 
 
 ; Laptop has a problem with switching tab status
