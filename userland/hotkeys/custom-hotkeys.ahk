@@ -10,14 +10,14 @@ return
 
 
 
-XButton1::
+~XButton1::
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500) {
 	Send #e
 }
 return
 
 
-XButton2::
+~XButton2::
 If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500) {
 	Run, http://192.168.1.27:8009/
 }
