@@ -25,6 +25,39 @@ return
 :*:plogin::c21913{tab}
 
 
+
+:*:aic::
+Send {tab}
+Send First naamie
+Send {tab}
+Send last naamie
+Send {tab}{space}{down}{enter}
+sleep 200
+Send {tab}{space}{down}{enter}
+sleep 200
+Send {tab}
+Send 054980544
+Send {tab}
+Send email@email.com
+return
+
+
+
+:*:agi::
+Send {tab}
+Send {tab}{space}{down}{enter}
+sleep 200
+Send {tab}
+sleep 200
+Send My setting name
+; Send {tab}
+; Send {tab}{space}{down}{enter}
+; Send {tab}
+; Send {tab}{space}{down}{enter}
+return
+
+
+
 ; ----------------------------------------------------------- FeatureTeam 2
 
 :*:pteam::van havermaet, ruben;vansteenkiste, tim;ribbens,joris; Ozdemir Gurbuz;ver eecke, truus; loockx helga; van der hoeven, Domien;robijns, steven
