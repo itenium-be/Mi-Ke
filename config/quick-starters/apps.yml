@@ -1,7 +1,7 @@
 Calculator:
   hotkey: ^#c
   path: <A_WINDIR>\System32\calc.exe
-  titleMatcher: ahk_class CalcFrame
+  titleMatcher: Calculator
   doublePressCloseHotkey: ~ESC # ~ --> First ESC should still clear the calc input
   menu: Programs
 
