@@ -5,7 +5,7 @@ ExplorerNoRenameWarning:
 		WinWaitActive, Rename ahk_class #32770
 		; BUG: Keeps sending "y" if a window satisfies the
 		; condition but y doesn't actually close the window
-		if not WinActive("ahk_exe eclipse.exe") and not WinActive("ahk_exe SumatraPDF.exe")
+		if not WinActive("ahk_exe eclipse.exe") and not WinActive("ahk_exe SumatraPDF.exe") and not WinActive("ahk_exe i_view64.exe")
 			Send y
 	}
 return
