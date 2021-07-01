@@ -22,3 +22,13 @@
 
 ; More fun combinations possible:
 ; https://autohotkey.com/docs/KeyList.htm
+
+^!w::
+Run, "C:\Users\robij\Google Drive (robijns.steven@gmail.com)\Private\P\Consultancy"
+Return
+
+^!x::
+Run, "C:\Users\robij\OneDrive - itenium.be\itenium"
+Return
+
+
