@@ -31,6 +31,11 @@ Return
 Run, "C:\Users\robij\OneDrive - itenium.be\itenium"
 Return
 
+^!g::
+Run, "C:\git\itenium\"
+Return
+
+
 ^!q::
 Send, is:unread category:primary {enter}
 Return
