@@ -26,6 +26,20 @@ return
 
 
 
+:*:tracequery::
+send SELECT TOP (1000) *
+send `n  FROM [DBWageDetermination].[Barema].[WageCalculationTrace]
+send `n-- where payrollunit='' and worker=''
+send `norder by id desc
+return
+
+
+:*:createcobra::
+Send insert into [CobraSyncMessage] values ('0461840952', '', 'New', 'Updated', 0, CURRENT_TIMESTAMP);
+return
+
+
+
 :*:aic::
 Send {tab}
 Send First naamie
