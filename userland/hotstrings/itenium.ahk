@@ -7,6 +7,8 @@ return
 :*:itphone::{+}32 15 79 46 89
 :*:unrpr::is:unread category:primary {enter}
 
+:*:mvgl::Met vriendelijke groeten
+
 getBtw()
 {
 	return "BE0687800967"
