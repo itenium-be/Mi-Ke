@@ -10,6 +10,12 @@ return
 
 :*:mvgl::Met vriendelijke groeten
 
+:*:itcal::https://calendly.com/itenium-steven-robijns/`nhttps://calendly.com/stijn-itenium
+
+:*:calsteven::https://calendly.com/itenium-steven-robijns/
+:*:calstijn::https://calendly.com/stijn-itenium
+:*:calwouter::https://calendly.com/wouter-van-schandevijl/
+
 getBtw()
 {
 	return "BE0687800967"
