@@ -8,15 +8,6 @@ Sublime Text:
 	menu: Editors
 
 
-WebStorm:
-	hotkey: ^#w
-	titleMatcher: ahk_exe webstorm64.exe
-	path: <A_PROGRAMFILES>\JetBrains\WebStorm /[0-9]+(.[0-9]+)*/\bin\webstorm64.exe/$/
-	passExplorerPathAsArgument: dir
-	openWithPathArgs: <exe> "<path>"
-	menu: Editors
-
-
 # Win+C: Notepad++. C=Code? :) (N is already mapped to OneNote)
 Notepad++:
 	hotkey: "#c"

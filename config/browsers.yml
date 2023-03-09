@@ -18,6 +18,10 @@ Google the currently selected text + Autohotkey:
 
 Google translate the currently selected text:
   label: OpenGoogleTranslate
+  hotkey: Capslock & Y
+
+Deepl translate the currently selected text:
+  label: OpenDeeplTranslateEN
   hotkey: Capslock & T
 
 

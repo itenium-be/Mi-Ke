@@ -1,3 +1,11 @@
+OpenDeeplTranslateEN:
+	sentence := Trim(CopyAndSaveClip())
+	; sl = start language
+	; tl = to language
+	Run https://www.deepl.com/translator#?/en/%sentence%
+	RestoreClip()
+return
+
 ;
 ; Your scripts here
 ; Any Ahk file in userland\hotkeys will be included into the script
