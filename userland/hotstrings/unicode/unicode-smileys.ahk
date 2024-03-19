@@ -18,7 +18,6 @@
 :::open_hands::{Sleep 250}👐
 :::punch::{Sleep 250}👊
 :::thumbsup::{Sleep 250}👍
-:::-1::{Sleep 250}👎
 :::thumbsdown::{Sleep 250}👎
 
 
