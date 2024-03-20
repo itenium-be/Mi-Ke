@@ -3,7 +3,11 @@
 	if (ErrorLevel = 0)
 	{
 		Notify("Starting Ditto")
-		Run, C:\Program Files (x86)\Ditto\Ditto.exe
+		if (FileExist("C:\Program Files (x86)\Ditto\Ditto.exe")) {
+			Run, C:\Program Files (x86)\Ditto\Ditto.exe
+		} else {
+			Run, C:\Program Files\Ditto\Ditto.exe
+		}
 	}
 
 
