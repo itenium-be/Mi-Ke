@@ -20,7 +20,7 @@ A script running in the background (tray icon) with little productivity boosters
 - Random scripts to do something I often do (did?) manually
 - Dev tooling (encode/decode, prettify/uglify, convert, ...)
 
-See the [Github Pages](https://itenium.be/Mi-Ke) for a listing of
+See the [Github Pages](https://itenium-be.github.io/Mi-Ke/) for a listing of
 all shortcuts and their default bindings.  
 Or don't: the information on the site is pretty outdated.
 
