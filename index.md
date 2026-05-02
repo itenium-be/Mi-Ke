@@ -35,20 +35,20 @@ Run `.\init.ps1` to create some personal customization example files.
 
 ## Diff 2 files in Windows explorer or the selected text elsewhere
 
-[memory-diff.ahk](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-other/memory-diff.ahk)
+[memory-diff.ahk](https://github.com/itenium-be/Mi-Ke/blob/main/scripts-other/memory-diff.ahk)
 
-{% include kbd k="Control+Win+Left" l="Put selected text in Desktop\left.txt" %}
-{% include kbd k="Control+Win+Down" l="Put selected text in Desktop\right.txt and open Diff tool" %}
-{% include kbd k="Control+Win+Up" l="Show current clipboard content" %}
-{% include kbd k="Control+Win+Right" l="Open Diff tool with current left/right.txt" %}
-{% include kbd k="Control+Win+Numpad0" l="Open Diff tool with a Dropbox conflicted file vs the original" %}
+{% include kbd k="Control+Win+Alt+Left" l="Put selected text in Desktop\left.txt" %}
+{% include kbd k="Control+Win+Alt+Down" l="Put selected text in Desktop\right.txt and open Diff tool" %}
+{% include kbd k="Control+Win+Alt+Up" l="Show current clipboard content" %}
+{% include kbd k="Control+Win+Alt+Right" l="Open Diff tool with current left/right.txt" %}
+{% include kbd k="Control+Win+Alt+Numpad0" l="Open Diff tool with a Dropbox conflicted file vs the original" %}
 
 
 ## Windows Explorer enhancements
 
 {% include kbd k="AltGr+Win+D" l="Open 2 explorers, one in download folder, one with USB stick" github="scripts-windows-explorer/windows-explorer-copy-download-to-usb" %}
 
-[windows-explorer](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-windows-explorer)
+[windows-explorer](https://github.com/itenium-be/Mi-Ke/blob/main/scripts-windows-explorer)
 
 {% include kbd k="2x Esc" l="Close active Explorer window" %}
 {% include kbd k="2x Capslock" l="Put full directory of selected file/folder to clipboard" %}
@@ -67,9 +67,9 @@ Switch views:
 
 ## Developer tooling
 
-[Configuration](https://github.com/itenium-be/Mi-Ke/blob/master/config/dev-tools)
+[Configuration](https://github.com/itenium-be/Mi-Ke/blob/main/config/dev-tools)
 and
-[implementations](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-dev-tools).
+[implementations](https://github.com/itenium-be/Mi-Ke/blob/main/scripts-dev-tools).
 
 
 {% include kbd k="AltGr+L" l="Paste lorem ipsum" %}
@@ -187,7 +187,7 @@ PowerShell ISE:
 
 ## Browsers
 
-[Browsers](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-other/browsers.ahk)
+[Browsers](https://github.com/itenium-be/Mi-Ke/blob/main/scripts-other/browsers.ahk)
 
 {% include kbd k="Capslock & W" l="Open browser" %}
 {% include kbd k="Capslock & X" l="Google selected text" %}
@@ -196,7 +196,7 @@ PowerShell ISE:
 
 ## change-sound-volume
 
-[Change sound volume](https://github.com/itenium-be/Mi-Ke/blob/master/scripts-other/change-sound-volume.ahk) with 'funny' images.  
+[Change sound volume](https://github.com/itenium-be/Mi-Ke/blob/main/scripts-other/change-sound-volume.ahk) with 'funny' images.  
 
 {% include kbd k="Win+PgUp" l="Volume +10" %}
 {% include kbd k="Win+PgDn" l="Volume -10" %}
